@@ -219,5 +219,6 @@ pip-log.txt
 
 /Data/AdditionalMaps/*
 /Data/AptUI/*
+*.babproj
 
 !.gitkeep
