@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityAlliedFutureTankLaserWeapon">
+		<State
+			Image="AUA_FutureTank_RiotBeam"
+			Title="NAME:AlliedFutureTankLaserWeapon"
+			Description="DESC:AlliedFutureTankLaserWeapon" />
+	</ButtonSingleStateData>
+</AssetDeclaration>

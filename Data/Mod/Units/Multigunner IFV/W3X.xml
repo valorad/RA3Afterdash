@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Multigunner IFV/AUIFV_SKN.UPGRADE_ARCHERMAIDEN.w3x" />
+		<Include type="all" source="ART:Units/Multigunner IFV/AUIFV_SKN.UPGRADE_ARCHERMAIDENSTRING.w3x" />
+		<Include type="all" source="ART:Units/Multigunner IFV/AUIFV_SKN.UPGRADE_CRYO.w3x" />
+		<Include type="all" source="ART:Units/Multigunner IFV/AUIFV_SKN.UPGRADE_DESOLATOR.w3x" />
+		<Include type="all" source="ART:Units/Multigunner IFV/AUIFV_Upheaval_CTR.w3x" />
+		<Include type="all" source="ART:Units/Multigunner IFV/AUIFV_Upheaval_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

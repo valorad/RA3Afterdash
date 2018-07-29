@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPower_ArcherArrowBarrage"
+		ReloadTime="10s"
+		TargetType="LOCATION"
+		RadiusCursorRadius="60"
+		Flags="WATER_OK NOT_IN_NANOSWARM CANNOT_LEAVE_ENCLOSURE"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="voiceArrowBarrage">
+	</SpecialPowerTemplate>
+</AssetDeclaration>

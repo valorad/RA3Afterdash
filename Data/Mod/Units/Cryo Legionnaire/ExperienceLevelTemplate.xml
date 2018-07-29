@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="AlliedLegionnaireInfantryExperienceLevel_1"
+		inheritFrom="ExperienceLevel_AlliedRank1"
+		RequiredExperience="1"
+		ExperienceAward="1500">
+		<Target>AlliedLegionnaireInfantry</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedLegionnaireInfantryExperienceLevel_2"
+		inheritFrom="ExperienceLevel_AlliedRank2"
+		Prerequisite="AlliedLegionnaireInfantryExperienceLevel_1"
+		RequiredExperience="4500"
+		ExperienceAward="3000">
+		<Target>AlliedLegionnaireInfantry</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedLegionnaireInfantryExperienceLevel_3"
+		inheritFrom="ExperienceLevel_AlliedRank3"
+		Prerequisite="AlliedLegionnaireInfantryExperienceLevel_2"
+		RequiredExperience="9000"
+		ExperienceAward="4500">
+		<Target>AlliedLegionnaireInfantry</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedLegionnaireInfantryExperienceLevel_4"
+		inheritFrom="ExperienceLevel_AlliedRank4"
+		Prerequisite="AlliedLegionnaireInfantryExperienceLevel_3"
+		RequiredExperience="13500"
+		ExperienceAward="6000">
+		<Target>AlliedLegionnaireInfantry</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

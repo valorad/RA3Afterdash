@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="JAP_Yuriko_PsychokineticBurstMS">
+		<Subsound>JAP_Yuriko_PsychokineticBurst1</Subsound>
+		<Subsound>JAP_Yuriko_PsychokineticBurst2</Subsound>
+	</Multisound>
+</AssetDeclaration>

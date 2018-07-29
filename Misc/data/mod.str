@@ -1,11 +1,585 @@
-HOTKEYNAME:SIDEBARBUTTONSLOT13
-	"Slot 13"
-End
-
-HOTKEYNAME:SIDEBARBUTTONSLOT14
-	"Slot 14"
-End
-
-HOTKEYNAME:SIDEBARBUTTONSLOT15
-	"Slot 15"
-End
+// Archer Maiden
+	
+	Name:JapanArcherInfantry
+		"Archer Maiden"
+	End
+	
+	Desc:JapanArcherInfantry
+		"Rejected from the Rocket Angel ranks, these women sought to fight by more-traditional means."
+	End
+	
+	Type:JapanArcherInfantry
+		"Anti-Air / Anti-Surface"
+	End
+	
+	Name:ArcherArrowBarrageSpecialPower
+		"Barrage Shot"
+	End
+	
+	Desc:ArcherArrowBarrageSpecialPower
+		"Fires a specially-armed arrow that bursts into white-hot, infantry-shredding spikes."
+	End
+	
+	DialogEvent:MIIn_ArcherMaiden
+		"*Archer Maidens use their powered greatbows to strike enemy ground and air targets.  These bows can be extremely damaging in spite of being relatively slow on the draw.  The Maidens' special ability launches an energy arrow barrage that can strike multiple targets in an area."
+	End
+	
+	
+	
+// Cryo Legionnaire
+	
+	Name:AlliedLegionnaireInfantry
+		"Cryo Legionnaire"
+	End
+	
+	Desc:AlliedLegionnaireInfantry
+		"Ice-cold experimental soldiers boasting the latest powered armor and cryo weaponry."
+	End
+	
+	Type:AlliedLegionnaireInfantry
+		"Advanced Anti-Surface"
+	End
+	
+	Name:CryoLeapSpecialPower
+		"Boost Kick"
+	End
+	
+	Desc:CryoLeapSpecialPower
+		"Launches feet-first towards a target point, damaging or shattering any foes in the area."
+	End
+	
+	Desc:PlayerPowerHighTechnology
+		"Power up the special abilities of Dogs, Guardians, Cryocopters, Legionnaires, and Carriers!"
+	End
+	
+	DialogEvent:MAIn_CryoLegionnaire
+		"*Cryo Legionnaires are heavy assault infantry whose ice cannons can freeze multiple assailants dead in their tracks in just a few seconds.  The Cryo Legionnaires' special ability is the boost kick, which they use to shatter frozen targets, or leap into or out of battle."
+	End
+	
+	
+	
+// Desolator
+	
+	Name:SovietDesolatorInfantry
+		"Desolator Trooper"
+	End
+	
+	Desc:SovietDesolatorInfantry
+		"Thick chemical suits shield these sadists from the horrid poisons they use as weapons."
+	End
+	
+	Type:SovietDesolatorInfantry
+		"Advanced Anti-Infantry"
+	End
+	
+	Name:DesolatorWeaponMode
+		"Splattershot Mode"
+	End
+	
+	Desc:DesolatorWeaponMode
+		"Switches to firing globs of armor-corroding filth. Rinse with Deathspray for best results."
+	End
+	
+	Name:DesolatorWeaponModeOff
+		"Deathspray Mode"
+	End
+	
+	Desc:DesolatorWeaponModeOff
+		"Switches back to spraying streams of poisonous fluids, which can melt flesh and bone."
+	End
+	
+	DialogEvent:MSIn_Desolator1
+		"*Desolator Troopers are heavy infantry who fight using deadly poisons stored in their chemical suits.  They can either spray their toxins on infantry or switch to their splattershot mode to launch explosive globs of corrosive acids against vehicles.  Their spray can also clear out enemy garrisons."
+	End
+	
+	
+	
+// Future Tank X-1
+	
+	Name:AlliedFutureTank
+		"Future Tank X-1"
+	End
+	
+	Desc:AlliedFutureTank
+		"Hulking unmanned war machines whose neutron scramblers can annihilate entire tank platoons."
+	End
+	
+	Type:AlliedFutureTank
+		"Advanced Anti-Surface Tank"
+	End
+	
+	Name:AlliedFutureTankLaserWeapon
+		"Riot Beam"
+	End
+	
+	Desc:AlliedFutureTankLaserWeapon
+		"Fires ultrahigh-energy beams toward a target point, likely incinerating anything in the way."
+	End
+	
+	DialogEvent:MAIn_FutureTank
+		"*Future Tank X-1s are heavily armored, computer-controlled combat vehicles that are virtually unmatched on the ground.  Their experimental cannons can easily cut through even the toughest armor, while their Riot Beam special weapon lets them turn the tables on enemies attacking in mass."
+	End
+	
+	
+	
+// Giga-Fortress
+	
+	Name:JapanFortressShip
+		"Giga-Fortress"
+	End
+	
+	Desc:JapanFortressShip
+		"Self-aware sea fortresses filled with unconscionable weapon systems and other dark secrets."
+	End
+	
+	Type:JapanFortressShip
+		"Advanced Anti-Surface / Anti-Air"
+	End
+	
+	Name:JapanFortressShip_Air
+		"Giga-Fortress"
+	End
+	
+	Desc:JapanFortressShip_Air
+		"Incredible, hopelessly destructive flying siege weapons--symbols of the Empire's defiance."
+	End
+	
+	Type:JapanFortressShip_Air
+		"Advanced Heavy Bombardment"
+	End
+	
+	Name:JapanFortressShipTransformAircraftMode
+		"Sky Fortress Mode"
+	End
+	
+	Desc:JapanFortressShipTransformAircraftMode
+		"Switches to aerial form, whose infamous Gods' Breath device could tear the Earth asunder."
+	End
+	
+	Name:JapanFortressShipTransformShipMode
+		"Sea Fortress Mode"
+	End
+	
+	Desc:JapanFortressShipTransformShipMode
+		"Switches back to floating form, whose myriad weapons could make the seas boil over."
+	End
+	
+	DialogEvent:MIIn_GigaFortress
+		"*Giga-Fortresses are among the most powerful weapons the Empire has ever developed.  In their primary form, their multiple cannons and photon rocket launchers are enough to overwhelm entire naval strike groups.  They may also switch to a secondary form, a devastating long-range artillery platform that can fly wherever it pleases."
+	End
+	
+	
+	
+// Giga-Fortress Core
+	
+	Name:JapanFortressShipEgg
+		"Giga-Fortress Core"
+	End
+	
+	Desc:JapanFortressShipEgg
+		"Special drones that unfurl into the Giga-Fortress, a massive and heavily-armed warship."
+	End
+	
+	Type:JapanFortressShipEgg
+		"Portable Heavy Artillery Unit"
+	End
+	
+	Name:JapanFortressShipEggUnpackSpecialPower
+		"Unfurl"
+	End
+	
+	Desc:JapanFortressShipEggUnpackSpecialPower
+		"Initiates transformation sequence into the massive Giga-Fortress. Must be on water."
+	End
+	
+	
+	
+// Grinder
+	
+	Name:SovietGrinderVehicle
+		"Grinder"
+	End
+	
+	Desc:SovietGrinderVehicle
+		"Road rollers jury-rigged for war. Their gnashing teeth can grind anything on land or sea."
+	End
+	
+	Type:SovietGrinderVehicle
+		"Advanced Anti-Surface"
+	End
+	
+	Name:NitrousBoostSpecialPower
+		"Turbo-Charge"
+	End
+	
+	Desc:NitrousBoostSpecialPower
+		"Fires on all cylinders for a sudden burst of speed, useful for overtaking cowardly foes."
+	End
+	
+	DialogEvent:MSIn_Grinder1
+		"*Grinders are heavily-armored amphibious vehicles that lack conventional weapons but can simply roll over most smaller targets.  They can tear apart larger targets almost as quickly.  Their special ability gives them a temporary burst of speed, allowing them to overrun faster foes."
+	End
+	
+	
+	
+// Harbinger Gunship
+	
+	Name:AlliedGunshipAircraft
+		"Harbinger Gunship"
+	End
+	
+	Desc:AlliedGunshipAircraft
+		"Some Allied officials strongly protested the charter of these enormous heavy-support aircraft."
+	End
+	
+	Type:AlliedGunshipAircraft
+		"Advanced Support Bomber"
+	End
+	
+	Name:ToggleAlliedGunship
+		"Chain Gun"
+	End
+	
+	Desc:ToggleAlliedGunship
+		"Switches to a 25 mm anti-personnel weapon that can chew through infantry in droves."
+	End
+	
+	Name:ToggleAlliedGunshipAutoCannon
+		"Collider Cannons"
+	End
+	
+	Desc:ToggleAlliedGunshipAutoCannon
+		"Re-enables the vaunted Collider Cannons, which pack the punch of the Allies' ultimate weapon."
+	End
+	
+	DialogEvent:MAIn_Harbinger
+		"*Harbinger Gunships are massive support aircraft armed with the latest in weapons technology.  Next to nothing can resist their on-board collider cannons, but just in case, they can switch to fast-firing antipersonnel guns for taking care of any smaller threats."
+	End
+	
+	
+	
+// Mortar Cycle
+	
+	Name:SovietMortarCycle
+		"Mortar Cycle"
+	End
+	
+	Desc:SovietMortarCycle
+		"These souped-up bikes would be even faster if not for all the explosives they carry."
+	End
+	
+	Type:SovietMortarCycle
+		"Light Bombardment"
+	End
+	
+	Name:ToggleSovietMortarCycleMolotov
+		"Molotov Flurry"
+	End
+	
+	Desc:ToggleSovietMortarCycleMolotov
+		"Packs up the Mortar so the sidecar gunner can resume dishing out explosive cocktails."
+	End
+	
+	Name:ToggleSovietMortarCycleMortar
+		"Porta-Mortar"
+	End
+	
+	Desc:ToggleSovietMortarCycleMortar
+		"Unpacks a light artillery piece for use against medium-to-long-range targets."
+	End
+	
+	DialogEvent:MSIn_MortarCycle
+		"*Mortar Cycles are light artillery vehicles that excel at hit-and-run attacks versus enemy fortifications or slower forces.  They may quickly switch between using Molotov cocktails to burn their foes to a crisp, or raining down explosive shells with their mortar attack."
+	End
+	
+	
+	
+// Pacifier FAV
+	
+	Name:AlliedArtilleryVehicle
+		"Pacifier FAV"
+	End
+	
+	Desc:AlliedArtilleryVehicle
+		"Absolute hell rains down once these field artillery vehicles unpack their Grand Cannons."
+	End
+	
+	Type:AlliedArtilleryVehicle
+		"Advanced Heavy Bombardment"
+	End
+	
+	Name:ToggleAlliedArtillerySiegeWeapon
+		"Unpack Artillery"
+	End
+	
+	Desc:ToggleAlliedArtillerySiegeWeapon
+		"Plants the Pacifier into the ground so that it can use its long-range cannon."
+	End
+	
+	Name:ToggleAlliedArtilleryAutoCannon
+		"Pack Up Artillery"
+	End
+	
+	Desc:ToggleAlliedArtilleryAutoCannon
+		"Detaches from the ground, retracts the Grand Cannon, and readies two 7.62 mm miniguns."
+	End
+	
+	DialogEvent:MAIn_Pacifier
+		"*Pacifier Field Artillery Vehicles can neutralize enemy combatants from long range using their Grand Cannons.  They must deploy to a fixed position on land to initiate bombardment.  When not deployed, Pacifiers may cross land or sea and defend themselves with heavy machineguns."
+	End
+	
+	
+	
+// Reaper
+	
+	Name:SovietHeavyWalkerVehicle
+		"Reaper"
+	End
+	
+	Desc:SovietHeavyWalkerVehicle
+		"Bigger, tougher relatives of the Sickle that can barely lift all their rockets and grenades."
+	End
+	
+	Type:SovietHeavyWalkerVehicle
+		"Anti-Surface / Anti-Air Walker"
+	End
+	
+	Name:SovietHeavyWalkerDeployedTurret
+		"Reaper Turret"
+	End
+	
+	Desc:SovietHeavyWalkerDeployedTurret
+		"Legless and entrenched, these failed prototypes still can deal death to whatever draws near."
+	End
+	
+	Type:SovietHeavyWalkerDeployedTurret
+		"Advanced Base Defense"
+	End
+	
+	Name:LeapDeploySpecialPower
+		"Proto Jump"
+	End
+	
+	Desc:LeapDeploySpecialPower
+		"Leaps up and crashes down on the target area or foe. Becomes entrenched and immobile."
+	End
+	
+	DialogEvent:MSIn_Reaper1
+		"*Reapers are bigger, tougher predecessors of the Sickle.  They are equipped with multiple grenade and rocket launchers, and are effective against multiple smaller targets, including aircraft.  Their special ability is to jump, but their legs tend to break on impact.  As such, Reapers still serve well as fixed gun emplacements."
+	End
+	
+	
+	
+// Steel Ronin
+	
+	Name:JapanSentinelVehicle
+		"Steel Ronin"
+	End
+	
+	Desc:JapanSentinelVehicle
+		"Sentinels as cold and heartless as their pilots, built to cut down enemy tank divisions."
+	End
+	
+	Type:JapanSentinelVehicle
+		"Anti-Armor Robot"
+	End
+	
+	Name:LaserGlaiveBlastSpecialPower
+		"Power Wave"
+	End
+	
+	Desc:LaserGlaiveBlastSpecialPower
+		"Slams the ground with violent energy that courses forward, consuming all in its path."
+	End
+	
+	DialogEvent:MIIn_SteelRonin
+		"*The Steel Ronin are pilot-assisted robots built to withstand heavy fire in order to get within striking distance, where their polearms can slash through multiple targets in one stroke.  The Ronin's special ability sends a wave of energy coursing through the earth, damaging all in its path."
+	End
+	
+	
+	
+// Maps
+	
+	MAP:MAP_MP_2_Feasel1_EP1
+		"Au Revoir Reservoir"
+	End
+	
+	MAP:MAP_MP_2_Feasel10_EP1
+		"Rival Schools"
+	End
+	
+	MAP:MAP_MP_2_Feasel12_EP1
+		"Mir's Landing"
+	End
+	
+	MAP:MAP_MP_2_Feasel2_EP1
+		"Island Arena"
+	End
+	
+	MAP:MAP_MP_2_Feasel3_EP1
+		"Hard Lesson"
+	End
+	
+	MAP:MAP_MP_2_Feasel4_EP1_SK
+		"Soundless Hill"
+	End
+	
+	MAP:MAP_MP_2_Feasel5_EP1
+		"Pure Oniage"
+	End
+	
+	MAP:MAP_MP_2_Feasel6_EP1
+		"Grinder Gulch"
+	End
+	
+	MAP:MAP_MP_2_Feasel7_EP1
+		"Kodiak Lake"
+	End
+	
+	MAP:MAP_MP_2_Feasel8_EP1
+		"Twisted Terrace"
+	End
+	
+	MAP:MAP_MP_2_Feasel9_EP1
+		"Killington Cove"
+	End
+	
+	MAP:MAP_MP_3_Feasel1_EP1
+		"Islandgrad"
+	End
+	
+	MAP:MAP_MP_3_Feasel2_EP1
+		"Fried River"
+	End
+	
+	MAP:MAP_MP_4_Feasel10_EP1
+		"Shogun's Alley"
+	End
+	
+	MAP:MAP_MP_4_Feasel11_EP1
+		"Bear Zamok"
+	End
+	
+	MAP:MAP_MP_4_Feasel12_EP1
+		"Assassin's Road"
+	End
+	
+	MAP:MAP_MP_4_Feasel13_EP1
+		"Desolation"
+	End
+	
+	MAP:MAP_MP_4_Feasel2_EP1
+		"Oil Slick"
+	End
+	
+	MAP:MAP_MP_4_Feasel3_EP1
+		"Florazon Basin"
+	End
+	
+	MAP:MAP_MP_4_Feasel4_EP1
+		"Battlebase Quartus"
+	End
+	
+	MAP:MAP_MP_4_Feasel5_EP1_SK
+		"Honor Bound"
+	End
+	
+	MAP:MAP_MP_4_Feasel6_EP1
+		"Trench Warfare"
+	End
+	
+	MAP:MAP_MP_4_Feasel7_EP1
+		"Jungle Stalkers"
+	End
+	
+	MAP:MAP_MP_4_Feasel8_EP1
+		"Isla Nooblar"
+	End
+	
+	MAP:MAP_MP_4_Feasel9_EP1
+		"Corporate Warfare"
+	End
+	
+	MAP:MAP_MP_6_Feasel1_EP1
+		"Apocalypse Mountain"
+	End
+	
+	MAP:MAP_MP_6_Feasel2_EP1
+		"Battlebase Hexis"
+	End
+	
+	MAP:MAP_MP_6_Feasel3_EP1
+		"Holdout Keep"
+	End
+	
+	
+	
+// Credits
+	
+	Credits:ModName
+		"Red Alert 3: Upheaval"
+	End
+	
+	Credits:ModVersion
+		"1.16"
+	End
+	
+	Credits:ModAuthorTitle
+		"Author"
+	End
+	
+	Credits:ModAuthor1
+		"Bibber"
+	End
+	
+	Credits:ModHomepageTitle
+		"Homepage"
+	End
+	
+	Credits:ModHomepage1
+		"http://www.moddb.com/mods/red-alert-3-upheaval"
+	End
+	
+	Credits:ModHomepage2
+		"http://bibber.eu"
+	End
+	
+	Credits:ModPartnerTitle
+		"Partner Mods"
+	End
+	
+	Credits:ModPartner1Name
+		"Granatball Reploded"
+	End
+	
+	Credits:ModPartner1Homepage1
+		"http://www.moddb.com/mods/granatball-reploded"
+	End
+	
+	Credits:ModPartner1Homepage2
+		"http://bibber.eu"
+	End
+	
+	Credits:ModPartner2Name
+		"Red Alert 3: Trinity Defense (R3D)"
+	End
+	
+	Credits:ModPartner2Homepage1
+		"http://www.moddb.com/mods/r3d"
+	End
+	
+	
+	
+// GUI
+	
+	GUI:FullGameName
+		"Command & Conquer Red Alert 3: Upheaval"
+	End
+	
+	
+	
+// Version
+	
+	Version:Format2
+		"Red Alert 3: Upheaval 1.16"
+	End

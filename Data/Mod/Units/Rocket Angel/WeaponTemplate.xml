@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<WeaponTemplate
+		id="JapanAntiVehicleInfantryTech3LockDownGun"
+		AttackRange="250"
+		WeaponSpeed="999999.0"
+		FiringLoopSound="JAP_RocketAngel_WhipLoop"
+		ReAcquireDetailType="PER_CLIP"
+		AcceptableAimDelta="10d"
+		CanFireWhileMoving="true"
+		RequiredAntiMask="ANTI_VEHICLE ANTI_INFANTRY"
+		ForbiddenAntiMask="ANTI_STRUCTURE ANTI_SUBMERGED ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS">
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<ActivateLaserNugget
+				id="DefaultLaserNugget"
+				Lifetime="0.1s"
+				LaserId="1">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="INFANTRY VEHICLE"
+					StatusBitFlagsExclude="AIRBORNE_TARGET">
+					<ExcludeThing>BaseSovietSupportBomber</ExcludeThing>
+					<ExcludeThing>Soviet_BombingRun</ExcludeThing>
+					<ExcludeThing>JapanFinalSquadronAircraft</ExcludeThing>
+					<ExcludeThing>JapanBalloonBomb</ExcludeThing>
+					<ExcludeThing>AlliedSupersonicBomber</ExcludeThing>
+				</SpecialObjectFilter>
+			</ActivateLaserNugget>	
+			
+			<ParalyzeNugget
+				DurationSeconds="0.2s"
+				ParalyzeType="EMP" >
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="INFANTRY VEHICLE"
+					StatusBitFlagsExclude="AIRBORNE_TARGET UNDER_IRON_CURTAIN">
+					<ExcludeThing>BaseSovietSupportBomber</ExcludeThing>
+					<ExcludeThing>Soviet_BombingRun</ExcludeThing>
+					<ExcludeThing>JapanFinalSquadronAircraft</ExcludeThing>
+					<ExcludeThing>JapanBalloonBomb</ExcludeThing>
+					<ExcludeThing>AlliedSupersonicBomber</ExcludeThing>
+				</SpecialObjectFilter>
+			</ParalyzeNugget>
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

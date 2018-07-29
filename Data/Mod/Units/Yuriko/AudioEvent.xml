@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<AudioEvent
+		id="JAP_YurikoOmega_MoveLoop"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="55"
+		VolumeShift="-5"
+		Limit="3"
+		Control="LOOP FADE_ON_KILL FADE_ON_START SEQUENTIAL"
+		Priority="LOWEST"
+		Type="WORLD SHROUDED EVERYONE"
+		SubmixSlider="SOUNDFX">
+		<Sound>JUYurik_moveLoopa</Sound> <Sound>JUYurik_moveLoopb</Sound> <Sound>JUYurik_moveLoopc</Sound> <Sound>JUYurik_moveLoopd</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+		id="JAP_YurikoOmega_AmbientLoop"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="20"
+		VolumeShift="-5"
+		Limit="3"
+		Control="LOOP FADE_ON_KILL FADE_ON_START SEQUENTIAL"
+		Priority="LOWEST"
+		Type="WORLD SHROUDED EVERYONE"
+		SubmixSlider="SOUNDFX">
+		<Sound>JUYurik_ambiLoopa</Sound> <Sound>JUYurik_ambiLoopb</Sound> <Sound>JUYurik_ambiLoopc</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+		id="JAP_YurikoOmega_PsyonicInfantryBurst"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="75"
+		VolumeShift="-5"
+		Limit="3"
+		Type="WORLD EVERYONE"
+		SubmixSlider="SOUNDFX">
+		<InitialDelay Low="0" High="100" />
+		<PitchShift Low="-5" High="-5" />
+		<Sound>JUYurik_enemyBurstA</Sound> <Sound>JUYurik_enemyBurstB</Sound> <Sound>JUYurik_enemyBurstC</Sound> <Sound>JUYurik_enemyBurstD</Sound>
+		<Sound>JUYurik_enemyBurstE</Sound> <Sound>JUYurik_enemyBurstF</Sound> <Sound>JUYurik_enemyBurstG</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+		id="JAP_Yuriko_PsychokineticBurst1"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="75"
+		Priority="HIGH"
+		Limit="3"
+		Type="WORLD SHROUDED EVERYONE"
+		SubmixSlider="SOUNDFX">
+		<PitchShift Low="-1" High="1" />
+		<Sound>JUYuriko_psychoBurstD</Sound> <Sound>JUYuriko_psychoBurstE</Sound> <Sound>JUYuriko_psychoBurstF</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+		id="JAP_Yuriko_PsychokineticBurst2"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="110"
+		Priority="HIGH"
+		Limit="3"
+		Type="WORLD SHROUDED EVERYONE"
+		SubmixSlider="SOUNDFX">
+		<PitchShift Low="-5" High="5" />
+		<Sound>JUYurik_PsychoBurst2a</Sound>
+	</AudioEvent>
+</AssetDeclaration>

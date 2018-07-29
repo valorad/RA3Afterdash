@@ -1,0 +1,1569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseAIPersonalityDefinition.xml" />
+	</Includes>
+	
+	<!-- Allies -->
+	<AIPersonalityDefinition
+		id="4AlliedBalanced"
+		PersonalityType="1AlliedBalanced"
+		inheritFrom="AlliedCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Warren"
+		CommanderPortrait="Warren">
+		
+		<OpeningMove Name="AlliedStandard_EASY" Weight="100%" Difficulty="EASY">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<OpeningMove Name="AlliedIsland_EASY" Weight="100%" Difficulty="EASY">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<OpeningMove Name="AlliedStandard" Weight="100%" Difficulty="MEDIUM HARD">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<OpeningMove Name="AlliedStandard_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<OpeningMove Name="AlliedIsland" Weight="100%" Difficulty="MEDIUM HARD BRUTAL">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<StrategicState id="BalancedDefense" State="BalancedDefense" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="Cleanup" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		<StrategicState id="BalancedCleanup" State="BalancedCleanup" Difficulty="EASY MEDIUM HARD"/>
+		
+		<StrategicState id="AlliedScout" State="AlliedScout" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<!-- Harrassment States -->
+		<StrategicState id="ACVHarrassment" State="ACVHarrassment" Difficulty="HARD BRUTAL"/>
+		
+		<!-- Main Offensive States - HARD and BRUTAL -->
+		<StrategicState id="BalancedAttackGround" State="BalancedAttackGround" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="BalancedAttackWater" State="BalancedAttackWater" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="BalancedAttackOverwhelm" State="BalancedAttackOverwhelm" Difficulty="HARD BRUTAL"/>
+		
+		<!-- Main Offensive States - MEDIUM -->
+		<StrategicState id="BalancedAttackGround_MEDIUM" State="BalancedAttackGround_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="BalancedAttackWater_MEDIUM" State="BalancedAttackWater_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="BalancedAttackOverwhelm_MEDIUM" State="BalancedAttackOverwhelm_MEDIUM" Difficulty="MEDIUM"/>
+		
+		<!-- Main Offensive States - EASY -->
+		<StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+		<StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+		
+		<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="AlliedCoopWarrenPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="AlliedCoopWarrenPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="AlliedCoopWarrenTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="AlliedCoopWarrenTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="AlliedCoopWarrenStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="AlliedCoopWarrenStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="AlliedCoopWarrenAutoPilot" FeedbackTo="ALLIES"/>
+		
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+			FeedbackKey="StartGame"
+			Video="AWAGR1"
+			FeedbackTo="ALLIES"/>
+			
+		<FeedbackEntry
+			FeedbackKey="StartGame"
+			Video="AWAGR2"
+			FeedbackTo="ALLIES"/>
+			
+		<FeedbackEntry
+			FeedbackKey="StartGame"
+			Video="AWAGR3"
+			FeedbackTo="ALLIES"/>
+			
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+	    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+			FeedbackKey="InTrouble"
+			Video="AWAND1"
+			FeedbackTo="ALLIES"
+			Timeout="600s"/>
+			
+		<FeedbackEntry
+			FeedbackKey="InTrouble"
+			Video="AWAND2"
+			FeedbackTo="ALLIES"
+			Timeout="600s"/>
+			
+		<FeedbackEntry
+			FeedbackKey="InTrouble"
+			Video="AWAND3"
+			FeedbackTo="ALLIES"
+			Timeout="600s"/>
+			
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+			FeedbackKey="Lost"
+			Video="AWADE1"
+			FeedbackTo="ALLIES"/>
+			
+		<FeedbackEntry
+			FeedbackKey="Lost"
+			Video="AWADE2"
+			FeedbackTo="ALLIES"/>
+			
+		<FeedbackEntry
+			FeedbackKey="Lost"
+			Video="AWADE3"
+			FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+			FeedbackKey="FirstSeen"
+			Video="AWATG1"
+			FeedbackTo="ENEMIES"
+			Timeout="9999999s"/>
+				
+		<FeedbackEntry
+			FeedbackKey="FirstSeen"
+			Video="AWATG2"
+			FeedbackTo="ENEMIES"
+			Timeout="9999999s"/>
+				
+		<FeedbackEntry
+			FeedbackKey="FirstSeen"
+			Video="AWATG3"
+			FeedbackTo="ENEMIES"
+			Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+			FeedbackKey="DefeatedByLocalPlayer"
+			Video="AWATD1"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedByLocalPlayer"
+			Video="AWATD2"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedByLocalPlayer"
+			Video="AWATD3"
+			FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+			FeedbackKey="DefeatedLocalPlayer"
+			Video="AWATV1"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedLocalPlayer"
+			Video="AWATV2"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedLocalPlayer"
+			Video="AWATV3"
+			FeedbackTo="ENEMIES"/>
+	</AIPersonalityDefinition>
+	
+	<AIPersonalityDefinition
+		id="5AlliedSquadronLeader"  
+		PersonalityType="2AlliedSquadronLeader"
+		inheritFrom="AlliedCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Giles"
+		CommanderPortrait="Giles">
+		<OpeningMove Name="AlliedVindicatorRush_EASY" Weight="100%" Difficulty="EASY"/>
+    
+		<OpeningMove Name="AlliedVindicatorRush" Weight="100%" Difficulty="MEDIUM HARD">
+			<Heuristic>
+				<ObjectOfTypeExistsHeuristic PassIfExists="false">
+					<ObjectFilter
+						Relationship="ENEMIES"
+						Rule="ANY" >
+						<IncludeThing>JapanConstructionYard</IncludeThing>
+					</ObjectFilter>
+				</ObjectOfTypeExistsHeuristic>
+			</Heuristic>
+		</OpeningMove>
+    
+		<OpeningMove Name="AlliedVindicatorRush_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+			<Heuristic>
+				<ObjectOfTypeExistsHeuristic PassIfExists="false">
+					<ObjectFilter
+						Relationship="ENEMIES"
+						Rule="ANY" >
+						<IncludeThing>JapanConstructionYard</IncludeThing>
+					</ObjectFilter>
+				</ObjectOfTypeExistsHeuristic>
+			</Heuristic>
+		</OpeningMove>
+
+		<OpeningMove Name="AlliedVindicatorRushVsJapan" Weight="100%" Difficulty="MEDIUM HARD">
+			<Heuristic>
+				<ObjectOfTypeExistsHeuristic PassIfExists="true">
+					<ObjectFilter
+						Relationship="ENEMIES"
+						Rule="ANY" >
+						<IncludeThing>JapanConstructionYard</IncludeThing>
+					</ObjectFilter>
+				</ObjectOfTypeExistsHeuristic>
+			</Heuristic>
+		</OpeningMove>
+		
+		<OpeningMove Name="AlliedVindicatorRushVsJapan_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+			<Heuristic>
+				<ObjectOfTypeExistsHeuristic PassIfExists="true">
+					<ObjectFilter
+						Relationship="ENEMIES"
+						Rule="ANY" >
+						<IncludeThing>JapanConstructionYard</IncludeThing>
+					</ObjectFilter>
+				</ObjectOfTypeExistsHeuristic>
+			</Heuristic>
+		</OpeningMove>
+
+		<!-- Main Offensive States -->
+
+		<StrategicState id="SquardonLeader_Attack_Land" State="SquardonLeader_Attack_Land" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="SquardonLeader_Attack_Land_MEDIUM" State="SquardonLeader_Attack_Land_MEDIUM" Difficulty="MEDIUM"/>
+
+		<StrategicState id="SquardonLeader_Attack_Water" State="SquardonLeader_Attack_Water" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="SquardonLeader_Attack_Water_MEDIUM" State="SquardonLeader_Attack_Water_MEDIUM" Difficulty="MEDIUM"/>
+
+		<!-- Main Offensive States - EASY -->
+		<StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+		<StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+		<!-- Unit Preferences -->
+    
+		<UnitModifier Unit="AlliedAntiInfantryInfantry" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+		<UnitModifier Unit="AlliedAntiAirVehicleTech1" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+		<UnitModifier Unit="AlliedAntiStructureShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+		<UnitModifier Unit="AlliedAntiGroundAircraft" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+		<UnitModifier Unit="AlliedBomberAircraft" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+		<!-- Player Power Preferences -->
+		<PowerChoice PlayerPower="PlayerTech_Allied_AirPower" Weight="999%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_PrecisionStrike" Weight="300%"/>
+
+		<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="AlliedCoopGilesPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="AlliedCoopGilesPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="AlliedCoopGilesTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="AlliedCoopGilesTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="AlliedCoopGilesStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="AlliedCoopGilesStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="AlliedCoopGilesAutoPilot" FeedbackTo="ALLIES"/>
+
+		<!-- Skirmish feedback -->
+
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+			FeedbackKey="StartGame"
+			Video="AGIGR1"
+			FeedbackTo="ALLIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="StartGame"
+			Video="AGIGR1"
+			FeedbackTo="ALLIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="StartGame"
+			Video="AGIGR1"
+			FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+			FeedbackKey="InTrouble"
+			Video="AGIND1"
+			FeedbackTo="ALLIES"
+			Timeout="600s"/>
+				
+		<FeedbackEntry
+			FeedbackKey="InTrouble"
+			Video="AGIND1"
+			FeedbackTo="ALLIES"
+			Timeout="600s"/>
+				
+		<FeedbackEntry
+			FeedbackKey="InTrouble"
+			Video="AGIND1"
+			FeedbackTo="ALLIES"
+			Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+			FeedbackKey="Lost"
+			Video="AGIDE1"
+			FeedbackTo="ALLIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="Lost"
+			Video="AGIDE2"
+			FeedbackTo="ALLIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="Lost"
+			Video="AGIDE3"
+			FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+			FeedbackKey="FirstSeen"
+			Video="AGITG1"
+			FeedbackTo="ENEMIES"
+			Timeout="9999999s"/>
+				
+		<FeedbackEntry
+			FeedbackKey="FirstSeen"
+			Video="AGITG2"
+			FeedbackTo="ENEMIES"
+			Timeout="9999999s"/>
+				
+		<FeedbackEntry
+			FeedbackKey="FirstSeen"
+			Video="AGITG3"
+			FeedbackTo="ENEMIES"
+			Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+			FeedbackKey="DefeatedByLocalPlayer"
+			Video="AGITD1"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedByLocalPlayer"
+			Video="AGITD2"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedByLocalPlayer"
+			Video="AGITD3"
+			FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+			FeedbackKey="DefeatedLocalPlayer"
+			Video="AGITV1"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedLocalPlayer"
+			Video="AGITV2"
+			FeedbackTo="ENEMIES"/>
+				
+		<FeedbackEntry
+			FeedbackKey="DefeatedLocalPlayer"
+			Video="AGITV3"
+			FeedbackTo="ENEMIES"/>
+	</AIPersonalityDefinition>
+	
+	<AIPersonalityDefinition
+		id="6AlliedSpecialForces"
+		PersonalityType="3AlliedSpecialForces"
+		inheritFrom="AlliedCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Lissette"
+		CommanderPortrait="Lissette"
+		BuildTechEfficiencyThreshold="0.75"
+		BuildTechMinPowerAdvantage="1.0">
+    <OpeningMove Name="AlliedStandard_EASY" Weight="100%" Difficulty="EASY">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="AlliedIsland_EASY" Weight="100%" Difficulty="EASY">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <OpeningMove Name="AlliedIFVRush" Weight="100%" Difficulty="MEDIUM HARD BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="AlliedIsland" Weight="100%" Difficulty="MEDIUM HARD BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <StrategicState id="IFVHarrassment" State="IFVHarrassment" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+    <!-- Main Offensive States -->
+
+    <StrategicState id="SpecialForces_MainAttack" State="SpecialForces_MainAttack" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="SpecialForces_SupportAttack" State="SpecialForces_SupportAttack" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="SpecialForces_WaterPatrol" State="SpecialForces_WaterPatrol" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+    <StrategicState id="AlliedInfiltration" State="AlliedInfiltration" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Unit Preferences -->
+
+    <UnitModifier Unit="AlliedAntiVehicleInfantry" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="AlliedAntiVehicleVehicleTech3" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="AlliedAntiStructureVehicle" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="AlliedAntiNavalScout" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="AlliedAntiAirShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="AlliedSupportAircraft" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <!-- Player Power Preferences -->
+    <PowerChoice PlayerPower="PlayerTech_Allied_CryoSatellite_Rank1" Weight="200%"/>
+    <PowerChoice PlayerPower="PlayerTech_Allied_CryoSatellite_Rank2" Weight="200%"/>
+    <PowerChoice PlayerPower="PlayerTech_Allied_CryoSatellite_Rank3" Weight="200%"/>
+    <PowerChoice PlayerPower="PlayerTech_Allied_HighTechnology" Weight="300%"/>
+
+	<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="AlliedCoopLissPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="AlliedCoopLissPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="AlliedCoopLissTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="AlliedCoopLissTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="AlliedCoopLissStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="AlliedCoopLissStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="AlliedCoopLissAutoPilot" FeedbackTo="ALLIES"/>
+
+		<!-- Skirmish feedback -->
+
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="ALIGR1"
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="ALIGR2"
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="ALIGR3"
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+					    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="ALIDN1"
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="ALIDN2"
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="ALIDN3"
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="ALIDE1"
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="ALIDE2"
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="ALIDE3"
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="ALITG1"
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="ALITG2"
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="ALITG3"
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="ALITD1"
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="ALITD1"
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="ALITD1"
+				FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="ALITV1"
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="ALITV2"
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="ALITV3"
+				FeedbackTo="ENEMIES"/>
+
+	</AIPersonalityDefinition>
+	
+	
+	
+	<!-- Japan -->
+  <AIPersonalityDefinition
+		id="4JapanBalanced"
+		PersonalityType="1JapanBalanced"
+		inheritFrom="JapanCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Shinzo"
+		CommanderPortrait="Shinzo">
+    <OpeningMove Name="JapanStandard_EASY" Weight="100%" Difficulty="EASY">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="JapanIsland_EASY" Weight="100%" Difficulty="EASY">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <OpeningMove Name="JapanStandard" Weight="100%" Difficulty="MEDIUM HARD">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="JapanStandard_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    
+    <OpeningMove Name="JapanIsland" Weight="100%" Difficulty="MEDIUM HARD">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="JapanIsland_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <StrategicState id="BalancedDefense" State="BalancedDefense" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+
+    <StrategicState id="Cleanup" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+    <StrategicState id="BalancedCleanup" State="BalancedCleanup" Difficulty="EASY MEDIUM HARD"/>
+
+    <StrategicState id="JapanScout" State="JapanScout" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Harrassment States -->
+    <StrategicState id="TenguHarrassment" State="TenguHarrassment" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="VXHarrassment" State="VXHarrassment" Difficulty="MEDIUM HARD BRUTAL"/>
+    <StrategicState id="SuddenTransportHarrassment" State="SuddenTransportHarrassment" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <StrategicState id="JapanInfiltration" State="JapanInfiltration" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Main Offensive States - HARD and BRUTAL -->
+		<StrategicState id="BalancedAttackGround" State="BalancedAttackGround" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="BalancedAttackWater" State="BalancedAttackWater" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="BalancedAttackOverwhelm" State="BalancedAttackOverwhelm" Difficulty="HARD BRUTAL"/>
+
+		<!-- Main Offensive States - MEDIUM -->
+		<StrategicState id="BalancedAttackGround_MEDIUM" State="BalancedAttackGround_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="BalancedAttackWater_MEDIUM" State="BalancedAttackWater_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="BalancedAttackOverwhelm_MEDIUM" State="BalancedAttackOverwhelm_MEDIUM" Difficulty="MEDIUM"/>
+
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+	<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="EmpireCoopShinzoPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="EmpireCoopShinzoPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="EmpireCoopShinzoTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="EmpireCoopShinzoTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="EmpireCoopShinzoStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="EmpireCoopShinzoStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="EmpireCoopShinzoAutoPilot" FeedbackTo="ALLIES"/>
+ 
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JSHGR1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JSHGR2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JSHGR3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JSHND1" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JSHND2" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JSHND3" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JSHDE1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JSHDE2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JSHDE3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JSHTG1" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JSHTG2" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JSHTG3" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JSHTD1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JSHTD2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JSHTD3" 
+				FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JSHTV1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JSHTV2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JSHTV3" 
+				FeedbackTo="ENEMIES"/>
+
+	</AIPersonalityDefinition>
+	
+  <AIPersonalityDefinition
+		id="5JapanMechaWarfare"
+		PersonalityType="2JapanMechaWarfare"
+		inheritFrom="JapanCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Kenji"
+		CommanderPortrait="Kenji">
+    <OpeningMove Name="JapanStandard_EASY" Weight="100%" Difficulty="EASY">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="JapanIsland_EASY" Weight="100%" Difficulty="EASY">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <OpeningMove Name="JapanMechRush" Weight="100%" Difficulty="MEDIUM HARD">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="JapanMechRush_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    
+    <OpeningMove Name="JapanIsland" Weight="100%" Difficulty="MEDIUM HARD">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="JapanIsland_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <StrategicState id="BalancedDefense" State="BalancedDefense" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+
+    <StrategicState id="JapanScout" State="JapanScout" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Main Offensive States - HARD and BRUTAL -->
+    <StrategicState id="GrowingAttacks_Land" State="GrowingAttacks_Land" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="GrowingAttacks_Water" State="GrowingAttacks_Water" Difficulty="HARD BRUTAL"/>
+
+    <!-- Main Offensive States - MEDIUM -->
+    <StrategicState id="GrowingAttacks_Land_MEDIUM" State="GrowingAttacks_Land_MEDIUM" Difficulty="MEDIUM"/>
+    <StrategicState id="GrowingAttacks_Water_MEDIUM" State="GrowingAttacks_Water_MEDIUM" Difficulty="MEDIUM"/>
+
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+    <!-- Unit Preferences -->
+    
+    <UnitModifier Unit="JapanScoutInfantry" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="JapanAntiInfantryVehicleTech1" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="JapanAntiAirVehicleTech1" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="JapanAntiVehicleVehicleTech3" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="JapanAntiAirShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <!-- Player Power Preferences -->
+    <PowerChoice PlayerPower="PlayerTech_Japan_PointDefenseDrones" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_EmperorsRage_Rank1" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_EmperorsRage_Rank2" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_EmperorsRage_Rank3" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_ProductionBonus_Japan" Weight="300%"/>
+
+	<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="EmpireCoopKenjiPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="EmpireCoopKenjiPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="EmpireCoopKenjiTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="EmpireCoopKenjiTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="EmpireCoopKenjiStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="EmpireCoopKenjiStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="EmpireCoopKenjiAutoPilot" FeedbackTo="ALLIES"/>
+
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JKEGR1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JKEGR2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JKEGR3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JKEND1" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JKEND2" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JKEND3" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JKEDE1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JKEDE2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JKEDE3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JKETG1" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JKETG2" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JKETG3" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JKETD1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JKETD2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JKETD3" 
+				FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JKETV1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JKETV2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JKETV3" 
+				FeedbackTo="ENEMIES"/>
+	</AIPersonalityDefinition>
+	
+  <AIPersonalityDefinition
+		id="6JapanFleetCommand"
+		PersonalityType="3JapanFleetCommand"
+		inheritFrom="JapanCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Naomi"
+		CommanderPortrait="Naomi">
+    <OpeningMove Name="JapanIsland_EASY" Weight="100%" Difficulty="EASY"/>
+    <OpeningMove Name="JapanIsland" Weight="100%" Difficulty="MEDIUM HARD"/>
+    <OpeningMove Name="JapanIsland_BRUTAL" Weight="100%" Difficulty="BRUTAL"/>
+    
+    <!-- Main Offensive States -->
+
+    <StrategicState id="FleetCommand_NavyHarrassment" State="FleetCommand_NavyHarrassment" Difficulty="MEDIUM HARD BRUTAL"/>
+    <StrategicState id="FleetCommand_NavyAttack" State="FleetCommand_NavyAttack" Difficulty="MEDIUM HARD BRUTAL"/>
+    <StrategicState id="FleetCommand_LandAttack" State="FleetCommand_LandAttack" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <StrategicState id="FleetCommand_RocketAngelSupport" State="FleetCommand_RocketAngelSupport" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+    <!-- Unit Preferences -->
+
+    <UnitModifier Unit="JapanAntiVehicleInfantryTech3" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="JapanNavyScout" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="JapanAntiAirShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="JapanAntiVehicleShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="JapanAntiStructureShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <!-- Player Power Preferences -->
+    <PowerChoice PlayerPower="PlayerTech_Japan_FinalSquadron_Rank1" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_FinalSquadron_Rank2" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_FinalSquadron_Rank3" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_NavalPower" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Japan_EnhancedKamikaze" Weight="300%"/>
+
+	<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="EmpireCoopNaomiPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="EmpireCoopNaomiPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="EmpireCoopNaomiTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="EmpireCoopNaomiTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="EmpireCoopNaomiStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="EmpireCoopNaomiStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="EmpireCoopNaomiAutoPilot" FeedbackTo="ALLIES"/>
+
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JNAGR1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JNAGR2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="JNAGR3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JNAND1" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JNAND2" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="JNAND3" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JNADE1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JNADE2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="JNADE3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JNATG1" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JNATG2" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="JNATG3" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JNATD1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JNATD2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="JNATD3" 
+				FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JNATV1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JNATV2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="JNATV3" 
+				FeedbackTo="ENEMIES"/>
+	</AIPersonalityDefinition>
+	
+	
+	
+	<!-- Soviet -->
+  <AIPersonalityDefinition
+		id="4SovietBalanced"
+		PersonalityType="1SovietBalanced"
+		inheritFrom="SovietCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Oleg"
+		CommanderPortrait="Oleg"
+		>
+
+    <OpeningMove Name="SovietStandard" Weight="100%" Difficulty="MEDIUM HARD">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="SovietStandard_BRUTAL" Weight="100%" Difficulty="BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    
+    <OpeningMove Name="SovietIsland" Weight="100%" Difficulty="MEDIUM HARD BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <StrategicState id="BalancedDefense" State="BalancedDefense" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+    
+    <StrategicState id="Cleanup" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+    <StrategicState id="BalancedCleanup" State="BalancedCleanup" Difficulty="EASY MEDIUM HARD"/> 
+
+    <StrategicState id="SovietScout" State="SovietScout" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <!-- Harrassment States -->
+    <!--
+    <StrategicState id="SickleHarrassment" State="SickleHarrassment" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="TerrorDroneHarrassment" State="TerrorDroneHarrassment" Difficulty="HARD BRUTAL"/>
+    -->
+
+    <!-- Removed Strategic States-->
+    <StrategicState id="TwinbladeHarrassment" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+
+    <!-- Main Offensive States - HARD and BRUTAL -->
+    <StrategicState id="GrowingAttacks_Land" State="GrowingAttacks_Land" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="GrowingAttacks_Water" State="GrowingAttacks_Water" Difficulty="HARD BRUTAL"/>
+
+    <!-- Main Offensive States - MEDIUM -->
+    <StrategicState id="GrowingAttacks_Land_MEDIUM" State="GrowingAttacks_Land_MEDIUM" Difficulty="MEDIUM"/>
+    <StrategicState id="GrowingAttacks_Water_MEDIUM" State="GrowingAttacks_Water_MEDIUM" Difficulty="MEDIUM"/>
+
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+		<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="SovietCoopOlegPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="SovietCoopOlegPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="SovietCoopOlegTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="SovietCoopOlegTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="SovietCoopOlegStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="SovietCoopOlegStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="SovietCoopOlegAutoPilot" FeedbackTo="ALLIES"/>
+
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SOLGR1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SOLGR2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SOLGR3" 
+				FeedbackTo="ALLIES"/>
+    <FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SOLGR4"
+				FeedbackTo="ALLIES"/>
+
+    <!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SOLND1" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SOLND2" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SOLND3" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+    <FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SOLND4"
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>    
+
+    <!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SOLDE1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SOLDE2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SOLDE3" 
+				FeedbackTo="ALLIES"/>
+    <FeedbackEntry
+        FeedbackKey="Lost"
+        Video="SOLDE4"
+        FeedbackTo="ALLIES"/>
+
+    <!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SOLTG1" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SOLTG2" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SOLTG3" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+    <FeedbackEntry
+        FeedbackKey="FirstSeen"
+        Video="SOLTG4"
+        FeedbackTo="ENEMIES"
+        Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SOLTD1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SOLTD2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SOLTD3" 
+				FeedbackTo="ENEMIES"/>
+    <FeedbackEntry
+        FeedbackKey="DefeatedByLocalPlayer"
+        Video="SOLTD4"
+        FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SOLTV1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SOLTV2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SOLTV3" 
+				FeedbackTo="ENEMIES"/>
+    <FeedbackEntry
+        FeedbackKey="DefeatedLocalPlayer"
+        Video="SOLTV4"
+        FeedbackTo="ENEMIES"/>
+
+	</AIPersonalityDefinition>
+	
+  <AIPersonalityDefinition
+		id="5SovietShockSpecialist"
+		PersonalityType="2SovietShockSpecialist"
+		inheritFrom="SovietCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Moskvin"
+		CommanderPortrait="Moskvin"
+		>
+
+    <OpeningMove Name="SovietTerrorDroneRush" Weight="50%" Difficulty="MEDIUM HARD BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="SovietSickleRush" Weight="50%" Difficulty="MEDIUM HARD BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+    <OpeningMove Name="SovietIsland" Weight="100%" Difficulty="MEDIUM HARD BRUTAL">
+      <Heuristic>
+        <PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+      </Heuristic>
+    </OpeningMove>
+
+    <!-- Harrassment States -->
+    <StrategicState id="SickleHarrassment" State="SickleHarrassment" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="SickleHarrassment_MEDIUM" State="SickleHarrassment_MEDIUM" Difficulty="MEDIUM"/>
+
+    <!-- Main Offensive States  -->
+    
+		<StrategicState id="ShockSpecialist_HitAndRun_Land" State="ShockSpecialist_HitAndRun_Land" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="ShockSpecialist_HitAndRun_Water" State="ShockSpecialist_HitAndRun_Water" Difficulty="HARD BRUTAL"/>
+
+    <StrategicState id="ShockSpecialist_HitAndRun_Land_MEDIUM" State="ShockSpecialist_HitAndRun_Land_MEDIUM" Difficulty="MEDIUM"/>
+    <StrategicState id="ShockSpecialist_HitAndRun_Water_MEDIUM" State="ShockSpecialist_HitAndRun_Water_MEDIUM" Difficulty="MEDIUM"/>
+    
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+
+    <BuildState id="SovietCraneBuildState" State="SovietCraneBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+
+    <!-- Unit Preferences -->
+    <UnitModifier Unit="SovietAntiInfantryInfantry" OffensiveModifier="1.25" DefensiveModifier="1.25"/>
+    <UnitModifier Unit="SovietHeavyAntiVehicleInfantry" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="SovietScoutVehicle" OffensiveModifier="4.0" DefensiveModifier="4.0"/>
+    <UnitModifier Unit="SovietAntiInfantryVehicle" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="SovietAntiStructureVehicle" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="SovietAntiVehicleVehicleTech3" OffensiveModifier="0.25" DefensiveModifier="0.25"/>
+
+    <UnitModifier Unit="SovietAntiAirShip" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="SovietAntiNavyShipTech1" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="SovietAntiGroundAircraft" OffensiveModifier="1.5" DefensiveModifier="1.5"/>
+    <UnitModifier Unit="SovietBomberAircraft" OffensiveModifier="0.5" DefensiveModifier="0.5"/>
+
+    <!-- Player Power Preferences -->
+    <PowerChoice PlayerPower="PlayerTech_Soviet_IrradiateTarget" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_DesolatorBomb_Rank1" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_DesolatorBomb_Rank2" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_DesolatorBomb_Rank3" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_TerrorDroneEggs" Weight="300%"/>
+
+		<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="SovietCoopMoskvinPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="SovietCoopMoskvinPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="SovietCoopMoskvinTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="SovietCoopMoskvinTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="SovietCoopMoskvinStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="SovietCoopMoskvinStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="SovietCoopMoskvinAutoPilot" FeedbackTo="ALLIES"/>
+		
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SMOGR1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SMOGR2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SMOGR3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SMOND1" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SMOND2" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SMOND3" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SMODE1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SMODE2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SMODE3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SMOTG1" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SMOTG2" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SMOTG3" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SMOTD1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SMOTD2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SMOTD3" 
+				FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SMOTV1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SMOTV2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SMOTV3" 
+				FeedbackTo="ENEMIES"/>
+
+
+		
+	</AIPersonalityDefinition>
+	
+  <AIPersonalityDefinition
+		id="6SovietAirMarshall"
+		PersonalityType="3SovietAirMarshall"
+		inheritFrom="SovietCoopBaseSkirmishPersonality"
+		SkirmishPersonality="true"
+		PersonalityUIName="Personality:Zhana"
+		CommanderPortrait="Zhana"
+		>
+
+    <OpeningMove Name="SovietAirfield_EASY" Weight="100%" Difficulty="EASY"/>
+    <OpeningMove Name="SovietAirfield" Weight="100%" Difficulty="MEDIUM HARD"/>
+    <OpeningMove Name="SovietAirfield_BRUTAL" Weight="100%" Difficulty="BRUTAL"/>
+
+    <!-- Land Attack States -->
+    <StrategicState id="AirMarshall_Scouts" State="AirMarshall_Scouts" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="AirMarshall_SiegeHarrassment" State="AirMarshall_SiegeHarrassment" Difficulty="MEDIUM HARD BRUTAL"/>
+
+    <StrategicState id="AirMarshall_Attack_Land" State="AirMarshall_Attack_Land" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="AirMarshall_Attack_Land_MEDIUM" State="AirMarshall_Attack_Land_MEDIUM" Difficulty="MEDIUM"/>
+
+    <StrategicState id="AirMarshall_Attack_Water" State="AirMarshall_Attack_Water" Difficulty="HARD BRUTAL"/>
+    <StrategicState id="AirMarshall_Attack_Water_MEDIUM" State="AirMarshall_Attack_Water_MEDIUM" Difficulty="MEDIUM"/>
+
+    <!-- Aircraft Attack States -->
+		<StrategicState id="AirMarshall_KirovRaid" State="AirMarshall_KirovRaid" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="AirMarshall_KirovEscort" State="AirMarshall_KirovEscort" Difficulty="MEDIUM HARD BRUTAL"/>
+    <StrategicState id="AirMarshall_TwinbladeAttack" State="AirMarshall_TwinbladeAttack" Difficulty="MEDIUM HARD BRUTAL"/>
+    
+    <!-- Main Offensive States - EASY -->
+    <StrategicState id="BalancedAttackGround_EASY" State="BalancedAttackGround_EASY" Difficulty="EASY"/>
+    <StrategicState id="BalancedAttackWater_EASY" State="BalancedAttackWater_EASY" Difficulty="EASY"/>
+    <StrategicState id="KirovAttack" State="KirovAttack" Difficulty="EASY"/>
+
+    <!-- Removed Strategic States-->
+    <StrategicState id="KirovFlankAttack" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+
+    <!-- Unit Preferences -->
+    <UnitModifier Unit="SovietAntiInfantryInfantry" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="SovietAntiVehicleInfantry" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="SovietAntiStructureVehicle" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="SovietAntiNavyShipTech2" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+
+    <UnitModifier Unit="SovietFighterAircraft" OffensiveModifier="2.0" DefensiveModifier="2.0"/>
+    <UnitModifier Unit="SovietAntiGroundAircraft" OffensiveModifier="3.0" DefensiveModifier="3.0"/>
+    <UnitModifier Unit="SovietBomberAircraft" OffensiveModifier="4.0" DefensiveModifier="4.0"/>
+
+    <!-- Player Power Preferences -->
+    <PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSatellite_Rank_1" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSatellite_Rank_2" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSatellite_Rank_3" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_OrbitalRefuse_Rank1" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_OrbitalRefuse_Rank2" Weight="300%"/>
+    <PowerChoice PlayerPower="PlayerTech_Soviet_OrbitalRefuse_Rank3" Weight="300%"/>
+
+	<!-- Voice Responses -->
+		<FeedbackEntry FeedbackKey="PlanAttackBeaconPlaced" EvaEvent="SovietCoopZhanaPlanAttack" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="PlanAttackOrderComplete" EvaEvent="SovietCoopZhanaPlanAttackDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionBeaconPlaced" EvaEvent="SovietCoopZhanaTakePos" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="TakePositionOrderComplete" EvaEvent="SovietCoopZhanaTakePosDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetBeaconPlaced" EvaEvent="SovietCoopZhanaStrikeThis" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="StrikeTargetOrderComplete" EvaEvent="SovietCoopZhanaStrikeThisDone" FeedbackTo="ALLIES"/>
+		<FeedbackEntry FeedbackKey="OrderCanceled" EvaEvent="SovietCoopZhanaAutoPilot" FeedbackTo="ALLIES"/>
+
+		<!-- Skirmish feedback -->
+		
+		<!-- Greet ally at beginning of game -->
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SZHGR1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SZHGR2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="StartGame"
+				Video="SZHGR3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell ally I'm in trouble -->
+		<!-- N.B.: If you wanted to add FeedbackTo="ENEMIES" or "NEUTRAL", you would also need to 
+			    adjust the InTroubleSkirmishFeedbackControl block's OnlyIfLocalPlayerIs list -->
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SZHND1" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SZHND2" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+		<FeedbackEntry
+				FeedbackKey="InTrouble"
+				Video="SZHND3" 
+				FeedbackTo="ALLIES"
+				Timeout="600s"/>
+
+		<!-- Tell ally I'm dead -->
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SZHDE1" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SZHDE2" 
+				FeedbackTo="ALLIES"/>
+		<FeedbackEntry
+				FeedbackKey="Lost"
+				Video="SZHDE3" 
+				FeedbackTo="ALLIES"/>
+
+		<!-- Tell enemy I'm going to defeat them! (when I first meet them) -->
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SZHTG1" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SZHTG2" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+		<FeedbackEntry
+				FeedbackKey="FirstSeen"
+				Video="SZHTG3" 
+				FeedbackTo="ENEMIES"
+				Timeout="9999999s"/>
+
+		<!-- Curse enemy who defeated me -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SZHTD1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SZHTD2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedByLocalPlayer"
+				Video="SZHTD3" 
+				FeedbackTo="ENEMIES"/>
+
+		<!-- Laugh at enemy whom I defeated -->
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SZHTV1" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SZHTV2" 
+				FeedbackTo="ENEMIES"/>
+		<FeedbackEntry
+				FeedbackKey="DefeatedLocalPlayer"
+				Video="SZHTV3" 
+				FeedbackTo="ENEMIES"/>
+	</AIPersonalityDefinition>
+</AssetDeclaration>

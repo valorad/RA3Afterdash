@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitAbilityButtonTemplate
+		id="MouseButtonJapanFortressShipEggUnpack"
+		LogicCommand="Command_UnPackJapanFortressShipEgg">
+		<Data>
+			<Unpack
+				StateData="ButtonStateAbilityJapanFortressShipEggUnpack"/>
+		</Data>
+	</UnitAbilityButtonTemplate>
+</AssetDeclaration>

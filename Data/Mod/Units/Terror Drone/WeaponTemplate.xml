@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<WeaponTemplate
+		id="SovietScoutVehicleMeleeAttachWeapon"
+		AttackRange="25.0"
+		ChaseWeapon="true"
+		WeaponSpeed="999999.0"
+		ReAcquireDetailType="PRE_FIRE"
+		ClipSize="1"
+		VirtualDamage="SHARE"
+		FireFX="FX_TerrorGoInside"
+		FireVeteranFX="FX_TerrorGoInside"
+		AcceptableAimDelta="10d"
+		CanFireWhileMoving="true"
+        Flags="NOT_ATTRACTED_BY_MAGNETS" 
+		RequiredAntiMask="ANTI_VEHICLE"
+		ForbiddenAntiMask="ANTI_AIRBORNE_VEHICLE"
+		MeleeWeapon="true">
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<ClipReloadTime
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<AttachNugget
+				AttachModuleId="ModuleTag_AttachUpdate"
+				ForbiddenTargetObjectStatus="AIRBORNE_TARGET VEHICLE_ATTACHED UNDERGOING_REPAIR SPECIAL_ARMOR_ACTIVE NOT_IN_WORLD">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="INFANTRY"
+					Relationship="ENEMIES NEUTRAL">
+					<ExcludeThing>SovietScoutVehicle</ExcludeThing>
+					<ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</AttachNugget>
+		</Nuggets>
+	</WeaponTemplate>
+
+
+	<WeaponTemplate
+		id="SovietScoutVehicleParalyzeWeapon"
+		AttackRange="300"
+		WeaponSpeed="999999.0"
+		ReAcquireDetailType="PRE_FIRE"
+		ClipSize="1"
+		FireFX="FX_SOV_TerrorDrone_WeaponFire"
+		AcceptableAimDelta="10d"
+		CanFireWhileMoving="false"
+		RequiredAntiMask="ANTI_GROUND ANTI_WATER"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS" >
+		<FiringDuration
+			MinSeconds="0.2s"
+			MaxSeconds="0.2s" />
+		<Nuggets>
+			<ActivateLaserNugget
+				Lifetime="0.3s"
+				LaserId="0">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="INFANTRY"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED UNDER_IRON_CURTAIN">
+					<IncludeThing>SovietScoutVehicle</IncludeThing>
+					<IncludeThing>SovietHeavyAntiVehicleInfantry</IncludeThing>
+					<IncludeThing>SovietDesolatorInfantry</IncludeThing>
+					<IncludeThing>AlliedLegionnaireInfantry</IncludeThing>
+				</SpecialObjectFilter>
+			</ActivateLaserNugget>
+			<!-- both a paralyze nugget and an attribute modifier that sets the speed to zero should be used
+				 to provide sufficient coverage for stopping everything while still letting them attack
+			-->
+			<ParalyzeNugget
+				Radius="0.0"
+				DurationSeconds="0.3s"
+				ParalyzeType="HELD" >
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="INFANTRY"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED UNDER_IRON_CURTAIN">
+					<IncludeThing>SovietScoutVehicle</IncludeThing>
+					<IncludeThing>SovietHeavyAntiVehicleInfantry</IncludeThing>
+					<IncludeThing>SovietDesolatorInfantry</IncludeThing>
+					<IncludeThing>AlliedLegionnaireInfantry</IncludeThing>
+				</SpecialObjectFilter>
+			</ParalyzeNugget>
+			
+			<AttributeModifierNugget
+				AttributeModifierName="AttributeMod_SovietScoutParalyzeWeapon">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="INFANTRY"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED UNDER_IRON_CURTAIN">
+					<IncludeThing>SovietScoutVehicle</IncludeThing>
+					<IncludeThing>SovietHeavyAntiVehicleInfantry</IncludeThing>
+					<IncludeThing>SovietDesolatorInfantry</IncludeThing>
+					<IncludeThing>AlliedLegionnaireInfantry</IncludeThing>
+				</SpecialObjectFilter>
+			</AttributeModifierNugget>
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

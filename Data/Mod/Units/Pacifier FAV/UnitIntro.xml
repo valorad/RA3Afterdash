@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitIntro
+		id="Allied_Pacifier_UnitIntro"
+		Video="ui_pacifier"
+		Audio="MAIn_Pacifier" />
+</AssetDeclaration>

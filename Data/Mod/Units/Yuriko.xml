@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Yuriko/AudioEvent.xml" />
+		<Include type="all" source="Yuriko/AudioFile.xml" />
+		<Include type="all" source="Yuriko/Multisound.xml" />
+		
+		<Include type="all" source="Yuriko/FXList.xml" />
+		<Include type="all" source="Yuriko/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Yuriko/GameObject.xml" />
+		<Include type="all" source="Yuriko/Texture.xml" />
+		<Include type="all" source="Yuriko/W3X.xml" />
+	</Includes>
+</AssetDeclaration>

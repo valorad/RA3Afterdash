@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Future Tank X-1/AudioEvent.xml" />
+		<Include type="all" source="Future Tank X-1/AudioFile.xml" />
+		<Include type="all" source="Future Tank X-1/Multisound.xml" />
+		<Include type="all" source="Future Tank X-1/Video.xml" />
+		<Include type="all" source="Future Tank X-1/VideoEventList.xml" />
+		
+		<Include type="all" source="Future Tank X-1/Armor.xml" />
+		<Include type="all" source="Future Tank X-1/ButtonSingleStateData.xml" />
+		<Include type="all" source="Future Tank X-1/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Future Tank X-1/FXList.xml" />
+		<Include type="all" source="Future Tank X-1/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Future Tank X-1/GameObject.xml" />
+		<Include type="all" source="Future Tank X-1/Locomotor.xml" />
+		<Include type="all" source="Future Tank X-1/LogicCommand.xml" />
+		<Include type="all" source="Future Tank X-1/LogicCommandSet.xml" />
+		<Include type="all" source="Future Tank X-1/ObjectCreationList.xml" />
+		<Include type="all" source="Future Tank X-1/PackedTextureImage.xml" />
+		<Include type="all" source="Future Tank X-1/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Future Tank X-1/Texture.xml" />
+		<Include type="all" source="Future Tank X-1/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Future Tank X-1/UnitIntro.xml" />
+		<Include type="all" source="Future Tank X-1/W3X.xml" />
+		<Include type="all" source="Future Tank X-1/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

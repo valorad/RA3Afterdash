@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<WeaponTemplate
+		id="SovietCommandoSniperRifle"
+		AttackRange="300.0"
+		WeaponSpeed="999999.0"
+		FireSound="SOV_Commando_GunFire"
+		FireFX="FX_SovietSniperFire"
+		FireVeteranFX="FX_SovietSniperFireHeroic"
+		RadiusDamageAffects="ENEMIES"
+		ClipSize="1"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		CanFireWhileMoving="false"
+		AcceptableAimDelta="10d"
+		RequiredAntiMask="ANTI_GROUND ANTI_WATER">
+		<PreAttackDelay
+			MinSeconds="0.25s"
+			MaxSeconds="0.25s" />
+		<FiringDuration
+			MinSeconds="1.5s"
+			MaxSeconds="1.5s" />
+		<ClipReloadTime
+			MinSeconds="0.25s"
+			MaxSeconds="0.25s" />
+		<Nuggets>
+			<LineDamageNugget
+				Damage="1000.0"
+				LineWidth="5.0"
+				DamageType="SNIPER"
+				DamageFXType="SOVIET_SNIPERRIFLE"
+				DeathType="NORMAL"
+				UseDynamicLineLength="true"
+				OverShootDistance="200.0">
+				<SpecialObjectFilter
+					Rule="NONE"
+					Include="INFANTRY">
+					<IncludeThing>SovietMortarcycle</IncludeThing>
+				</SpecialObjectFilter>          					
+			</LineDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="SovietCommandoCallBombingRun"
+		AttackRange="300.0"
+		MinimumAttackRange="50"
+		WeaponSpeed="999999.0"
+		RadiusDamageAffects="ENEMIES"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		CanFireWhileMoving="false"
+		ReAcquireDetailType="PER_CLIP"
+		PreAttackType="PER_TARGET"
+		AcceptableAimDelta="10d"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+		<PreAttackDelay
+			MinSeconds="0.5s"
+			MaxSeconds="0.5s" />
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<WeaponAiHintInfo
+			UseAsWarheadForDamageCalculations="SovietBombingRunWeaponWarhead"
+			UseLongLockOnTimeCode="true" />
+		<Nuggets>
+			<ActivateLaserNugget
+				id="DefaultLaserNugget"
+				Lifetime="1s"
+				LaserId="1">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE STRUCTURE VALID_TARGET_FOR_C4"
+					Exclude="INFANTRY WALL_PIECE"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED">
+					<ExcludeThing>JapanMechaKing</ExcludeThing> 
+					<ExcludeThing>SovietMortarcycle</ExcludeThing>   
+				</SpecialObjectFilter>
+			</ActivateLaserNugget>
+			<SpecialPowerNugget
+				SpecialPowerTemplate="SpecialPowerBombingRun">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE STRUCTURE VALID_TARGET_FOR_C4"
+					Exclude="INFANTRY WALL_PIECE"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED">
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+					<ExcludeThing>SovietMortarcycle</ExcludeThing>   
+				</SpecialObjectFilter>
+			</SpecialPowerNugget>
+			<TintObjectsNugget
+				PreColorTime="0.5s"
+				SustainedColorTime="1.0s"
+				PostColorTime="0s"
+				Frequency="1"
+				Amplitude="0">
+				<Color R="2" G="0" B="0"/>
+			</TintObjectsNugget>
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietCommandoCallBombingRunGarrison"
+		AttackRange="300.0"
+		WeaponSpeed="999999.0"
+		RadiusDamageAffects="ENEMIES"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		CanFireWhileMoving="false"
+		ReAcquireDetailType="PER_CLIP"
+		PreAttackType="PER_TARGET"
+		AcceptableAimDelta="10d"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+		<PreAttackDelay
+			MinSeconds="0.5s"
+			MaxSeconds="0.5s" />
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<WeaponAiHintInfo
+			UseAsWarheadForDamageCalculations="SovietBombingRunWeaponWarhead"
+			UseLongLockOnTimeCode="true" />
+		<Nuggets>
+			<ActivateLaserNugget
+				id="DefaultLaserNugget"
+				Lifetime="1s"
+				LaserId="1">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE STRUCTURE VALID_TARGET_FOR_C4"
+					Exclude="INFANTRY WALL_PIECE"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED">
+					<ExcludeThing>JapanMechaKing</ExcludeThing> 
+					<ExcludeThing>SovietMortarcycle</ExcludeThing>   
+				</SpecialObjectFilter>
+			</ActivateLaserNugget>
+			<SpecialPowerNugget
+				SpecialPowerTemplate="SpecialPowerBombingRun">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE STRUCTURE VALID_TARGET_FOR_C4"
+					Exclude="INFANTRY WALL_PIECE"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED">
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+					<ExcludeThing>SovietMortarcycle</ExcludeThing>   
+				</SpecialObjectFilter>
+			</SpecialPowerNugget>
+			<TintObjectsNugget
+				PreColorTime="0.5s"
+				SustainedColorTime="1.0s"
+				PostColorTime="0s"
+				Frequency="1"
+				Amplitude="0">
+				<Color R="2" G="0" B="0"/>
+			</TintObjectsNugget>
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>
+	
+	
+	
+	<!-- Multigunner IFV -->
+	<WeaponTemplate
+		id="AAAVT1_SovietCommandoSniperRifle"
+		FireFX="FX_SovietSnipeFire_IFV"
+		FireVeteranFX="FX_SovietSnipeFire_IFV"
+		inheritFrom="SovietCommandoSniperRifle" />
+	
+	<!-- Multigunner Turret -->
+	<WeaponTemplate
+		id="ABD_SovietCommandoSniperRifle"
+		inheritFrom="SovietCommandoSniperRifle" />
+</AssetDeclaration>

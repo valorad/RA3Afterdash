@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_SovietMortarLaunch">
+    <NuggetList>
+      <ParticleSystem
+          Particle="SovietGrenadeFlash"
+          OrientToObject="true" />
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_SovietMortarLaunchVet">
+    <NuggetList>
+      <ParticleSystem
+          Particle="SovietGrenadeFlash_Vet"
+          OrientToObject="true" />
+    </NuggetList>
+  </FXList>
+	
+	<FXList id="FX_SOV_MortarCycle_MortarExplo1">
+		<NuggetList>
+      <ParticleSystem	Particle="SovietV4RocketExplosion"/>
+      <ParticleSystem	Particle="SovietV4RocketExplosionShockwave"/>      
+      <ParticleSystem	Particle="SovietV4RocketExplosionFlash"/>
+      <ParticleSystem	Particle="SovietV4RocketExplosionFireMushroom" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionFire" />      
+      <ParticleSystem	Particle="SovietV4RocketExplosionSmoke" />      
+      <ParticleSystem	Particle="SovietV4RocketExplosionSmokeMushroom" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionSmokeGround" />      
+      <ParticleSystem	Particle="SovietV4RocketExplosionLight" />
+      <TerrainScorch
+				Type		= "TERRAIN_MAPPED"
+				Radius		= "25" >
+      </TerrainScorch>
+
+      <!-- Water FX -->
+      <ParticleSystem	
+        Particle="SovietV4RocketExplosionWake" 
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+      <ParticleSystem	
+        Particle="SovietV4RocketExplosionWaterMist" 
+        OnlyIfOnWater ="true">
+      </ParticleSystem>      
+
+      <Sound Value="SOV_MortarCycle_MortarExplo" />
+
+			<ForceFeedback Event="V4MissleExplosionRumble" />
+			
+		</NuggetList> 
+  </FXList>
+
+  <FXList id="FX_SOV_MortarCycle_MortarExplo1Vet">
+    <NuggetList>
+      <ParticleSystem	Particle="SovietV4RocketExplosion_Vet"/>
+      <ParticleSystem	Particle="SovietV4RocketExplosionShockwave_Vet"/>
+      <ParticleSystem	Particle="SovietV4RocketExplosionFlash_Vet"/>
+      <ParticleSystem	Particle="SovietV4RocketExplosionFireMushroom_Vet" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionFire_Vet" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionSmoke" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionSmokeMushroom" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionSmokeGround" />
+      <ParticleSystem	Particle="SovietV4RocketExplosionLight_Vet" />
+      <ParticleSystem	Particle="AlliedBombExplosionBits_Vet" />
+      <TerrainScorch
+              Type		= "TERRAIN_MAPPED"
+              Radius		= "35" >
+      </TerrainScorch>
+
+      <!-- Water FX -->
+      <ParticleSystem
+        Particle="SovietV4RocketExplosionWake"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+      <ParticleSystem
+        Particle="SovietV4RocketExplosionWaterMist"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+
+      <Sound Value="SOV_MortarCycle_MortarExplo" />
+
+      <ForceFeedback Event="V4MissleExplosionRumble" />
+
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_SOV_MortarCycle_MortarExplo2">
+    <NuggetList>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitExplosion">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitGlow">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitLight">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_SOV_MortarCycle_MortarExplo2Vet">
+    <NuggetList>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitExplosion_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitGlow_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitLight_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitBits_Vet">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_SOV_MortarCycleDie">
+    <NuggetList>
+		<Sound Value="RA3VehicleExplosionSmall" />
+      <ParticleSystem Particle="SovietDieRays">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="SovietDieFlash">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="SovietDieGlow">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="SovietDieSmoke">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="SovietDieSmoke02">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <TerrainScorch
+              Type		= "TERRAIN_MAPPED"
+              Radius		= "25" >
+      </TerrainScorch>
+    </NuggetList>
+  </FXList>
+	
+  <FXList id="FX_Soviet_MolCocktailBIGHit">
+    <NuggetList>
+
+      <ParticleSystem
+				Particle="Soviet_Mol_Large_Balls"/>
+
+      <ParticleSystem
+				Particle="Soviet_Mol_Large_Fire01"/>
+      <ParticleSystem
+              Particle="Soviet_Mol_Large_Embers"/>
+      <ParticleSystem
+				Particle="Soviet_Mol_Large_Fire02"/>
+      <Sound Value="SOV_Conscript_MolotovCocktailExplosion" />
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_Soviet_MolCocktailBIGHitVet">
+    <NuggetList>
+      <ParticleSystem
+				Particle="Soviet_Mol_Large_Balls"/>
+      <ParticleSystem
+				Particle="Soviet_Mol_Large_Vet_Fire01"/>
+      <ParticleSystem
+        Particle="Soviet_Mol_Large_Vet_Embers"/>
+      <ParticleSystem
+				Particle="Soviet_Mol_Large_Vet_Fire02"/>
+      <Sound Value="SOV_Conscript_MolotovCocktailExplosion" />
+    </NuggetList>
+  </FXList>
+  
+	<FXList id="FX_SOV_MortarCycle_VoiceDie">
+		<NuggetList>
+			<Sound Value="SOV_MortarCycle_VoiceDie" />
+		</NuggetList>
+	</FXList>
+</AssetDeclaration>

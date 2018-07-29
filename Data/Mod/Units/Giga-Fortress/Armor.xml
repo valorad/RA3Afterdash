@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ArmorTemplate
+		id="JapanFortressShipArmor"
+		SideDamageScalar="100"
+		RearDamageScalar="100">
+		<Armor
+			Damage="MELEE"
+			Percent="0" />
+		<Armor
+			Damage="SNIPER"
+			Percent="0" />
+		<Armor
+			Damage="GUN"
+			Percent="100" />		
+		<Armor
+			Damage="AUTO_CANNON"
+			Percent="65" />
+		<Armor
+			Damage="IMPACT"
+			Percent="75" />
+		<Armor
+			Damage="FLAK"
+			Percent="100" />	
+		<Armor
+			Damage="ROCKET"
+			Percent="100" />
+		<Armor
+			Damage="CANNON"
+			Percent="150" />
+		<Armor
+			Damage="PRISM"
+			Percent="150" />
+		<Armor
+			Damage="TESLA"
+			Percent="100" />
+		<Armor
+			Damage="EXPLOSIVE"
+			Percent="100" />
+		<Armor
+			Damage="CONCUSSIVE"
+			Percent="75" />
+		<Armor
+			Damage="RADIATION"
+			Percent="5" />
+	</ArmorTemplate>
+</AssetDeclaration>

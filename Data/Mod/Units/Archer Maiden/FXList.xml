@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_JAP_ArcherMaiden_EnergyArrowImpact">
+    <NuggetList>
+		<Sound Value="JAP_NinjaArcher_WeaponFire1_ArrowImpact" />
+      <ParticleSystem
+				Particle="FXJapanMIRVHitExplosion">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitGlow">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitLight">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JAP_ArcherMaiden_EnergyArrowImpact_Vet">
+    <NuggetList>
+		<Sound Value="JAP_NinjaArcher_WeaponFire1_ArrowImpact" />
+      <ParticleSystem
+				Particle="FXJapanMIRVHitExplosion_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitGlow_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitLight_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitBits_Vet">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JAP_ArcherMaiden_BarrageFire">
+    <NuggetList>
+		<Sound Value="JAP_NinjaArcher_WeaponFire1_Arrow" />
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JAP_ArcherMaiden_BarrageFire_Vet">
+    <NuggetList>
+		<Sound Value="JAP_NinjaArcher_WeaponFire1_Arrow" />
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanArrowMIRV">
+    <NuggetList>
+		<Sound Value="JAP_NinjaArcher_BombardAttack_Split" />
+      <ParticleSystem
+				Particle="JapanArrowMirvBits"
+        OrientToObject="true">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanArrowMirvExp"
+        OrientToObject="true">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanArrowMirvExp02"
+        OrientToObject="true">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanArrowMIRVVet">
+    <NuggetList>
+      <Sound Value="JAP_NinjaArcher_BombardAttack_Split" />
+      <ParticleSystem
+				Particle="JapanArrowMirvBitsVet"
+        OrientToObject="true">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanArrowMirvExpVet"
+        OrientToObject="true">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanArrowMirvExp02Vet"
+        OrientToObject="true">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanArrowMIRVBitHitVet">
+    <NuggetList>
+      <Sound Value="JAP_NinjaArcher_BombardAttack_Impact" />
+      <ParticleSystem
+				Particle="JapanArrowSmall_BlastVet"
+        OrientToObject="false">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanArrowSmall_ExpVet"
+        OrientToObject="false">
+      </ParticleSystem>
+
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_JapanArrowMIRVBitHit">
+    <NuggetList>
+		<Sound Value="JAP_NinjaArcher_BombardAttack_Impact" />
+      <ParticleSystem
+				Particle="JapanArrowSmall_Blast"
+        OrientToObject="false">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanArrowSmall_Exp"
+        OrientToObject="false">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+</AssetDeclaration>

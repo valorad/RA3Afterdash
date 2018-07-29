@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+    <LogicCommand
+        Type="SPECIAL_POWER"
+        id="Command_ToggleJapanFortressShipTransformMode">
+        <SpecialPower>SpecialPower_JapanFortressShipTransformMode</SpecialPower>
+        <AISpecialPowerInfo 
+        	Heuristic="TOGGLE"
+			Manager="MICRO_MANAGER">
+        </AISpecialPowerInfo>
+    </LogicCommand>
+</AssetDeclaration>

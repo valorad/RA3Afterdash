@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<LogicCommandSet
+		id="AlliedAirfieldCommandSet">
+		<Cmd>Command_ConstructAlliedAntiGroundAircraft</Cmd>
+		<Cmd>Command_ConstructAlliedFighterAircraft</Cmd>
+		<Cmd>Command_ConstructAlliedSupportAircraft</Cmd>
+		<Cmd>Command_ConstructAlliedBomberAircraft</Cmd>
+		<Cmd>Command_AlliedRecallAllAircraft</Cmd>
+		<Cmd>Command_ConstructAlliedGunshipAircraft</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="AlliedBarracksCommandSet">
+		<Cmd>Command_ConstructAlliedScoutInfantry</Cmd>
+		<Cmd>Command_ConstructAlliedAntiInfantryInfantry</Cmd>
+		<Cmd>Command_ConstructAlliedAntiVehicleInfantry</Cmd>
+		<Cmd>Command_ConstructAlliedEngineer</Cmd>
+		<Cmd>Command_ConstructAlliedInfiltrationInfantry</Cmd>
+		<Cmd>Command_ConstructAlliedLegionnaireInfantry</Cmd>
+		<Cmd>Command_ConstructAlliedCommandoTech1</Cmd>
+	</LogicCommandSet>	
+	
+	<LogicCommandSet
+		id="AlliedWarFactoryCommandSet">
+		<Cmd>Command_ConstructAlliedMiner</Cmd>
+		<Cmd>Command_ConstructAlliedAntiInfantryVehicle_Ground</Cmd>
+		<Cmd>Command_ConstructAlliedAntiAirVehicleTech1</Cmd>
+		<Cmd>Command_ConstructAlliedAntiVehicleVehicleTech1</Cmd>
+		<Cmd>Command_ConstructAlliedAntiStructureVehicle</Cmd>
+		<Cmd>Command_ConstructAlliedAntiVehicleVehicleTech3</Cmd>
+		<Cmd>Command_ConstructAlliedArtilleryVehicle</Cmd>
+		<Cmd>Command_ConstructAlliedFutureTank</Cmd>
+		<Cmd>Command_ConstructAlliedMCV</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanBarracksCommandSetBase">
+		<Cmd>Command_ConstructJapanScoutInfantry</Cmd>
+		<Cmd>Command_ConstructJapanAntiInfantryInfantry</Cmd>
+		<Cmd>Command_ConstructJapanAntiVehicleInfantry</Cmd>
+		<Cmd>Command_ConstructJapanEngineer</Cmd>
+		<Cmd>Command_ConstructJapanArcherInfantry</Cmd>
+		<Cmd>Command_ConstructJapanInfiltrationInfantry</Cmd>
+		<Cmd>Command_ConstructJapanAntiVehicleInfantryTech3</Cmd>
+		<Cmd>Command_ConstructJapanCommandoTech1</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanBarracksCommandSet"
+		inheritFrom="JapanBarracksCommandSetBase">
+		<Cmd>Command_PurchaseJapanBarracksTech2</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanBarracksCommandSetTech2"
+		inheritFrom="JapanBarracksCommandSetBase">
+		<Cmd>Command_PurchaseJapanBarracksTech3</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanNavalYardCommandSetBase">
+		<Cmd>Command_ConstructJapanMiner_Naval</Cmd>
+		<Cmd>Command_ConstructJapanNavyScoutShip</Cmd>	
+		<Cmd>Command_ConstructJapanAntiVehicleVehicleTech1_Naval</Cmd>
+		<Cmd>Command_ConstructJapanAntiAirShip</Cmd>	
+		<Cmd>Command_ConstructJapanAntiVehicleShip</Cmd>
+		<Cmd>Command_ConstructJapanAntiStructureShip</Cmd>
+		<Cmd>Command_ConstructJapanFortressShipEgg</Cmd>
+		<Cmd>Command_ConstructJapanMCV_Naval</Cmd>
+		<Cmd>Command_RepairVehicle</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanNavalYardCommandSet"
+		inheritFrom="JapanNavalYardCommandSetBase">
+		<Cmd>Command_PurchaseJapanNavalYardTech2</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanNavalYardCommandSetTech2"
+		inheritFrom="JapanNavalYardCommandSetBase">
+		<Cmd>Command_PurchaseJapanNavalYardTech3</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanWarFactoryCommandSetBase">
+		<Cmd>Command_ConstructJapanMiner</Cmd>
+		<Cmd>Command_ConstructJapanLightTransportVehicle</Cmd>
+		<Cmd>Command_ConstructJapanAntiInfantryVehicle</Cmd>
+		<Cmd>Command_ConstructJapanAntiVehicleVehicleTech1</Cmd>
+		<Cmd>Command_ConstructJapanAntiAirVehicleTech1</Cmd>
+		<Cmd>Command_ConstructJapanSentinelVehicle</Cmd>
+		<Cmd>Command_ConstructJapanAntiStructureVehicle</Cmd>
+		<Cmd>Command_ConstructJapanAntiVehicleVehicleTech3</Cmd>
+		<Cmd>Command_ConstructJapanMCV</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanWarFactoryCommandSet"
+		inheritFrom="JapanWarFactoryCommandSetBase">
+		<Cmd>Command_PurchaseJapanWarFactoryTech2</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="JapanWarFactoryCommandSetTech2"
+		inheritFrom="JapanWarFactoryCommandSetBase">
+		<Cmd>Command_PurchaseJapanWarFactoryTech3</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="SovietBarracksCommandSet">
+		<Cmd>Command_ConstructSovietScoutInfantry</Cmd>
+		<Cmd>Command_ConstructSovietAntiInfantryInfantry</Cmd>
+		<Cmd>Command_ConstructSovietAntiVehicleInfantry</Cmd>
+		<Cmd>Command_ConstructSovietEngineer</Cmd>
+		<Cmd>Command_ConstructSovietMortarcycle</Cmd>
+		<Cmd>Command_ConstructSovietHeavyAntiVehicleInfantry</Cmd>
+		<Cmd>Command_ConstructSovietDesolatorInfantry</Cmd>
+		<Cmd>Command_ConstructSovietCommandoTech1</Cmd>
+	</LogicCommandSet>
+	
+	<LogicCommandSet
+		id="SovietWarFactoryCommandSet">
+		<Cmd>Command_ConstructSovietMiner</Cmd>
+		<Cmd>Command_ConstructSovietSurveyor</Cmd>
+		<Cmd>Command_ConstructSovietScoutVehicle</Cmd>
+		<Cmd>Command_ConstructSovietAntiInfantryVehicle</Cmd>
+		<Cmd>Command_ConstructSovietAntiAirShip_Ground</Cmd>
+		<Cmd>Command_ConstructSovietHeavyWalkerVehicle</Cmd>
+		<Cmd>Command_ConstructSovietAntiVehicleVehicleTech1</Cmd>
+		<Cmd>Command_ConstructSovietGrinderVehicle</Cmd>
+		<Cmd>Command_ConstructSovietAntiStructureVehicle</Cmd>
+		<Cmd>Command_ConstructSovietAntiVehicleVehicleTech3</Cmd>
+		<Cmd>Command_ConstructSovietMCV</Cmd>
+		<Cmd>Command_RepairVehicle</Cmd>
+	</LogicCommandSet>
+</AssetDeclaration>

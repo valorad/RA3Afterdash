@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Harbinger Gunship/AudioEvent.xml" />
+		<Include type="all" source="Harbinger Gunship/AudioFile.xml" />
+		<Include type="all" source="Harbinger Gunship/Multisound.xml" />
+		<Include type="all" source="Harbinger Gunship/Video.xml" />
+		<Include type="all" source="Harbinger Gunship/VideoEventList.xml" />
+		
+		<Include type="all" source="Harbinger Gunship/Armor.xml" />
+		<Include type="all" source="Harbinger Gunship/AttributeModifier.xml" />
+		<Include type="all" source="Harbinger Gunship/ButtonSingleStateData.xml" />
+		<Include type="all" source="Harbinger Gunship/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Harbinger Gunship/FXList.xml" />
+		<Include type="all" source="Harbinger Gunship/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Harbinger Gunship/GameObject.xml" />
+		<Include type="all" source="Harbinger Gunship/Locomotor.xml" />
+		<Include type="all" source="Harbinger Gunship/LogicCommand.xml" />
+		<Include type="all" source="Harbinger Gunship/LogicCommandSet.xml" />
+		<Include type="all" source="Harbinger Gunship/ObjectCreationList.xml" />
+		<Include type="all" source="Harbinger Gunship/PackedTextureImage.xml" />
+		<Include type="all" source="Harbinger Gunship/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Harbinger Gunship/Texture.xml" />
+		<Include type="all" source="Harbinger Gunship/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Harbinger Gunship/UnitIntro.xml" />
+		<Include type="all" source="Harbinger Gunship/W3X.xml" />
+		<Include type="all" source="Harbinger Gunship/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

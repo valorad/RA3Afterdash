@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="SOV_Grinder_NitroBoostMS">
+		<Subsound>SOV_Grinder_NitroBoostPlayerMS</Subsound> 
+		<Subsound>SOV_Grinder_NitroBoostOthersMS</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_Grinder_NitroBoostOthersMS">
+		<Subsound>SOV_Grinder_NitroBoost1</Subsound> 
+		<Subsound>SOV_Grinder_NitroBoost2</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_Grinder_NitroBoostPlayerMS">
+		<Subsound>SOV_Grinder_NitroBoost1_Player</Subsound> 
+		<Subsound>SOV_Grinder_NitroBoost2_Player</Subsound>
+	</Multisound>
+</AssetDeclaration>

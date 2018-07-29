@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="EXJapanArrow" File="ART:Units/Archer Maiden/EXJapanArrow.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="EXJapanArrowVet" File="ART:Units/Archer Maiden/EXJapanArrowVet.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXCloakField" File="ART:Units/Archer Maiden/FXCloakField.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXJapanSentBlast" File="ART:Units/Archer Maiden/FXJapanSentBlast.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUArcherInfantry" File="ART:Units/Archer Maiden/JUArcherInfantry.dds" OutputFormat="DXT5" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="Target_Japan_ArcherBarrage" File="ART:Units/Archer Maiden/Target_Japan_ArcherBarrage.dds" OutputFormat="DXT5" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="SovietDesolatorInfantryExperienceLevel_1"
+		inheritFrom="ExperienceLevel_SovietRank1"
+		RequiredExperience="1"
+		ExperienceAward="1500">
+		<Target>SovietDesolatorInfantry</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietDesolatorInfantryExperienceLevel_2"
+		inheritFrom="ExperienceLevel_SovietRank2"
+		Prerequisite="SovietDesolatorInfantryExperienceLevel_1"
+		RequiredExperience="4500"
+		ExperienceAward="3000">
+		<Target>SovietDesolatorInfantry</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietDesolatorInfantryExperienceLevel_3"
+		inheritFrom="ExperienceLevel_SovietRank3"
+		Prerequisite="SovietDesolatorInfantryExperienceLevel_2"
+		RequiredExperience="9000"
+		ExperienceAward="4500">
+		<Target>SovietDesolatorInfantry</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietDesolatorInfantryExperienceLevel_4"
+		inheritFrom="ExperienceLevel_SovietRank4"
+		Prerequisite="SovietDesolatorInfantryExperienceLevel_3"
+		RequiredExperience="13500"
+		ExperienceAward="6000">
+		<Target>SovietDesolatorInfantry</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseMissionEvaDialogue.xml" />
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<!-- Mission dialogue -->
+	<AudioEvent id="MAIn_Pacifier" inheritFrom="AudioEvent:BaseMissionEvaDialogue">
+		<Sound>MAIn_Pacifier</Sound> 
+	</AudioEvent>
+	
+	
+	
+	<!-- Sound effect -->
+	<AudioEvent
+	id="ALL_PacifierFAV_WaterLoopGeneric"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="35"
+	VolumeShift="-10"
+	Limit="3"
+	Control="LOOP FADE_ON_KILL"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+		<Sound>AUPacif_movLoopWaterA</Sound> <Sound>AUPacif_movLoopWaterB</Sound> <Sound>AUPacif_movLoopWaterC</Sound> <Sound>AUPacif_movLoopWaterD</Sound> 
+		<Sound>AUPacif_movLoopWaterE</Sound> <Sound>AUPacif_movLoopWaterF</Sound> <Sound>AUPacif_movLoopWaterG</Sound> <Sound>AUPacif_movLoopWaterH</Sound> 
+		<Sound>AUPacif_movLoopWaterI</Sound> <Sound>AUPacif_movLoopWaterJ</Sound> <Sound>AUPacif_movLoopWaterK</Sound>
+	</AudioEvent>			
+
+	<AudioEvent
+	id="ALL_PacifierFAV_MoveByLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="45"
+	VolumeShift="-10"
+	Limit="3"
+	Control="LOOP FADE_ON_KILL"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Delay
+	Low="40"
+	High="80" />
+		<Sound>AUPacif_movByLoopA</Sound> <Sound>AUPacif_movByLoopB</Sound> <Sound>AUPacif_movByLoopC</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_PacifierFAV_IdleLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-10"
+	MaxRange="500"
+	Priority="LOWEST"
+	Limit="2"
+	Control="LOOP FADE_ON_KILL"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUPacif_idleLoopA</Sound> <Sound>AUPacif_idleLoopB</Sound> <Sound>AUPacif_idleLoopC</Sound> <Sound>AUPacif_idleLoopD</Sound> <Sound>AUPacif_idleLoopE</Sound>
+	</AudioEvent>	
+
+	<AudioEvent
+	id="ALL_Pacifier_MachineGunLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE - 10"
+	VolumeShift="-5"
+	Control = "LOOP IMMEDIATE_DECAY_ON_KILL"
+	Priority="HIGH"
+	Limit="4"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="5" High="20" />
+		<Sound>AUPacif_machineGunFireL2a</Sound>
+		<Sound>AUPacif_machineGunFireL2b</Sound>
+		<Sound>AUPacif_machineGunFireL2c</Sound>
+		<Sound>AUPacif_machineGunFireL2d</Sound>
+		<Sound>AUPacif_machineGunFireL2e</Sound>
+		<Sound>AUPacif_machineGunFireL2f</Sound>
+		<Decay>AUPacif_machineGunFireL3a</Decay>
+		<Decay>AUPacif_machineGunFireL3b</Decay>
+		<Decay>AUPacif_machineGunFireL3c</Decay>
+		<Decay>AUPacif_machineGunFireL3d</Decay>
+		<Decay>AUPacif_machineGunFireL3e</Decay>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_MachineGunWhineLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE - 25"
+	VolumeShift="-5"
+	Control = "LOOP ALLOW_KILL_MID_FILE"
+	Priority="HIGH"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+		<Attack>AUPacif_machineGunWhineL1a</Attack>
+		<Attack>AUPacif_machineGunWhineL1b</Attack>
+		<!-- <Attack>AUPacif_machineGunWhineL1c</Attack>
+		<Attack>AUPacif_machineGunWhineL1d</Attack> -->
+		<Attack>AUPacif_machineGunWhineL1e</Attack>
+		<Attack>AUPacif_machineGunWhineL2f</Attack>
+		<Attack>AUPacif_machineGunWhineL2g</Attack>
+		<Attack>AUPacif_machineGunWhineL2h</Attack>
+		<Attack>AUPacif_machineGunWhineL2i</Attack>
+		<Attack>AUPacif_machineGunWhineL2j</Attack>
+		<Sound>AUPacif_machineGunWhineL2a</Sound>
+		<Sound>AUPacif_machineGunWhineL2b</Sound>
+		<Sound>AUPacif_machineGunWhineL2c</Sound>
+		<Sound>AUPacif_machineGunWhineL2d</Sound>
+		<Sound>AUPacif_machineGunWhineL2e</Sound>
+		<Sound>AUPacif_machineGunWhineL2f</Sound>
+		<Sound>AUPacif_machineGunWhineL2g</Sound>
+		<Sound>AUPacif_machineGunWhineL2h</Sound>
+		<Sound>AUPacif_machineGunWhineL2i</Sound>
+		<Sound>AUPacif_machineGunWhineL2j</Sound>
+		<!-- <Decay>AUPacif_machineGunWhineL3a</Decay>
+		<Decay>AUPacif_machineGunWhineL3b</Decay>
+		<Decay>AUPacif_machineGunWhineL3c</Decay>
+		<Decay>AUPacif_machineGunWhineL3d</Decay> -->
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_MachineGunFire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.6s" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+<!--
+		<Sound>SUEngineer_pistolFireA</Sound> <Sound>SUEngineer_pistolFireB</Sound> <Sound>SUEngineer_pistolFireC</Sound> <Sound>SUEngineer_pistolFireD</Sound>
+-->
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_DeployPlayer"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="60"
+	VolumeShift="-5"
+	MinVolume="50"
+	Limit="3"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Delay Low="0" High="50" />
+		<Sound>AUPacif_deploya</Sound>
+		<Sound>AUPacif_deployb</Sound>
+		<Sound>AUPacif_deployc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_DeployOthers"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="60"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED ALLIES ENEMIES"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Delay Low="0" High="50" />
+		<Sound>AUPacif_deploya</Sound>
+		<Sound>AUPacif_deployb</Sound>
+		<Sound>AUPacif_deployc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_UndeployPlayer"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="60"
+	VolumeShift="-5"
+	MinVolume="50"
+	Limit="3"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Delay Low="0" High="50" />
+		<Sound>AUPacif_undeploya</Sound>
+		<Sound>AUPacif_undeployb</Sound>
+		<Sound>AUPacif_undeployc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_UndeployOthers"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="60"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED ALLIES ENEMIES"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Delay Low="0" High="50" />
+		<Sound>AUPacif_undeploya</Sound>
+		<Sound>AUPacif_undeployb</Sound>
+		<Sound>AUPacif_undeployc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_SiegeTank_CannonFire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="5"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUSiege_weaFirea</Sound>
+	<Sound>AUSiege_weaFireb</Sound>
+	<Sound>AUSiege_weaFirec</Sound>
+	<Sound>AUSiege_weaFired</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_SiegeTank_CannonImpact"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_IMPACT"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUSiege_weaImpacta</Sound>
+	<Sound>AUSiege_weaImpactb</Sound>
+	<Sound>AUSiege_weaImpactc</Sound>
+	<Sound>AUSiege_weaImpactd</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_Pacifier_MoveStart"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="35"
+	VolumeShift="-5"
+	Limit="2"
+	Type="WORLD EVERYONE SHROUDED"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Delay Low="0" High="50" />
+		<Sound>AUPacifier_moveStara</Sound>
+		<Sound>AUPacifier_moveStarb</Sound>
+		<Sound>AUPacifier_moveStarc</Sound>
+		<Sound>AUPacifier_moveStard</Sound>
+		<Sound>AUPacifier_moveStare</Sound>
+		<Sound>AUPacifier_moveStarf</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_Pacifier_RotateStart"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD EVERYONE SHROUDED"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-20" High="-10" />
+	<Delay Low="0" High="50" />
+		<Sound>AUPacifier_moveStara</Sound>
+		<Sound>AUPacifier_moveStarb</Sound>
+		<Sound>AUPacifier_moveStarc</Sound>
+		<Sound>AUPacifier_moveStard</Sound>
+		<Sound>AUPacifier_moveStare</Sound>
+		<Sound>AUPacifier_moveStarf</Sound>
+	</AudioEvent>
+	
+	
+	
+	<!-- Voice -->
+	<AudioEvent id="ALL_Pacifier_VoiceAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiAttacka</Sound>
+		<Sound>AUPacif_voiAttackb</Sound>
+		<Sound>AUPacif_voiAttackc</Sound>
+		<Sound>AUPacif_voiAttackd</Sound>
+		<Sound>AUPacif_voiAttacke</Sound>
+		<Sound>AUPacif_voiAttackf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceAttackSpecial" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiAttSpeca</Sound>
+		<Sound>AUPacif_voiAttSpecb</Sound>
+		<Sound>AUPacif_voiAttSpecc</Sound>
+		<Sound>AUPacif_voiAttSpecd</Sound>
+		<Sound>AUPacif_voiAttSpece</Sound>
+		<Sound>AUPacif_voiAttSpecf</Sound>
+		<Sound>AUPacif_voiAttSpecg</Sound>
+		<Sound>AUPacif_voiAttSpech</Sound>
+		<Sound>AUPacif_voiAttSpeci</Sound>
+		<Sound>AUPacif_voiAttSpecj</Sound>
+		<Sound>AUPacif_voiAttSpeck</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceCreate" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiCreateb</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceDeploy" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		Limit="1"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiDeploya</Sound>
+		<Sound>AUPacif_voiDeployb</Sound>
+		<Sound>AUPacif_voiDeployc</Sound>
+		<Sound>AUPacif_voiDeployd</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceMove" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiMovea</Sound>
+		<Sound>AUPacif_voiMoveb</Sound>
+		<Sound>AUPacif_voiMovec</Sound>
+		<Sound>AUPacif_voiMoved</Sound>
+		<Sound>AUPacif_voiMovee</Sound>
+		<Sound>AUPacif_voiMovef</Sound>
+		<Sound>AUPacif_voiMoveg</Sound>
+		<Sound>AUPacif_voiMoveh</Sound>
+		<Sound>AUPacif_voiMovei</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceMoveAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiMvAtta</Sound>
+		<Sound>AUPacif_voiMvAttb</Sound>
+		<Sound>AUPacif_voiMvAttc</Sound>
+		<Sound>AUPacif_voiMvAttd</Sound>
+		<Sound>AUPacif_voiMvAtte</Sound>
+		<Sound>AUPacif_voiMvAttf</Sound>
+		<Sound>AUPacif_voiMvAttg</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceRetreat" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiRetreaa</Sound>
+		<Sound>AUPacif_voiRetreab</Sound>
+		<Sound>AUPacif_voiRetreac</Sound>
+		<Sound>AUPacif_voiRetread</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceSelect" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiCreatea</Sound>
+		<Sound>AUPacif_voiCreatec</Sound>
+		<Sound>AUPacif_voiSelecta</Sound>
+		<Sound>AUPacif_voiSelectb</Sound>
+		<Sound>AUPacif_voiSelectc</Sound>
+		<Sound>AUPacif_voiSelectd</Sound>
+		<Sound>AUPacif_voiSelecte</Sound>
+		<Sound>AUPacif_voiSelectf</Sound>
+		<Sound>AUPacif_voiSelectg</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceSelectBattle" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiSelBata</Sound>
+		<Sound>AUPacif_voiSelBatb</Sound>
+		<Sound>AUPacif_voiSelBatc</Sound>
+		<Sound>AUPacif_voiSelBatd</Sound>
+		<Sound>AUPacif_voiSelBate</Sound>
+		<Sound>AUPacif_voiSelBatf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_Pacifier_VoiceSelectUnderFire" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUPacif_voiSelUnda</Sound>
+		<Sound>AUPacif_voiSelUndb</Sound>
+		<Sound>AUPacif_voiSelUndc</Sound>
+		<Sound>AUPacif_voiSelUndd</Sound>
+		<Sound>AUPacif_voiSelUnde</Sound>
+	</AudioEvent>
+	
+	<AudioEvent id="ALL_Pacifier_VoiceShrunken" inheritFrom="AudioEvent:BaseUnitResponse"
+	Volume = "100"
+	MinVolume = "0"
+	Priority = "HIGH"
+	Limit="1"
+	Type = "WORLD SHROUDED EVERYONE VOICE"
+	SubmixSlider = "VOICE" >
+	<PitchShift Low="-1" High="1" />
+	<Delay Low="1300" High="1400" />
+	<Sound>AUPacif_voiSelUnda</Sound>
+	<Sound>AUPacif_voiSelUndc</Sound>
+	<Sound>AUPacif_voiSelUnde</Sound>
+	<Sound>AUPacif_voiRetreab</Sound>
+	<Sound>AUPacif_voiRetread</Sound>
+	</AudioEvent>
+</AssetDeclaration>

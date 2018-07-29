@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<!-- Updated RA3 structures -->
+		<Include type="all" source="Structures/Multigunner Turret.xml" />
+		
+		<!-- Uprising structures -->
+		<Include type="all" source="Structures/Castle Gate.xml" />
+		<Include type="all" source="Structures/Castle Square.xml" />
+		<Include type="all" source="Structures/Castle Tower.xml" />
+		<Include type="all" source="Structures/Castle Wall.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="FXJapanPearlLaser02" File="ART:Units/Giga-Fortress/FXJapanPearlLaser02.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUFortressShip" File="ART:Units/Giga-Fortress/JUFortressShip.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUFortressShip_D" File="ART:Units/Giga-Fortress/JUFortressShip_D.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUFortressShip_NRM" File="ART:Units/Giga-Fortress/JUFortressShip_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUFortressShip_SPM" File="ART:Units/Giga-Fortress/JUFortressShip_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

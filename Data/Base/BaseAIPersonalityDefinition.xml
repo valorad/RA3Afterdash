@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<AIPersonalityDefinition
+		id="BasePersonality"
+		PersonalityType="BasePersonality"
+		SkirmishPersonality="false"
+		SecondsTillTargetsExpire="5"
+		DesiredExcessPowerBuffer="100"
+		BaseCompactness="0.75"
+		UnitBuilderOverallDefensivePreference="25%"
+		UnitBuilderEnemyNearbyDistance="800.0"
+		UnitBuilderEnemyNearbyMultiplier="4"
+		ResourceNodeSearchRadius="700"
+		ResourceNodeValueRemainingForExpansion="22000"
+		RefineryPlacementStartDistanceDelta="-30.0"
+		RefineryPlacementIncreaseTickAmount="30.0"
+		RefineryPlacementNumberOfIncreaseTicksBeforeGivingUp="15"
+		ReactiveDefenseRadius="750"
+		RepairBuildingsAtDifficulty="MEDIUM HARD BRUTAL"
+		ConyardInDangerEmergencyUnderAttackTime="5s"
+		ConyardInDangerEmergencyHealthPercent="70%"
+		ConyardInDangerEmergencyEngineerDistance="175.0"
+		CleanupRefineries="true"
+		BuildTechEfficiencyThreshold="0.5"
+		BuildTechMinPowerAdvantage="1.25"
+		DefaultThreatFindRadius="300.0"
+		EnemySortingBrutalDifficulty="NearestFirst_BreakTies"
+		EnemySortingHardDifficulty="NearestFirst_BreakTies" 
+		EnemySortingMediumDifficulty="Flat"
+		EnemySortingEasyDifficulty="StrongestFirst_AllowTies"
+		EnemyResortingTime="15s"
+		MaxWallDestroyTimeToCountAsGoThroughWalls="10s">
+		<!-- Handles Fighter Aircraft that havne't been picked up for an offensive team -->
+		<StrategicState id="ScoutAircraft" State="ScoutAircraft" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Grabs idle engineers and sends them back to base.  This only happens in a few situations such as a tech building was destroyed
+		while an engineer was on its way to capture it. -->
+		<StrategicState id="EngineerIdle" State="EngineerIdle" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- All sides need this in case they capture a Japanese ConYard. Also, this unpacks the MCVs for every side
+		for times when the Emergency Manager needs to build a new ConYard. -->
+		<StrategicState id="JapanEggUnpacker" State="JapanEggUnpacker" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Manages harvesters for all sides -->
+		<StrategicState id="HarvesterController" State="HarvesterController" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Manages base defenses for all sides (for now, anyways) -->
+		<StrategicState id="BaseDefenseController" State="BaseDefenseController" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<BudgetState id="OpeningMoveBudget" State="OpeningMoveBudget" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- By default, which base does a EndBehavior="RETURN_HOME_AND_DISBAND" tactic go home to? -->
+		<DefaultTacticHomeBaseCriteria PreferredNotBaseTypes="CAPTURED" SortOrder="PREFER_CLOSEST" />
+		
+		<!-- As far as the Japanese are concerned, building an egg is the same as building a structure, in terms of priority -->
+		<CountAsStructureForBuildPurposesFilter
+			Rule="ANY"
+			Include="STRUCTURE UNPACKS_INTO_BUILDING" >
+			<!-- But expansion tactics don't get priority over other needed builds, even if though it happens that
+			these units are unpacks-into-building types -->
+			<ExcludeThing>AlliedMiner</ExcludeThing>
+			<ExcludeThing>SovietSurveyor</ExcludeThing>
+			<!-- The refinery egg is a little tricky, since sometimes it's part of an expansion tactic, and other times
+			we're just trying to get a refinery up. But let's leave it as a unit for now, to avoid problems with the
+			expansion tactic. Hacky, but what can you do? -->
+			<ExcludeThing>JapanRefineryEgg</ExcludeThing>
+			<ExcludeThing>JapanFortressShipEgg</ExcludeThing>
+		</CountAsStructureForBuildPurposesFilter>
+	</AIPersonalityDefinition>
+	
+	<AIPersonalityDefinition
+		id="CoopBasePersonality"
+		PersonalityType="CoopBasePersonality"
+		inheritFrom="BasePersonality"
+		AssaultBeaconRadius="250.0"
+		HoldObjectBeaconRadius="250.0"
+		HoldPositionBeaconRadius="250.0"
+		EmergencyManagerHandleNoIncomeAtDifficulty="EASY MEDIUM HARD BRUTAL"
+		EmergencyManagerHandleNoConyardAtDifficulty="EASY MEDIUM HARD BRUTAL"
+		EmergencyManagerHandleUnderAttackAtDifficulty="EASY MEDIUM HARD BRUTAL"
+		SkirmishTimeTillGreeting="1.5s"
+		CoopPersonality="true">
+		<ResourceMultiplierCheat Percentage="100%" Difficulty="EASY"/>
+		<ResourceMultiplierCheat Percentage="200%" Difficulty="BRUTAL"/>
+		
+		<BudgetState id="CoopBudget" State="CoopBudget" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BudgetState id="DefenseBudget" State="DefenseBudget" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BudgetState id="HeavyDefenseBudget" State="HeavyDefenseBudget" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Command Behavior -->
+		<StrategicState id="CommandAssault_Gather_Land" State="CommandAssault_Gather_Land" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandAssault_Gather_Water" State="CommandAssault_Gather_Water" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandAssault_Land" State="CommandAssault_Land" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandAssault_Water" State="CommandAssault_Water" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandAssault_FighterAircraft" State="CommandAssault_FighterAircraft" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandAssault_BomberAircraft" State="CommandAssault_BomberAircraft" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="CommandHold_Land" State="CommandHold_Land" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandHold_Water" State="CommandHold_Water" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandHold_BomberAircraft" State="CommandHold_BomberAircraft" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandHold_FighterAircraft" State="CommandHold_FighterAircraft" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="Command_StrikeTarget_Land" State="Command_StrikeTarget_Land" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="Command_StrikeTarget_Water" State="Command_StrikeTarget_Water" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="Command_StrikeTarget_BomberAircraft" State="Command_StrikeTarget_BomberAircraft" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Miscellaneous Behaviors -->
+		<StrategicState id="CaptureLandHusks" State="CaptureLandHusks" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="AttachedBurstDroneRemoval" State="AttachedBurstDroneRemoval" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- StrategicDirective Feedback-->
+	  
+		<!-- Assault Feedback -->
+		<StrategicDirectiveFeedback
+			StrategicDirective="Assault"
+			Event="Begin" 
+			FeedbackKey="PlanAttackBeaconPlaced"/>
+		<StrategicDirectiveFeedback
+			StrategicDirective="Assault"
+			Event="Complete"
+			FeedbackKey="PlanAttackOrderComplete"/>
+		<StrategicDirectiveFeedback
+			StrategicDirective="Assault"
+			Event="Cancel"
+			FeedbackKey="OrderCanceled"/>
+			
+		<!-- TakePosition Feedback -->
+		<StrategicDirectiveFeedback
+			StrategicDirective="HoldPosition"
+			Event="Begin"
+			FeedbackKey="TakePositionBeaconPlaced"/>
+		<StrategicDirectiveFeedback
+			StrategicDirective="HoldPosition"
+			Event="Complete"
+			FeedbackKey="TakePositionOrderComplete"/>
+		<StrategicDirectiveFeedback
+			StrategicDirective="HoldPosition"
+			Event="Cancel"
+			FeedbackKey="OrderCanceled"/>
+			
+		<!-- StrikeTarget Feedback -->
+		<StrategicDirectiveFeedback
+			StrategicDirective="HoldObject"
+			Event="Begin"
+			FeedbackKey="StrikeTargetBeaconPlaced"/>
+		<StrategicDirectiveFeedback
+			StrategicDirective="HoldObject"
+			Event="Complete"
+			FeedbackKey="StrikeTargetOrderComplete"/>
+		<StrategicDirectiveFeedback
+			StrategicDirective="HoldObject"
+			Event="Cancel"
+			FeedbackKey="OrderCanceled"/>
+	  
+		<!-- There is no Feedback for Normal -->
+		
+		<!-- Feedback for Skirmish / MP Game Events -->
+		<!-- For now, this is mostly just a way of translating enum values into StringHashs. Doesn't really 
+		add much but makes the code easier. :-P -->
+		<SkirmishGameEventFeedback
+			Event="StartGame"
+			FeedbackKey="StartGame" />
+		<SkirmishGameEventFeedback
+			Event="InTrouble"
+			FeedbackKey="InTrouble" />
+		<SkirmishGameEventFeedback
+			Event="FirstSeen"
+			FeedbackKey="FirstSeen" />
+		<SkirmishGameEventFeedback
+			Event="DefeatedLocalPlayer"
+			FeedbackKey="DefeatedLocalPlayer" />
+		<SkirmishGameEventFeedback
+			Event="DefeatedByLocalPlayer"
+			FeedbackKey="DefeatedByLocalPlayer" />
+		<SkirmishGameEventFeedback
+			Event="Lost"
+			FeedbackKey="Lost" />
+			
+		<!-- Control when the InTrouble event is triggered -->
+		<InTroubleSkirmishFeedbackControl
+			OnlyIfLocalPlayerIs="ALLIES"
+			TimeoutAfterPlaying="600s"
+			TimeBetweenScans="5s"
+			TimeThatConditionsMustBeMet="10s"
+			NumberOfObjectsRecentlyLost="3"
+			TimeForNumberOfObjectLost="120s"
+			ObjectLostFilter="SkirmishAIInTroubleObjectList_ImportantStrctures" 
+			MinPowerAdvantageEnemiesInMyBaseVsAllMyUnits="1.2" />
+	</AIPersonalityDefinition>
+	
+	
+	
+	<!-- Allies -->
+	<AIPersonalityDefinition
+		id="AlliedCoopBasePersonality"
+		PersonalityType="AlliedCoopBasePersonality"
+		inheritFrom="CoopBasePersonality"
+		BaseCompactness="0.5">
+		<Side>Allies</Side>
+		
+		<StrategicState id="AlliedExpansion" State="AlliedExpansion" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="AlliedNavalBase" State="AlliedNavalBase" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="AlliedCaptureTech" State="AlliedCaptureTech" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="AlliedCaptureWaterHusks" State="AlliedCaptureWaterHusks" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<BuildState id="AlliedDefenseBuildState" State="AlliedDefenseBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedNeededUnits_Upheaval" State="AlliedNeededUnits_Upheaval" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Defensive modifier on infantry accounting for low speed and crushability -->
+		<UnitModifier Unit="AlliedScoutInfantry" OffensiveModifier="0.5" DefensiveModifier="0.5"/> <!-- Dogs offense not as good as the AI thinks because they do overkill -->
+		<UnitModifier Unit="AlliedAntiInfantryInfantry" OffensiveModifier="1.0" DefensiveModifier="0.2"/>
+		<UnitModifier Unit="AlliedAntiVehicleInfantry" OffensiveModifier="0.8" DefensiveModifier="0.2"/>
+		<UnitModifier Unit="AlliedLegionnaireInfantry" OffensiveModifier="3.0" DefensiveModifier="2.0"/>
+		<UnitModifier Unit="AlliedCommandoTech1" OffensiveModifier="5.0" DefensiveModifier="5.0"/> <!-- Commandos are good.  You pretty much always want them. -->
+		
+		<UnitModifier Unit="AlliedAntiInfantryVehicle_Ground" OffensiveModifier="1.5" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="AlliedAntiAirVehicleTech1" OffensiveModifier="1.0" DefensiveModifier="1.0"/> <!-- The AI can't use all the IFV's weapons at once -->
+		<UnitModifier Unit="AlliedAntiVehicleVehicleTech1" OffensiveModifier="5.5" DefensiveModifier="2.0"/> <!-- Tanks can crush, reverse move, are robust, and generally very good -->
+		<UnitModifier Unit="AlliedAntiVehicleVehicleTech3" OffensiveModifier="6.0" DefensiveModifier="2.0"/> <!-- Tanks can crush, reverse move, are robust, and generally very good -->
+		<UnitModifier Unit="AlliedAntiStructureVehicle" OffensiveModifier="15.0" DefensiveModifier="1.0"/> <!-- The Athena cannon has a wierd DoT weapon.  This brings it close to its true damage -->
+		<UnitModifier Unit="AlliedArtilleryVehicle" OffensiveModifier="6.5" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="AlliedFutureTank" OffensiveModifier="7.0" DefensiveModifier="2.0"/>
+		
+		<UnitModifier Unit="AlliedAntiInfantryVehicle" OffensiveModifier="1.5" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="AlliedAntiAirShip" OffensiveModifier="0.5" DefensiveModifier="1.0"/>
+		
+		<UnitModifier Unit="AlliedFighterAircraft" OffensiveModifier="3.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="AlliedBomberAircraft" OffensiveModifier="3.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="AlliedGunshipAircraft" OffensiveModifier="1.0" DefensiveModifier="1.0"/>	  
+		
+		<!-- Player Tech -->
+		
+		<!-- Tier 1 -->
+		<PowerChoice PlayerPower="PlayerTech_Allied_AirPower" Weight="100%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_SatelliteSweep" Weight="100%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_HighTechnology" Weight="100%"/>
+		
+		<!-- Tier 2 -->
+		<PowerChoice PlayerPower="PlayerTech_Allied_PrecisionStrike" Weight="200%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_ChronoRift_Rank1" Weight="200%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_ChronoSwap" Weight="200%"/>
+		
+		<!-- Tier 3 -->
+		<PowerChoice PlayerPower="PlayerTech_Allied_TimeBomb_Rank1" Weight="300%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_ChronoRift_Rank2" Weight="300%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_CryoSatellite_Rank1" Weight="300%"/>
+		
+		<!-- Tier 4 -->
+		<PowerChoice PlayerPower="PlayerTech_Allied_TimeBomb_Rank2" Weight="400%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_ChronoRift_Rank3" Weight="400%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_CryoSatellite_Rank2" Weight="400%"/>
+		
+		<!-- Tier 5 -->
+		<PowerChoice PlayerPower="PlayerTech_Allied_TimeBomb_Rank3" Weight="500%"/>
+		<PowerChoice PlayerPower="PlayerTech_ProductionBonus_Allies" Weight="500%"/>
+		<PowerChoice PlayerPower="PlayerTech_Allied_CryoSatellite_Rank3" Weight="500%"/>
+	</AIPersonalityDefinition>
+	
+	<AIPersonalityDefinition
+		id="AlliedCoopBaseSkirmishPersonality"
+		PersonalityType="AlliedCoopBaseSkirmishPersonality"
+		inheritFrom="AlliedCoopBasePersonality"
+		EmergencyManagerHandleConyardInDangerAtDifficulty="MEDIUM HARD BRUTAL">
+		<!-- Defense States -->
+
+		<StrategicState id="LandDefense" State="LandDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="WaterDefense" State="WaterDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="LandDefense_MEDIUM" State="LandDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="WaterDefense_MEDIUM" State="WaterDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="LandDefense_EASY" State="LandDefense_EASY" Difficulty="EASY"/>
+		<StrategicState id="WaterDefense_EASY" State="WaterDefense_EASY" Difficulty="EASY"/>
+		
+		<StrategicState id="LandEmergencyDefense" State="LandEmergencyDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="WaterEmergencyDefense" State="WaterEmergencyDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="LandEmergencyDefense_MEDIUM" State="LandEmergencyDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="WaterEmergencyDefense_MEDIUM" State="WaterEmergencyDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="LandEmergencyDefense_EASY" State="LandEmergencyDefense_EASY" Difficulty="EASY"/>
+		<StrategicState id="WaterEmergencyDefense_EASY" State="WaterEmergencyDefense_EASY" Difficulty="EASY"/>
+		
+		<!-- General Skirmish States -->
+		
+		<StrategicState id="Cleanup" State="Cleanup" Difficulty="EASY MEDIUM HARD"/>
+		<StrategicState id="Cleanup_BRUTAL" State="Cleanup_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="RetreatMCVToLand" State="RetreatMCVToLand" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="RetreatMCVToWater" State="RetreatMCVToWater" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="EscortMCV" State="EscortMCV" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="BombardmentShipAttack" State="BombardmentShipAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="TanyaController" State="TanyaController" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="AlliedStealthDetector" State="AlliedStealthDetector" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="CratePickup" State="CratePickup" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Aircraft Offensive States -->
+		
+		<StrategicState id="FighterAircraftFlankAttack" State="FighterAircraftFlankAttack" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="FighterAircraft_MEDIUM" State="FighterAircraft_MEDIUM" Difficulty="EASY MEDIUM"/>
+		
+		<StrategicState id="VindicatorDefense" State="VindicatorDefense" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="VindicatorAttack" State="VindicatorAttack" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="VindicatorAttack_MEDIUM" State="VindicatorAttack_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="VindicatorAttack_EASY" State="VindicatorAttack_EASY" Difficulty="EASY"/>
+		
+		<StrategicState id="CenturyBomberAttack" State="CenturyBomberAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Island States -->
+		<StrategicState id="AlliedTransportAttack" State="AlliedTransportAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Removed Strategic States-->
+		<StrategicState id="AlliedNavalBase" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		<StrategicState id="AlliedExpansion" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		<StrategicState id="AlliedCaptureTech" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		
+		<StrategicState id="AlliedExpansion_MEDIUM" State="AlliedExpansion_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="AlliedExpansion_HARD" State="AlliedExpansion_HARD" Difficulty="HARD"/>
+		<StrategicState id="AlliedExpansion_BRUTAL" State="AlliedExpansion_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="AlliedCaptureTech_EASY" State="AlliedCaptureTech_EASY" Difficulty="EASY"/>
+		<StrategicState id="AlliedCaptureTech_MEDIUM" State="AlliedCaptureTech_MEDIUM" Difficulty="MEDIUM"/>
+		
+		<StrategicState id="AlliedCapturePriorityTech_HARD" State="AlliedCapturePriorityTech_HARD" Difficulty="HARD"/>
+		<StrategicState id="AlliedCaptureNonPriorityTech_HARD" State="AlliedCaptureNonPriorityTech_HARD" Difficulty="HARD"/>
+		
+		<StrategicState id="AlliedCapturePriorityTech_BRUTAL" State="AlliedCapturePriorityTech_BRUTAL" Difficulty="BRUTAL"/>
+		<StrategicState id="AlliedCaptureNonPriorityTech_BRUTAL" State="AlliedCaptureNonPriorityTech_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="AlliedCaptureVehicleHealTech" State="AlliedCaptureVehicleHealTech" Difficulty="HARD BRUTAL"/>
+		
+		<!-- Build States -->
+		<BuildState id="AlliedNonPathDependentStructureBuildState" State="AlliedNonPathDependentStructureBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedTechBuildState" State="AlliedTechBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedTechBuildState_EASY" State="AlliedTechBuildState_EASY" Difficulty="EASY"/>
+		
+		<BuildState id="AlliedLandUnitBuildState_Upheaval" State="AlliedLandUnitBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedWaterUnitBuildState" State="AlliedWaterUnitBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedAmphibiousUnitBuildState_Upheaval" State="AlliedAmphibiousUnitBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedAntiInfantryOnlyBuildState" State="AlliedAntiInfantryOnlyBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedAntiAirOnlyBuildState" State="AlliedAntiAirOnlyBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="AlliedAntiGroundAircraftBuildState_Upheaval" State="AlliedAntiGroundAircraftBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<BuildState id="AlliedBarracksBuildState_RANDOM_Upheaval" State="AlliedBarracksBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		<BuildState id="AlliedWarFactoryBuildState_RANDOM_Upheaval" State="AlliedWarFactoryBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		<BuildState id="AlliedNavalYardBuildState_RANDOM" State="AlliedNavalYardBuildState_RANDOM" Difficulty="EASY"/>
+		<BuildState id="AlliedAirfieldBuildState_RANDOM_Upheaval" State="AlliedAirfieldBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		
+		<!-- Caps for difficulty -->
+		<SpecificUnitCap Unit="AlliedFighterAircraft" Cap="0" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="AlliedAntiGroundAircraft" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="AlliedSupportAircraft" Cap="2" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="AlliedBomberAircraft" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="AlliedAntiStructureShip" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="AlliedCommandoTech1" Cap="0" Difficulty="EASY"/>
+		
+		<SpecificUnitCap Unit="AlliedFighterAircraft" Cap="2" Difficulty="MEDIUM"/>
+		
+		<!-- At a certain point, we don't need any more of these because they are very limited in use. -->
+		<SpecificUnitCap Unit="AlliedScoutInfantry" Cap="6" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- At a certain point, we just don't need any more of these since they can't actually do damage -->
+		<SpecificUnitCap Unit="AlliedSupportAircraft" Cap="10" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- We need caps for all land-only and water-only units to protect against situations where those units can no longer path to the enemy.
+		We try to protect against that as much as possible but this is the safety-net.  At a certain point, the AI should just spam amphibious
+		or air units which are always a safe bet. -->
+		<SpecificUnitCap Unit="AlliedAntiInfantryInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="AlliedAntiVehicleInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="AlliedAntiVehicleVehicleTech1" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="AlliedAntiAirVehicleTech1" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="AlliedAntiVehicleVehicleTech3" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="AlliedAntiStructureVehicle" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="AlliedAntiNavalScout" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="AlliedAntiAirShip" Cap="15" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="AlliedAntiStructureShip" Cap="6" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+	</AIPersonalityDefinition>
+	
+	
+	
+	<!-- Japan -->
+	<AIPersonalityDefinition
+		id="JapanCoopBasePersonality"
+		PersonalityType="JapanCoopBasePersonality"
+		inheritFrom="CoopBasePersonality"
+		BaseCompactness="1.0">
+		<Side>Japan</Side>
+		
+		<StrategicState id="JapanExpansion" State="JapanExpansion" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="JapanCaptureTech" State="JapanCaptureTech" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="JapanCaptureWaterHusks" State="JapanCaptureWaterHusks" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<BuildState id="JapanDefenseBuildState" State="JapanDefenseBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BuildState id="JapanNeededUnits_Upheaval" State="JapanNeededUnits_Upheaval" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<UnitModifier Unit="JapanScoutInfantry" OffensiveModifier="0.5" DefensiveModifier="0.5"/>
+		<UnitModifier Unit="JapanAntiInfantryInfantry" OffensiveModifier="1.0" DefensiveModifier="0.2"/>
+		<UnitModifier Unit="JapanAntiVehicleInfantry" OffensiveModifier="1.0" DefensiveModifier="0.2"/>
+		<UnitModifier Unit="JapanArcherInfantry" OffensiveModifier="1.5" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="JapanAntiVehicleInfantryTech3" OffensiveModifier="1.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="JapanCommandoTech1" OffensiveModifier="5.0" DefensiveModifier="5.0"/> <!-- Commandos are good.  You pretty much always want them. -->
+		
+		<UnitModifier Unit="JapanAntiInfantryVehicle" OffensiveModifier="1.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="JapanAntiAirVehicleTech1" OffensiveModifier="1.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="JapanAntiVehicleVehicleTech1" OffensiveModifier="5.5" DefensiveModifier="2.0"/> <!-- Tanks can crush, reverse move, are robust, and generally very good -->
+		<UnitModifier Unit="JapanSentinelVehicle" OffensiveModifier="6.0" DefensiveModifier="2.0"/>
+		<UnitModifier Unit="JapanAntiVehicleVehicleTech3" OffensiveModifier="6.5" DefensiveModifier="2.0"/> <!-- Tanks can crush, reverse move, are robust, and generally very good -->
+		<UnitModifier Unit="JapanAntiStructureVehicle" OffensiveModifier="3.0" DefensiveModifier="1.0"/> <!-- Extreme range makes artillery much more powerful -->
+		
+		<!-- There is never a reason to have more than 1 of these -->
+		<SpecificUnitCap Unit="JapanTechStructureEgg" Cap="1" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="JapanRefineryEgg" Cap="1" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Don't go too crazy with base defenses.  This isn't a cap on how many defenses it can build, only a cap on how many it can try simulaneously.  This prevents the AI
+		from over-responding to minor threats. -->
+		<SpecificUnitCap Unit="JapanBaseDefenseEgg" Cap="3" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="JapanBaseDefenseAdvancedEgg" Cap="2" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Player Tech -->
+		
+		<!-- Tier 1 -->
+		<PowerChoice PlayerPower="PlayerTech_Japan_NavalPower" Weight="100%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_EnhancedKamikaze" Weight="100%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_AdvancedMissilePacks" Weight="100%"/>
+		
+		<!-- Tier 2 -->
+		<PowerChoice PlayerPower="PlayerTech_Japan_PointDefenseDrones" Weight="200%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_EmperorsRage_Rank1" Weight="200%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_Ambush" Weight="200%"/>
+		
+		<!-- Tier 3 -->
+		<PowerChoice PlayerPower="PlayerTech_Japan_FinalSquadron_Rank1" Weight="300%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_EmperorsRage_Rank2" Weight="300%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_BalloonAttack_Rank1" Weight="300%"/>
+		
+		<!-- Tier 4 -->
+		<PowerChoice PlayerPower="PlayerTech_Japan_FinalSquadron_Rank2" Weight="400%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_EmperorsRage_Rank3" Weight="400%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_BalloonAttack_Rank2" Weight="400%"/>
+		
+		<!-- Tier 5 -->
+		<PowerChoice PlayerPower="PlayerTech_Japan_FinalSquadron_Rank3" Weight="500%"/>
+		<PowerChoice PlayerPower="PlayerTech_ProductionBonus_Japan" Weight="500%"/>
+		<PowerChoice PlayerPower="PlayerTech_Japan_BalloonAttack_Rank3" Weight="500%"/>
+	</AIPersonalityDefinition>
+	
+	<AIPersonalityDefinition
+		id="JapanCoopBaseSkirmishPersonality"
+		PersonalityType="JapanCoopBaseSkirmishPersonality"
+		inheritFrom="JapanCoopBasePersonality"
+		EmergencyManagerHandleConyardInDangerAtDifficulty="MEDIUM HARD BRUTAL">
+		<!-- Defense States -->
+		
+		<StrategicState id="LandDefense" State="LandDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="WaterDefense" State="WaterDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="LandDefense_MEDIUM" State="LandDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="WaterDefense_MEDIUM" State="WaterDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="LandDefense_EASY" State="LandDefense_EASY" Difficulty="EASY"/>
+		<StrategicState id="WaterDefense_EASY" State="WaterDefense_EASY" Difficulty="EASY"/>
+		
+		<StrategicState id="LandEmergencyDefense" State="LandEmergencyDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="WaterEmergencyDefense" State="WaterEmergencyDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="LandEmergencyDefense_MEDIUM" State="LandEmergencyDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="WaterEmergencyDefense_MEDIUM" State="WaterEmergencyDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="LandEmergencyDefense_EASY" State="LandEmergencyDefense_EASY" Difficulty="EASY"/>
+		<StrategicState id="WaterEmergencyDefense_EASY" State="WaterEmergencyDefense_EASY" Difficulty="EASY"/>
+		
+		<!-- General Skirmish States -->
+		<StrategicState id="Cleanup" State="Cleanup" Difficulty="EASY MEDIUM HARD"/>
+		<StrategicState id="Cleanup_BRUTAL" State="Cleanup_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="RetreatMCVToLand" State="RetreatMCVToLand" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="RetreatMCVToWater" State="RetreatMCVToWater" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="EscortMCV" State="EscortMCV" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="BombardmentShipAttack" State="BombardmentShipAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandoController" State="CommandoController" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="JapanStealthDetector" State="JapanStealthDetector" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="CratePickup" State="CratePickup" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Island States -->
+		<StrategicState id="JapanTransportAttack" State="JapanTransportAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Removed Strategic States-->
+		<StrategicState id="JapanExpansion" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		<StrategicState id="JapanCaptureTech" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		
+		<StrategicState id="JapanExpansion_MEDIUM" State="JapanExpansion_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="JapanExpansion_HARD" State="JapanExpansion_HARD" Difficulty="HARD"/>
+		<StrategicState id="JapanExpansion_BRUTAL" State="JapanExpansion_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="JapanCaptureTech_EASY" State="JapanCaptureTech_EASY" Difficulty="EASY"/>
+		<StrategicState id="JapanCaptureTech_MEDIUM" State="JapanCaptureTech_MEDIUM" Difficulty="MEDIUM"/>
+		
+		<StrategicState id="JapanCapturePriorityTech_HARD" State="JapanCapturePriorityTech_HARD" Difficulty="HARD"/>
+		<StrategicState id="JapanCaptureNonPriorityTech_HARD" State="JapanCaptureNonPriorityTech_HARD" Difficulty="HARD"/>
+		
+		<StrategicState id="JapanCapturePriorityTech_BRUTAL" State="JapanCapturePriorityTech_BRUTAL" Difficulty="BRUTAL"/>
+		<StrategicState id="JapanCaptureNonPriorityTech_BRUTAL" State="JapanCaptureNonPriorityTech_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="JapanCaptureVehicleHealTech" State="JapanCaptureVehicleHealTech" Difficulty="HARD BRUTAL"/>
+		
+		<!-- Build States -->
+		<BuildState id="JapanNonPathDependentStructureBuildState" State="JapanNonPathDependentStructureBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BuildState id="JapanTechBuildState" State="JapanTechBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="JapanTechBuildState_EASY" State="JapanTechBuildState_EASY" Difficulty="EASY"/>
+		
+		<BuildState id="JapanLandUnitBuildState_Upheaval" State="JapanLandUnitBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="JapanWaterUnitBuildState" State="JapanWaterUnitBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="JapanAmphibiousUnitBuildState_Upheaval" State="JapanAmphibiousUnitBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>   
+		
+		<BuildState id="JapanBarracksBuildState_RANDOM_Upheaval" State="JapanBarracksBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		<BuildState id="JapanWarFactoryBuildState_RANDOM_Upheaval" State="JapanWarFactoryBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		<BuildState id="JapanNavalYardBuildState_RANDOM_Upheaval" State="JapanNavalYardBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		
+		<!-- Caps for difficulty -->
+		<SpecificUnitCap Unit="JapanAntiStructureShip" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="JapanInfiltrationInfantry" Cap="0" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="JapanCommandoTech1" Cap="0" Difficulty="EASY"/>
+		
+		<!-- At a certain point, we just don't need any more of these since they can't double-up on targets-->
+		<SpecificUnitCap Unit="JapanScoutInfantry" Cap="8" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="JapanInfiltrationInfantry" Cap="8" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+			
+		<SpecificUnitCap Unit="JapanLightTransportVehicle" Cap="2" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- We need caps for all land-only and water-only units to protect against situations where those units can no longer path to the enemy.
+		We try to protect against that as much as possible but this is the safety-net.  At a certain point, the AI should just spam amphibious
+		or air units which are always a safe bet. -->
+		<SpecificUnitCap Unit="JapanAntiInfantryInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="JapanAntiVehicleInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="JapanAntiVehicleVehicleTech3" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="JapanAntiStructureVehicle" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="JapanNavyScoutShip" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="JapanAntiVehicleShip" Cap="15" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="JapanAntiStructureShip" Cap="6" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+	</AIPersonalityDefinition>
+	
+	
+	
+	<!-- Soviet -->
+	<AIPersonalityDefinition
+		id="SovietCoopBasePersonality"
+		PersonalityType="SovietCoopBasePersonality"
+		inheritFrom="CoopBasePersonality">
+		<Side>Soviet</Side>
+		
+		<StrategicState id="SovietExpansion" State="SovietExpansion" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="SovietNavalBase" State="SovietNavalBase" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="SovietCaptureTech" State="SovietCaptureTech" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="SovietCaptureWaterHusks" State="SovietCaptureWaterHusks" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<BuildState id="SovietDefenseBuildState" State="SovietDefenseBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietNeededUnits_Upheaval" State="SovietNeededUnits_Upheaval" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Defensive modifier on infantry accounting for low speed and crushability -->
+		<UnitModifier Unit="SovietScoutInfantry" OffensiveModifier="0.5" DefensiveModifier="0.5"/> <!-- Bears offense not as good as the AI thinks because they do overkill -->
+		<UnitModifier Unit="SovietAntiInfantryInfantry" OffensiveModifier="1.0" DefensiveModifier="0.2"/>
+		<UnitModifier Unit="SovietAntiVehicleInfantry" OffensiveModifier="0.8" DefensiveModifier="0.2"/>
+		<UnitModifier Unit="SovietHeavyAntiVehicleInfantry" OffensiveModifier="1.0" DefensiveModifier="0.5"/> <!-- Can't be crushed -->
+		<UnitModifier Unit="SovietMortarcycle" OffensiveModifier="1.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="SovietDesolatorInfantry" OffensiveModifier="3.0" DefensiveModifier="1.0"/> <!-- Can't be crushed -->
+		<UnitModifier Unit="SovietCommandoTech1" OffensiveModifier="5.0" DefensiveModifier="5.0"/> <!-- Commandos are good.  You pretty much always want them. -->
+		
+		<UnitModifier Unit="SovietAntiInfantryVehicle" OffensiveModifier="1.5" DefensiveModifier="1.0"/> <!-- Sickle's Jump ability is a big offensive boost -->
+		<UnitModifier Unit="SovietHeavyWalkerVehicle" OffensiveModifier="3.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="SovietAntiAirShip_Ground" OffensiveModifier="1.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="SovietScoutVehicle" OffensiveModifier="1.0" DefensiveModifier="0.75"/> <!-- Terror Drones have poor range, can't attack structures and multiple cannot attack the same unit -->
+		<UnitModifier Unit="SovietAntiVehicleVehicleTech1" OffensiveModifier="5.5" DefensiveModifier="2.0"/> <!-- Tanks can crush, reverse move, are robust, and generally very good -->
+		<UnitModifier Unit="SovietGrinderVehicle" OffensiveModifier="6.0" DefensiveModifier="2.0"/>
+		<UnitModifier Unit="SovietAntiVehicleVehicleTech3" OffensiveModifier="6.5" DefensiveModifier="2.0"/> <!-- Tanks can crush, reverse move, are robust, and generally very good -->
+		<UnitModifier Unit="SovietAntiStructureVehicle" OffensiveModifier="3.0" DefensiveModifier="1.0"/> <!-- Extreme range makes artillery much more powerful -->
+		
+		<UnitModifier Unit="SovietAntiNavyShipTech1" OffensiveModifier="0.75" DefensiveModifier="0.75"/>
+		
+		<UnitModifier Unit="SovietFighterAircraft" OffensiveModifier="3.0" DefensiveModifier="1.0"/>
+		<UnitModifier Unit="SovietBomberAircraft" OffensiveModifier="1.0" DefensiveModifier="1.0"/> <!-- The Kirov's horrendous speed negates most of its high hitpoints -->
+		
+		<SpecificUnitCap Unit="SovietSurveyor" Cap="1" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Player Tech -->
+		
+		<!-- Tier 1 -->
+		<PowerChoice PlayerPower="PlayerTech_Soviet_TerrorDroneEggs" Weight="100%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_ProductionKickbacks" Weight="100%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_CrushPuppies" Weight="100%"/>
+		
+		<!-- Tier 2 -->
+		<PowerChoice PlayerPower="PlayerTech_Soviet_IrradiateTarget" Weight="200%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_DesolatorBomb_Rank1" Weight="200%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSatellite_Rank_1" Weight="200%"/>
+		
+		<!-- Tier 3 -->
+		<PowerChoice PlayerPower="PlayerTech_Soviet_OrbitalRefuse_Rank1" Weight="300%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_DesolatorBomb_Rank2" Weight="300%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSatellite_Rank_2" Weight="300%"/>
+		
+		<!-- Tier 4 -->
+		<PowerChoice PlayerPower="PlayerTech_Soviet_OrbitalRefuse_Rank2" Weight="400%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_DesolatorBomb_Rank3" Weight="400%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSatellite_Rank_3" Weight="400%"/>
+		
+		<!-- Tier 5 -->
+		<PowerChoice PlayerPower="PlayerTech_Soviet_OrbitalRefuse_Rank3" Weight="500%"/>
+		<PowerChoice PlayerPower="PlayerTech_ProductionBonus_Soviet" Weight="500%"/>
+		<PowerChoice PlayerPower="PlayerTech_Soviet_MagneticSingularity" Weight="500%"/>
+	</AIPersonalityDefinition>
+	
+	<AIPersonalityDefinition
+		id="SovietCoopBaseSkirmishPersonality"
+		PersonalityType="SovietCoopBaseSkirmishPersonality"
+		inheritFrom="SovietCoopBasePersonality"
+		EmergencyManagerHandleConyardInDangerAtDifficulty="MEDIUM HARD BRUTAL">
+		<OpeningMove Name="SovietStandard_EASY" Weight="100%" Difficulty="EASY">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="true" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<OpeningMove Name="SovietIsland_EASY" Weight="100%" Difficulty="EASY">
+			<Heuristic>
+				<PathToTargetHeuristic PathExists="false" ObjectTypeToUseForTest="SovietAntiInfantryInfantry" LocomotorConditionToUseForTest="NORMAL" />
+			</Heuristic>
+		</OpeningMove>
+		
+		<!-- Defense States -->
+		<StrategicState id="LandDefense" State="LandDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="WaterDefense" State="WaterDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="LandDefense_MEDIUM" State="LandDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="WaterDefense_MEDIUM" State="WaterDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="LandDefense_EASY" State="LandDefense_EASY" Difficulty="EASY"/>
+		<StrategicState id="WaterDefense_EASY" State="WaterDefense_EASY" Difficulty="EASY"/>
+		
+		<StrategicState id="LandEmergencyDefense" State="LandEmergencyDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="WaterEmergencyDefense" State="WaterEmergencyDefense" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="LandEmergencyDefense_MEDIUM" State="LandEmergencyDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="WaterEmergencyDefense_MEDIUM" State="WaterEmergencyDefense_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="LandEmergencyDefense_EASY" State="LandEmergencyDefense_EASY" Difficulty="EASY"/>
+		<StrategicState id="WaterEmergencyDefense_EASY" State="WaterEmergencyDefense_EASY" Difficulty="EASY"/>
+		
+		<!-- General Skirmish States -->
+		<StrategicState id="Cleanup" State="Cleanup" Difficulty="EASY MEDIUM HARD"/>
+		<StrategicState id="Cleanup_BRUTAL" State="Cleanup_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="RetreatMCVToLand" State="RetreatMCVToLand" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="RetreatMCVToWater" State="RetreatMCVToWater" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="EscortMCV" State="EscortMCV" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="BombardmentShipAttack" State="BombardmentShipAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<StrategicState id="CommandoController" State="CommandoController" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="SovietStealthDetector" State="SovietStealthDetector" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="CratePickup" State="CratePickup" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Aircraft Offensive States -->
+		<StrategicState id="FighterAircraftFlankAttack" State="FighterAircraftFlankAttack" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="FighterAircraft_MEDIUM" State="FighterAircraft_MEDIUM" Difficulty="EASY MEDIUM"/>
+		
+		<StrategicState id="TwinbladeHarrassment_EASY" State="TwinbladeHarrassment_EASY" Difficulty="EASY"/>
+		<StrategicState id="TwinbladeHarrassment" State="TwinbladeHarrassment" Difficulty="MEDIUM HARD BRUTAL"/>
+		<StrategicState id="KirovFlankAttack" State="KirovFlankAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<StrategicState id="TerrorDroneHarrassment" State="TerrorDroneHarrassment" Difficulty="HARD BRUTAL"/>
+		<StrategicState id="TerrorDroneHarrassment_MEDIUM" State="TerrorDroneHarrassment_MEDIUM" Difficulty="EASY MEDIUM"/>
+		
+		<!-- Island States -->
+		<StrategicState id="SovietTransportAttack" State="SovietTransportAttack" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Removed Strategic States-->
+		<StrategicState id="SovietNavalBase" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		<StrategicState id="SovietExpansion" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		<StrategicState id="SovietCaptureTech" xai:joinAction="Remove" xmlns:xai="uri:ea.com:eala:asset:instance"/>
+		
+		<StrategicState id="SovietExpansion_MEDIUM" State="SovietExpansion_MEDIUM" Difficulty="MEDIUM"/>
+		<StrategicState id="SovietExpansion_HARD" State="SovietExpansion_HARD" Difficulty="HARD"/>
+		<StrategicState id="SovietExpansion_BRUTAL" State="SovietExpansion_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="SovietCaptureTech_EASY" State="SovietCaptureTech_EASY" Difficulty="EASY"/>
+		<StrategicState id="SovietCaptureTech_MEDIUM" State="SovietCaptureTech_MEDIUM" Difficulty="MEDIUM"/>
+		
+		<StrategicState id="SovietCapturePriorityTech_HARD" State="SovietCapturePriorityTech_HARD" Difficulty="HARD"/>
+		<StrategicState id="SovietCaptureNonPriorityTech_HARD" State="SovietCaptureNonPriorityTech_HARD" Difficulty="HARD"/>
+		
+		<StrategicState id="SovietCapturePriorityTech_BRUTAL" State="SovietCapturePriorityTech_BRUTAL" Difficulty="BRUTAL"/>
+		<StrategicState id="SovietCaptureNonPriorityTech_BRUTAL" State="SovietCaptureNonPriorityTech_BRUTAL" Difficulty="BRUTAL"/>
+		
+		<StrategicState id="SovietCaptureVehicleHealTech" State="SovietCaptureVehicleHealTech" Difficulty="HARD BRUTAL"/>
+		
+		<!-- Build States -->
+		<BuildState id="SovietNonPathDependentStructureBuildState" State="SovietNonPathDependentStructureBuildState" Difficulty="EASY MEDIUM HARD BRUTAL"/>    
+		<BuildState id="SovietTechBuildState" State="SovietTechBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietTechBuildState_EASY" State="SovietTechBuildState_EASY" Difficulty="EASY"/>
+		
+		<BuildState id="SovietLandUnitBuildState_Upheaval" State="SovietLandUnitBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietWaterUnitBuildState" State="SovietWaterUnitBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietAmphibiousUnitBuildState_Upheaval" State="SovietAmphibiousUnitBuildState_Upheaval" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietAntiInfantryOnlyBuildState" State="SovietAntiInfantryOnlyBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietAntiAirOnlyBuildState" State="SovietAntiAirOnlyBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		<BuildState id="SovietAntiGroundAircraftBuildState" State="SovietAntiGroundAircraftBuildState" Difficulty="MEDIUM HARD BRUTAL"/>
+		
+		<BuildState id="SovietBarracksBuildState_RANDOM_Upheaval" State="SovietBarracksBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		<BuildState id="SovietWarFactoryBuildState_RANDOM_Upheaval" State="SovietWarFactoryBuildState_RANDOM_Upheaval" Difficulty="EASY"/>
+		<BuildState id="SovietNavalYardBuildState_RANDOM" State="SovietNavalYardBuildState_RANDOM" Difficulty="EASY"/>
+		<BuildState id="SovietAirfieldBuildState_RANDOM" State="SovietAirfieldBuildState_RANDOM" Difficulty="EASY"/>
+		
+		<!-- Caps for difficulty -->
+		<SpecificUnitCap Unit="SovietFighterAircraft" Cap="0" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="SovietAntiGroundAircraft" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="SovietBomberAircraft" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="SovietAntiStructureShip" Cap="1" Difficulty="EASY"/>
+		<SpecificUnitCap Unit="SovietCommandoTech1" Cap="0" Difficulty="EASY"/>
+		
+		<SpecificUnitCap Unit="SovietScoutVehicle" Cap="1" Difficulty="EASY"/>
+		
+		<SpecificUnitCap Unit="SovietFighterAircraft" Cap="2" Difficulty="MEDIUM"/>
+		
+		<!-- At a certain point, we don't need any more of these because they are very limited in use. -->
+		<SpecificUnitCap Unit="SovietScoutInfantry" Cap="6" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- At a certain point, we just don't need any more of these since they can't double-up on targets-->
+		<SpecificUnitCap Unit="SovietScoutVehicle" Cap="10" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- Although amphibious, these are anti-air only so they can never actually defeat an opponent -->
+		<SpecificUnitCap Unit="SovietAntiAirShip" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietAntiAirShip_Ground" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<!-- We need caps for all land-only and water-only units to protect against situations where those units can no longer path to the enemy.
+		We try to protect against that as much as possible but this is the safety-net.  At a certain point, the AI should just spam amphibious
+		or air units which are always a safe bet. -->
+		<SpecificUnitCap Unit="SovietAntiInfantryInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietAntiVehicleInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietHeavyAntiVehicleInfantry" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="SovietAntiInfantryVehicle" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietAntiVehicleVehicleTech1" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietAntiStructureVehicle" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietAntiVehicleVehicleTech3" Cap="20" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		
+		<SpecificUnitCap Unit="SovietAntiNavyShipTech2" Cap="10" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+		<SpecificUnitCap Unit="SovietAntiStructureShip" Cap="6" Difficulty="EASY MEDIUM HARD BRUTAL"/>
+	</AIPersonalityDefinition>
+</AssetDeclaration>

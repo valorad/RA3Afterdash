@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitAbilityButtonTemplate
+		id="MouseButtonArcherArrowBarrage"
+		LogicCommand="Command_ArcherArrowBarrageSpecialPower">
+		<Data>
+			<TargetedSpecialPower
+       			RadiusCursor="Target_Japan_ArcherBarrage"
+				StateData="ButtonStateAbilityArcherArrowBarrage"/>
+		</Data>
+	</UnitAbilityButtonTemplate>
+</AssetDeclaration>

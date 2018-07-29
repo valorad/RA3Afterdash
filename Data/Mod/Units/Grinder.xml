@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Grinder/AudioEvent.xml" />
+		<Include type="all" source="Grinder/AudioFile.xml" />
+		<Include type="all" source="Grinder/Multisound.xml" />
+		<Include type="all" source="Grinder/Video.xml" />
+		<Include type="all" source="Grinder/VideoEventList.xml" />
+		
+		<Include type="all" source="Grinder/Armor.xml" />
+		<Include type="all" source="Grinder/AttributeModifier.xml" />
+		<Include type="all" source="Grinder/ButtonSingleStateData.xml" />
+		<Include type="all" source="Grinder/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Grinder/FXList.xml" />
+		<Include type="all" source="Grinder/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Grinder/GameObject.xml" />
+		<Include type="all" source="Grinder/Locomotor.xml" />
+		<Include type="all" source="Grinder/LogicCommand.xml" />
+		<Include type="all" source="Grinder/LogicCommandSet.xml" />
+		<Include type="all" source="Grinder/ObjectCreationList.xml" />
+		<Include type="all" source="Grinder/PackedTextureImage.xml" />
+		<Include type="all" source="Grinder/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Grinder/Texture.xml" />
+		<Include type="all" source="Grinder/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Grinder/UnitIntro.xml" />
+		<Include type="all" source="Grinder/W3X.xml" />
+		<Include type="all" source="Grinder/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Reaper/AudioEvent.xml" />
+		<Include type="all" source="Reaper/AudioFile.xml" />
+		<Include type="all" source="Reaper/Multisound.xml" />
+		<Include type="all" source="Reaper/Video.xml" />
+		<Include type="all" source="Reaper/VideoEventList.xml" />
+		
+		<Include type="all" source="Reaper/Armor.xml" />
+		<Include type="all" source="Reaper/AttributeModifier.xml" />
+		<Include type="all" source="Reaper/ButtonSingleStateData.xml" />
+		<Include type="all" source="Reaper/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Reaper/FXList.xml" />
+		<Include type="all" source="Reaper/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Reaper/GameObject.xml" />
+		<Include type="all" source="Reaper/Locomotor.xml" />
+		<Include type="all" source="Reaper/LogicCommand.xml" />
+		<Include type="all" source="Reaper/LogicCommandSet.xml" />
+		<Include type="all" source="Reaper/ObjectCreationList.xml" />
+		<Include type="all" source="Reaper/PackedTextureImage.xml" />
+		<Include type="all" source="Reaper/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Reaper/Texture.xml" />
+		<Include type="all" source="Reaper/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Reaper/UnitIntro.xml" />
+		<Include type="all" source="Reaper/W3X.xml" />
+		<Include type="all" source="Reaper/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

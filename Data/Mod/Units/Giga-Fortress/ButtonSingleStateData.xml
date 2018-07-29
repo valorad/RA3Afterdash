@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityToggleJapanFortressShipTransformShipMode">
+		<State
+			Image="JUA_GigaFortress_Sea"
+			Title="NAME:JapanFortressShipTransformShipMode"
+			Description="DESC:JapanFortressShipTransformShipMode" />
+	</ButtonSingleStateData>
+	
+	<ButtonSingleStateData
+		id="ButtonStateAbilityToggleJapanFortressShipTransformAircraftMode">
+		<State
+			Image="JUA_GigaFortress_Air"
+			Title="NAME:JapanFortressShipTransformAircraftMode"
+			Description="DESC:JapanFortressShipTransformAircraftMode" />
+	</ButtonSingleStateData>
+</AssetDeclaration>

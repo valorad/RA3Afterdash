@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		  id="AlliedGunshipAircraftWeapon"
+		  AcceptableAimDelta="5d"
+		  AttackRange="400"
+		  MinimumAttackRange="100"
+		  UseCenterForRangeCheck="true"
+		  CanFireWhileMoving="true"
+		  ClipSize="12"
+		  ScatterRadius="30"
+		  RadiusDamageAffects="ENEMIES"
+		  FireFX="FX_Allied_Gunship_Fire"
+		  FireVeteranFX="FX_Allied_Gunship_Fire"
+		  FireSound="ALL_Gunship_ColliderCannonWeaponFire"
+		  Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		  WeaponSpeed="500"
+		  MinTargetPitch="-45d"
+		  MaxTargetPitch="45d"
+		  RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER">
+	  <FiringDuration
+		  MinSeconds="2.0s"
+		  MaxSeconds="2.0s" />
+	  <ClipReloadTime
+		  MinSeconds="2.0s"
+		  MaxSeconds="2.0s" />
+	  <Nuggets>
+		<ProjectileNugget
+			ProjectileTemplate="AlliedGunshipAircraftWeaponProjectile"
+			WarheadTemplate="AlliedGunshipAircraftWeaponWarhead">
+		  <VeterancyProjectiles
+			  VeterancyLevel="HEROIC"
+			  ProjectileTemplate="AlliedGunshipAircraftWeaponProjectile_Veteran"/>
+		</ProjectileNugget>
+		<InformTargetNugget />
+	  </Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="AlliedGunshipAircraftWeaponWarhead"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER" >
+	  <Nuggets>
+      <DamageNugget
+        id="DefaultDamageNugget"
+        Damage="100.0"
+			  Radius="50.0"
+			  DamageTaperOff="30"
+			  DamageType="EXPLOSIVE"
+			  DeathType="EXPLODED">
+        <DamageScalarDetails Scalar= "50%">
+          <Filter
+            Rule="NONE"
+						Include="INFANTRY" />
+        </DamageScalarDetails>
+      </DamageNugget>
+      <MetaImpactNugget
+        id="DefaultMetaImpactNugget"
+        ShockWaveAmount="50"
+			  ShockWaveRadius="50.0"
+			  ShockWaveTaperOff="25.0"
+			  ForbiddenTargetModelCondition="STUNNED STUNNED_STANDING_UP STUNNED_FLAILING"/>
+    </Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="AlliedGunshipAircraftAutoCannon"
+		AttackRange="400.0"
+		MinimumAttackRange="100"
+		UseCenterForRangeCheck="true"
+		AcceptableAimDelta="5d"
+		CanFireWhileMoving="true"
+		ClipSize="10"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		FireSound="ALL_Gunship_MachineGunWeaponFire"
+		MinTargetPitch="-45d"
+		MaxTargetPitch="45d"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		ReAcquireDetailType="PER_CLIP">
+	  <FiringDuration
+		  MinSeconds="0.1s"
+		  MaxSeconds="0.1s" />
+	  <ClipReloadTime
+		  MinSeconds="0.5s"
+		  MaxSeconds="0.5s" />
+	  <Nuggets>
+		<DamageNugget
+			Damage="12.0"
+			Radius="0.0"
+			DamageType="AUTO_CANNON"
+			DamageFXType="SOVIET_MACHINEGUN"
+			DeathType="NORMAL">
+		<DamageScalarDetails Scalar= "50%">
+					<Filter
+						Rule="NONE"
+						Include="STRUCTURE" />
+				</DamageScalarDetails>
+						</DamageNugget>
+	  </Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

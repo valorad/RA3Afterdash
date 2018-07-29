@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Structures/Castle Wall/RM_CASTLEWALL02.OBJDEFAULT.w3x" />
+		<Include type="all" source="ART:Structures/Castle Wall/RM_CASTLEWALL02_CTR.w3x" />
+		<Include type="all" source="ART:Structures/Castle Wall/RM_CASTLEWALL02_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

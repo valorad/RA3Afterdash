@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Specific/AmbientStream.xml" />
+		<Include type="all" source="Specific/AudioEvent.xml" />
+		<Include type="all" source="Specific/AudioFile.xml" />
+		
+		<Include type="all" source="Specific/GameObject.xml" />
+		<Include type="all" source="Specific/MapMetaData.xml" />
+		<Include type="all" source="Specific/OnDemandTexture.xml" />
+		<Include type="all" source="Specific/OnDemandTextureImage.xml" />
+		<Include type="all" source="Specific/Texture.xml" />
+	</Includes>
+</AssetDeclaration>

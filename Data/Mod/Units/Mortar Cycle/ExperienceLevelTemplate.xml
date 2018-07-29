@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="SovietMortarcycleExperienceLevel_1"
+		inheritFrom="ExperienceLevel_SovietRank1"
+		RequiredExperience="1"
+		ExperienceAward="600">
+		<Target>SovietMortarcycle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietMortarcycleExperienceLevel_2"
+		inheritFrom="ExperienceLevel_SovietRank2"
+		Prerequisite="SovietMortarcycleExperienceLevel_1"
+		RequiredExperience="1800"
+		ExperienceAward="1200">
+		<Target>SovietMortarcycle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietMortarcycleExperienceLevel_3"
+		inheritFrom="ExperienceLevel_SovietRank3"
+		Prerequisite="SovietMortarcycleExperienceLevel_2"
+		RequiredExperience="3600"
+		ExperienceAward="1800">
+		<Target>SovietMortarcycle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietMortarcycleExperienceLevel_4"
+		inheritFrom="ExperienceLevel_SovietRank4"
+		Prerequisite="SovietMortarcycleExperienceLevel_3"
+		RequiredExperience="5400"
+		ExperienceAward="2400">
+		<Target>SovietMortarcycle</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

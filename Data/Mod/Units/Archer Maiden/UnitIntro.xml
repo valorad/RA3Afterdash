@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitIntro
+		id="Japan_ArcherMaiden_UnitIntro"
+		Video="ui_archemaiden"
+		Audio="MIIn_ArcherMaiden" />
+</AssetDeclaration>

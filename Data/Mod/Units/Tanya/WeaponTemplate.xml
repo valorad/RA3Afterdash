@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<WeaponTemplate
+		id="AlliedCommandoDesertEagles"
+		AttackRange="140.0"
+		WeaponSpeed="999999.0"
+		FireSound="ALL_Commando_PistolFire"
+		FireFX="FX_MuzzleTanya"
+		FireVeteranFX="FX_MuzzleTanya_Vet"
+		RadiusDamageAffects="ENEMIES"
+		ClipSize="0"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		CanFireWhileMoving="true"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND"
+		AcceptableAimDelta="10d">
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<DamageNugget
+				Damage="100.0"
+				Radius="0.0"
+				DamageType="SNIPER"
+				DamageFXType="ALLIED_TANYA"
+				DeathType="NORMAL" >
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="VEHICLE STRUCTURE VALID_TARGET_FOR_C4">
+					<IncludeThing>SovietMortarcycle</IncludeThing>
+				</SpecialObjectFilter>
+			</DamageNugget>
+			<SuppressionNugget
+				Radius="10.0"
+				Suppression="25"
+				DurationSeconds="5s">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="STRUCTURE VALID_TARGET_FOR_C4 VEHICLE" />
+			</SuppressionNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedCommandoAttachWeapon"
+		AttackRange="1.0"
+		WeaponSpeed="999999.0"
+		ClipSize="0"
+		AutoReloadsClip="AUTO"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT IGNORE_TARGET_AS_OBSTACLE NOT_ATTRACTED_BY_MAGNETS"
+		CanFireWhileMoving="false"
+		InstantLoadClipOnActivate="true"
+		ContactWeapon="false"
+		ChaseWeapon="true"
+		FireSound="ALL_Commando_C4MS"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE"
+		AcceptableAimDelta="180d">
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>            
+			<AttachNugget
+				id="ModuleTag_AttachNugget" 
+				AttachModuleId="ModuleTag_AttachUpdate"				
+				Radius="1">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="STRUCTURE VEHICLE VALID_TARGET_FOR_C4"
+					Exclude="WALL_PIECE" 
+					StatusBitFlagsExclude="AIRBORNE_TARGET NOT_IN_WORLD UNDER_IRON_CURTAIN">
+					<ExcludeThing>AlliedWallPiece</ExcludeThing>
+					<ExcludeThing>SovietWallPiece</ExcludeThing>
+					<ExcludeThing>JapanWallPiece</ExcludeThing>
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+					<ExcludeThing>SovietMortarcycle</ExcludeThing>
+				</SpecialObjectFilter>
+			</AttachNugget>
+			<TintObjectsNugget
+				id="ModuleTag_TintObjectNugget" 
+				PreColorTime="1s"
+				SustainedColorTime="1s"
+				PostColorTime="1s"
+				Frequency="0"
+				Amplitude="0">				
+				<Color R="2" G="0" B="0"/>
+			</TintObjectsNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedCommandoDetonationWeapon"
+		RadiusDamageAffects="ENEMIES NEUTRALS NOT_SIMILAR"
+		AttackRange="1.0"
+		ChaseWeapon="true"
+		WeaponSpeed="999999.0"
+		ReAcquireDetailType="PER_SHOT"
+		ClipSize="1"		
+		AcceptableAimDelta="180d"
+		CanFireWhileMoving="true"
+		VirtualDamage="SHARE"
+		Flags="NOT_ATTRACTED_BY_MAGNETS" 
+		RequiredAntiMask="ANTI_GROUND ANTI_WATER ANTI_SUBMERGED"
+		FinishAttackOnceStarted="true">
+		<PreAttackDelay
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<ClipReloadTime
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>
+			<DamageNugget
+				Damage="999999.0"				  
+				DamageType="GRENADE"
+				DeathType="DETONATED">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="STRUCTURE VEHICLE VALID_TARGET_FOR_C4"
+					Exclude="WALL_PIECE" 
+					StatusBitFlags="MARCH_OF_DEATH"
+					StatusBitFlagsExclude="AIRBORNE_TARGET">
+					<ExcludeThing>AlliedWallPiece</ExcludeThing>
+					<ExcludeThing>SovietWallPiece</ExcludeThing>
+					<ExcludeThing>JapanWallPiece</ExcludeThing>
+					<ExcludeThing>JapanMechaKing</ExcludeThing>   
+					<ExcludeThing>SovietMortarcycle</ExcludeThing> 
+				</SpecialObjectFilter>
+			</DamageNugget>
+			<AttributeModifierNugget
+				AttributeModifierName="AttributeModifier_AlliedCommandoDetonationWeapon"
+				AttributeModifierOwnerName="AttributeModifier_AlliedCommandoDetonationWeaponOwner">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="STRUCTURE VEHICLE VALID_TARGET_FOR_C4"
+					StatusBitFlags="MARCH_OF_DEATH"
+					StatusBitFlagsExclude="AIRBORNE_TARGET">
+					<ExcludeThing>AlliedWallPiece</ExcludeThing>
+					<ExcludeThing>SovietWallPiece</ExcludeThing>
+					<ExcludeThing>JapanWallPiece</ExcludeThing>
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+					<ExcludeThing>SovietMortarcycle</ExcludeThing>    
+				</SpecialObjectFilter>
+			</AttributeModifierNugget>                
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

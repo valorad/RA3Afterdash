@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<LogicCommand
+		Type="UNIT_BUILD"
+		id="Command_ConstructSovietGrinderVehicle">
+		<Object>SovietGrinderVehicle</Object>
+	</LogicCommand>
+	
+    <LogicCommand
+        Type="SPECIAL_POWER"
+        id="Command_ActivateGrinderNitrousBoostSpecialPower">
+        <SpecialPower>SpecialPower_TriggerNitrousBoost</SpecialPower>
+        <AISpecialPowerInfo 
+        	Heuristic="RUSH_ATTACK" 
+        	Manager="MICRO_MANAGER"
+			HealthFraction="1.0"
+			Distance="9999.0"
+            NeverUseWhileRetreating="true"
+            NeverUseWhilePullingBack="true">
+        </AISpecialPowerInfo>
+    </LogicCommand>
+</AssetDeclaration>

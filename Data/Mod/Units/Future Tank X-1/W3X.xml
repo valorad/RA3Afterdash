@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_ABTA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_AIDA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_ATKD.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_ATKE.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_ATKF.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_ATKG.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_BATA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_BATB.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_BIDA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_COL.TREADS.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_MOVA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_SKL.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_SKN.AUFUTURETANK.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_SKN.NEWSKIN_TREADS.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_SKN.OBBOX.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_SKN.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/AUFUTURETANK_XMOVA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/EXFUTURETANKCHARGE.CYLINDER01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/EXFUTURETANKCHARGE.GEOSPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/EXFUTURETANKCHARGE.PLANE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/EXFUTURETANKCHARGE.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/EXFUTURETANKCHARGE_CTR.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/EXFUTURETANKCHARGE_HRC.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE.AURA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE.GEOSPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE_CTR.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE_HRC.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE_VET.AURA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE_VET.GEOSPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE_VET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE_VET_HRC.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02.AURA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02.GEOSPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02.PLANE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_CTR.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_HRC.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_VET.AURA.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_VET.GEOSPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_VET.PLANE01.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_VET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Future Tank X-1/FXFUTUREPROJECTILE02_VET_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Texture id="LURomania_vol" File="ART:Specific/LURomania_vol.dds" OutputFormat="DXT1" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+</AssetDeclaration>

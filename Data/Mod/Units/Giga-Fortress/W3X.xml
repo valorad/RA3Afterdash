@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKET.SPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKET.SPHERE02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKET_HRC.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKETVET.SPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKETVET.SPHERE02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKETVET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/EXJAPANFORTRESSROCKETVET_HRC.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_BLD.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_BLD2.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_COL.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_IDLA.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKL.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.FX_JETGLOW01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.FX_JETGLOW02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.FX_LIGHTS02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX03.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX04.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX05.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX06.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.OBBOX07.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_SKN.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS.FX_JETGLOW01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS.FX_JETGLOW02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIP_TRANS_HRC.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD.FX_JETGLOW01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD.FX_JETGLOW02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD.FX_JETGLOW03.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_COL.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_FP.JAPANFORTRESSSHIP.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_FP_CTR.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_FP_HRC.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_IDLA.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKL.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.FX_JETGLOW01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.FX_JETGLOW02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.FX_JETGLOW03.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.FX_LIGHTS02.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.NEWSKIN_SHIT.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Giga-Fortress/JUFORTRESSSHIPHEAD_SKN.w3x" />
+	</Includes>
+</AssetDeclaration>

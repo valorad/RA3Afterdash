@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="JapanSentinelVehicleExperienceLevel_1"
+		inheritFrom="ExperienceLevel_JapanRank1"
+		RequiredExperience="1"
+		ExperienceAward="1600">
+		<Target>JapanSentinelVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="JapanSentinelVehicleExperienceLevel_2"
+		inheritFrom="ExperienceLevel_JapanRank2"
+		Prerequisite="JapanSentinelVehicleExperienceLevel_1"
+		RequiredExperience="4800"
+		ExperienceAward="3200">
+		<Target>JapanSentinelVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="JapanSentinelVehicleExperienceLevel_3"
+		inheritFrom="ExperienceLevel_JapanRank3"
+		Prerequisite="JapanSentinelVehicleExperienceLevel_2"
+		RequiredExperience="9600"
+		ExperienceAward="4800">
+		<Target>JapanSentinelVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="JapanSentinelVehicleExperienceLevel_4"
+		inheritFrom="ExperienceLevel_JapanRank4"
+		Prerequisite="JapanSentinelVehicleExperienceLevel_3"
+		RequiredExperience="14400"
+		ExperienceAward="6400">
+		<Target>JapanSentinelVehicle</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

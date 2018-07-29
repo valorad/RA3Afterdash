@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Mortar Cycle/AudioEvent.xml" />
+		<Include type="all" source="Mortar Cycle/AudioFile.xml" />
+		<Include type="all" source="Mortar Cycle/Multisound.xml" />
+		<Include type="all" source="Mortar Cycle/Video.xml" />
+		<Include type="all" source="Mortar Cycle/VideoEventList.xml" />
+		
+		<Include type="all" source="Mortar Cycle/Armor.xml" />
+		<Include type="all" source="Mortar Cycle/AttributeModifier.xml" />
+		<Include type="all" source="Mortar Cycle/ButtonSingleStateData.xml" />
+		<Include type="all" source="Mortar Cycle/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Mortar Cycle/FXList.xml" />
+		<Include type="all" source="Mortar Cycle/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Mortar Cycle/GameObject.xml" />
+		<Include type="all" source="Mortar Cycle/Locomotor.xml" />
+		<Include type="all" source="Mortar Cycle/LogicCommand.xml" />
+		<Include type="all" source="Mortar Cycle/LogicCommandSet.xml" />
+		<Include type="all" source="Mortar Cycle/ObjectCreationList.xml" />
+		<Include type="all" source="Mortar Cycle/PackedTextureImage.xml" />
+		<Include type="all" source="Mortar Cycle/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Mortar Cycle/Texture.xml" />
+		<Include type="all" source="Mortar Cycle/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Mortar Cycle/UnitIntro.xml" />
+		<Include type="all" source="Mortar Cycle/W3X.xml" />
+		<Include type="all" source="Mortar Cycle/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityGrinderNitrousBoost">
+		<State
+			Image="SUA_Grinder_TurboBoost"
+			Title="NAME:NitrousBoostSpecialPower"
+			Description="DESC:NitrousBoostSpecialPower" />
+	</ButtonSingleStateData>	
+</AssetDeclaration>

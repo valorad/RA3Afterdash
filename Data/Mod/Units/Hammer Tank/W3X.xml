@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Hammer Tank/SUANTIVEHICLEVEHICLETECH1_SKN.UPGRADE_FUTURETANK.w3x" />
+		<Include type="all" source="ART:Units/Hammer Tank/SUANTIVEHICLEVEHICLETECH1_SKN.UPGRADE_GIGAFORTRESS.w3x" />
+		<Include type="all" source="ART:Units/Hammer Tank/SUAntiVehicleVehicleTech1_Upheaval_CTR.w3x" />
+		<Include type="all" source="ART:Units/Hammer Tank/SUAntiVehicleVehicleTech1_Upheaval_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

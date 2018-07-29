@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Yuriko/FXYURIKOPSYONICBLAST.SHIELDLARGE01.w3x" />
+		<Include type="all" source="ART:Units/Yuriko/FXYURIKOPSYONICBLAST_CTR.w3x" />
+		<Include type="all" source="ART:Units/Yuriko/FXYURIKOPSYONICBLAST_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

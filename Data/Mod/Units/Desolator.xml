@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Desolator/AudioEvent.xml" />
+		<Include type="all" source="Desolator/AudioFile.xml" />
+		<Include type="all" source="Desolator/Multisound.xml" />
+		<Include type="all" source="Desolator/Video.xml" />
+		<Include type="all" source="Desolator/VideoEventList.xml" />
+		
+		<Include type="all" source="Desolator/Armor.xml" />
+		<Include type="all" source="Desolator/AttributeModifier.xml" />
+		<Include type="all" source="Desolator/ButtonSingleStateData.xml" />
+		<Include type="all" source="Desolator/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Desolator/FXList.xml" />
+		<Include type="all" source="Desolator/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Desolator/GameObject.xml" />
+		<Include type="all" source="Desolator/LogicCommand.xml" />
+		<Include type="all" source="Desolator/LogicCommandSet.xml" />
+		<Include type="all" source="Desolator/PackedTextureImage.xml" />
+		<Include type="all" source="Desolator/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Desolator/Texture.xml" />
+		<Include type="all" source="Desolator/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Desolator/UnitIntro.xml" />
+		<Include type="all" source="Desolator/UnitTypeIcon.xml" />
+		<Include type="all" source="Desolator/W3X.xml" />
+		<Include type="all" source="Desolator/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<AudioFile id="JUYurik_ambiLoopa" File="AUDIO:Units/Yuriko/JUYurik_ambiLoopa.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_ambiLoopb" File="AUDIO:Units/Yuriko/JUYurik_ambiLoopb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_ambiLoopc" File="AUDIO:Units/Yuriko/JUYurik_ambiLoopc.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstA" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstA.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstB" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstB.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstC" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstC.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstD" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstD.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstE" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstE.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstF" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstF.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_enemyBurstG" File="AUDIO:Units/Yuriko/JUYurik_enemyBurstG.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_moveLoopa" File="AUDIO:Units/Yuriko/JUYurik_moveLoopa.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_moveLoopb" File="AUDIO:Units/Yuriko/JUYurik_moveLoopb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_moveLoopc" File="AUDIO:Units/Yuriko/JUYurik_moveLoopc.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_moveLoopd" File="AUDIO:Units/Yuriko/JUYurik_moveLoopd.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUYurik_PsychoBurst2a" File="AUDIO:Units/Yuriko/JUYurik_PsychoBurst2a.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+</AssetDeclaration>

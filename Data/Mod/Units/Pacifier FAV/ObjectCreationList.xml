@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ObjectCreationList
+		id="OCL_AlliedArtilleryPreAttack_Marker">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			MinLifetime="1.5s"
+			MaxLifetime="1.5s">
+			<CreateObject>AlliedArtilleryVehicleSiegeMarker</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="AUArtilleryVehicle_Die_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="20.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>AlliedArtilleryVehicle_Collapse</CreateObject>
+		</CreateObject>		
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="AUArtilleryVehicle_Deployed_Die_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="20.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>AlliedArtilleryVehicle_Deployed_Collapse</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+</AssetDeclaration>

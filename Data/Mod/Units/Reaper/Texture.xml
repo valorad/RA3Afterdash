@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="JUFortressShip" File="ART:Units/Reaper/JUFortressShip.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUFortressShip_NRM" File="ART:Units/Reaper/JUFortressShip_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="JUFortressShip_SPM" File="ART:Units/Reaper/JUFortressShip_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SovietHeavyTurretScorch" File="ART:Units/Reaper/SovietHeavyTurretScorch.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUHeavyWalkerVehicle" File="ART:Units/Reaper/SUHeavyWalkerVehicle.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUHeavyWalkerVehicle_D" File="ART:Units/Reaper/SUHeavyWalkerVehicle_D.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUHeavyWalkerVehicle_NRM" File="ART:Units/Reaper/SUHeavyWalkerVehicle_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUHeavyWalkerVehicle_SPM" File="ART:Units/Reaper/SUHeavyWalkerVehicle_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

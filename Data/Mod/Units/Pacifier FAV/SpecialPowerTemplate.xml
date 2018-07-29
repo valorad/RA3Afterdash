@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPower_ToggleSiegeArtillery"
+		TargetType="NONE"
+		ReloadTime="3s"
+		PreventConditions="OVER_WATER IMMOBILE_ALLOW_ROTATE BOOBY_TRAPPED"
+		WaypointModeTerminal="false" />
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_SiegeMarker"
+		TargetType="OBJECT_OR_LOCATION"
+		ReloadTime="3s"
+		PreventConditions="IS_ATTACKING"
+		Flags="WATER_OK IGNORE_MAP_EXTENTS FOGGED_SHROUDED_CELLS_OK" />
+</AssetDeclaration>

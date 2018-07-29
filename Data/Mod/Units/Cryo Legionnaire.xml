@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Cryo Legionnaire/AudioEvent.xml" />
+		<Include type="all" source="Cryo Legionnaire/AudioFile.xml" />
+		<Include type="all" source="Cryo Legionnaire/Multisound.xml" />
+		<Include type="all" source="Cryo Legionnaire/Video.xml" />
+		<Include type="all" source="Cryo Legionnaire/VideoEventList.xml" />
+		
+		<Include type="all" source="Cryo Legionnaire/Armor.xml" />
+		<Include type="all" source="Cryo Legionnaire/AttributeModifier.xml" />
+		<Include type="all" source="Cryo Legionnaire/ButtonSingleStateData.xml" />
+		<Include type="all" source="Cryo Legionnaire/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Cryo Legionnaire/FXList.xml" />
+		<Include type="all" source="Cryo Legionnaire/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Cryo Legionnaire/GameObject.xml" />
+		<Include type="all" source="Cryo Legionnaire/LogicCommand.xml" />
+		<Include type="all" source="Cryo Legionnaire/LogicCommandSet.xml" />
+		<Include type="all" source="Cryo Legionnaire/ObjectCreationList.xml" />
+		<Include type="all" source="Cryo Legionnaire/PackedTextureImage.xml" />
+		<Include type="all" source="Cryo Legionnaire/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Cryo Legionnaire/Texture.xml" />
+		<Include type="all" source="Cryo Legionnaire/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Cryo Legionnaire/UnitIntro.xml" />
+		<Include type="all" source="Cryo Legionnaire/UnitTypeIcon.xml" />
+		<Include type="all" source="Cryo Legionnaire/W3X.xml" />
+		<Include type="all" source="Cryo Legionnaire/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

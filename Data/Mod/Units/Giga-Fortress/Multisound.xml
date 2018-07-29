@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="JAP_EmperorsPearl_DieImpactGroundMS">
+		<Subsound>JAP_EmperorsPearl_DieImpactGround</Subsound> 
+		<Subsound>JAP_EmperorsPearl_DieSparks</Subsound>
+		<Subsound>RA3VehicleExplosionLargeNoDelay</Subsound>		
+		<Subsound>RA3VehicleExplosionMediumNoDelay</Subsound>	
+	</Multisound>
+	
+	<Multisound id="JAP_EmperorsPearl_DieStartMS">
+		<!-- <Subsound>JAP_EmperorsPearl_DieStart</Subsound> moved to onDeath on Gigafortress xml -->
+		<Subsound>RA3VehicleExplosionLargeNoDelay</Subsound>		
+		<Subsound>RA3VehicleExplosionMediumNoDelay</Subsound>	
+	</Multisound>
+	
+	<Multisound id="JAP_EmperorsPearl_MoveLoopMS">
+		<Subsound>JAP_EmperorsPearl_MoveLoop</Subsound> 
+		<Subsound>JAP_EmperorsPearl_MoveLoopForDecayOnly</Subsound>
+	</Multisound>
+	
+	<Multisound id="JAP_EmperorsPearl_MoveLoopWaterMS">
+		<Subsound>JAP_EmperorsPearl_MoveLoopWater</Subsound> 
+		<Subsound>JAP_EmperorsPearl_MoveLoopWaterForDecayOnly</Subsound>
+	</Multisound>
+	
+	<Multisound id="JAP_GigaFortress_VoiceSelectMS" >
+		<Subsound>JAP_EmperorsPearl_SelectWater</Subsound>
+		<Subsound>JAP_GigaFortress_VoiceSelect</Subsound>
+	</Multisound>
+	
+	<Multisound id="JAP_GigaFortress_VoiceSelectAirMS" >
+		<Subsound>JAP_EmperorsPearl_Select</Subsound>
+		<Subsound>JAP_GigaFortress_VoiceSelectAir</Subsound>
+	</Multisound>
+	
+	<Multisound id="JAP_Nanocore_GigafortressUnpackingSelectMS">
+		<Subsound>JAP_Nanocore_GigafortressUnpackingSelect1</Subsound> 
+		<Subsound>JAP_Nanocore_GigafortressUnpackingSelect2</Subsound>
+	</Multisound>
+</AssetDeclaration>

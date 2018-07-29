@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Steel Ronin/AudioEvent.xml" />
+		<Include type="all" source="Steel Ronin/AudioFile.xml" />
+		<Include type="all" source="Steel Ronin/Multisound.xml" />
+		<Include type="all" source="Steel Ronin/Video.xml" />
+		<Include type="all" source="Steel Ronin/VideoEventList.xml" />
+		
+		<Include type="all" source="Steel Ronin/Armor.xml" />
+		<Include type="all" source="Steel Ronin/ButtonSingleStateData.xml" />
+		<Include type="all" source="Steel Ronin/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Steel Ronin/FXList.xml" />
+		<Include type="all" source="Steel Ronin/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Steel Ronin/GameObject.xml" />
+		<Include type="all" source="Steel Ronin/Locomotor.xml" />
+		<Include type="all" source="Steel Ronin/LogicCommand.xml" />
+		<Include type="all" source="Steel Ronin/LogicCommandSet.xml" />
+		<Include type="all" source="Steel Ronin/ObjectCreationList.xml" />
+		<Include type="all" source="Steel Ronin/PackedTextureImage.xml" />
+		<Include type="all" source="Steel Ronin/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Steel Ronin/Texture.xml" />
+		<Include type="all" source="Steel Ronin/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Steel Ronin/UnitIntro.xml" />
+		<Include type="all" source="Steel Ronin/W3X.xml" />
+		<Include type="all" source="Steel Ronin/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

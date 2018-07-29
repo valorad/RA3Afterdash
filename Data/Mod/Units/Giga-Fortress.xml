@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Giga-Fortress/AudioEvent.xml" />
+		<Include type="all" source="Giga-Fortress/AudioFile.xml" />
+		<Include type="all" source="Giga-Fortress/Multisound.xml" />
+		<Include type="all" source="Giga-Fortress/Video.xml" />
+		<Include type="all" source="Giga-Fortress/VideoEventList.xml" />
+		
+		<Include type="all" source="Giga-Fortress/Armor.xml" />
+		<Include type="all" source="Giga-Fortress/AttributeModifier.xml" />
+		<Include type="all" source="Giga-Fortress/ButtonSingleStateData.xml" />
+		<Include type="all" source="Giga-Fortress/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Giga-Fortress/FXList.xml" />
+		<Include type="all" source="Giga-Fortress/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Giga-Fortress/GameObject.xml" />
+		<Include type="all" source="Giga-Fortress/Locomotor.xml" />
+		<Include type="all" source="Giga-Fortress/LogicCommand.xml" />
+		<Include type="all" source="Giga-Fortress/LogicCommandSet.xml" />
+		<Include type="all" source="Giga-Fortress/ObjectCreationList.xml" />
+		<Include type="all" source="Giga-Fortress/PackedTextureImage.xml" />
+		<Include type="all" source="Giga-Fortress/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Giga-Fortress/Texture.xml" />
+		<Include type="all" source="Giga-Fortress/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Giga-Fortress/UnitIntro.xml" />
+		<Include type="all" source="Giga-Fortress/UpgradeTemplate.xml" />
+		<Include type="all" source="Giga-Fortress/W3X.xml" />
+		<Include type="all" source="Giga-Fortress/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

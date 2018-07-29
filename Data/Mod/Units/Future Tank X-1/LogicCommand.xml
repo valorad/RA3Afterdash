@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<LogicCommand
+		Type="UNIT_BUILD"
+		id="Command_ConstructAlliedFutureTank">
+		<Object>AlliedFutureTank</Object>
+	</LogicCommand>	
+	
+    <LogicCommand
+        Type="SPECIAL_POWER"
+        id="Command_AlliedFutureTankLaserWeapon">
+        <SpecialPower>SpecialPower_AlliedFutureTankLaserWeapon</SpecialPower>
+        <AISpecialPowerInfo 
+        	Heuristic="INSTAKILL"
+					Manager="MICRO_MANAGER">
+        </AISpecialPowerInfo>
+    </LogicCommand>
+</AssetDeclaration>

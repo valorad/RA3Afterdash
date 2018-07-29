@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Giga-Fortress Core/AudioEvent.xml" />
+		<Include type="all" source="Giga-Fortress Core/AudioFile.xml" />
+		<Include type="all" source="Giga-Fortress Core/Multisound.xml" />
+		
+		<Include type="all" source="Giga-Fortress Core/ButtonSingleStateData.xml" />
+		<Include type="all" source="Giga-Fortress Core/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Giga-Fortress Core/GameObject.xml" />
+		<Include type="all" source="Giga-Fortress Core/LogicCommand.xml" />
+		<Include type="all" source="Giga-Fortress Core/LogicCommandSet.xml" />
+		<Include type="all" source="Giga-Fortress Core/Texture.xml" />
+		<Include type="all" source="Giga-Fortress Core/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Giga-Fortress Core/W3X.xml" />
+	</Includes>
+</AssetDeclaration>

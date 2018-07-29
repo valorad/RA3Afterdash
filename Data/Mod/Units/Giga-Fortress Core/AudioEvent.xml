@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<AudioEvent id="JAP_NanocoreGigafortress_VoiceCreateGigafortress" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "125"
+		MinVolume = "120"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>IUGigaN_VoiCrea</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="JAP_NanocoreGigafortress_VoiceHelpMe" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "125"
+		MinVolume = "120"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>IUGigaN_VoiHlpMea</Sound>
+		<Sound>IUGigaN_VoiHlpMeb</Sound>
+		<Sound>IUGigaN_VoiHlpMec</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="JAP_NanocoreGigafortress_VoiceMove" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "125"
+		MinVolume = "120"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>IUGigaN_VoiMova</Sound>
+		<Sound>IUGigaN_VoiMovb</Sound>
+		<Sound>IUGigaN_VoiMovc</Sound>
+		<Sound>IUGigaN_VoiMovd</Sound>
+		<Sound>IUGigaN_VoiMove</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="JAP_NanocoreGigafortress_VoiceMoveSpecial" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "125"
+		MinVolume = "120"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>IUGigaN_VoiMovSpca</Sound>
+		<Sound>IUGigaN_VoiMovSpcb</Sound>
+		<Sound>IUGigaN_VoiMovSpcc</Sound>
+		<Sound>IUGigaN_VoiMovSped</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="JAP_NanocoreGigafortress_VoiceSelectGigafortress" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "125"
+		MinVolume = "120"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>IUGigaN_VoiSela</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="JAP_GigafortressNanocore_VoiceShrunken" inheritFrom="AudioEvent:BaseUnitResponse"
+	Volume = "100"
+	MinVolume = "0"
+	Priority = "HIGH"
+	Limit="1"
+	Type = "WORLD SHROUDED EVERYONE VOICE"
+	SubmixSlider = "VOICE" >
+	<PitchShift Low="-1" High="1" />
+	<Delay Low="1300" High="1400" />
+	<Sound>IUGigaN_VoiMovd</Sound>
+	</AudioEvent>
+</AssetDeclaration>

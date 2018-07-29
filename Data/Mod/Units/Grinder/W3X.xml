@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Grinder/SUEXHAUSTFIRE.PLANE02.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUEXHAUSTFIRE_CTR.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUEXHAUSTFIRE_HRC.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_COL.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_IDLA.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_SKL.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_SKN.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_SKN.NEWSKIN_TREADS.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_SKN.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_SKN.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_WIDL.w3x" />
+		<Include type="all" source="ART:Units/Grinder/SUGRINDERVEHICLE_WTRANS.w3x" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityToggleAlliedArtillerySiegeWeapon">
+		<State
+			Image="AUA_Pacifier_Artillery"
+			Title="NAME:ToggleAlliedArtillerySiegeWeapon"
+			Description="DESC:ToggleAlliedArtillerySiegeWeapon" />
+	</ButtonSingleStateData>
+
+	<ButtonSingleStateData
+		id="ButtonStateAbilityToggleAlliedArtilleryAutoCannon">
+		<State
+			Image="AUA_Pacifier_Machineguns"
+			Title="NAME:ToggleAlliedArtilleryAutoCannon"
+			Description="DESC:ToggleAlliedArtilleryAutoCannon" />
+	</ButtonSingleStateData>
+</AssetDeclaration>

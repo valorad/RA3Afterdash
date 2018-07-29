@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseMissionEvaDialogue.xml" />
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<!-- Mission dialogue -->
+	<AudioEvent id="MSIn_Reaper1" inheritFrom="AudioEvent:BaseMissionEvaDialogue">
+		<Sound>MSIn_Reaper1</Sound> 
+	</AudioEvent>
+	
+	
+	
+	<!-- Sound effect -->
+	<AudioEvent
+	id="SOV_ProtoSickle_Footstep"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="25"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="50" />
+	<NonInterruptibleTime
+	Low="0.0s"
+	High="0.75s" />
+	<PitchShift
+	Low="-1"
+	High="1" />
+	<Sound>SUProtoSickl_movStepA</Sound> <Sound>SUProtoSickl_movStepB</Sound> <Sound>SUProtoSickl_movStepC</Sound> <Sound>SUProtoSickl_movStepD</Sound>
+	<Sound>SUProtoSickl_movStepE</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+	id="SOV_ProtoSickle_MoveLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="60"
+	VolumeShift="-5"
+	Limit="3"
+	Control="LOOP ALLOW_KILL_MID_FILE"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="5" />
+	<PerFilePitchShift Low="-5" High="5" />
+		<Sound>SUProtoSickl_movStepA</Sound> <Sound>SUProtoSickl_movStepB</Sound> <Sound>SUProtoSickl_movStepC</Sound> <Sound>SUProtoSickl_movStepD</Sound>
+		<Sound>SUProtoSickl_movStepE</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_MoveLeap1"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="60"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift
+	Low="-5"
+	High="-5" />
+		<Sound>SUProtoSickl_movJumpA</Sound> <Sound>SUProtoSickl_movJumpB</Sound> <Sound>SUProtoSickl_movJumpC</Sound> <Sound>SUProtoSickl_movJumpD</Sound> 
+		<Sound>SUProtoSickl_movJumpE</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_MoveLeap2"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="65"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+		<Delay
+	Low="0"
+	High="10" />
+	<PitchShift
+	Low="-50"
+	High="-40" />
+		<Sound>SUV4Mis_MIRVoffa</Sound> <Sound>SUV4Mis_MIRVona</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_MoveLand1"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="65"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift
+	Low="-10"
+	High="0" />
+		<Sound>SUProtoSickl_jumpLandA</Sound> <Sound>SUProtoSickl_jumpLandB</Sound> <Sound>SUProtoSickl_jumpLandC</Sound> <Sound>SUProtoSickl_jumpLandD</Sound> 
+		<Sound>SUProtoSickl_jumpLandE</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_MoveLand2"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="65"
+	VolumeShift="-10"
+	Limit="3"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUV4Mis_misExplosioa</Sound> <Sound>SUV4Mis_misExplosiob</Sound> <Sound>SUV4Mis_misExplosioc</Sound> <Sound>SUV4Mis_misExplosiod</Sound> <Sound>SUV4Mis_misExplosioe</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+	id="SOV_ProtoSickle_Select"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-5"
+	MinVolume="20"
+	Limit="3"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUProtoSickl_selectA</Sound> <Sound>SUProtoSickl_selectB</Sound> <Sound>SUProtoSickl_selectC</Sound> <Sound>SUProtoSickl_selectD</Sound> <Sound>SUProtoSickl_selectE</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_WeaponGrenadeFire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="HIGH"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUProtoSickl_wpnGrndFireA</Sound> <Sound>SUProtoSickl_wpnGrndFireB</Sound> <Sound>SUProtoSickl_wpnGrndFireC</Sound> 
+		<Sound>SUProtoSickl_wpnGrndFireD</Sound> <Sound>SUProtoSickl_wpnGrndFireE</Sound> <Sound>SUProtoSickl_wpnGrndFireF</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_WeaponGrenadeExplo"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_IMPACT"
+	VolumeShift="-5"
+	Limit="3"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="1.2s" />
+	<Delay Low="0" High="33" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUProtoSickl_GrndFireExploA</Sound> <Sound>SUProtoSickl_GrndFireExploB</Sound> <Sound>SUProtoSickl_GrndFireExploC</Sound> 
+		<Sound>SUProtoSickl_GrndFireExploD</Sound> <Sound>SUProtoSickl_GrndFireExploE</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+	id="SOV_ProtoSickle_WeaponRocketFire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="HIGH"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+	<Sound>SUProtoSickl_wpnRocketFireA</Sound> <Sound>SUProtoSickl_wpnRocketFireB</Sound> <Sound>SUProtoSickl_wpnRocketFireC</Sound> 
+	<Sound>SUProtoSickl_wpnRocketFireD</Sound> <Sound>SUProtoSickl_wpnRocketFireE</Sound> <Sound>SUProtoSickl_wpnRocketFireF</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickle_WeaponRocketExplo"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_IMPACT"
+	VolumeShift="-5"
+	Limit="3"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="1.2s" />
+	<Delay Low="0" High="33" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUProtoSickl_wpnRocketExploA</Sound> <Sound>SUProtoSickl_wpnRocketExploB</Sound> <Sound>SUProtoSickl_wpnRocketExploC</Sound> 
+		<Sound>SUProtoSickl_wpnRocketExploD</Sound> <Sound>SUProtoSickl_wpnRocketExploE</Sound> <Sound>SUProtoSickl_wpnRocketExploF</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_ProtoSickleTurret_Select"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="80"
+	MinVolume="70"
+	Limit="1"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-1"
+	High="1" />
+		<Sound>SUProtoSickle_deploySelectA</Sound> <Sound>SUProtoSickle_deploySelectB</Sound>
+	</AudioEvent>
+	
+	
+	
+	<!-- Voice -->
+	<AudioEvent id="SOV_Reaper_VoiceAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiAttacka</Sound>
+		<Sound>SUReape_voiAttackb</Sound>
+		<Sound>SUReape_voiAttackc</Sound>
+		<Sound>SUReape_voiAttackd</Sound>
+		<Sound>SUReape_voiAttacke</Sound>
+		<Sound>SUReape_voiAttackf</Sound>
+		<Sound>SUReape_voiAttackg</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceAttackJump" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiAttSpeca</Sound>
+		<Sound>SUReape_voiAttSpecb</Sound>
+		<Sound>SUReape_voiAttSpecc</Sound>
+		<Sound>SUReape_voiAttSpecd</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceCreate" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<!-- <Sound>SUReape_voiCreatea</Sound> This Reaper looks ready -->
+		<Sound>SUReape_voiCreateb</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceJumpReaction" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "0"
+		Limit = "1"
+		PlayPercent = "30"
+		Priority = "LOW"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<Delay Low = "200" High = "600" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiAttSpLaua</Sound>
+		<Sound>SUReape_voiAttSpLaub</Sound>
+		<Sound>SUReape_voiAttSpLauc</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceMove" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiMovea</Sound>
+		<Sound>SUReape_voiMoveb</Sound>
+		<Sound>SUReape_voiMovec</Sound>
+		<Sound>SUReape_voiMoved</Sound>
+		<Sound>SUReape_voiMovee</Sound>
+		<Sound>SUReape_voiMovef</Sound>
+		<Sound>SUReape_voiMoveg</Sound>
+		<Sound>SUReape_voiMoveh</Sound>
+		<Sound>SUReape_voiMovei</Sound>
+		<Sound>SUReape_voiMovej</Sound>
+		<Sound>SUReape_voiMovek</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceMoveAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiMvAtta</Sound>
+		<Sound>SUReape_voiMvAttb</Sound>
+		<Sound>SUReape_voiMvAttc</Sound>
+		<Sound>SUReape_voiMvAttd</Sound>
+		<Sound>SUReape_voiMvAtte</Sound>
+		<Sound>SUReape_voiMvAttf</Sound>
+		<Sound>SUReape_voiMvAttg</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceRetreat" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiRetreaa</Sound>
+		<Sound>SUReape_voiRetreab</Sound>
+		<Sound>SUReape_voiRetreac</Sound>
+		<!-- <Sound>SUReape_voiRetread</Sound> Don't fail me now Sickle! -->
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceSelect" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiCreatec</Sound>
+		<Sound>SUReape_voiSelecta</Sound>
+		<Sound>SUReape_voiSelectb</Sound>
+		<Sound>SUReape_voiSelectc</Sound>
+		<Sound>SUReape_voiSelectd</Sound>
+		<Sound>SUReape_voiSelecte</Sound>
+		<Sound>SUReape_voiSelectg</Sound>
+		<Sound>SUReape_voiSelecth</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceSelectBattle" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiSelBata</Sound>
+		<Sound>SUReape_voiSelBatb</Sound>
+		<Sound>SUReape_voiSelBatc</Sound>
+		<Sound>SUReape_voiSelBatd</Sound>
+		<Sound>SUReape_voiSelBate</Sound>
+		<Sound>SUReape_voiSelBatf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_Reaper_VoiceSelectUnderFire" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUReape_voiSelUnda</Sound>
+		<Sound>SUReape_voiSelUndb</Sound>
+		<Sound>SUReape_voiSelUndc</Sound>
+		<Sound>SUReape_voiSelUndd</Sound>
+		<Sound>SUReape_voiSelUnde</Sound>
+	</AudioEvent>
+	
+	<AudioEvent id="SOV_Reaper_VoiceShrunken" inheritFrom="AudioEvent:BaseUnitResponse"
+	Volume = "100"
+	MinVolume = "0"
+	Priority = "HIGH"
+	Limit="1"
+	Type = "WORLD SHROUDED EVERYONE VOICE"
+	SubmixSlider = "VOICE" >
+	<PitchShift Low="-1" High="1" />
+	<Delay Low="1300" High="1400" />
+	<Sound>SUReape_voiSelUnda</Sound>
+	<Sound>SUReape_voiSelUndb</Sound>
+	<Sound>SUReape_voiRetreaa</Sound>
+	<Sound>SUReape_voiRetreac</Sound>
+	<Sound>SUReape_voiRetread</Sound>
+	</AudioEvent>
+</AssetDeclaration>

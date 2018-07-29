@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitAbilityButtonTemplate
+		id="MouseButtonAlliedFutureTankLaserWeapon"
+		LogicCommand="Command_AlliedFutureTankLaserWeapon">
+		<Data>
+			<TargetedSpecialPower
+				StateData="ButtonStateAbilityAlliedFutureTankLaserWeapon"
+				ValidTargetCursor="TargetAbility"/>
+		</Data>
+	</UnitAbilityButtonTemplate>
+</AssetDeclaration>

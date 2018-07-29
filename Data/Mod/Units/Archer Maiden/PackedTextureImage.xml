@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<PackedTextureImage id="Button_JapanArcherMaiden" Texture="PackedImages_027_EP1" Rotated="false">
+		<Dimensions x="106" y="106"/>
+		<Coords x="109" y="1"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="JUA_Archer_Barrage" Texture="PackedImages_082_EP1" Rotated="false">
+		<Dimensions x="82" y="82"/>
+		<Coords x="86" y="167"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="UnitTypeIcon_ArcherMaiden" Texture="PackedImages_094_EP1" Rotated="false">
+		<Dimensions x="25" y="32"/>
+		<Coords x="1" y="223"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="Portrait_JapanArcherMaiden" Texture="PackedImagesPortraits_014_EP1" Rotated="false">
+		<Dimensions x="101" y="76"/>
+		<Coords x="1" y="79"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+</AssetDeclaration>

@@ -1,0 +1,7 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="SUGrinderVehicle" File="ART:Units/Grinder/SUGrinderVehicle.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUGrinderVehicle_D" File="ART:Units/Grinder/SUGrinderVehicle_D.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUGrinderVehicle_NRM" File="ART:Units/Grinder/SUGrinderVehicle_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUGrinderVehicle_SPM" File="ART:Units/Grinder/SUGrinderVehicle_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

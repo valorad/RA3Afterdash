@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPower_TriggerNitrousBoost"
+		ReloadTime="10s"
+		TargetType="NONE"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="voiceNitroBoost"
+		PreventConditions="IMMOBILE IMMOBILE_ALLOW_ROTATE"/>
+</AssetDeclaration>

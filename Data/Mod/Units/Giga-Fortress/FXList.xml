@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_JapanFortressShipCannonProjectileHit">
+    <NuggetList>
+      <Sound Value="JAP_EmperorsPearl_WaterWeapon_CannonImpact" />
+      <ParticleSystem
+				Particle="JapanBattleshipHitFlash"/>
+      <ParticleSystem
+				Particle="JapanBattleshipHitVapor"/>
+      <ParticleSystem
+				Particle="JapanBattleshipHitGlow"/>
+      <ParticleSystem
+				Particle="JapanBattleshipHitLight"/>
+
+      <ParticleSystem	
+        Particle="JapanBattleshipHitWake" 
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+
+		<ForceFeedback Event="ShogunBattleshipAttacking" />
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_JapanFortressShipCannonProjectileHit_Vet">
+    <NuggetList>
+      <Sound Value="JAP_EmperorsPearl_WaterWeapon_CannonImpact" />
+      <ParticleSystem
+				Particle="JapanBattleshipHitFlash_Vet"/>
+      <ParticleSystem
+				Particle="JapanBattleshipHitVapor_Vet"/>
+      <ParticleSystem
+				Particle="JapanBattleshipHitGlow_Vet"/>
+      <ParticleSystem
+				Particle="JapanBattleshipHitLight_Vet"/>
+
+      <ParticleSystem
+        Particle="JapanBattleshipHitWake"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+
+      <ForceFeedback Event="ShogunBattleshipAttacking" />
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_GigaFortressDeathWeapon">
+    <NuggetList>
+      <ParticleSystem Particle="GigaFortressDeathLight"/>
+      <ParticleSystem Particle="GigaFortressDeathFlash"/>
+      <ParticleSystem Particle="GigaFortressDeathBurst"/>
+      <ParticleSystem Particle="GigaFortressDeathBurst2"/>
+      <ParticleSystem Particle="JapanFortressTrans_Wake"
+        OnlyIfOnWater ="true"/>
+      <ParticleSystem Particle="GigaFortressDeathWater"
+        OnlyIfOnWater ="true"/>
+      <ParticleSystem Particle="GigaFortressDeathSplash"
+        OnlyIfOnWater ="true"/>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_FortressShip_MissileImpact">
+    <NuggetList>
+		<Sound Value="JAP_EmperorsPearl_MissilePodImpact" />
+      <ParticleSystem
+				Particle="FXJapanMIRVHitExplosion">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitGlow">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitLight">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_FortressShip_MissileImpact_Vet">
+    <NuggetList>
+      <Sound Value="JAP_EmperorsPearl_MissilePodImpact" />
+      <ParticleSystem
+				Particle="FXJapanMIRVHitExplosion_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitGlow_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitLight_Vet">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="FXJapanMIRVHitBits_Vet">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanPearlLaserFire">
+    <NuggetList>
+     
+      <ParticleSystem
+        Particle="JapanPearlLaserFireSW"
+        OrientToObject="true">
+      </ParticleSystem>
+      <ParticleSystem
+        Particle="JapanPearlLaserFireSW2"
+        OrientToObject="true">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanBattleshipFireWake"
+        OrientToObject = "true"/>
+      
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanPearlLaserHit">
+    <NuggetList>
+
+      <ParticleSystem
+				Particle="JapanPearlSweepEmbers"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepVapor"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepFlash"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepLight"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepSW"
+				OrientToObject="false" />
+      <TerrainScorch
+				Type		= "TERRAIN_MAPPED"
+				Radius		= "15" >
+      </TerrainScorch>
+      <ViewShake
+				Type = "SUBTLE" />
+      <!-- Water FX -->
+      <ParticleSystem
+        Particle="JapanPearlSweepMist"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+      <ParticleSystem
+        Particle="JapanPearlSweepWake"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanPearlLaserHitVet">
+    <NuggetList>
+
+      <ParticleSystem
+				Particle="JapanPearlSweepEmbersVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepVaporVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepFlashVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepLightVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="JapanPearlSweepSWVet"
+				OrientToObject="false" />
+      <TerrainScorch
+				Type		= "TERRAIN_MAPPED"
+				Radius		= "15" >
+      </TerrainScorch>
+      <ViewShake
+				Type = "SUBTLE" />
+      <!-- Water FX -->
+      <ParticleSystem
+        Particle="JapanPearlSweepMist"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+      <ParticleSystem
+        Particle="JapanPearlSweepWake"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+
+    </NuggetList>
+  </FXList>
+
+	<FXList id="FX_Audio_Gigafortress_Die">
+		<NuggetList>
+			<Sound Value="JAP_EmperorsPearl_DieStart" />
+		</NuggetList>
+	</FXList>
+</AssetDeclaration>

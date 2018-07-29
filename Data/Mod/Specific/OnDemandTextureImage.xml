@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<OnDemandTextureImage id="BootupScreen" Texture="Mod_Logo" Rotated="false">
+		<Dimensions x="1280" y="720"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="2048" y="1024"/>
+	</OnDemandTextureImage>
+	
+	<OnDemandTextureImage id="BootupScreen_PC" Texture="Mod_Logo" Rotated="false">
+		<Dimensions x="1280" y="720"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="2048" y="1024"/>
+	</OnDemandTextureImage>
+	
+	<OnDemandTextureImage id="Logo" Texture="Mod_Logo" Rotated="false">
+		<Dimensions x="1280" y="720"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="2048" y="1024"/>
+	</OnDemandTextureImage>
+	
+	<OnDemandTextureImage id="PostBootupScreen" Texture="Mod_Logo" Rotated="false">
+		<Dimensions x="1280" y="720"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="2048" y="1024"/>
+	</OnDemandTextureImage>
+	
+	<OnDemandTextureImage id="PostBootupScreen_ESRB" Texture="Mod_Logo" Rotated="false">
+		<Dimensions x="1280" y="720"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="2048" y="1024"/>
+	</OnDemandTextureImage>
+	
+	<OnDemandTextureImage id="PostBootupScreen_NAFR" Texture="Mod_Logo" Rotated="false">
+		<Dimensions x="1280" y="720"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="2048" y="1024"/>
+	</OnDemandTextureImage>
+	
+	<OnDemandTextureImage id="RA3_MainMenu3D_logo" Texture="Mod_Text" Rotated="false">
+		<!-- 464 x 87 -->
+		<Dimensions x="811" y="152"/>
+		<Coords x="0" y="0"/>
+		<TextureDimensions x="1024" y="256"/>
+	</OnDemandTextureImage>
+</AssetDeclaration>

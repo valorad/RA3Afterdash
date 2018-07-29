@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Pacifier FAV/AudioEvent.xml" />
+		<Include type="all" source="Pacifier FAV/AudioFile.xml" />
+		<Include type="all" source="Pacifier FAV/Multisound.xml" />
+		<Include type="all" source="Pacifier FAV/Video.xml" />
+		<Include type="all" source="Pacifier FAV/VideoEventList.xml" />
+		
+		<Include type="all" source="Pacifier FAV/Armor.xml" />
+		<Include type="all" source="Pacifier FAV/AttributeModifier.xml" />
+		<Include type="all" source="Pacifier FAV/ButtonSingleStateData.xml" />
+		<Include type="all" source="Pacifier FAV/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Pacifier FAV/FXList.xml" />
+		<Include type="all" source="Pacifier FAV/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Pacifier FAV/GameObject.xml" />
+		<Include type="all" source="Pacifier FAV/Locomotor.xml" />
+		<Include type="all" source="Pacifier FAV/LogicCommand.xml" />
+		<Include type="all" source="Pacifier FAV/LogicCommandSet.xml" />
+		<Include type="all" source="Pacifier FAV/ObjectCreationList.xml" />
+		<Include type="all" source="Pacifier FAV/PackedTextureImage.xml" />
+		<Include type="all" source="Pacifier FAV/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Pacifier FAV/Texture.xml" />
+		<Include type="all" source="Pacifier FAV/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Pacifier FAV/UnitIntro.xml" />
+		<Include type="all" source="Pacifier FAV/W3X.xml" />
+		<Include type="all" source="Pacifier FAV/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="JAP_ArcherMaiden_VoiceSelectBattleMS" >
+		<Subsound>JAP_ArcherMaiden_VoiceSelectBattle</Subsound>
+		<Subsound>JAP_NinjaArcher_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="JAP_ArcherMaiden_VoiceSelectMS" >
+		<Subsound>JAP_ArcherMaiden_VoiceSelect</Subsound>
+		<Subsound>JAP_NinjaArcher_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="JAP_ArcherMaiden_VoiceSelectUnderFireMS" >
+		<Subsound>JAP_ArcherMaiden_VoiceSelectUnderFire</Subsound>
+		<Subsound>JAP_NinjaArcher_Select</Subsound>
+	</Multisound>
+</AssetDeclaration>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<WeaponTemplate
+		id="JapanScoutInfantryAttachWeapon"
+		AttackRange="80.0"
+		RadiusDamageAffects="ENEMIES"
+		RequiredAntiMask="ANTI_VEHICLE ANTI_AIRBORNE_VEHICLE"
+		ForbiddenAntiMask="ANTI_INFANTRY ANTI_STRUCTURE ANTI_SUBMERGED ANTI_AIRBORNE_INFANTRY" 
+		WeaponSpeed="125"
+		CanFireWhileMoving="true"
+		AcceptableAimDelta="180d"
+		ProjectileSelf="true"
+		ClipSize="1"
+		Flags="NOT_ATTRACTED_BY_MAGNETS" 
+		PreferredTargetBone="ROOTTRANSFORM"
+		FinishAttackOnceStarted="true">
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>
+			<ProjectileNugget
+				ForbiddenTargetObjectStatus="VEHICLE_ATTACHED"
+				WarheadTemplate="JapanScoutInfantryAttachWeaponWarhead">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					StatusBitFlagsExclude="SUBMERGED">
+					<ExcludeThing>JapanScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</ProjectileNugget>
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

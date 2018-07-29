@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ArmorTemplate
+		id="SovietHeavyWalkerVehicleArmor"
+		SideDamageScalar="105"
+		RearDamageScalar="110">
+		<Armor
+			Damage="MELEE"
+			Percent="0" />
+		<Armor
+			Damage="SNIPER"
+			Percent="0" />
+		<Armor
+			Damage="GUN"
+			Percent="50" />		
+		<Armor
+			Damage="AUTO_CANNON"
+			Percent="100" />
+		<Armor
+			Damage="IMPACT"
+			Percent="75" />
+		<Armor
+			Damage="ROCKET"
+			Percent="75" />
+		<Armor
+			Damage="FLAK"
+			Percent="100" />
+		<Armor
+			Damage="CANNON"
+			Percent="170" />
+		<Armor
+			Damage="PRISM"
+			Percent="170" />
+		<Armor
+			Damage="TESLA"
+			Percent="170" />
+		<Armor
+			Damage="EXPLOSIVE"
+			Percent="100" />
+		<Armor
+			Damage="RADIATION"
+			Percent="5" />
+	</ArmorTemplate>
+	
+	<ArmorTemplate
+		id="SovietHeavyWalkerDeployedTurretArmor">
+		<Armor
+			Damage="SNIPER"
+			Percent="0" />
+		<Armor
+			Damage="CANNON"
+			Percent="100" />
+		<Armor
+			Damage="ROCKET"
+			Percent="100" />
+		<Armor
+			Damage="GRENADE"
+			Percent="100" />
+		<Armor
+			Damage="GUN"
+			Percent="100" />
+		<Armor
+			Damage="MELEE"
+			Percent="0" />
+		<Armor
+			Damage="AUTO_CANNON"
+			Percent="50" />
+		<Armor
+			Damage="IMPACT"
+			Percent="100" />
+		<Armor
+			Damage="EXPLOSIVE"
+			Percent="150" />
+		<Armor
+			Damage="FLAK"
+			Percent="100" />
+		<Armor
+			Damage="PRISM"
+			Percent="100" />
+		<Armor
+			Damage="TESLA"
+			Percent="100" />
+		<Armor
+			Damage="RADIATION"
+			Percent="0" />
+	</ArmorTemplate>
+</AssetDeclaration>

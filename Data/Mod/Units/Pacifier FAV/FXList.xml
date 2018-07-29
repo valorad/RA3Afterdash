@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_AlliedArtilleryFootprint">
+    <NuggetList>
+      <DynamicDecal
+				Decal				= "FXSovietSickleFP"
+				Size								= "50"
+				OpacityStart				= "0"
+				OpacityFadeTimeOne	= "0s"
+				OpacityPeak					= "1"
+				OpacityPeakTime			= "5s"
+				OpacityFadeTimeTwo	= "20s"
+				OpacityEnd					= "0"
+				StartingDelay				= "0s"
+				OnlyIfOnLand				="true"
+				Lifetime						= "40s">
+        <Color R="1" G="1" B="1" />
+        <Offset x="0" y="0" />
+      </DynamicDecal>
+      <ParticleSystem
+				Particle="AlliedArtilleryFootDust"
+				OrientToObject = "true">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_AlliedArtilleryVehicleBarrageExplosion">
+    <NuggetList>
+      <Sound Value="ALL_SiegeTank_CannonImpact" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionEmbers"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionFlash"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionLight"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionShockwave"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionCenterFire"
+				OrientToObject="false" />
+      <TerrainScorch
+				Type		= "TERRAIN_MAPPED"
+				Radius		= "15" >
+      </TerrainScorch>
+      <ViewShake
+				Type = "SEVERE" />
+      <!-- Water FX -->
+      <ParticleSystem
+        Particle="AlliedArtilleryExplosionWake"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+      <ParticleSystem
+        Particle="AlliedArtilleryExplosionWaterMist"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_AlliedArtilleryVehicleBarrageExplosionVet">
+    <NuggetList>
+      <Sound Value="ALL_SiegeTank_CannonImpact" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionEmbersVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionFlashVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionLightVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionShockwaveVet"
+				OrientToObject="false" />
+      <ParticleSystem
+				Particle="AlliedArtilleryExplosionCenterFireVet"
+				OrientToObject="false" />
+      <TerrainScorch
+				Type		= "TERRAIN_MAPPED"
+				Radius		= "15" >
+      </TerrainScorch>
+      <ViewShake
+				Type = "SEVERE" />
+      <!-- Water FX -->
+      <ParticleSystem
+        Particle="AlliedArtilleryExplosionWake"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+      <ParticleSystem
+        Particle="AlliedArtilleryExplosionWaterMist"
+        OnlyIfOnWater ="true">
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_Allied_Artillery_Fire">
+    <NuggetList>
+      <ParticleSystem Particle="AlliedArtilleryFire_Geo"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryFire_Glow"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryFire_Light"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryFire_Smoke"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_Allied_Artillery_FireVet">
+    <NuggetList>
+      <ParticleSystem Particle="AlliedArtilleryFire_GeoVet"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryFire_GlowVet"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryFire_LightVet"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryFire_Smoke"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_Allied_Artillery_PrimaryFire">
+    <NuggetList>
+      <ParticleSystem Particle="AlliedArtilleryPrimary_Flash"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryPrimary_Shells"
+                      OrientToObject = "false">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_Allied_Artillery_PrimaryFireVet">
+    <NuggetList>
+      <ParticleSystem Particle="AlliedArtilleryPrimary_FlashVet"
+                      OrientToObject = "true">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedArtilleryPrimary_Shells"
+                      OrientToObject = "false">
+        <Offset x="0.0" y="0.0" z="0.0"/>
+      </ParticleSystem>
+    </NuggetList>
+  </FXList>
+</AssetDeclaration>

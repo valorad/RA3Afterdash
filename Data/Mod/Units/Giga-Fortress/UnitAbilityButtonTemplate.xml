@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitAbilityButtonTemplate
+		id="MouseButtonToggleJapanFortressShipTransformMode"
+		LogicCommand="Command_ToggleJapanFortressShipTransformMode">
+		<Data>
+			<ToggleSpecialPower>
+				<StateData>ButtonStateAbilityToggleJapanFortressShipTransformAircraftMode</StateData>
+				<StateData>ButtonStateAbilityToggleJapanFortressShipTransformShipMode</StateData>
+			</ToggleSpecialPower>
+		</Data>
+	</UnitAbilityButtonTemplate>
+</AssetDeclaration>

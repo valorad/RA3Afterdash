@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<PackedTextureImage id="Button_JapanGigaFortressHead" Texture="PackedImages_030_EP1" Rotated="false">
+		<Dimensions x="106" y="106"/>
+		<Coords x="109" y="1"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="Button_JapanGigaFortressShip" Texture="PackedImages_030_EP1" Rotated="false">
+		<Dimensions x="106" y="106"/>
+		<Coords x="1" y="109"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="JUA_GigaFortress_Air" Texture="PackedImages_083_EP1" Rotated="false">
+		<Dimensions x="82" y="82"/>
+		<Coords x="169" y="169"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="JUA_GigaFortress_Sea" Texture="PackedImages_084_EP1" Rotated="false">
+		<Dimensions x="82" y="82"/>
+		<Coords x="1" y="1"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="Portrait_JapanGigaFortressHead" Texture="PackedImagesPortraits_016_EP1" Rotated="false">
+		<Dimensions x="101" y="76"/>
+		<Coords x="1" y="79"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+	
+	<PackedTextureImage id="Portrait_JapanGigaFortressShip" Texture="PackedImagesPortraits_016_EP1" Rotated="false">
+		<Dimensions x="101" y="76"/>
+		<Coords x="104" y="79"/>
+		<TextureDimensions x="256" y="256"/>
+	</PackedTextureImage>
+</AssetDeclaration>

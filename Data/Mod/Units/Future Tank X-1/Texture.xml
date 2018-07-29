@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="AUFutureTank" File="ART:Units/Future Tank X-1/AUFutureTank.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AUFutureTank_D" File="ART:Units/Future Tank X-1/AUFutureTank_D.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AUFutureTank_NRM" File="ART:Units/Future Tank X-1/AUFutureTank_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AUFutureTank_SPM" File="ART:Units/Future Tank X-1/AUFutureTank_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXAlienLaser" File="ART:Units/Future Tank X-1/FXAlienLaser.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXAlienLaserHeroic" File="ART:Units/Future Tank X-1/FXAlienLaserHeroic.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXAlliedFutureElec" File="ART:Units/Future Tank X-1/FXAlliedFutureElec.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXAlliedFutureLaser" File="ART:Units/Future Tank X-1/FXAlliedFutureLaser.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXYurikoShieldFadeLUT" File="ART:Units/Future Tank X-1/FXYurikoShieldFadeLUT.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

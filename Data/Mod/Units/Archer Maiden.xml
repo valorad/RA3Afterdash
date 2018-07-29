@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Archer Maiden/AudioEvent.xml" />
+		<Include type="all" source="Archer Maiden/AudioFile.xml" />
+		<Include type="all" source="Archer Maiden/Multisound.xml" />
+		<Include type="all" source="Archer Maiden/Video.xml" />
+		<Include type="all" source="Archer Maiden/VideoEventList.xml" />
+		
+		<Include type="all" source="Archer Maiden/Armor.xml" />
+		<Include type="all" source="Archer Maiden/ButtonSingleStateData.xml" />
+		<Include type="all" source="Archer Maiden/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="Archer Maiden/FXList.xml" />
+		<Include type="all" source="Archer Maiden/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="Archer Maiden/GameObject.xml" />
+		<Include type="all" source="Archer Maiden/LogicCommand.xml" />
+		<Include type="all" source="Archer Maiden/LogicCommandSet.xml" />
+		<Include type="all" source="Archer Maiden/PackedTextureImage.xml" />
+		<Include type="all" source="Archer Maiden/RadiusCursor.xml" />
+		<Include type="all" source="Archer Maiden/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Archer Maiden/Texture.xml" />
+		<Include type="all" source="Archer Maiden/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="Archer Maiden/UnitIntro.xml" />
+		<Include type="all" source="Archer Maiden/UnitTypeIcon.xml" />
+		<Include type="all" source="Archer Maiden/W3X.xml" />
+		<Include type="all" source="Archer Maiden/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="PackedImages_003_EP1" File="ART:Common/PackedImages_003_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_004_EP1" File="ART:Common/PackedImages_004_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_005_EP1" File="ART:Common/PackedImages_005_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_011_EP1" File="ART:Common/PackedImages_011_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_012_EP1" File="ART:Common/PackedImages_012_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_014_EP1" File="ART:Common/PackedImages_014_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_015_EP1" File="ART:Common/PackedImages_015_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_027_EP1" File="ART:Common/PackedImages_027_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="PackedImages_030_EP1" File="ART:Common/PackedImages_030_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_035_EP1" File="ART:Common/PackedImages_035_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_066_EP1" File="ART:Common/PackedImages_066_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_067_EP1" File="ART:Common/PackedImages_067_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_069_EP1" File="ART:Common/PackedImages_069_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_082_EP1" File="ART:Common/PackedImages_082_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="PackedImages_083_EP1" File="ART:Common/PackedImages_083_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_084_EP1" File="ART:Common/PackedImages_084_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_086_EP1" File="ART:Common/PackedImages_086_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_088_EP1" File="ART:Common/PackedImages_088_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_089_EP1" File="ART:Common/PackedImages_089_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_090_EP1" File="ART:Common/PackedImages_090_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImages_094_EP1" File="ART:Common/PackedImages_094_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="PackedImages_097_EP1" File="ART:Common/PackedImages_097_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	
+	<Texture id="PackedImagesPortraits_004_EP1" File="ART:Common/PackedImagesPortraits_004_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_006_EP1" File="ART:Common/PackedImagesPortraits_006_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_014_EP1" File="ART:Common/PackedImagesPortraits_014_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="PackedImagesPortraits_016_EP1" File="ART:Common/PackedImagesPortraits_016_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_019_EP1" File="ART:Common/PackedImagesPortraits_019_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_032_EP1" File="ART:Common/PackedImagesPortraits_032_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_033_EP1" File="ART:Common/PackedImagesPortraits_033_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_034_EP1" File="ART:Common/PackedImagesPortraits_034_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<Texture id="PackedImagesPortraits_035_EP1" File="ART:Common/PackedImagesPortraits_035_EP1.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+</AssetDeclaration>

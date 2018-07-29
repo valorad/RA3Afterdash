@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseMissionEvaDialogue.xml" />
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<!-- Mission dialogue -->
+	<AudioEvent id="MSIn_MortarCycle" inheritFrom="AudioEvent:BaseMissionEvaDialogue">
+		<Sound>MSIn_MortarCycle</Sound> 
+	</AudioEvent>
+	
+	
+	
+	<!-- Sound effect -->
+	<AudioEvent
+	id="SOV_MortarCycle_Select"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUMorCycle_selectA</Sound> <Sound>SUMorCycle_selectB</Sound> <Sound>SUMorCycle_selectC</Sound> <Sound>SUMorCycle_selectD</Sound>
+	</AudioEvent>		
+		
+	<AudioEvent
+	id="SOV_MortarCycle_MovStart"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUMorCycle_movstartA</Sound> <Sound>SUMorCycle_movstartB</Sound> <Sound>SUMorCycle_movstartC</Sound> <Sound>SUMorCycle_movstartD</Sound>
+	</AudioEvent>		
+
+	<AudioEvent
+	id="SOV_MortarCycle_MovByLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-10"
+	Limit="3"
+	Control="LOOP FADE_ON_KILL"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-10" High="10" />
+	<Delay Low="40" High="80" />
+		<Sound>SUMorCycle_movByLpA</Sound>
+		<Sound>SUMorCycle_movByLpB</Sound>
+		<Sound>SUMorCycle_movByLpC</Sound>
+		<Sound>SUMorCycle_movByLpD</Sound>
+		<Sound>SUMorCycle_movByLpE</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarGunToggleOn"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="55"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED ENEMIES ALLIES"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="100" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUMorCycle_weapToggleMortarA</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarGunToggleOnPlayer"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="55"
+	MinVolume="50"
+	Limit="2"
+	Priority="HIGH"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="100" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUMorCycle_weapToggleMortarA</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarGunToggleOff"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="70"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED ENEMIES ALLIES"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="100" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUMorCycle_weapToggleMgA</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarGunToggleOffPlayer"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="70"
+	MinVolume="60"
+	Limit="2"
+	Priority="HIGH"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="100" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>SUMorCycle_weapToggleMgA</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarFire1"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE - 5"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="HIGH"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift Low="40" High="50" />
+		<Sound>SUMorCycle_mortarFireA</Sound> <Sound>SUMorCycle_mortarFireB</Sound> <Sound>SUMorCycle_mortarFireC</Sound> <Sound>SUMorCycle_mortarFireD</Sound> <Sound>SUMorCycle_mortarFireE</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarFire2"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 20"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.6s" />
+	<PitchShift Low="-40" High="-35" />
+		<Sound>WIBulle_gener001</Sound> <Sound>WIBulle_gener002</Sound> <Sound>WIBulle_gener003</Sound> <Sound>WIBulle_gener004</Sound> 
+		<Sound>WIBulle_gener005</Sound> <Sound>WIBulle_gener006</Sound>
+		<!--
+		<Sound>WIBulle_generic1a</Sound> <Sound>WIBulle_generic1b</Sound> <Sound>WIBulle_generic1c</Sound> 
+		<Sound>WIBulle_generic1d</Sound> <Sound>WIBulle_generic1e</Sound> <Sound>WIBulle_generic1f</Sound> 
+		<Sound>WIBulle_generic1g</Sound> <Sound>WIBulle_generic1h</Sound> <Sound>WIBulle_generic1i</Sound> 
+		<Sound>WIBulle_generic1j</Sound> <Sound>WIBulle_generic1k</Sound> <Sound>WIBulle_generic1l</Sound> 
+		<Sound>WIBulle_generic1m</Sound>
+		-->
+		<!-- <Sound>WIBulle_ricoTon23</Sound> use for gun fire -->
+	</AudioEvent>
+
+	<AudioEvent
+	id="SOV_MortarCycle_MortarIncoming"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="30"
+	VolumeShift="-20"
+	Limit="2"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="750" High="1000" />
+	<PerFilePitchShift Low="20" High="30" />
+		<Sound>SUMorCycle_mortarIncomingA</Sound> <Sound>SUMorCycle_mortarIncomingB</Sound> <Sound>SUMorCycle_mortarIncomingC</Sound> <Sound>SUMorCycle_mortarIncomingD</Sound> <Sound>SUMorCycle_mortarIncomingE</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+	id="SOV_MortarCycle_MortarExplo"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 5"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="HIGH"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift Low="-5" High="5" />
+		<Sound>SUMorCycle_mortarExploA</Sound>
+		<Sound>SUMorCycle_mortarExploB</Sound>
+		<Sound>SUMorCycle_mortarExploC</Sound>
+		<Sound>SUMorCycle_mortarExploD</Sound>
+		<Sound>SUMorCycle_mortarExploE</Sound>
+		<Sound>SUMorCycle_mortarExploF</Sound>
+	</AudioEvent>
+	
+	
+	
+	<!-- Voice -->
+	<AudioEvent id="SOV_MortarCycle_VoiceAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiAttacka</Sound>
+		<Sound>SUMorta_voiAttackb</Sound>
+		<Sound>SUMorta_voiAttackc</Sound>
+		<Sound>SUMorta_voiAttackd</Sound>
+		<Sound>SUMorta_voiAttacke</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceAttackMortar" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiAttSpeca</Sound>
+		<Sound>SUMorta_voiAttSpecb</Sound>
+		<Sound>SUMorta_voiAttSpecc</Sound>
+		<Sound>SUMorta_voiAttSpecd</Sound>
+		<Sound>SUMorta_voiAttSpece</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceCreate" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<!-- <Sound>SUMorta_voiCreatea</Sound> ha ha check out the new bike -->
+		<Sound>SUMorta_voiCreatec</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceDie" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>NUYELL1</Sound> 
+		<Sound Weight="350">NUYELL3</Sound> 
+		<Sound>NUYELL4</Sound> 
+		<Sound>NUYELL5</Sound> 
+		<Sound>YELL1</Sound> 
+		<Sound Weight="200">SUMorta_voiDiea</Sound> 
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceMove" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiMovea</Sound>
+		<Sound>SUMorta_voiMoveb</Sound>
+		<Sound>SUMorta_voiMovec</Sound>
+		<Sound>SUMorta_voiMoved</Sound>
+		<Sound>SUMorta_voiMovee</Sound>
+		<Sound>SUMorta_voiMovef</Sound>
+		<Sound>SUMorta_voiMoveg</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceMoveAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiMvAtta</Sound>
+		<Sound>SUMorta_voiMvAttb</Sound>
+		<Sound>SUMorta_voiMvAttc</Sound>
+		<Sound>SUMorta_voiMvAttd</Sound>
+		<Sound>SUMorta_voiMvAtte</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceSelect" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiCreateb</Sound>
+		<Sound>SUMorta_voiSelecta</Sound>
+		<Sound>SUMorta_voiSelectb</Sound>
+		<Sound>SUMorta_voiSelectc</Sound>
+		<Sound>SUMorta_voiSelectd</Sound>
+		<Sound>SUMorta_voiSelecte</Sound>
+		<Sound>SUMorta_voiSelectf</Sound>
+	</AudioEvent>
+	
+	<AudioEvent id="SOV_MortarCycle_VoiceSelectBattle" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiSelBata</Sound>
+		<Sound>SUMorta_voiSelBatb</Sound>
+		<Sound>SUMorta_voiSelBatc</Sound>
+		<Sound>SUMorta_voiSelBatd</Sound>
+		<Sound>SUMorta_voiSelBate</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="SOV_MortarCycle_VoiceSelectUnderFire" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>SUMorta_voiSelUnda</Sound>
+		<Sound>SUMorta_voiSelUndb</Sound>
+		<Sound>SUMorta_voiSelUndc</Sound>
+		<Sound>SUMorta_voiSelUndd</Sound>
+	</AudioEvent>
+	
+	<AudioEvent id="SOV_MortarCycle_VoiceShrunken" inheritFrom="AudioEvent:BaseUnitResponse"
+	Volume = "100"
+	MinVolume = "0"
+	Priority = "HIGH"
+	Limit="1"
+	Type = "WORLD SHROUDED EVERYONE VOICE"
+	SubmixSlider = "VOICE" >
+	<PitchShift Low="-1" High="1" />
+	<Delay Low="1300" High="1400" />
+	<Sound>SUMorta_voiSelBata</Sound>
+	<Sound>SUMorta_voiSelBatd</Sound>
+	<Sound>SUMorta_voiSelUnda</Sound>
+	<Sound>SUMorta_voiSelUndb</Sound>
+	<Sound>SUMorta_voiSelUndd</Sound>
+	</AudioEvent>
+</AssetDeclaration>

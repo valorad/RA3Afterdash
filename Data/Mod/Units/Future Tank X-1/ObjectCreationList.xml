@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ObjectCreationList
+		id="AUFutureTank_Die_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="20.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>AlliedFutureTank_Collapse</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_AlliedFutureTankNeutronScramblerNode">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS INHERIT_ATTRIBUTES_FROM_SOURCE COPY_CREATORS_UPGRADES CREATE_AT_TARGET ISSUE_ATTACK_AFTER_CREATION"			
+			Disposition="LIKE_EXISTING"
+			Count="1"
+			StatusToCopyFromParent="FORCE_ATTACKING">
+			<CreateObject>AlliedFutureTankNeutronScramblerNode</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+
+	<ObjectCreationList
+		id="OCL_AlliedFutureTankNeutronScramblerNode_Vet">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS INHERIT_ATTRIBUTES_FROM_SOURCE COPY_CREATORS_UPGRADES CREATE_AT_TARGET ISSUE_ATTACK_AFTER_CREATION"
+			Disposition="LIKE_EXISTING"
+			Count="1"
+			StatusToCopyFromParent="FORCE_ATTACKING">
+			<CreateObject>AlliedFutureTankNeutronScramblerNode_Vet</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+</AssetDeclaration>

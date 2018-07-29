@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPower_TriggerLeapDeploy"
+		TargetType="LOCATION"
+		Flags="PATHABLE_ONLY NOT_CLIFF_CELL NO_FORBIDDEN_OBJECTS FOGGED_SHROUDED_CELLS_OK CANNOT_LEAVE_ENCLOSURE CAN_NOT_BE_SCRAMBLED"
+		PreventConditions="IGNORE_AI_COMMAND"
+		ForbiddenObjectRange="15"
+		WaypointModeTerminal="false"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="voiceLeapDeploy">
+		<ForbiddenObjectFilter
+			Rule="ANY"
+			Include="STRUCTURE CRUSHABLE_OBSTACLE AIRCRAFT"
+			Exclude="BRIDGE_ENDCAP BRIDGE_SEGMENT">
+			<ExcludeThing>NanoSwarmHiveEffect</ExcludeThing>
+		</ForbiddenObjectFilter>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_TriggerReplaceDummy"
+		TargetType="OBJECT_OR_LOCATION"
+		WaypointModeTerminal="false" />
+</AssetDeclaration>

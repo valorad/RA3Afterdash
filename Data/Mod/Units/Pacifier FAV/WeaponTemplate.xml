@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleMachineGun"
+		FiringLoopSound="ALL_Pacifier_MachineGunLoopMS"
+		FiringLoopSoundContinuesDuringReload="false"
+		FireFX="FX_Allied_Artillery_PrimaryFire"
+		FireVeteranFX="FX_Allied_Artillery_PrimaryFireVet"
+		AttackRange="250.0"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		CanFireWhileMoving="true"
+		ClipSize="8"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		ReAcquireDetailType="PER_CLIP">
+		<FiringDuration
+			MinSeconds="0.2s"
+			MaxSeconds="0.2s" />
+		<ClipReloadTime
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>
+			<DamageNugget
+				Damage="18.0"
+				Radius="0.0"
+				DamageType="AUTO_CANNON"
+				DamageFXType="SOVIET_MACHINEGUN"
+				DeathType="NORMAL"/>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleBaseSiegeArtillery"
+		AttackRange="740.0"
+		MinimumAttackRange="250"
+		WeaponSpeed="250.0"
+		MinWeaponSpeed="225"
+		MaxWeaponSpeed="275"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		ClipSize="1"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS">
+		<Nuggets>
+			<ProjectileNugget
+				id="AlliedArtilleryVehicleSiegeArtillery_ProjectileNugget"
+				WarheadTemplate="AlliedArtilleryVehicleSiegeArtilleryBarrageWeaponWarhead"
+				ProjectileTemplate="AlliedArtilleryVehicleBarrageProjectile" />
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleDummySiegeArtillery"
+		inheritFrom="AlliedArtilleryVehicleBaseSiegeArtillery"
+		FireSound="ALL_SiegeTank_CannonFire"
+		FireFX="FX_Allied_Artillery_Fire"
+		FireVeteranFX="FX_Allied_Artillery_FireVet"
+		WeaponSpeed="1"
+		Flags="FORCE_EMPTY_ENTIRE_CLIP"
+		CanFireWhileMoving="false"
+		ClipSize="5"		
+		ReAcquireDetailType="PRE_FIRE"
+		PreAttackType="PER_CLIP">
+		<PreAttackDelay
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<ClipReloadTime
+			MinSeconds="4.0s"
+			MaxSeconds="4.0s" />
+		<WeaponAiHintInfo
+			UseAsWarheadForDamageCalculations="AlliedArtilleryVehicleSiegeArtilleryBarrageWeaponWarhead" />
+		<Nuggets>
+			<SpecialPowerNugget
+				SpecialPowerTemplate="SpecialPower_SiegeMarker" />
+			<ProjectileNugget
+				id="AlliedArtilleryVehicleSiegeArtillery_ProjectileNugget" 
+				WarheadTemplate="AlliedArtilleryVehicleDummySiegeArtilleryBarrageWeaponWarhead"
+				ProjectileTemplate="AlliedArtilleryVehicleDummyBarrageProjectile">
+				<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="AlliedArtilleryVehicleDummyBarrageProjectile_Veteran"/>
+			</ProjectileNugget>
+			<AttributeModifierNugget
+				AttributeModifierOwnerName="AttributeModifier_SiegeMarker" />
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleSiegeArtillery"
+		inheritFrom="AlliedArtilleryVehicleBaseSiegeArtillery"
+		AutoReloadsClip="NONE"		
+		ScatterIndependently="true"
+		ScatterRadius="30">
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleSiegeArtillery_Veteran"
+		inheritFrom="AlliedArtilleryVehicleSiegeArtillery">
+		<Nuggets>
+			<ProjectileNugget
+				id="AlliedArtilleryVehicleSiegeArtillery_ProjectileNugget"
+				ProjectileTemplate="AlliedArtilleryVehicleBarrageProjectile_Veteran" />
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleDummySiegeArtilleryBarrageWeaponWarhead"
+        Flags="NOT_ATTRACTED_BY_MAGNETS"/>
+	
+	<WeaponTemplate
+		id="AlliedArtilleryVehicleSiegeArtilleryBarrageWeaponWarhead"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS SELF"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+		<Nuggets>
+			<MetaImpactNugget
+				id="DefaultMetaImpaceNugget"
+				ShockWaveAmount="50"
+				ShockWaveRadius="50.0"
+				ShockWaveZMult="1.0"
+				ShockWaveClearFlingHeight="15.0"
+				ForbiddenTargetObjectStatus="LEECHED_TARGET_ACTIVE"
+				ForbiddenTargetModelCondition="STUNNED STUNNED_STANDING_UP STUNNED_FLAILING">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="INFANTRY">
+				</SpecialObjectFilter>
+			</MetaImpactNugget>
+			<DamageNugget
+				id="DefaultDamageNugget" 
+				Damage="150.0"
+				DamageType="EXPLOSIVE"
+				DeathType="EXPLODED"
+				Radius="40.0">
+				<DamageScalarDetails Scalar= "50%">
+					<Filter
+						Rule="ALL"
+						Relationship="ALLIES" />
+				</DamageScalarDetails>	
+			</DamageNugget>			
+			<SuppressionNugget
+			   Radius="60.0"
+			   Suppression="25"
+			   DurationSeconds="3s" />
+		</Nuggets>
+	</WeaponTemplate>
+	
+	
+	
+	<!-- Hammer Tank -->
+	<WeaponTemplate
+		id="Leech_Pacifier"
+		inheritFrom="AlliedArtilleryVehicleMachineGun"
+		ClipSize="4" />
+</AssetDeclaration>

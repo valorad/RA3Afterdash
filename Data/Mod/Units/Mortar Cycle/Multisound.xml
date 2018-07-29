@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="SOV_MortarCycle_MortarFireMS">
+		<Subsound>SOV_MortarCycle_MortarFire1</Subsound>
+		<Subsound>SOV_MortarCycle_MortarFire2</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_MortarCycle_MortarGunToggleOffMS">
+		<Subsound>SOV_MortarCycle_MortarGunToggleOffPlayer</Subsound> 
+		<Subsound>SOV_MortarCycle_MortarGunToggleOff</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_MortarCycle_MortarGunToggleOnMS">
+		<Subsound>SOV_MortarCycle_MortarGunToggleOnPlayer</Subsound> 
+		<Subsound>SOV_MortarCycle_MortarGunToggleOn</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_MortarCycle_VoiceSelectMS" >
+		<Subsound>SOV_MortarCycle_VoiceSelect</Subsound>
+		<Subsound>SOV_MortarCycle_Select</Subsound>
+	</Multisound>
+</AssetDeclaration>

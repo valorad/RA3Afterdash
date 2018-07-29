@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityLeapDeploy">
+		<State
+			Image="SUA_Reaper_Jump"
+			Title="NAME:LeapDeploySpecialPower"
+			Description="DESC:LeapDeploySpecialPower" />
+	</ButtonSingleStateData>
+</AssetDeclaration>

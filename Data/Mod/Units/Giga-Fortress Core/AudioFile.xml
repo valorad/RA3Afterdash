@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<AudioFile id="IUGigaN_VoiCrea" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiCrea.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiHlpMea" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiHlpMea.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiHlpMeb" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiHlpMeb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiHlpMec" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiHlpMec.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMova" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMova.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovb" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovc" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovc.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovd" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovd.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMove" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMove.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovSpca" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovSpca.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovSpcb" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovSpcb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovSpcc" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovSpcc.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiMovSped" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiMovSped.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="IUGigaN_VoiSela" File="AUDIO:Units/Giga-Fortress Core/IUGigaN_VoiSela.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+</AssetDeclaration>

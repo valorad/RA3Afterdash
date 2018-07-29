@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="AlliedFutureTankNeutronScrambler"
+		FireSound="ALL_FutureTank_Weapon1FireMS"
+		FireFX="FX_Allied_FutureTank_Fire"
+		FireVeteranFX="FX_Allied_FutureTank_Fire"
+		AttackRange="250.0"
+		ProjectileCollidesWith="ENEMIES NEUTRAL STRUCTURES WALLS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		CanFireWhileMoving="true"
+		ClipSize="2"
+		ShotsPerBarrel="1"
+		ReAcquireDetailType="PER_SHOT"
+		PreAttackType="PER_CLIP">
+		<PreAttackDelay
+			MinSeconds="2.4s"
+			MaxSeconds="2.4s" />
+		<FiringDuration
+			MinSeconds="0.0s"
+			MaxSeconds="0.0s" />
+		<ClipReloadTime
+			MinSeconds="3.6s"
+			MaxSeconds="3.6s" />
+		<Nuggets>
+			<ProjectileNugget
+				id="defaultProjectileNugget" 
+				ProjectileTemplate="AlliedFutureTankNeutronWeaponProjectile"
+				WarheadTemplate="AlliedFutureTankNeutronWeaponWarhead">
+        <SpecialObjectFilter
+            Rule="ALL"
+            Exclude="BRIDGE BRIDGE_SEGMENT BRIDGE_ENDCAP BRIDGE_GATEHOUSE" />
+			</ProjectileNugget>
+			<InformTargetNugget />
+		</Nuggets>
+		<ScatterRadiusVsType
+			Radius="70.0"
+			RequiredModelConditions="SHRINK_EFFECT">
+			<Filter
+				Rule="ANY"
+				Include="INFANTRY AIRCRAFT VEHICLE HUGE_VEHICLE" />
+		</ScatterRadiusVsType>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedFutureTankNeutronScrambler_Veteran"
+		inheritFrom="AlliedFutureTankNeutronScrambler">
+		<Nuggets>
+			<ProjectileNugget
+				id="defaultProjectileNugget"
+				ProjectileTemplate="AlliedFutureTankNeutronWeaponProjectile_Vet"
+				WarheadTemplate="AlliedFutureTankNeutronWeaponWarhead_Vet">
+			</ProjectileNugget>
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>
+	
+  <WeaponTemplate
+		id="AlliedFutureTankNeutronWeaponWarhead"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER" >
+		<Nuggets>
+			<DamageNugget
+				id="defaultDamageNugget"
+				Damage="0.1"
+				DamageType="UNRESISTABLE" />
+				<!-- DamageType="NEUTRON" -->
+			<WeaponOCLNugget
+				id="defaultOCLNugget" 
+				WeaponOCL="OCL_AlliedFutureTankNeutronScramblerNode"
+				TargetAsPrimaryObject="false">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE BRIDGE_SEGMENT BRIDGE_ENDCAP BRIDGE_GATEHOUSE" />
+			</WeaponOCLNugget>
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="AlliedFutureTankNeutronWeaponWarhead_Vet"
+		inheritFrom="AlliedFutureTankNeutronWeaponWarhead">
+		<Nuggets>
+			<WeaponOCLNugget
+				id="defaultOCLNugget"
+				WeaponOCL="OCL_AlliedFutureTankNeutronScramblerNode_Vet">
+			</WeaponOCLNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedFutureTankNeutronWeapon_OneShotWeapon"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER ANTI_AIRBORNE_INFANTRY ANTI_AIRBORNE_VEHICLE" >
+		<Nuggets>
+			<DOTNugget
+				Damage="10.0"
+				DamageInterval="0.25s"
+				DamageDuration="1.35s"
+				DamageFXType="ALLIED_BOMB"
+				DeathType="DETONATED"
+				DamageType="UNRESISTABLE">
+				<!-- DamageType="NEUTRON" -->
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE BRIDGE_SEGMENT BRIDGE_ENDCAP BRIDGE_GATEHOUSE" />
+				<DamageScalarDetails
+					Scalar="25%">
+					<Filter
+						Rule="NONE"
+						Include="INFANTRY" />
+				</DamageScalarDetails>
+                <DamageScalarDetails
+					Scalar="50%">
+                    <Filter
+						Rule="ALL"
+						Relationship="ALLIES" />
+                </DamageScalarDetails>
+			</DOTNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedFutureTankNeutronWeapon_IncrementalWeapon"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER ANTI_AIRBORNE_INFANTRY ANTI_AIRBORNE_VEHICLE" >
+		<Nuggets>
+			<DamageNugget
+				Damage="20.0"
+				Radius="150"
+				DelayTimeSeconds="1.35s"
+				DamageSpeed="100"
+				DamageFXType="ALLIED_BOMB"
+				DeathType="DETONATED"
+				DamageType="UNRESISTABLE">
+				<!-- DamageType="NEUTRON" -->
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE BRIDGE_SEGMENT BRIDGE_ENDCAP BRIDGE_GATEHOUSE" />
+				<DamageScalarDetails
+					Scalar="25%">
+					<Filter
+						Rule="NONE"
+						Include="INFANTRY" />
+				</DamageScalarDetails>
+                <DamageScalarDetails
+					Scalar="50%">
+                    <Filter
+						Rule="ALL"
+						Relationship="ALLIES" />
+                </DamageScalarDetails>
+			</DamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedFutureTankLaserWeapon"
+		AttackRange="275"
+		CanFireWhileMoving="false"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RevealShroudOnFire="true">
+		<FiringDuration
+			MinSeconds="1s"
+			MaxSeconds="1s" />
+		<Nuggets>
+			<ActivateLaserNugget
+				id="defaultActivateLaserNugget1"
+				Lifetime="1s"
+				LaserId="101">
+				<ForbiddenUpgrade>Upgrade_Veterancy_HEROIC</ForbiddenUpgrade>
+			</ActivateLaserNugget>
+			<ActivateLaserNugget
+				id="defaultActivateLaserNugget2"
+				Lifetime="1s"
+				LaserId="102">
+				<ForbiddenUpgrade>Upgrade_Veterancy_HEROIC</ForbiddenUpgrade>
+			</ActivateLaserNugget>
+			<ActivateLaserNugget
+				id="defaultActivateLaserNugget3"
+				Lifetime="1s"
+				LaserId="103">
+				<RequiredUpgrade>Upgrade_Veterancy_HEROIC</RequiredUpgrade>
+			</ActivateLaserNugget>
+			<ActivateLaserNugget
+				id="defaultActivateLaserNugget4"
+				Lifetime="1s"
+				LaserId="104">
+				<RequiredUpgrade>Upgrade_Veterancy_HEROIC</RequiredUpgrade>
+			</ActivateLaserNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedFutureTankLaserSweepWeapon"
+		RadiusDamageAffects="ENEMIES NEUTRALS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		AttackRange="275.0"
+		CanFireWhileMoving="false">
+		<Nuggets>
+			<DamageNugget
+				Damage="50.0"
+				Radius="5.0"
+				RadiusAffectsBridges="true"
+				DelayTimeSeconds="0.1s"
+				DamageType="EXPLOSIVE"
+				DeathType="LASERED">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="AIRCRAFT ORE_NODE BRIDGE_SEGMENT BRIDGE_ENDCAP"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED" />
+				<DamageScalarDetails Scalar= "30%">
+					<Filter
+						Rule="NONE"
+						Include="INFANTRY" />
+				</DamageScalarDetails>
+			</DamageNugget>
+			<LineDamageNugget
+				id="DefaultDamageNugget"
+				Damage="25.0"
+				LineWidth="5.0"
+				DamageType="EXPLOSIVE"
+				DamageFXType="JAPAN_FORCE"
+				DeathType="NORMAL"
+				UseDynamicLineLength="true"
+				RadiusAffectsBridges="true"
+				OverShootDistance="0.0">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="AIRCRAFT ORE_NODE BRIDGE_SEGMENT BRIDGE_ENDCAP"
+					StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED" />
+				<DamageScalarDetails Scalar= "30%">
+					<Filter
+						Rule="NONE"
+						Include="INFANTRY" />
+				</DamageScalarDetails>
+			</LineDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	
+	
+	<!-- Hammer Tank -->
+	<WeaponTemplate
+		id="Leech_FutureTank"
+		inheritFrom="AlliedFutureTankNeutronScrambler" 
+		ClipSize="1">
+		<PreAttackDelay
+			MinSeconds="0.0s"
+			MaxSeconds="0.0s" />
+		<FiringDuration
+			MinSeconds="0.0s"
+			MaxSeconds="0.0s" />
+		<ClipReloadTime
+			MinSeconds="6.0s"
+			MaxSeconds="6.0s" />
+	</WeaponTemplate>
+</AssetDeclaration>

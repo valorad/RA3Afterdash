@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<FXList id="FX_TeslaTrooperFire">
+		<NuggetList>
+			<ParticleSystem
+				Particle="TeslaFireLightning01"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+			<ParticleSystem
+				Particle="TeslaFireLightning01"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+			<ParticleSystem
+				Particle="TeslaFireLightning02"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+			<ParticleSystem
+				Particle="TeslaFireLightning02"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+		</NuggetList>
+	</FXList>
+	
+	<FXList id="FX_TeslaTrooperFire_Vet">
+		<NuggetList>
+			<ParticleSystem
+				Particle="TeslaFireLightning01_Vet"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+			<ParticleSystem
+				Particle="TeslaFireLightning01_Vet"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+			<ParticleSystem
+				Particle="TeslaFireLightning02_Vet"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+			<ParticleSystem
+				Particle="TeslaFireLightning02_Vet"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset x="-7.5" y="0" z="0" />
+			</ParticleSystem>
+		</NuggetList>
+	</FXList>
+</AssetDeclaration>

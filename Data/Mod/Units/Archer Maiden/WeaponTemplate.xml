@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="JapanArcherInfantryEnergyBow"
+		AttackRange="200.0"
+		WeaponSpeed="500"
+		FireSoundPerClip="JAP_NinjaArcher_WeaponFire1_Arrow"
+		RadiusDamageAffects="ENEMIES"
+		AcceptableAimDelta="20d"
+		ClipSize="1"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		CanFireWhileMoving="false"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		PreAttackType="PER_SHOT"
+		ReAcquireDetailType="PRE_FIRE">
+		<PreAttackDelay
+			MinSeconds="0.5s"
+			MaxSeconds="0.5s" />
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<ClipReloadTime
+			MinSeconds="2.3s"
+			MaxSeconds="2.3s" />
+		<Nuggets>
+			<ProjectileNugget
+				WarheadTemplate="JapanArcherInfantryEnergyArrowWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowProjectile">
+				<VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowProjectile_Veteran"/>
+			</ProjectileNugget>
+		</Nuggets>
+	</WeaponTemplate>	
+
+	<WeaponTemplate
+		id="JapanArcherInfantryEnergyArrowWarhead"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY ANTI_PARACHUTE">
+		<Nuggets>
+			<DamageNugget
+				Damage="60.0"
+				DamageType="GUN"
+				DamageFXType="JAPAN_PLASMA"
+				DeathType="NORMAL"/>
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="JapanArcherInfantryEnergyBow_Aircraft"
+		inheritFrom="JapanArcherInfantryEnergyBow"
+		AttackRange="200.0"
+		AcceptableAimDelta="90d"
+		RequiredAntiMask="ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY ANTI_PARACHUTE">
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="JapanArcherInfantryEnergyArrowBarrage"
+		AttackRange="300.0"
+		MinimumAttackRange="100"
+		WeaponSpeed="300"
+		ClipSize="1"
+		AutoReloadsClip="AUTO"
+		CanFireWhileMoving="false"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE"
+		FireFX="FX_JAP_ArcherMaiden_BarrageFire"
+		FireVeteranFX="FX_JAP_ArcherMaiden_BarrageFire_Vet"
+		ReAcquireDetailType="PRE_FIRE"
+		RadiusDamageAffects="ENEMIES"
+		RevealShroudOnFire="true"	>
+		<Nuggets>
+			<!-- this projectile is the logical one which does damage. -->
+			<ProjectileNugget
+				WarheadTemplate="JapanArcherInfantryEnergyArrowBarrageArrowWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageMIRVingDamageProjectile">
+			</ProjectileNugget>
+			<!-- this projectile splits into multiple ones, and just visually represents the mirv -->
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageMIRVingProjectile">
+				<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageMIRVingProjectileVet"/>
+			</ProjectileNugget>
+			<InformTargetNugget />
+		</Nuggets>
+		<ScatterRadiusVsType
+			Radius="70.0"
+			RequiredModelConditions="SHRINK_EFFECT">
+			<Filter
+				Rule="ANY"
+				Include="INFANTRY AIRCRAFT VEHICLE HUGE_VEHICLE" />
+		</ScatterRadiusVsType>
+	</WeaponTemplate>
+
+		<!-- this weapon fires half way through the JapanArcherInfantryEnergyArrowBarrage's
+			  projectile trajectory, and creates a load of individual dummy projectiles.
+			  When the WeaponSpeed is zero, pick random number from min to max -->
+	<WeaponTemplate
+		id="JapanArcherInfantryEnergyArrowBarrageArrowLauncher"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RadiusDamageAffects="ENEMIES"
+		WeaponSpeed="0"
+		MinWeaponSpeed="250"
+		MaxWeaponSpeed="250"
+		ScatterIndependently="true"
+		ScatterRadius="60"
+		ClipSize="1"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+      </ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectile">
+        <VeterancyProjectiles
+						VeterancyLevel="HEROIC"
+						ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet"/>
+			</ProjectileNugget>
+		</Nuggets>
+		<ScatterRadiusVsType
+			Radius="70.0"
+			RequiredModelConditions="SHRINK_EFFECT">
+			<Filter
+				Rule="ANY"
+				Include="INFANTRY AIRCRAFT VEHICLE HUGE_VEHICLE" />
+		</ScatterRadiusVsType>
+	</WeaponTemplate>
+
+  <WeaponTemplate
+		id="JapanArcherInfantryEnergyArrowBarrageArrowLauncherVet"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RadiusDamageAffects="ENEMIES"
+		WeaponSpeed="0"
+		MinWeaponSpeed="250"
+		MaxWeaponSpeed="250"
+		ScatterIndependently="true"
+		ScatterRadius="60"
+		ClipSize="1"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+    <FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+    <Nuggets>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+      <ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead"
+				ProjectileTemplate="JapanArcherInfantryEnergyArrowBarrageArrowProjectileVet">
+      </ProjectileNugget>
+    </Nuggets>
+		<ScatterRadiusVsType
+			Radius="70.0"
+			RequiredModelConditions="SHRINK_EFFECT">
+			<Filter
+				Rule="ANY"
+				Include="INFANTRY AIRCRAFT VEHICLE HUGE_VEHICLE" />
+		</ScatterRadiusVsType>
+  </WeaponTemplate>
+
+	<!-- this is the main single weapon for the arrow mirv. -->
+	<WeaponTemplate
+		id="JapanArcherInfantryEnergyArrowBarrageArrowWarhead"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS SELF"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+		<Nuggets>
+			<DamageNugget
+				id="DefaultDamageNugget"
+				Damage="20.0"
+				DamageTaperOff="20.0"
+				DamageType="AUTO_CANNON"
+				DeathType="NORMAL"
+				Radius="60"/>
+			<SuppressionNugget
+				 Radius="30.0"
+				 Suppression="50"
+				 DurationSeconds="5s" />
+		</Nuggets>
+	</WeaponTemplate>
+	
+	
+	
+	<!-- Multigunner IFV -->
+	<WeaponTemplate
+		id="AAAVT1_ArcherMaiden"
+		inheritFrom="JapanArcherInfantryEnergyBow"
+		AttackRange="250.0"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY ANTI_PARACHUTE" />
+	
+	<!-- Multigunner Turret -->
+	<WeaponTemplate
+		id="ABD_ArcherMaiden"
+		inheritFrom="AAAVT1_ArcherMaiden" />
+</AssetDeclaration>

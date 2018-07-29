@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="SovietHeavyWalkerGrenadeWeapon"
+		AttackRange="225.0"
+		MinimumAttackRange="20"
+		WeaponSpeed="300"
+		MinWeaponSpeed="275"
+		MaxWeaponSpeed="325"
+		ScatterRadius="20"
+		ScatterIndependently="true"
+		FireSound="SOV_ProtoSickle_WeaponGrenadeFire"
+		FireFX="FX_SovietGrenadeLaunch"
+		FireVeteranFX="FX_SovietGrenadeLaunchVet"
+		AcceptableAimDelta="10d"
+		ClipSize="3"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		CanFireWhileMoving="true"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER">
+		<FiringDuration
+				MinSeconds="0.2s"
+				MaxSeconds="0.2s" />
+		<ClipReloadTime
+				MinSeconds="2.5s"
+				MaxSeconds="2.5s" />
+		<Nuggets>
+			<ProjectileNugget
+				ProjectileTemplate="SovietHeavyWalkerGrenadeWeaponProjectile"
+				WarheadTemplate="SovietHeavyWalkerGrenadeWeaponWarhead">
+				<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="SovietHeavyWalkerGrenadeWeaponProjectile_Vet"/>
+			</ProjectileNugget>
+			<SuppressionNugget
+				Radius="20.0"
+				Suppression="20"
+				DurationSeconds="5.0s" />
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietHeavyWalkerGrenadeWeaponWarhead"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		ProjectileCollidesWith  = "ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER" >
+		<Nuggets>
+			<DamageNugget
+				Damage="15.0"
+				Radius="20.0"
+				DamageTaperOff="15"
+				DamageType="EXPLOSIVE"
+				DamageFXType="ALLIED_MISSILE" 
+				DeathType="EXPLODED">
+			<DamageScalarDetails Scalar= "150%">
+					<Filter
+						Rule="NONE"
+						Include="INFANTRY" />
+				</DamageScalarDetails>
+			</DamageNugget>
+			<SuppressionNugget
+				Radius="20.0"
+				Suppression="20"
+				DurationSeconds="5s" />
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietHeavyWalkerRocketWeapon"
+		AttackRange="225.0"
+		MinimumAttackRange="20"
+		WeaponSpeed="250"
+		MinWeaponSpeed="200"
+		MaxWeaponSpeed="300"
+		FireSound="SOV_ProtoSickle_WeaponRocketFire"
+		FireFX="FX_SovietRocketLaunch"
+		FireVeteranFX="FX_SovietRocketLaunchVet"
+		AcceptableAimDelta="10d"
+		VirtualDamage="SHARE"
+		ClipSize="10"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		CanFireWhileMoving="true"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY ANTI_PARACHUTE" >
+		<FiringDuration
+				MinSeconds="0.1s"
+				MaxSeconds="0.1s" />
+		<ClipReloadTime
+				MinSeconds="8s"
+				MaxSeconds="8s" />
+		<Nuggets>
+			<ProjectileNugget
+				ProjectileTemplate="SovietHeavyWalkerRocketWeaponProjectile"
+				WarheadTemplate="SovietHeavyWalkerRocketWeaponWarhead">
+				<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="SovietHeavyWalkerRocketWeaponProjectile_Vet"/>
+			</ProjectileNugget>
+			<SuppressionNugget
+				Radius="10.0"
+				Suppression="10"
+				DurationSeconds="5.0s" />
+			<InformTargetNugget />
+		</Nuggets>
+		<ScatterRadiusVsType
+			Radius="70.0"
+			RequiredModelConditions="SHRINK_EFFECT">
+			<Filter
+				Rule="ANY"
+				Include="INFANTRY AIRCRAFT VEHICLE HUGE_VEHICLE" />
+		</ScatterRadiusVsType>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietHeavyWalkerRocketWeaponWarhead"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		ProjectileCollidesWith ="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY ANTI_PARACHUTE" >
+		<Nuggets>
+			<DamageNugget
+				Damage="7.0"
+				Radius="10.0"
+				DamageTaperOff="0"
+				DamageType="ROCKET"
+				DamageFXType="ALLIED_MISSILE"
+				DeathType="EXPLODED">
+				<DamageScalarDetails Scalar= "500%">
+					<Filter
+						Rule="ANY"
+						Include="INFANTRY VEHICLE"
+						StatusBitFlags="AIRBORNE_TARGET"/>
+				</DamageScalarDetails>
+			</DamageNugget>
+			<SuppressionNugget
+				Radius="10.0"
+				Suppression="10"
+				DurationSeconds="5s" />
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietHeavyWalkerVehicleLeapWeaponRangeCheck"
+		MinimumAttackRange="20" />
+	
+	<WeaponTemplate
+		id="SovietHeavyWalkerVehicleLeapWeapon"
+		IdleAfterFiringDelaySeconds="0s"
+		AttackRange="350.0"
+		MinimumAttackRange="20"
+		WeaponSpeed="300"
+		ProjectileSelf="true"
+		AutoReloadsClip="AUTO"
+		PreAttackType="PER_SHOT"
+		FireFX="FX_None"
+		FireVeteranFX="FX_None"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		HitPercentage="0%" >
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead" />
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietHeavyWalkerVehicleLandDeployWeapon"
+		FireFX="FX_SovietSickleLand"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		RadiusDamageAffects="ENEMIES NEUTRALS"
+		FireVeteranFX="FX_SovietSickleLand">
+		<Nuggets>
+			<WeaponOCLNugget
+				WeaponOCL="SUHeavyWalkerVehicle_Legs_OCL" />
+				
+			<SpecialPowerNugget
+				SpecialPowerTemplate="SpecialPower_TriggerReplaceDummy" />
+		
+			<DamageNugget
+				id="CrushingDamageNugget"
+				Damage="999999.0"
+				Radius="15.0"
+				DamageType="CRUSH"
+				DeathType="CRUSHED">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE">
+					<ExcludeThing>AlliedAntiNavyShipTech1</ExcludeThing>
+					<ExcludeThing>JapanAntiVehicleVehicleTech3</ExcludeThing>
+					<ExcludeThing>SovietAntiVehicleVehicleTech3</ExcludeThing>
+					<ExcludeThing>AlliedArtilleryVehicle</ExcludeThing>
+					<ExcludeThing>AlliedFutureTank</ExcludeThing>
+					<ExcludeThing>AlliedMCV</ExcludeThing>
+					<ExcludeThing>SovietMCV</ExcludeThing>
+					<ExcludeThing>JapanMCV</ExcludeThing>
+				</SpecialObjectFilter>
+			</DamageNugget>
+		
+			<DamageNugget
+				id="DefaultDamageNugget"
+				Damage="120.0"
+				DamageTaperOff="40"
+				Radius="50.0"
+				DamageType="MELEE"
+				DeathType="CRUSHED">
+				<SpecialObjectFilter
+					Rule="ALL"
+					StatusBitFlagsExclude="NO_COLLISIONS">
+					<ExcludeThing>AlliedAntiNavyShipTech1</ExcludeThing>
+					<ExcludeThing>JapanAntiVehicleVehicleTech3</ExcludeThing>
+					<ExcludeThing>SovietAntiVehicleVehicleTech3</ExcludeThing>
+					<ExcludeThing>AlliedArtilleryVehicle</ExcludeThing>
+					<ExcludeThing>AlliedFutureTank</ExcludeThing>
+					<ExcludeThing>AlliedMCV</ExcludeThing>
+					<ExcludeThing>SovietMCV</ExcludeThing>
+					<ExcludeThing>JapanMCV</ExcludeThing>
+				</SpecialObjectFilter>
+			</DamageNugget>
+			
+			<DamageNugget
+				id="KillSelfDamageNugget"
+				OnlyKillOwnerWhenTriggered="true"
+				DeathType="SUPERNATURAL" />
+			
+			<MetaImpactNugget
+				ShockWaveAmount="50"
+				ShockWaveRadius="50.0"
+				ShockWaveTaperOff="1.0"
+				ForbiddenTargetModelCondition="STUNNED STUNNED_STANDING_UP STUNNED_FLAILING">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="INFANTRY"
+					StatusBitFlagsExclude="NO_COLLISIONS">
+				</SpecialObjectFilter>
+			</MetaImpactNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	
+	
+	<!-- Hammer Tank -->
+	<WeaponTemplate
+		id="Leech_Reaper"
+		inheritFrom="SovietHeavyWalkerGrenadeWeapon" />
+</AssetDeclaration>

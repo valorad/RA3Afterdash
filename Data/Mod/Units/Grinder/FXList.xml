@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_Sov_Grinder_Grind">
+    <NuggetList>
+      <ParticleSystem
+				Particle="Sov_Grinder_Grind"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true" />
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_Sov_Grinder_Collide">
+    <NuggetList>
+      <ParticleSystem
+				Particle="Sov_Grinder_Grind"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true">
+				<Offset
+					x="-25"
+					z="5" />
+		</ParticleSystem>
+		<Sound Value="SOV_Grinder_WeaponOnce" />
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_Sov_Grinder_GrindPeople">
+    <NuggetList>
+      <ParticleSystem
+				Particle="Sov_Grinder_GrindPeopleBlood"
+				UseTarget="true"
+				OrientToObject="true"
+				Ricochet="true" />
+    </NuggetList>
+  </FXList>
+</AssetDeclaration>

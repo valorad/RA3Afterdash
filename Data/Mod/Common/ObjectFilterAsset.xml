@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<ObjectFilterAsset
+		id="AlliedChronosphereSpecialPowerObjectFilter">
+		<Filter
+			Rule="ANY"
+			Include="INFANTRY VEHICLE"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET NOT_IN_WORLD">
+			<IncludeThing>AlliedTimeBombLvl1</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl2</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl3</IncludeThing>
+		</Filter>
+	</ObjectFilterAsset>
+	
+	<ObjectFilterAsset
+		 id="JapanPointDefenseDroneSpecialPowerObjectFilter">
+		<Filter
+			Rule="ANY"
+			Relationship="ALLIES"
+			Include="VEHICLE HUGE_VEHICLE SHIP"
+			Exclude="INFANTRY AIRCRAFT SUBMARINE"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET IN_NANOHIVE NOT_IN_WORLD POINT_DEFENSE_DRONE_ATTACHED">
+			<ExcludeThing>JapanPointDefenseDrone</ExcludeThing>
+		</Filter>
+	</ObjectFilterAsset>
+	
+	<ObjectFilterAsset
+		 id="JapanEmperorsResolveSpecialPowerObjectFilter">
+		<Filter
+			Rule="ANY"
+			Include="INFANTRY VEHICLE HUGE_VEHICLE SHIP"
+			Exclude="STRUCTURE"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET NOT_IN_WORLD"/>
+	</ObjectFilterAsset>
+	
+	<ObjectFilterAsset
+		 id="SovietMagneticSatelliteSpecialPowerObjectFilter_LVL1">
+		<Filter
+			Rule="ANY"
+			Include="VEHICLE"
+			Exclude="T2_UNIT T3_UNIT"
+			StatusBitFlagsExclude="SUBMERGED UNDER_IRON_CURTAIN IN_NANOHIVE">
+			<IncludeThing>SovietScoutVehicle</IncludeThing>
+			<IncludeThing>SovietHeavyAntiVehicleInfantry</IncludeThing>
+			<IncludeThing>SovietDesolatorInfantry</IncludeThing>
+			<IncludeThing>JapanAntiVehicleInfantryTech3</IncludeThing>
+			<IncludeThing>AlliedLegionnaireInfantry</IncludeThing>
+			
+			<ExcludeThing>JapanBalloonBomb</ExcludeThing>
+			<ExcludeThing>JapanFallingBalloonBomb</ExcludeThing>
+			<ExcludeThing>JapanEmperorMecha</ExcludeThing>
+			<ExcludeThing>JapanFortressShip</ExcludeThing>
+			<ExcludeThing>JapanMechaKing</ExcludeThing>
+		</Filter>
+	</ObjectFilterAsset>
+	
+	<ObjectFilterAsset
+		 id="SovietMagneticSatelliteSpecialPowerObjectFilter_LVL2">
+		<Filter
+			Rule="ANY"
+			Include="VEHICLE"
+			Exclude="T3_UNIT"
+			StatusBitFlagsExclude="SUBMERGED UNDER_IRON_CURTAIN IN_NANOHIVE">
+			<IncludeThing>SovietScoutVehicle</IncludeThing>
+			<IncludeThing>SovietHeavyAntiVehicleInfantry</IncludeThing>
+			<IncludeThing>SovietDesolatorInfantry</IncludeThing>
+			<IncludeThing>JapanAntiVehicleInfantryTech3</IncludeThing>
+			<IncludeThing>AlliedLegionnaireInfantry</IncludeThing>
+			
+			<ExcludeThing>JapanBalloonBomb</ExcludeThing>
+			<ExcludeThing>JapanFallingBalloonBomb</ExcludeThing>
+			<ExcludeThing>JapanEmperorMecha</ExcludeThing>
+			<ExcludeThing>JapanFortressShip</ExcludeThing>
+			<ExcludeThing>JapanMechaKing</ExcludeThing>
+		</Filter>
+	</ObjectFilterAsset>
+
+	<ObjectFilterAsset
+		 id="SovietMagneticSatelliteSpecialPowerObjectFilter_LVL3">
+		<Filter
+			Rule="ANY"
+			Include="VEHICLE"
+			StatusBitFlagsExclude="SUBMERGED UNDER_IRON_CURTAIN IN_NANOHIVE">
+			<IncludeThing>SovietScoutVehicle</IncludeThing>
+			<IncludeThing>SovietHeavyAntiVehicleInfantry</IncludeThing>
+			<IncludeThing>SovietDesolatorInfantry</IncludeThing>
+			<IncludeThing>JapanAntiVehicleInfantryTech3</IncludeThing>
+			<IncludeThing>AlliedLegionnaireInfantry</IncludeThing>
+			
+			<ExcludeThing>JapanBalloonBomb</ExcludeThing>
+			<ExcludeThing>JapanFallingBalloonBomb</ExcludeThing>
+			<ExcludeThing>JapanEmperorMecha</ExcludeThing>
+			<ExcludeThing>JapanFortressShip</ExcludeThing>
+			<ExcludeThing>JapanMechaKing</ExcludeThing>
+		</Filter>
+	</ObjectFilterAsset>
+	
+	<ObjectFilterAsset
+		 id="SovietMagneticSingularitySpecialPowerObjectFilter">
+		<Filter
+			Rule="ANY"
+			Include="VEHICLE INFANTRY STRUCTURE"
+      Exclude="UNATTACKABLE"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET UNDER_IRON_CURTAIN" />
+	</ObjectFilterAsset>
+</AssetDeclaration>

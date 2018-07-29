@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Multigunner Turret/GameObject.xml" />
+		<Include type="all" source="Multigunner Turret/UpgradeTemplate.xml" />
+		<Include type="all" source="Multigunner Turret/W3X.xml" />
+	</Includes>
+</AssetDeclaration>

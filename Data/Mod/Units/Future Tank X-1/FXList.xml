@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_Allied_FutureTank_HitVet">
+    <NuggetList>
+      <ParticleSystem	Particle="AlliedFutureTankNodeVet"/>
+      <ParticleSystem	Particle="AlliedFutureTankNodeHitLightVet"/>
+      <ParticleSystem	Particle="AlliedFutureTankNodeHitGlowVet"/>
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_Allied_FutureTank_Hit">
+    <NuggetList>
+      <ParticleSystem	Particle="AlliedFutureTankNode"/>
+      <ParticleSystem	Particle="AlliedFutureTankNodeHitLight"/>
+      <ParticleSystem	Particle="AlliedFutureTankNodeHitGlow"/>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_Allied_FutureTank_Fire">
+    <NuggetList>
+      <ParticleSystem	Particle="AlliedFutureTankFireLight"/>
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_ALL_FutureTankDie">
+    <NuggetList>
+      <Sound Value="ALL_FutureTank_DieExplosionMS" />
+      <ParticleSystem Particle="AlliedDieRays">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedDieFlash">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedDieGlow">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedDieSmoke">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <ParticleSystem Particle="AlliedDieSmoke02">
+        <Offset x="0.0" y="0.0" z="10.0"/>
+      </ParticleSystem>
+      <TerrainScorch
+				Type		= "TERRAIN_MAPPED"
+				Radius		= "25" >
+      </TerrainScorch>
+
+    </NuggetList>
+  </FXList>
+</AssetDeclaration>

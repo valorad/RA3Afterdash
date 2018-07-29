@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<!-- Updated RA3 units -->
+		<Include type="all" source="Units/Allied Engineer.xml" />
+		<Include type="all" source="Units/Attack Dog.xml" />
+		<Include type="all" source="Units/Burst Drone.xml" />
+		<Include type="all" source="Units/Hammer Tank.xml" />
+		<Include type="all" source="Units/Multigunner IFV.xml" />
+		<Include type="all" source="Units/Natasha.xml" />
+		<Include type="all" source="Units/Rocket Angel.xml" />
+		<Include type="all" source="Units/Shinobi.xml" />
+		<Include type="all" source="Units/Tanya.xml" />
+		<Include type="all" source="Units/Tesla Trooper.xml" />
+		<Include type="all" source="Units/Terror Drone.xml" />
+		<Include type="all" source="Units/War Bear.xml" />
+		<Include type="all" source="Units/Yuriko.xml" />
+		
+		<!-- Uprising units -->
+		<Include type="all" source="Units/Archer Maiden.xml" />
+		<Include type="all" source="Units/Cryo Legionnaire.xml" />
+		<Include type="all" source="Units/Desolator.xml" />
+		<Include type="all" source="Units/Future Tank X-1.xml" />
+		<Include type="all" source="Units/Giga-Fortress.xml" />
+		<Include type="all" source="Units/Giga-Fortress Core.xml" />
+		<Include type="all" source="Units/Grinder.xml" />
+		<Include type="all" source="Units/Harbinger Gunship.xml" />
+		<Include type="all" source="Units/Mortar Cycle.xml" />
+		<Include type="all" source="Units/Pacifier FAV.xml" />
+		<Include type="all" source="Units/Reaper.xml" />
+		<Include type="all" source="Units/Steel Ronin.xml" />
+	</Includes>
+</AssetDeclaration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<AudioFile id="JUPearl_ambiLoopa" File="AUDIO:Specific/JUPearl_ambiLoopa.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopb" File="AUDIO:Specific/JUPearl_ambiLoopb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopc" File="AUDIO:Specific/JUPearl_ambiLoopc.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopd" File="AUDIO:Specific/JUPearl_ambiLoopd.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopWatera" File="AUDIO:Specific/JUPearl_ambiLoopWatera.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopWaterb" File="AUDIO:Specific/JUPearl_ambiLoopWaterb.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopWaterc" File="AUDIO:Specific/JUPearl_ambiLoopWaterc.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="JUPearl_ambiLoopWaterd" File="AUDIO:Specific/JUPearl_ambiLoopWaterd.wav" GUIPreset="Default" PCCompression="XAS" IsStreamedOnPC="false" />
+	<AudioFile id="WAFloat_Fortress_quad" File="AUDIO:Specific/WAFloat_Fortress_quad.wav" PCCompression="XAS" IsStreamedOnPC="true" GUIPreset="Default"/>
+	<AudioFile id="WAGreat_Outdoors_quad" File="AUDIO:Specific/WAGreat_Outdoors_quad.wav" PCCompression="XAS" IsStreamedOnPC="true" GUIPreset="Default"/>
+	<AudioFile id="WAJapan_Rural_Quad" File="AUDIO:Specific/WAJapan_Rural_Quad.wav" PCCompression="XAS" IsStreamedOnPC="true" GUIPreset="Default"/>
+	<AudioFile id="WAMilit_Base_quad" File="AUDIO:Specific/WAMilit_Base_quad.wav" PCCompression="XAS" IsStreamedOnPC="true" GUIPreset="Default"/>
+	<AudioFile id="WANight_Transylvania_quad" File="AUDIO:Specific/WANight_Transylvania_quad.wav" PCCompression="XAS" IsStreamedOnPC="true" GUIPreset="Default"/>
+</AssetDeclaration>

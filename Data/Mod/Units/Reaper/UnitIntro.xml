@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitIntro
+		id="Soviet_Reaper_UnitIntro"
+		Video="ui_reaper"
+		Audio="MSIn_Reaper1" />		
+</AssetDeclaration>

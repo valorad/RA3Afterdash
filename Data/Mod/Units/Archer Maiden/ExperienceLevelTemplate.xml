@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="JapanArcherInfantryExperienceLevel_1"
+		inheritFrom="ExperienceLevel_JapanRank1"
+		RequiredExperience="1"
+		ExperienceAward="500">
+		<Target>JapanArcherInfantry</Target>
+	</ExperienceLevelTemplate>
+
+	<ExperienceLevelTemplate
+		id="JapanArcherInfantryExperienceLevel_2"
+		inheritFrom="ExperienceLevel_JapanRank2"
+		Prerequisite="JapanArcherInfantryExperienceLevel_1"
+		RequiredExperience="1500"
+		ExperienceAward="1000">
+		<Target>JapanArcherInfantry</Target>
+	</ExperienceLevelTemplate>
+
+	<ExperienceLevelTemplate
+		id="JapanArcherInfantryExperienceLevel_3"
+		inheritFrom="ExperienceLevel_JapanRank3"
+		Prerequisite="JapanArcherInfantryExperienceLevel_2"
+		RequiredExperience="3000"
+		ExperienceAward="1500">
+		<Target>JapanArcherInfantry</Target>
+	</ExperienceLevelTemplate>
+
+	<ExperienceLevelTemplate
+		id="JapanArcherInfantryLevel_4"
+		inheritFrom="ExperienceLevel_JapanRank4"
+		Prerequisite="JapanArcherInfantryExperienceLevel_3"
+		RequiredExperience="4500"
+		ExperienceAward="2000">
+		<Target>JapanArcherInfantry</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

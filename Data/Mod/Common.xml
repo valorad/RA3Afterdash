@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="Common/AIBuildStateDefinition.xml" />
+		<Include type="all" source="Common/AIPersonalityDefinition.xml" />
+		<Include type="all" source="Common/DamageFX.xml" />
+		<Include type="all" source="Common/GameObject.xml" />
+		<Include type="all" source="Common/LogicCommandSet.xml" />
+		<Include type="all" source="Common/ObjectFilterAsset.xml" />
+		<Include type="all" source="Common/PlayerTech.xml" />
+		<Include type="all" source="Common/PlayerTechStoreTemplate.xml" />
+		<Include type="all" source="Common/SpecialPowerTemplate.xml" />
+		<Include type="all" source="Common/Texture.xml" />
+		<Include type="all" source="Common/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

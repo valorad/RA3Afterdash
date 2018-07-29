@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseMissionEvaDialogue.xml" />
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<!-- Mission dialogue -->
+	<AudioEvent id="MAIn_CryoLegionnaire" inheritFrom="AudioEvent:BaseMissionEvaDialogue">
+		<Sound>MAIn_CryoLegionnaire</Sound> 
+	</AudioEvent>
+	
+	
+	
+	<!-- Sound effect -->
+	<AudioEvent
+	id="ALL_CryoLegionaire_Die_FreezeEffect"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="55"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.75s" />
+	<PitchShift Low="10" High="20" />
+	<Delay Low="0" High="75" />	
+	<Sound>ABChrono_frozenExploA</Sound> <Sound>ABChrono_frozenExploB</Sound> <Sound>ABChrono_frozenExploC</Sound> <Sound>ABChrono_frozenExploD</Sound> 
+	<Sound>ABChrono_frozenExploE</Sound> <Sound>ABChrono_frozenExploF</Sound> <Sound>ABChrono_frozenExploG</Sound> <Sound>ABChrono_frozenExploH</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_Jump"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="65"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="100" />	
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUCryoL_jumStarta</Sound>
+	<Sound>AUCryoL_jumStartb</Sound>
+	<Sound>AUCryoL_jumStartc</Sound>
+	<Sound>AUCryoL_jumStartd</Sound>
+	<Sound>AUCryoL_jumStarte</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_Land"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="95"
+	VolumeShift="-5"
+	Control="INTERRUPT"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="100" />	
+	<NonInterruptibleTime Low="0.0s" High="0.75s" />
+	<PitchShift Low="-15" High="-5" />
+	<Sound>AUCryoL_jumLanda</Sound>
+	<Sound>AUCryoL_jumLandb</Sound>
+	<Sound>AUCryoL_jumLandc</Sound>
+	<Sound>AUCryoL_jumLandd</Sound>
+	<Sound>AUCryoL_jumLande</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_CryoLegionaire_WaterExplosion"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-10"
+	Limit="3"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<NonInterruptibleTime Low="0.0s" High="1.50s" />
+	<InitialDelay Low="0" High="30" />
+		<Sound>TEMP_gexpwama</Sound> 
+		<Sound>TEMP_gexpwamb</Sound> 
+		<Sound>TEMP_gexpwasa</Sound> 
+		<Sound>TEMP_gexpwasb</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_CryoLegionaire_Land_Footstep1"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-5"
+	MaxRange="600"
+	Priority="LOWEST"
+	Limit="2"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="30" />
+	<PitchShift
+	Low="-5"
+	High="5" />	
+		<Sound>AUCryoL_landFootstepa</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_CryoLegionaire_Land_Footstep2"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-5"
+	Priority="LOWEST"
+	Limit="2"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0s" High="1.2s" />
+	<PitchShift
+	Low="-5"
+	High="3" />
+		<Sound>AUCryoL_landFootstepb</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_CryoLegionaire_MovRun"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="25"
+	VolumeShift="-10"
+	MaxRange="600"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-20"
+	High="-15" />
+		<Sound>AUCryoSoldier_movStepA</Sound> <Sound>AUCryoSoldier_movStepB</Sound> <Sound>AUCryoSoldier_movStepC</Sound> <Sound>AUCryoSoldier_movStepD</Sound> <Sound>AUCryoSoldier_movStepE</Sound> 
+	 	<Sound>AUCryoSoldier_movStepF</Sound> <Sound>AUCryoSoldier_movStepG</Sound> <Sound>AUCryoSoldier_movStepH</Sound> <Sound>AUCryoSoldier_movStepI</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_MoveStart"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="45"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="600" />
+	<PitchShift
+	Low="-5"
+	High="5" />
+	<Sound>AUCryoSoldier_movStepA</Sound> <Sound>AUCryoSoldier_movStepB</Sound> <Sound>AUCryoSoldier_movStepC</Sound> <Sound>AUCryoSoldier_movStepD</Sound> <Sound>AUCryoSoldier_movStepE</Sound> 
+ 	<Sound>AUCryoSoldier_movStepF</Sound> <Sound>AUCryoSoldier_movStepG</Sound> <Sound>AUCryoSoldier_movStepH</Sound> <Sound>AUCryoSoldier_movStepI</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_Select1"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-15"
+	MinVolume="35"
+	Limit="3"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUCryoL_selecta</Sound> <Sound>AUCryoL_selectb</Sound> <Sound>AUCryoL_selectc</Sound> <Sound>AUCryoL_selectd</Sound> <Sound>AUCryoL_selecte</Sound> 
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_CryoLegionaire_FreezeWeaponStart"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUCryoL_freezeStarta</Sound>
+	<Sound>AUCryoL_freezeStartb</Sound>
+	<Sound>AUCryoL_freezeStartc</Sound>
+	<Sound>AUCryoL_freezeStartd</Sound>
+	<Sound>AUCryoL_freezeStarte</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_FreezeWeaponEnd"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="0.9s" />
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUCryoL_freezeEnda</Sound>
+	<Sound>AUCryoL_freezeEndb</Sound>
+	<Sound>AUCryoL_freezeEndc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_FreezeWeaponSwellLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 10"
+	VolumeShift="-30"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="LOOP IMMEDIATE_DECAY_ON_KILL"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="25" High="35" />
+	<Delay Low="0" High="500" />
+	<!-- <InitialDelay Low="0" High="750" /> -->
+	<Sound>AUCryoL_freezeSwella</Sound> 
+	<Sound>AUCryoL_freezeSwellb</Sound> 
+	<Sound>AUCryoL_freezeSwellc</Sound> 
+	<Sound>AUCryoL_freezeSwelld</Sound> 
+	<Sound>AUCryoL_freezeSwelle</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionaire_FreezeWeaponLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE"
+	VolumeShift="-10"
+	Limit="3"
+	Priority="HIGH"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="LOOP IMMEDIATE_DECAY_ON_KILL"
+	SubmixSlider="SOUNDFX">
+	<PerFilePitchShift Low="-5" High="5" />
+	<!-- <Delay Low="10" High="20" /> -->
+	<!-- <InitialDelay Low="0" High="750" /> -->
+	<Attack>AUCryoL_freezeStarta</Attack>
+	<Attack>AUCryoL_freezeStartb</Attack>
+	<Attack>AUCryoL_freezeStartc</Attack>
+	<Attack>AUCryoL_freezeStartd</Attack>
+	<Attack>AUCryoL_freezeStarte</Attack>
+	<Sound>AUCryoL_freezeSwella</Sound> 
+	<Sound>AUCryoL_freezeSwellb</Sound> 
+	<Sound>AUCryoL_freezeSwellc</Sound> 
+	<Sound>AUCryoL_freezeSwelld</Sound> 
+	<Sound>AUCryoL_freezeSwelle</Sound> 
+	<Decay>AUCryoL_freezeEnda</Decay>
+	<Decay>AUCryoL_freezeEndb</Decay>
+	<Decay>AUCryoL_freezeEndc</Decay>	
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_CryoLegionnaire_FreezeWeapon_GarrisonFire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE - 10"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Delay Low="100" High="200" />
+	<Sound>AUCryoL_weapFire2l3a</Sound>
+	<Sound>AUCryoL_weapFire2l3b</Sound>
+	<Sound>AUCryoL_weapFire2l3c</Sound>	
+	<Sound>AUCryoL_weapFire2l3d</Sound>	
+	<Sound>AUCryoL_weapFire2l3e</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionnaire_FreezeWeapon_GarrisonLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE - 10"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="LOOP SEQUENTIAL IMMEDIATE_DECAY_ON_KILL"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+	<Attack>AUCryoL_weapFire2l1a</Attack>
+	<Attack>AUCryoL_weapFire2l1b</Attack>
+	<Attack>AUCryoL_weapFire2l1c</Attack>
+	<Attack>AUCryoL_weapFire2l1d</Attack>
+	<Attack>AUCryoL_weapFire2l1e</Attack>
+	<Sound>AUCryoL_weapFire2l2a</Sound> 
+	<Sound>AUCryoL_weapFire2l2b</Sound> 
+	<Sound>AUCryoL_weapFire2l2c</Sound> 
+	<Decay>AUCryoL_weapFire2l3a</Decay>
+	<Decay>AUCryoL_weapFire2l3b</Decay>
+	<Decay>AUCryoL_weapFire2l3c</Decay>	
+	<Decay>AUCryoL_weapFire2l3d</Decay>	
+	<Decay>AUCryoL_weapFire2l3e</Decay>	
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_CryoLegionnaire_FootstepWaterSplash"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="25"
+	VolumeShift="-20"
+	Limit="3"
+	PlayPercent="25"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="1.50s" />
+	<Delay Low="0" High="20" />
+	<PitchShift Low="55" High="65" /> 
+		<Sound>GUInfan_waterSplasha</Sound> <Sound>GUInfan_waterSplashb</Sound> <Sound>GUInfan_waterSplashc</Sound> <Sound>GUInfan_waterSplashd</Sound> 
+		<Sound>GUInfan_waterSplashe</Sound> <Sound>GUInfan_waterSplashf</Sound> <Sound>GUInfan_waterSplashg</Sound> <Sound>GUInfan_waterSplashh</Sound> 
+		<Sound>GUInfan_waterSplashi</Sound> <Sound>GUInfan_waterSplashj</Sound> <Sound>GUInfan_waterSplashk</Sound> <Sound>GUInfan_waterSplashl</Sound> 
+		<Sound>GUInfan_waterSplashm</Sound> <Sound>GUInfan_waterSplashn</Sound> <Sound>GUInfan_waterSplasho</Sound> <Sound>GUInfan_waterSplashp</Sound> 
+		<Sound>GUInfan_waterSplashq</Sound> <Sound>GUInfan_waterSplashr</Sound> <Sound>GUInfan_waterSplashs</Sound> <Sound>GUInfan_waterSplasht</Sound> 
+		<Sound>GUInfan_waterSplashu</Sound> <Sound>GUInfan_waterSplashv</Sound> <Sound>GUInfan_waterSplashw</Sound> <Sound>GUInfan_waterSplashx</Sound> 
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_Footstep_Ice_OverWater" inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume = "20"
+		VolumeShift = "-10"
+		Limit = "3"
+		Priority = "LOW"
+		Control = "INTERRUPT"
+		Type = "WORLD SHROUDED EVERYONE"
+		SubmixSlider = "SOUNDFX" >
+		<NonInterruptibleTime Low="0.0s" High="0.5s" />	
+		<PitchShift Low = "5" High = "15" />
+		<Delay Low = "0" High = "20" />
+		<Sound>AUCryoL_stepIcea</Sound> <Sound>AUCryoL_stepIceb</Sound> <Sound>AUCryoL_stepIcec</Sound> <Sound>AUCryoL_stepIced</Sound> 
+		<Sound>AUCryoL_stepIcee</Sound> <Sound>AUCryoL_stepIcef</Sound> <Sound>AUCryoL_stepIceg</Sound> <Sound>AUCryoL_stepIceh</Sound> 
+		<Sound>AUCryoL_stepIcei</Sound> <Sound>AUCryoL_stepIcej</Sound> <Sound>AUCryoL_stepIcek</Sound> <Sound>AUCryoL_stepIcel</Sound> 
+	</AudioEvent>
+	
+	<!-- Voice -->
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiAttacka</Sound>
+		<Sound>AUCryoL_voiAttackb</Sound>
+		<Sound>AUCryoL_voiAttackc</Sound>
+		<Sound>AUCryoL_voiAttackd</Sound>
+		<Sound>AUCryoL_voiAttacke</Sound>
+		<Sound>AUCryoL_voiAttackf</Sound>
+		<Sound>AUCryoL_voiAttackg</Sound>
+		<Sound>AUCryoL_voiAttackh</Sound>
+		<Sound>AUCryoL_voiAttacki</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceAttackJump" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiAttSpeca</Sound>
+		<Sound>AUCryoL_voiAttSpecb</Sound>
+		<Sound>AUCryoL_voiAttSpecc</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceCreate" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiCreateb</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceDie" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>AUCryoL_voiDiea</Sound>
+		<Sound>AUCryoL_voiDieb</Sound>
+		<Sound>AUCryoL_voiDiec</Sound>
+		<Sound>AUCryoL_voiDied</Sound>
+		<Sound>AUCryoL_voiDiee</Sound>
+		<Sound>AUCryoL_voiDief</Sound>
+		<Sound>AUCryoL_voiDieg</Sound>
+		<Sound>AUCryoL_voiDieh</Sound>
+		<Sound>AUCryoL_voiDiei</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceDieFire" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Delay Low = "0" High = "750" />
+		<Sound>AUCryoL_voiDieFirea</Sound>
+		<Sound>AUCryoL_voiDieFireb</Sound>
+		<Sound>AUCryoL_voiDieFirec</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceDiePoison" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>AUCryoL_voiDiePoisona</Sound>
+		<Sound>AUCryoL_voiDiePoisonb</Sound>
+		<Sound>AUCryoL_voiDiePoisonc</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceDieShock" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>AUCryoL_voiDieShocka</Sound>
+		<Sound>AUCryoL_voiDieShockb</Sound>
+		<Sound>AUCryoL_voiDieShockc</Sound>
+		<Sound>AUCryoL_voiDieShockd</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceDieYurikoFall" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Limit="1"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Sound>AUCryoL_voiDieYurikoFalla</Sound>
+		<Sound>AUCryoL_voiDieYurikoFallb</Sound>
+		<Sound>AUCryoL_voiDieYurikoFallc</Sound>
+		<Sound>AUCryoL_voiDieYurikoFalld</Sound>
+		<Sound>AUCryoL_voiDieYurikoFalle</Sound>
+		<Sound>AUCryoL_voiDieYurikoFallf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceDieYurikoUp" inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "80"
+		VolumeShift = "-10"
+		MinVolume="0"
+		Limit="1"
+		Type = "WORLD SHROUDED EVERYONE VOICE"
+		SubmixSlider = "SOUNDFX" >
+		<PitchShift Low="-1" High="1" />
+		<Delay Low = "0" High = "750" />
+		<Sound>AUCryoL_voiDieYurikoUpa</Sound>
+		<Sound>AUCryoL_voiDieYurikoUpb</Sound>
+		<Sound>AUCryoL_voiDieYurikoUpc</Sound>
+		<Sound>AUCryoL_voiDieYurikoUpd</Sound>
+		<Sound>AUCryoL_voiDieYurikoUpe</Sound>
+		<Sound>AUCryoL_voiDieYurikoUpf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceGarrison" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiGarrisa</Sound>
+		<Sound>AUCryoL_voiGarrisb</Sound>
+		<Sound>AUCryoL_voiGarrisc</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceMove" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiMovea</Sound>
+		<Sound>AUCryoL_voiMoveb</Sound>
+		<Sound>AUCryoL_voiMovec</Sound>
+		<Sound>AUCryoL_voiMoved</Sound>
+		<Sound>AUCryoL_voiMovee</Sound>
+		<Sound>AUCryoL_voiMovef</Sound>
+		<Sound>AUCryoL_voiMoveg</Sound>
+		<Sound>AUCryoL_voiMoveh</Sound>
+		<Sound>AUCryoL_voiMovei</Sound>
+		<Sound>AUCryoL_voiMovej</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceMoveAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiMvAtta</Sound>
+		<Sound>AUCryoL_voiMvAttb</Sound>
+		<Sound>AUCryoL_voiMvAttc</Sound>
+		<Sound>AUCryoL_voiMvAttd</Sound>
+		<Sound>AUCryoL_voiMvAtte</Sound>
+		<Sound>AUCryoL_voiMvAttf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceMoveToLand" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiMovLana</Sound>
+		<Sound>AUCryoL_voiMovLanb</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceMoveToWater" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiMovWata</Sound>
+		<Sound>AUCryoL_voiMovWatb</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceSelect" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiCreatea</Sound>
+		<Sound>AUCryoL_voiCreatec</Sound>
+		<Sound>AUCryoL_voiSelecta</Sound>
+		<Sound>AUCryoL_voiSelectb</Sound>
+		<Sound>AUCryoL_voiSelectc</Sound>
+		<Sound>AUCryoL_voiSelectd</Sound>
+		<Sound>AUCryoL_voiSelecte</Sound>
+		<Sound>AUCryoL_voiSelectf</Sound>
+		<Sound>AUCryoL_voiSelectg</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceSelectBattle" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiSelBata</Sound>
+		<Sound>AUCryoL_voiSelBatb</Sound>
+		<Sound>AUCryoL_voiSelBatc</Sound>
+		<Sound>AUCryoL_voiSelBatd</Sound>
+		<Sound>AUCryoL_voiSelBate</Sound>
+		<Sound>AUCryoL_voiSelBatf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_CryoLegionnaire_VoiceSelectUnderFire" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUCryoL_voiSelUnda</Sound>
+		<Sound>AUCryoL_voiSelUndb</Sound>
+		<Sound>AUCryoL_voiSelUndc</Sound>
+		<Sound>AUCryoL_voiSelUndd</Sound>
+	</AudioEvent>
+</AssetDeclaration>

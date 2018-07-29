@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<LogicCommand
+		Type="UNIT_BUILD"
+		id="Command_ConstructJapanArcherInfantry">
+		<Object>JapanArcherInfantry</Object>
+	</LogicCommand>
+	
+    <LogicCommand
+        Options="NEED_TARGET_POS"
+        Type="SPECIAL_POWER"
+        id="Command_ArcherArrowBarrageSpecialPower">
+        <SpecialPower>SpecialPower_ArcherArrowBarrage</SpecialPower>
+        <AISpecialPowerInfo 
+            Heuristic="AOE_ATTACK"
+            Manager="MICRO_MANAGER"
+            NeverUseWhileRetreating="true"
+            NeverUseWhilePullingBack="true">
+            <SpecialPowerWeapon
+                Weapon="JapanArcherInfantryEnergyArrowBarrage"
+                AoeAttackPowerLocationPreference="PREFER_CENTER_OF_ENEMIES"/>
+        </AISpecialPowerInfo>
+    </LogicCommand>
+</AssetDeclaration>

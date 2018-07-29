@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="SovietMortarcycleMolotovCocktail"
+		AttackRange="210.0"
+		MinimumAttackRange="40"
+		WeaponSpeed="300"
+		MinWeaponSpeed="290"
+		MaxWeaponSpeed="310"
+		AcceptableAimDelta="45d"
+		PreAttackType="PER_SHOT"
+		ClipSize="1"
+		FireSound="SOV_Conscript_MolotovCocktailThrow"
+		AutoReloadsClip="AUTO"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		CanFireWhileMoving="true"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE"
+		RadiusDamageAffects="ENEMIES">
+		<PreAttackDelay
+			MinSeconds="0.0s"
+			MaxSeconds="0.0s" />
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<ClipReloadTime
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<WeaponAiHintInfo
+			IsAntiGarrisonWeapon="true"
+			MaxSpeedOfTarget="30" />
+		<Nuggets>
+			<ProjectileNugget
+				ProjectileTemplate="SovietMortarcycleMolotovCocktailProjectile"
+				WarheadTemplate="SovietMortarcycleMolotovCocktailWarhead">
+				<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="SovietMortarCycleMolotovCocktailProjectile_Veteran"/>
+			</ProjectileNugget>
+			<SuppressionNugget
+				Radius="30.0"
+				Suppression="25"
+				DurationSeconds="4s" />
+			<InformTargetNugget />
+		</Nuggets>
+		<ScatterRadiusVsType
+			Radius="5.0">
+			<Filter
+				Rule="NONE"
+				Include="INFANTRY" />
+		</ScatterRadiusVsType>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietMortarcycleMolotovCocktailWarhead"
+		ProjectileCollidesWith="ENEMIES"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS"
+		HitStoredTarget="true"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND ANTI_STRUCTURE">
+		<Nuggets>
+			<DamageContainedNugget
+				MaxUnitsToDamage="1"
+				WindowBlastFX="FX_None"
+				Damage="50"
+				DamageType="EXPLOSIVE"
+				DeathType="BURNED">
+				<DamageObjectFilter
+					Rule="NONE"
+					Include="INFANTRY" />
+			</DamageContainedNugget>
+			<DamageNugget
+				id="DefaultDamageNugget"
+				Damage="24.0"
+				Radius="30.0"
+				DamageTaperOff="16"
+				DamageType="EXPLOSIVE"
+				DamageFXType="SOVIET_MOLOTOV"
+				DeathType="BURNED" />
+		</Nuggets>
+		<HitStoredObjectFilter
+			Rule="ANY"
+			Include="STRUCTURE" />
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="SovietMortarcycleMortar"
+		AcceptableAimDelta="10d"
+		AttackRange="330.0"
+		UseCenterForRangeCheck="false"
+		MinimumAttackRange="150.0"
+		CanFireWhileMoving="false"
+		ClipSize="1"
+		FireSound="SOV_MortarCycle_MortarFireMS"
+		RadiusDamageAffects="ENEMIES"
+		FireFX="FX_SovietMortarLaunch"
+		FireVeteranFX="FX_SovietMortarLaunchVet"
+		FinishAttackOnceStarted="true"
+		Flags="RELOAD_WHEN_ATTACK_STOPS FORCE_EMPTY_ENTIRE_CLIP"	
+		ReAcquireDetailType="PER_CLIP"
+		ScatterIndependently="true"
+		ScatterRadius="1"		
+		WeaponSpeed="200"
+		MinWeaponSpeed="190"
+		MaxWeaponSpeed="210"
+		MinTargetPitch="-45d"
+		MaxTargetPitch="45d"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		RevealShroudOnFire="true">
+		<PreAttackDelay
+		  MinSeconds="1s"
+		  MaxSeconds="1s" />		
+		<FiringDuration
+			MinSeconds="1s"
+			MaxSeconds="1s" />
+		<ClipReloadTime
+			MinSeconds="2s"
+			MaxSeconds="2s" />
+		<Nuggets>
+			<ProjectileNugget
+				ProjectileTemplate="SovietMortarcycleMortarWeaponProjectile"
+				WarheadTemplate="SovietMortarcycleMortarWarhead">		
+				<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="SovietMortarcycleMortarWeaponProjectile_Veteran"/>
+			</ProjectileNugget>
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>		
+
+	<WeaponTemplate
+		id="SovietMortarcycleMortarWarhead"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS"
+		HitStoredTarget="true"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER" >
+		<Nuggets>
+			<DamageNugget
+				Damage="100.0"
+				Radius="50.0"
+				DamageTaperOff="10"
+				DamageType="EXPLOSIVE"
+				DeathType="EXPLODED">
+			</DamageNugget>
+			<MetaImpactNugget
+				ShockWaveAmount="50"
+				ShockWaveRadius="50.0"
+				ShockWaveTaperOff="0.0"
+				ForbiddenTargetModelCondition="STUNNED STUNNED_STANDING_UP STUNNED_FLAILING">
+			</MetaImpactNugget>
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

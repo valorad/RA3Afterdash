@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseMissionEvaDialogue.xml" />
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<!-- Mission dialogue -->
+	<AudioEvent id="MAIn_FutureTank" inheritFrom="AudioEvent:BaseMissionEvaDialogue">
+		<Sound>MAIn_FutureTank</Sound> 
+	</AudioEvent>
+	
+	
+	
+	<!-- Sound effect -->
+	<AudioEvent
+	id="ALL_FutureTank_ArmPrimaryWeapon"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUFutur_armPrimarya</Sound>
+		<Sound>AUFutur_armPrimaryb</Sound>
+		<Sound>AUFutur_armPrimaryc</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_FutureTank_ArmSecondaryWeapon_Others"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED ALLIES ENEMIES"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUFutur_armSecondarya</Sound>
+		<Sound>AUFutur_armSecondaryb</Sound>
+		<Sound>AUFutur_armSecondaryc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_ArmSecondaryWeapon_Player"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-5"
+	MinVolume="45"
+	Limit="3"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUFutur_armSecondarya</Sound>
+		<Sound>AUFutur_armSecondaryb</Sound>
+		<Sound>AUFutur_armSecondaryc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_BarrelSpinLong"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="65"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUFutur_barrelSpin2a</Sound>
+	<Sound>AUFutur_barrelSpin2b</Sound>
+	<Sound>AUFutur_barrelSpin2c</Sound>
+	<Sound>AUFutur_barrelSpin2d</Sound>
+	<Sound>AUFutur_barrelSpin2e</Sound>
+	<Sound>AUFutur_barrelSpin2f</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_BarrelSpinShort"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="65"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift Low="-50" High="-45" />
+	<Sound>AUFutur_barrelSpin1a</Sound>
+	<Sound>AUFutur_barrelSpin1b</Sound>
+	<Sound>AUFutur_barrelSpin1c</Sound>
+	<Sound>AUFutur_barrelSpin1d</Sound>
+	<Sound>AUFutur_barrelSpin1e</Sound>
+	<Sound>AUFutur_barrelSpin1f</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_DieExplosionDebris_Delayed"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="80"
+	VolumeShift="-20"
+	Limit="3"
+	Control="INTERRUPT"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="1.25s" />
+	<Delay Low="1000" High="1200" />
+	<PitchShift Low="-10" High="5" />	
+		<Sound>WImpact_DebrisVsGrounda</Sound> <Sound>WImpact_DebrisVsGroundb</Sound> <Sound>WImpact_DebrisVsGroundc</Sound> <Sound>WImpact_DebrisVsGroundd</Sound> 
+		<Sound>WImpact_DebrisVsGrounde</Sound> <Sound>WImpact_DebrisVsGroundf</Sound> <Sound>WImpact_DebrisVsGroundg</Sound> <Sound>WImpact_DebrisVsGroundh</Sound> 
+		<Sound>WImpact_DebrisVsGroundi</Sound> <Sound>WImpact_DebrisVsGroundj</Sound> <Sound>WImpact_DebrisVsGroundk</Sound> <Sound>WImpact_DebrisVsGroundl</Sound> 
+		<Sound>WImpact_DebrisVsGroundm</Sound> <Sound>WImpact_DebrisVsGroundn</Sound> <Sound>WImpact_DebrisVsGroundo</Sound> <Sound>WImpact_DebrisVsGroundp</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_DieScream"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="30"
+	VolumeShift="-20"
+	PlayPercent="50"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<Delay Low="0" High="200" />
+	<PitchShift Low="-25" High="0" />	
+	<Sound>AUFutur_dieScreama</Sound>
+	<Sound>AUFutur_dieScreamb</Sound>
+	<Sound>AUFutur_dieScreamc</Sound>
+	<Sound>AUFutur_dieScreamd</Sound>
+	<Sound>AUFutur_dieScreame</Sound>
+	<Sound>AUFutur_dieScreamf</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_TorsoRotate"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="40"
+	VolumeShift="-5"
+	Limit="3"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUFutur_torsoRotatea</Sound>
+		<Sound>AUFutur_torsoRotateb</Sound>
+		<Sound>AUFutur_torsoRotatec</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_IdleLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-10"
+	MinRange="50"
+	MaxRange="250"
+	Priority="LOWEST"
+	Limit="3"
+	Control="LOOP FADE_ON_KILL"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>JUWavef_idleLoopA</Sound> <Sound>JUWavef_idleLoopB</Sound> <Sound>JUWavef_idleLoopC</Sound> <Sound>JUWavef_idleLoopD</Sound> <Sound>JUWavef_idleLoopE</Sound> 
+	</AudioEvent>
+		
+	<AudioEvent
+	id="ALL_FutureTank_MoveLoop"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="30"
+	VolumeShift="-5"
+	Limit="3"
+	Control="LOOP FADE_ON_KILL SEQUENTIAL"
+	Priority="LOW"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+		<Sound>AUFTank_moveLoopa</Sound> <Sound>AUFTank_moveLoopb</Sound> <Sound>AUFTank_moveLoopc</Sound> <Sound>AUFTank_moveLoopd</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_MoveStart"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-5"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+		<Sound>AUFTank_moveStara</Sound> <Sound>AUFTank_moveStarb</Sound> <Sound>AUFTank_moveStarc</Sound> <Sound>AUFTank_moveStard</Sound> 
+		<Sound>AUFTank_moveStare</Sound> <Sound>AUFTank_moveStarf</Sound> 
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_PreFireChargeUp"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 40"
+	VolumeShift="-10"
+	Control="INTERRUPT"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High=".6s" />
+<!--	<Delay Low="300" High="500" /> -->
+	<PitchShift Low="-5" High="5" />
+<!---->
+	<Sound>AUFutur_Wea1PreFireV3a</Sound>
+	<Sound>AUFutur_Wea1PreFireV3b</Sound>
+	<Sound>AUFutur_Wea1PreFireV3c</Sound>
+	<Sound>AUFutur_Wea1PreFireV3d</Sound>
+	<Sound>AUFutur_Wea1PreFireV3e</Sound>
+
+<!-- version1
+		<Sound>AUFutur_preFireChargeUpa</Sound>
+		<Sound>AUFutur_preFireChargeUpb</Sound>
+		<Sound>AUFutur_preFireChargeUpc</Sound>
+		<Sound>AUFutur_preFireChargeUpd</Sound>
+		<Sound>AUFutur_preFireChargeUpe</Sound>
+		<Sound>AUFutur_preFireChargeUpf</Sound>
+-->
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_DeathRayWeaponFire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 35"
+	VolumeShift="-10"
+	Priority="HIGH"
+	Control="INTERRUPT"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="2s" />
+	<Delay Low="0" High="33" />
+	<PitchShift Low="-7" High="2" />
+		<Sound>AUFTank_weapFire1a</Sound>
+		<Sound>AUFTank_weapFire1b</Sound>
+		<Sound>AUFTank_weapFire1c</Sound>
+		<Sound>AUFTank_weapFire1d</Sound>
+		<Sound>AUFTank_weapFire1e</Sound>
+		<Sound>AUFTank_weapFire1f</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_Weapon1Fire2"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 25"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High=".8s" />
+	<PitchShift Low="-5" High="5" />
+	<Sound>AUFutur_Wea1FireV3a</Sound>
+	<Sound>AUFutur_Wea1FireV3b</Sound>
+	<Sound>AUFutur_Wea1FireV3c</Sound>
+	<Sound>AUFutur_Wea1FireV3d</Sound>
+	<Sound>AUFutur_Wea1FireV3e</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_Weapon1Fire"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_FIRE + 20"
+	VolumeShift="-10"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	Priority="HIGH"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High=".8s" />
+	<PitchShift Low="-20" High="-10" />
+		<Sound>AUFutur_wea1Firea</Sound>
+		<Sound>AUFutur_wea1Fireb</Sound>
+		<Sound>AUFutur_wea1Firec</Sound>
+		<Sound>AUFutur_wea1Fired</Sound>
+		<Sound>AUFutur_wea1Firee</Sound>
+		<!-- Version 1
+		<Sound>AUWarBo_wea1Firea</Sound>
+		<Sound>AUWarBo_wea1Fireb</Sound>
+		<Sound>AUWarBo_wea1Firec</Sound>
+		<Sound>AUWarBo_wea1Fired</Sound>
+		-->
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_FutureTank_Weapon_NeutronScramblerImpactSmall"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_IMPACT + 45"
+	VolumeShift="-10"
+	Priority="HIGH"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="1s" />
+	<PitchShift
+	Low="-7"
+	High="2" />
+		<Sound>AUFTank_neutImpaSmaa</Sound>
+		<Sound>AUFTank_neutImpaSmab</Sound>
+		<Sound>AUFTank_neutImpaSmac</Sound>
+		<Sound>AUFTank_neutImpaSmad</Sound>
+		<Sound>AUFTank_neutImpaSmae</Sound>
+	</AudioEvent>
+	
+	<AudioEvent
+	id="ALL_FutureTank_Weapon_NeutronScramblerImpactBig"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="=$WEAPON_IMPACT + 55"
+	VolumeShift="-10"
+	MaxRange="800"
+	Priority="HIGH"
+	Limit="3"
+	Type="WORLD SHROUDED EVERYONE"
+	Control="INTERRUPT"
+	SubmixSlider="SOUNDFX">
+	<NonInterruptibleTime Low="0.0s" High="1.5s" />
+	<PitchShift
+	Low="-7"
+	High="2" />
+		<Sound>AUFTank_neutImpaBiga</Sound>
+		<Sound>AUFTank_neutImpaBigb</Sound>
+		<Sound>AUFTank_neutImpaBigc</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+	id="ALL_WarBot_Select"
+	inheritFrom="AudioEvent:BaseSoundEffect"
+	Volume="50"
+	VolumeShift="-15"
+	MinVolume="45"
+	Limit="3"
+	Type="WORLD PLAYER"
+	SubmixSlider="SOUNDFX">
+	<PitchShift
+	Low="-5"
+	High="5" />
+	<Sound>AUWarBo_selecta</Sound>
+	</AudioEvent>
+	
+	
+	
+	<!-- Voice -->
+	<AudioEvent id="ALL_FutureTank_VoiceActivatePrimary" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		Limit="1"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiSpeActa</Sound>
+		<Sound>AUFutur_voiSpeActb</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceActivateSecondary" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Limit="1"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiSpeActc</Sound>
+		<Sound>AUFutur_voiSpeActd</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiAttacka</Sound>
+		<Sound>AUFutur_voiAttackb</Sound>
+		<Sound>AUFutur_voiAttackc</Sound>
+		<Sound>AUFutur_voiAttackd</Sound>
+		<Sound>AUFutur_voiAttacke</Sound>
+		<Sound>AUFutur_voiAttackf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceAttackBeam" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiAttacka</Sound>
+		<Sound>AUFutur_voiAttackb</Sound>
+		<Sound>AUFutur_voiAttackc</Sound>
+		<Sound>AUFutur_voiAttackd</Sound>
+		<Sound>AUFutur_voiAttacke</Sound>
+		<Sound>AUFutur_voiAttackf</Sound>
+		<Sound Weight="2000">AUFutur_voiAttSpeca</Sound>
+		<Sound Weight="2000">AUFutur_voiAttSpecb</Sound>
+		<Sound Weight="2000">AUFutur_voiAttSpecc</Sound>
+		<Sound Weight="2000">AUFutur_voiAttSpecd</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceCreate" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiCreatea</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceMove" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiMovea</Sound>
+		<Sound>AUFutur_voiMoveb</Sound>
+		<Sound>AUFutur_voiMovec</Sound>
+		<Sound>AUFutur_voiMoved</Sound>
+		<Sound>AUFutur_voiMovee</Sound>
+		<Sound>AUFutur_voiMovef</Sound>
+		<Sound>AUFutur_voiMoveg</Sound>
+		<Sound>AUFutur_voiMoveh</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceMoveAttack" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiMvAtta</Sound>
+		<Sound>AUFutur_voiMvAttb</Sound>
+		<Sound>AUFutur_voiMvAttc</Sound>
+		<Sound>AUFutur_voiMvAttd</Sound>
+		<Sound>AUFutur_voiMvAtte</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceSelect" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiCreateb</Sound>
+		<Sound>AUFutur_voiSelecta</Sound>
+		<Sound>AUFutur_voiSelectb</Sound>
+		<Sound>AUFutur_voiSelectc</Sound>
+		<Sound>AUFutur_voiSelectd</Sound>
+		<Sound>AUFutur_voiSelecte</Sound>
+		<Sound>AUFutur_voiSelectf</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceSelectBattle" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiSelBata</Sound>
+		<Sound>AUFutur_voiSelBatb</Sound>
+		<Sound>AUFutur_voiSelBatc</Sound>
+		<Sound>AUFutur_voiSelBatd</Sound>
+		<Sound>AUFutur_voiSelBate</Sound>
+	</AudioEvent>
+
+	<AudioEvent id="ALL_FutureTank_VoiceSelectUnderFire" 
+		inheritFrom="AudioEvent:BaseUnitResponse"
+		Volume = "110"
+		MinVolume = "105"
+		ShrunkenPitchModifier="1.8"
+		ShrunkenVolumeModifier="80"
+		Priority = "HIGH"
+		Type = "WORLD PLAYER VOICE"
+		SubmixSlider = "VOICE" >
+		<PitchShift Low="-1" High="1" />
+		<!-- EP1 -->
+		<Sound>AUFutur_voiSelUnda</Sound>
+		<Sound>AUFutur_voiSelUndb</Sound>
+		<Sound>AUFutur_voiSelUndc</Sound>
+		<Sound>AUFutur_voiSelUndd</Sound>
+		<Sound>AUFutur_voiSelUnde</Sound>
+	</AudioEvent>
+	
+	<AudioEvent id="ALL_FutureTank_VoiceShrunken" inheritFrom="AudioEvent:BaseUnitResponse"
+	Volume = "100"
+	MinVolume = "0"
+	ShrunkenPitchModifier="1.8"
+	ShrunkenVolumeModifier="80"
+	Priority = "HIGH"
+	Limit="1"
+	Type = "WORLD SHROUDED EVERYONE VOICE"
+	SubmixSlider = "VOICE" >
+	<PitchShift Low="-1" High="1" />
+	<Delay Low="1300" High="1400" />
+	<Sound>AUFutur_voiSelectb</Sound>
+	<Sound>AUFutur_voiSelectd</Sound>
+	<Sound>AUFutur_voiSelUndc</Sound>
+	<Sound>AUFutur_voiSelUndd</Sound>
+	<Sound>AUFutur_voiSelUnde</Sound>
+	</AudioEvent>
+</AssetDeclaration>

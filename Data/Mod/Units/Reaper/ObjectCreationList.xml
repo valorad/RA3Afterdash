@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ObjectCreationList
+		id="SUHeavyWalkerVehicle_Legs_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS USE_CREATORS_HEALTH_PERCENTAGE COPY_CREATORS_UPGRADES ORIENT_IN_PRIMARY_DIRECTION INHERIT_PRICE_PURCHASED"
+			Disposition="LIKE_EXISTING ON_GROUND_ALIGNED"
+			StartingBusyTime="0.25s"
+			DisabledWhileBusy="true"
+			Count="1">
+			<CreateObject>SovietHeavyWalkerDeployedTurret</CreateObject>
+		</CreateObject>
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING"
+			Count="1"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>SovietHeavyWalkerTurret_Legs</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="SUHeavyWalkerVehicle_Die_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="20.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>SovietHeavyWalker_Collapse</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="SUHeavyWalkerTurret_Die_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="20.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>SovietHeavyWalkerTurret_Collapse</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>	
+</AssetDeclaration>

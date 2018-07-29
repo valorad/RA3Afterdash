@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Allied Engineer/AttributeModifier.xml" />
+		<Include type="all" source="Allied Engineer/GameObject.xml" />
+		<Include type="all" source="Allied Engineer/ObjectCreationList.xml" />
+		<Include type="all" source="Allied Engineer/Texture.xml" />
+		<Include type="all" source="Allied Engineer/W3X.xml" />
+	</Includes>
+</AssetDeclaration>

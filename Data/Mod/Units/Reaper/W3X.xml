@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETGRENADE.SPHERE02.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETGRENADE.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETGRENADE_CTR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETGRENADE_HRC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET.SPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET.SPHERE02.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET_HRC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET_VET.SPHERE01.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET_VET.SPHERE02.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET_VET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/EXSOVIETROCKET_VET_HRC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERTURRET_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERTURRET_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERTURRET_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERTURRET_GAR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_ABTA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_AIDA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_AIDB.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_AIFA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_BATA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_BIDA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_BIFA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_BIFB.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_BIFC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_JMPA.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_JMPB.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_JMPC_LEGS.SCYTHE.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_JMPC_LEGS.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_JMPC_LEGS_CTR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_JMPC_LEGS_HRC.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_SKL.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_SKN.BOX01.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_SKN.SCYTHE.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_SKN.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_TRNL.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_TRNR.w3x" />
+		<Include type="all" source="ART:Units/Reaper/SUHEAVYWALKERVEHICLE_WLKA.w3x" />
+	</Includes>
+</AssetDeclaration>

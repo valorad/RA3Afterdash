@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPower_AlliedFutureTankLaserWeapon"
+		TargetType="LOCATION"
+		Flags="WATER_OK CANNOT_LEAVE_ENCLOSURE"
+		ReloadTime="15s"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="voiceAttackRiotBeam"
+		WaypointModeTerminal="false" />
+</AssetDeclaration>

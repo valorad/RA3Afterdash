@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ObjectCreationList
+		id="OCL_SeaDeathOCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY">
+			<CreateObject>JapanFortressShip_Collapse</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+
+	<ObjectCreationList
+		id="OCL_AirDeathOCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="0.5"
+ 			MinForceMagnitude="0.01"
+			MaxForceMagnitude="0.10">
+			<CreateObject>JapanFortressShipAirborne_Dying</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+
+	<ObjectCreationList
+		id="JUFortressShipAirborne_Die_OCL">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY SEND_IT_UP"
+			Count="1"
+			VelocityScale="20.0"
+			DispositionIntensity="100.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+			<CreateObject>JapanFortressShipAirborne_Collapse</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+  <ObjectCreationList
+		id="OCL_AirDeath_OverWater_OCL">
+    <CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY"
+			Count="1"
+			VelocityScale="0.5"
+ 			MinForceMagnitude="0.01"
+			MaxForceMagnitude="0.10">
+      <CreateObject>JapanFortressShipAirborne_OverWater_Dying</CreateObject>
+    </CreateObject>
+  </ObjectCreationList>
+  
+  <ObjectCreationList
+		id="JUFortressShipAirborne_Die_OverWater_OCL">
+    <CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING INHERIT_VELOCITY SEND_IT_UP"
+			Count="1"
+			VelocityScale="20.0"
+			DispositionIntensity="100.0"
+			MinForceMagnitude="1.0"
+			MaxForceMagnitude="2.0"
+			MinForcePitch="90d"
+			MaxForcePitch="75d">
+      <CreateObject>JapanFortressShipAirborne_Overwater_Collapse</CreateObject>
+    </CreateObject>
+  </ObjectCreationList>
+  
+	<ObjectCreationList
+		id="OCL_JapanFortressShipAirborneSeigeCannonWeaponNode">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS INHERIT_ATTRIBUTES_FROM_SOURCE COPY_CREATORS_UPGRADES CREATE_AT_TARGET"
+			Disposition="LIKE_EXISTING"
+			Count="1"
+			StatusToCopyFromParent="FORCE_ATTACKING">
+			<CreateObject>JapanFortressShipSeigeCannonNode</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_JapanFortressShipAirborneSeigeCannonWeaponNode_Veteran">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS INHERIT_ATTRIBUTES_FROM_SOURCE COPY_CREATORS_UPGRADES CREATE_AT_TARGET"
+			Disposition="LIKE_EXISTING"
+			Count="1"
+			StatusToCopyFromParent="FORCE_ATTACKING">
+			<CreateObject>JapanFortressShipSeigeCannonNode_Veteran</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_FortressReplace">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CLEAR_REMOVEABLES COPY_CREATORS_UPGRADES USE_CREATORS_HEALTH_PERCENTAGE INHERIT_ATTRIBUTES_FROM_SOURCE INHERIT_SCRIPTING_NAME"
+			Disposition="LIKE_EXISTING"
+			Count="1">
+			<CreateObject>JapanFortressShip</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+</AssetDeclaration>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPower_JapanFortressShipTransformMode"
+		ReloadTime="15s"
+		TargetType="NONE"
+		Flags="NOT_WHILE_BENEATH_BRIDGE NOT_ON_BRIDGE NOT_IN_NANOSWARM" 
+		PreventConditions="BOOBY_TRAPPED IS_BEING_DRAGGED IMMOBILE_ALLOW_ROTATE MARCH_OF_DEATH" >
+	</SpecialPowerTemplate>
+</AssetDeclaration>

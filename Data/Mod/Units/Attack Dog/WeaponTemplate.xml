@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<WeaponTemplate
+		id="AlliedScoutInfantryMaul"
+		AttackRange="30.0"
+		ChaseWeapon="true"
+		WeaponSpeed="125.0"
+		ReAcquireDetailType="PRE_FIRE"
+		ProjectileSelf="true"
+		ClipSize="1"		
+		FireSound="ALL_Dog_Attack"
+		AcceptableAimDelta="10d"
+		CanFireWhileMoving="true"
+		HoldDuringReload="true"
+		VirtualDamage="SHARE"
+        Flags="NOT_ATTRACTED_BY_MAGNETS" 
+		InstantLoadClipOnActivate="true"
+        FinishAttackOnceStarted="true"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND"
+		MeleeWeapon="true">
+		<!-- this is the amount of time the dog should spend in the air -->
+		<FiringDuration
+			MinSeconds="0.5s"
+			MaxSeconds="0.5s" />
+		<!-- this should match the time the dog spends attacking -->
+		<ClipReloadTime
+			MinSeconds="1.5s"
+			MaxSeconds="1.5s" />
+		<Nuggets>			
+			<!-- forbid attacking anything that is RIOT_SHIELDED so won't auto-acquire peacekeepers when it can't do any damage to them -->
+			<!-- Ditto in-hole Tankbusters, since we'll clear their NO_ATTACK status and allow them to attack from their hole -->
+			
+			<!-- remove any effects that might prevent the hit reaction from making the victim face us -->
+			<ParalyzeNugget
+				RemoveParalyzeType="EMP"
+				ForbiddenTargetObjectStatus="RIOT_SHIELDED IN_SPIDER_HOLE">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="STRUCTURE VEHICLE AIRCRAFT">
+					<ExcludeThing>SovietHeavyAntiVehicleInfantry</ExcludeThing>
+					<ExcludeThing>SovietScoutVehicle</ExcludeThing>
+					<ExcludeThing>AlliedAntiNavalScout</ExcludeThing>
+					<ExcludeThing>AlliedLegionnaireInfantry</ExcludeThing>
+					<ExcludeThing>SovietDesolatorInfantry</ExcludeThing>
+					<ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</ParalyzeNugget>
+			<DamageNugget
+				Damage="1.0"
+				Radius="0.0"
+				DamageType="UNRESISTABLE"
+				DeathType="BITTEN"
+				ForbiddenTargetObjectStatus="RIOT_SHIELDED IN_SPIDER_HOLE">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="STRUCTURE VEHICLE AIRCRAFT">
+					<ExcludeThing>SovietHeavyAntiVehicleInfantry</ExcludeThing>
+					<ExcludeThing>SovietScoutVehicle</ExcludeThing>
+					<ExcludeThing>AlliedAntiNavalScout</ExcludeThing>
+					<ExcludeThing>AlliedLegionnaireInfantry</ExcludeThing>
+					<ExcludeThing>SovietDesolatorInfantry</ExcludeThing>
+                    <ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</DamageNugget>
+			<AttributeModifierNugget
+				AttributeModifierName="AlliedScoutInfantryMaulAttributeModifier"
+				AttributeModifierOwnerName="AlliedScoutInfantryMaulOwnerAttributeModifier"
+				ForbiddenTargetObjectStatus="RIOT_SHIELDED IN_SPIDER_HOLE">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="STRUCTURE VEHICLE AIRCRAFT">
+					<ExcludeThing>SovietHeavyAntiVehicleInfantry</ExcludeThing>
+					<ExcludeThing>SovietScoutVehicle</ExcludeThing>
+					<ExcludeThing>AlliedAntiNavalScout</ExcludeThing>
+					<ExcludeThing>AlliedLegionnaireInfantry</ExcludeThing>
+					<ExcludeThing>SovietDesolatorInfantry</ExcludeThing>
+                    <ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</AttributeModifierNugget>
+			<ProjectileNugget
+				WarheadTemplate="AlliedScoutInfantryMaulWarhead"
+				ForbiddenTargetObjectStatus="RIOT_SHIELDED IN_SPIDER_HOLE">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="STRUCTURE VEHICLE AIRCRAFT">
+					<ExcludeThing>SovietHeavyAntiVehicleInfantry</ExcludeThing>
+					<ExcludeThing>SovietScoutVehicle</ExcludeThing>
+					<ExcludeThing>AlliedAntiNavalScout</ExcludeThing>
+					<ExcludeThing>AlliedLegionnaireInfantry</ExcludeThing>
+					<ExcludeThing>SovietDesolatorInfantry</ExcludeThing>
+                    <ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</ProjectileNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AlliedScoutInfantryMaulWarhead"
+		ProjectileCollidesWith="ALLIES ENEMIES NEUTRAL STRUCTURES WALLS"
+		RadiusDamageAffects="ENEMIES NEUTRALS"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		FinishAttackOnceStarted="true" 
+		HitStoredTarget="true">
+        <FiringDuration
+			MinSeconds="0.5s"
+			MaxSeconds="0.5s" />
+		<ClipReloadTime
+			MinSeconds="0.3s"
+			MaxSeconds="0.3s" />
+		<Nuggets>
+			<AttributeModifierNugget
+				AttributeModifierName="AlliedScoutInfantryMaulLandedAttributeModifier"
+				ForbiddenTargetObjectStatus="IN_SPIDER_HOLE" />
+			<DamageNugget
+				Damage="200.0"
+				Radius="0.0"
+				DamageType="MELEE"
+				DamageFXType="ALLIED_DOG"
+				DeathType="BITTEN"
+				ForbiddenTargetObjectStatus="IN_SPIDER_HOLE">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="STRUCTURE VEHICLE AIRCRAFT">
+					<ExcludeThing>SovietHeavyAntiVehicleInfantry</ExcludeThing>
+					<ExcludeThing>SovietScoutVehicle</ExcludeThing>
+					<ExcludeThing>AlliedLegionnaireInfantry</ExcludeThing>
+					<ExcludeThing>SovietDesolatorInfantry</ExcludeThing>
+                    <ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+				</SpecialObjectFilter>
+			</DamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

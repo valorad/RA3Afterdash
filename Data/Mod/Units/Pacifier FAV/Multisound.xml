@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="ALL_Pacifier_DeployMS">
+		<Subsound>ALL_Pacifier_DeployPlayer</Subsound> 
+		<Subsound>ALL_Pacifier_DeployOthers</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_Pacifier_MachineGunLoopMS">
+		<Subsound>ALL_Pacifier_MachineGunLoop</Subsound> 
+		<Subsound>ALL_Pacifier_MachineGunWhineLoop</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_Pacifier_UndeployMS">
+		<Subsound>ALL_Pacifier_UndeployPlayer</Subsound> 
+		<Subsound>ALL_Pacifier_UndeployOthers</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_Pacifier_VoiceDeployMS" >
+		<Subsound>ALL_Pacifier_VoiceDeploy</Subsound>
+		<Subsound>ALL_Pacifier_DeployMS</Subsound>
+	</Multisound>
+</AssetDeclaration>

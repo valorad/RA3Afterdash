@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<Tags></Tags>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
 	<Includes>
-		<!--
-			mod.xml is the central include for mod setup data.		
-		-->
-		<!-- These includes need to be in all mod.xml files -->
 		<Include type="reference" source="DATA:static.xml" />
-		<Include type="reference" source="DATA:global.xml" />    
+		<Include type="reference" source="DATA:global.xml" />
 		<Include type="reference" source="DATA:audio.xml" />
-
-		<!-- Afterdash starts -->
 		
-
+		<!-- STATIC DATA -->
+		
+		<!-- Mod specific -->
+		<Include type="all" source="Mod/Specific.xml" />
+		
+		<!-- Common used -->
+		<Include type="all" source="Mod/Common.xml" />
+		
+		<!-- Objects -->
+		<Include type="all" source="Mod/Structures.xml" />
+		<Include type="all" source="Mod/Units.xml" />
 	</Includes>
-
 </AssetDeclaration>
-

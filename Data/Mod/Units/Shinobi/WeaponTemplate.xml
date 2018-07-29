@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+<WeaponTemplate
+		id="JapanInfiltrationShirukenGarrison"
+		AttackRange="150.0"
+		WeaponSpeed="400"	
+		AcceptableAimDelta="20d"
+		ClipSize="1"
+		AutoReloadsClip="AUTO"
+		CanFireWhileMoving="true"
+		FireSound="JAP_Shinobi_WeaponFire_ThrowingStar"
+		RequiredAntiMask="ANTI_WATER ANTI_GROUND"
+		RadiusDamageAffects="ENEMIES"		
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		FinishAttackOnceStarted="true"
+		ShouldPlayUnderAttackEvaEvent="false"
+		ShouldPlayTargetDeadEvaEvent="false">
+		<PreAttackDelay
+			MinSeconds="0.2s"
+			MaxSeconds="0.2s" />
+		<FiringDuration
+			MinSeconds="0.8s"
+			MaxSeconds="0.8s" />
+		<ClipReloadTime
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<ProjectileNugget
+				id="Default_Nugget"
+				WarheadTemplate="JapanShurikenProjectileWarhead"
+				ProjectileTemplate="JapanShurikenProjectile">
+					<VeterancyProjectiles
+					VeterancyLevel="HEROIC"
+					ProjectileTemplate="JapanShurikenProjectile_Veteran"/>
+			</ProjectileNugget>
+		</Nuggets>
+    </WeaponTemplate>
+</AssetDeclaration>

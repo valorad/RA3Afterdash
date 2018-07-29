@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="SovietGrinderVehicleGrindWeapon"
+		AttackRange="0.1"
+		FireFX="FX_Sov_Grinder_Grind"
+		FireVeteranFX="FX_Sov_Grinder_Grind"
+		FiringLoopSound="SOV_Grinder_WeaponLoop"
+		AcceptableAimDelta="35d"
+		CanFireWhileMoving="false"
+		Flags="NOT_ATTRACTED_BY_MAGNETS IGNORE_TARGET_AS_OBSTACLE CRUSH_VEHICLE"
+		RequiredAntiMask="ANTI_VEHICLE ANTI_STRUCTURE ANTI_WATER"
+		ForbiddenAntiMask="ANTI_INFANTRY ANTI_AIRBORNE_INFANTRY ANTI_AIRBORNE_VEHICLE ANTI_LIFTED_GROUND_UNIT ANTI_SUBMERGED"
+		FinishAttackOnceStarted="true"
+		IgnoresContactPoints="true">
+		<FiringDuration
+			MinSeconds="0.12s"
+			MaxSeconds="0.12s" />
+		<Nuggets>
+			<AttributeModifierNugget
+				AttributeModifierOwnerName="AttributeModifier_SovietGrinderWeapon">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE STRUCTURE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING UNDER_IRON_CURTAIN">
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+				</SpecialObjectFilter>
+			</AttributeModifierNugget>
+			
+			<ParalyzeNugget
+				ParalyzeType="USER_PARALYZE"
+				DurationSeconds="0.25s">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING UNDER_IRON_CURTAIN">
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+				</SpecialObjectFilter>
+			</ParalyzeNugget>
+			
+			<DamageNugget
+				id="defaultDamageNugget" 
+				Damage="10.0"
+				DelayTimeSeconds="0.0s"
+				DamageType="EXPLOSIVE"
+				DeathType="CRUSHED"
+				DamageFXType="NOD_GRENADE" 
+				PartitionFilterTestType="SPHERE">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE STRUCTURE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING" />
+				<ForbiddenUpgrade>Upgrade_SovietCrushPuppiesPower</ForbiddenUpgrade>
+			</DamageNugget>
+			
+			<DamageNugget
+				id="upgradedDamageNugget"
+				Damage="10.0"
+				DelayTimeSeconds="0.0s"
+				DamageType="EXPLOSIVE"
+				DeathType="CRUSHED"
+				DamageFXType="NOD_GRENADE"
+				PartitionFilterTestType="SPHERE" >
+				<SpecialObjectFilter
+					Rule="NONE"
+					Include="STRUCTURE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS" />
+				<RequiredUpgrade>Upgrade_SovietCrushPuppiesPower</RequiredUpgrade>
+			</DamageNugget>
+			
+			<LeechPercentMaxHealthDamageNugget
+				id="leechDamageNugget"
+				Damage="10.0"
+				DelayTimeSeconds="0.0s"
+				DamageType="EXPLOSIVE"
+				DeathType="CRUSHED"
+				DamageFXType="NOD_GRENADE"
+				PartitionFilterTestType="SPHERE"
+				PercentMaxHealthToTake="0.25%">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE STRUCTURE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING"/>
+				<RequiredUpgrade>Upgrade_SovietCrushPuppiesPower</RequiredUpgrade>
+			</LeechPercentMaxHealthDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+			
+	<WeaponTemplate
+		id="SovietGrinderVehicleCollideWeapon"
+		AttackRange="1.0"
+		FireFX="FX_Sov_Grinder_Collide"
+		FireVeteranFX="FX_Sov_Grinder_Collide"
+		AcceptableAimDelta="35d"
+		CanFireWhileMoving="false"
+		Flags="NOT_ATTRACTED_BY_MAGNETS IGNORE_TARGET_AS_OBSTACLE CRUSH_VEHICLE"
+		RequiredAntiMask="ANTI_VEHICLE ANTI_WATER"
+		ForbiddenAntiMask="ANTI_INFANTRY ANTI_STRUCTURE ANTI_AIRBORNE_INFANTRY ANTI_AIRBORNE_VEHICLE ANTI_LIFTED_GROUND_UNIT ANTI_SUBMERGED"
+		FinishAttackOnceStarted="true"
+		IgnoresContactPoints="true">
+		<FiringDuration
+			MinSeconds="0.12s"
+			MaxSeconds="0.12s" />
+		<Nuggets>
+			<AttributeModifierNugget
+				AttributeModifierOwnerName="AttributeModifier_SovietGrinderCollide">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING UNDER_IRON_CURTAIN">
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+				</SpecialObjectFilter>
+			</AttributeModifierNugget>
+			
+			<ParalyzeNugget
+				ParalyzeType="USER_PARALYZE"
+				DurationSeconds="0.25s">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING UNDER_IRON_CURTAIN">
+					<ExcludeThing>JapanMechaKing</ExcludeThing>
+				</SpecialObjectFilter>
+			</ParalyzeNugget>
+			
+			<DamageNugget
+				id="defaultDamageNugget" 
+				Damage="5.0"
+				DelayTimeSeconds="0.0s"
+				DamageType="EXPLOSIVE"
+				DeathType="CRUSHED"
+				DamageFXType="NOD_GRENADE" 
+				PartitionFilterTestType="SPHERE">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING"/>
+				<ForbiddenUpgrade>Upgrade_SovietCrushPuppiesPower</ForbiddenUpgrade>
+			</DamageNugget>
+
+			<LeechPercentMaxHealthDamageNugget
+				id="leechDamageNugget"
+				Damage="5.0"
+				DelayTimeSeconds="0.0s"
+				DamageType="EXPLOSIVE"
+				DeathType="CRUSHED"
+				DamageFXType="NOD_GRENADE"
+				PartitionFilterTestType="SPHERE"
+				PercentMaxHealthToTake="0.25%">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="VEHICLE"
+					Exclude="ORE_NODE BRIDGE_GATEHOUSE NO_COLLIDE DEBRIS"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING"/>
+				<RequiredUpgrade>Upgrade_SovietCrushPuppiesPower</RequiredUpgrade>
+			</LeechPercentMaxHealthDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="SovietGrinderVehicleGrindWeapon_Infantry"
+		AttackRange="0.1"
+		CanFireWhileMoving="true"
+		Flags="NOT_ATTRACTED_BY_MAGNETS IGNORE_TARGET_AS_OBSTACLE CRUSH_VEHICLE"
+		RequiredAntiMask="ANTI_INFANTRY ANTI_WATER"
+		ForbiddenAntiMask="ANTI_VEHICLE ANTI_STRUCTURE ANTI_AIRBORNE_INFANTRY ANTI_AIRBORNE_VEHICLE ANTI_LIFTED_GROUND_UNIT ANTI_SUBMERGED">
+		<Nuggets>
+			<DamageNugget
+				Damage="999999.0"
+				DamageType="CRUSH"
+				DeathType="CRUSHED">
+				<ForbiddenUpgrade>Upgrade_SovietCrushPuppiesPower</ForbiddenUpgrade>
+			</DamageNugget>
+			
+			<LeechPercentMaxHealthDamageNugget
+				Damage="999999.0"
+				DamageType="CRUSH"
+				DeathType="CRUSHED"
+				PercentMaxHealthToTake="2.5%">
+				<RequiredUpgrade>Upgrade_SovietCrushPuppiesPower</RequiredUpgrade>
+			</LeechPercentMaxHealthDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="SovietGrinderVehicleCrushWeapon"
+		AttackRange="0.1"
+		CanFireWhileMoving="true"
+		Flags="NOT_ATTRACTED_BY_MAGNETS IGNORE_TARGET_AS_OBSTACLE CRUSH_VEHICLE"
+		RequiredAntiMask="ANTI_INFANTRY ANTI_WATER"
+		ForbiddenAntiMask="ANTI_VEHICLE ANTI_STRUCTURE ANTI_AIRBORNE_INFANTRY ANTI_AIRBORNE_VEHICLE ANTI_LIFTED_GROUND_UNIT ANTI_SUBMERGED">
+		<Nuggets>
+			<DamageNugget
+				Damage="999999.0"
+				DamageType="CRUSH"
+				DeathType="CRUSHED">
+				<ForbiddenUpgrade>Upgrade_SovietCrushPuppiesPower</ForbiddenUpgrade>
+			</DamageNugget>
+			
+			<LeechPercentMaxHealthDamageNugget
+				Damage="999999.0"
+				DamageType="CRUSH"
+				DeathType="CRUSHED"
+				PercentMaxHealthToTake="2.5%">
+				<RequiredUpgrade>Upgrade_SovietCrushPuppiesPower</RequiredUpgrade>
+			</LeechPercentMaxHealthDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+</AssetDeclaration>

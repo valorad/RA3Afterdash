@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<AttributeModifier
+		id="AttributeModifer_ChronoRiftedAlliedEngineer"
+		Duration="1s"
+		ModelConditionsSet="CHRONORIFT" />
+	
+	<AttributeModifier
+		id="AttributeModifer_FrozenAlliedEngineer"
+		Category="WEAPON"
+		StartFX="FX_Freeze"
+		EndFX="FX_UnFreeze"
+		Shader="ShaderOverride_ObjectsFrozen"
+		ModelConditionsSet="FROZEN"
+		ObjectStatusToSet="UNDER_FROZEN">
+		<Modifier Type="SPEED" Value="0%"/>
+		<Modifier Type="RATE_OF_FIRE" Value="0%"/>
+		<Modifier Type="PRODUCTION" Value="0.01%"/>		
+	</AttributeModifier>
+</AssetDeclaration>

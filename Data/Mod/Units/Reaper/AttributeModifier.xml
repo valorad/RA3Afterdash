@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<AttributeModifier
+		id="AttributeModifier_ReaperDeployed"
+		Duration="999999s">
+		<Modifier Type="HEALTH_MULT" Value="150%"/>
+	</AttributeModifier>
+</AssetDeclaration>

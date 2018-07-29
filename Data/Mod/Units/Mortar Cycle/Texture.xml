@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="SUMortarCycle" File="ART:Units/Mortar Cycle/SUMortarCycle.dds" OutputFormat="DXT5" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUMortarCycle_D" File="ART:Units/Mortar Cycle/SUMortarCycle_D.dds" OutputFormat="DXT5" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUMortarCycle_NRM" File="ART:Units/Mortar Cycle/SUMortarCycle_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUMortarCycle_rider" File="ART:Units/Mortar Cycle/SUMortarCycle_rider.dds" OutputFormat="DXT5" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="SUMortarCycle_SPM" File="ART:Units/Mortar Cycle/SUMortarCycle_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

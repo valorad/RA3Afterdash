@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Mortar Cycle/EXSOVMORTAR.NBRDEFMIS.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/EXSOVMORTAR.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/EXSOVMORTAR_CTR.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/EXSOVMORTAR_HRC.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_ABTA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_ACCL.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_AIDA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_ATKA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_BATA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_BIDA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_BIFA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_BIFB.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_BIFC.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MABTA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MAIDA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MATKA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MBATA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MBIDA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MBIFA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MBIFB.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MBIFC.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MRUNA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MSWPA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MTURNL.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_MTURNR.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_RUNA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKL.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKN.DRIVE_SKIN.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKN.MOLOTOV.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKN.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKN.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKN.PLANE05.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SKN.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_SWPA.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_TURNL.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLE_TURNR.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLEGUY_COL.DRIVE_SKIN.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLEGUY_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Mortar Cycle/SUMORTARCYCLEGUY_COL_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

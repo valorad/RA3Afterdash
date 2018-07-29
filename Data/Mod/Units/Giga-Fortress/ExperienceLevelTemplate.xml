@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="JapanFortressShipExperienceLevel_1"
+		inheritFrom="ExperienceLevel_JapanRank1"
+		RequiredExperience="1"
+		ExperienceAward="3000">
+		<Target>JapanFortressDummy</Target>
+		<Target>JapanFortressShip</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="JapanFortressShipExperienceLevel_2"
+		inheritFrom="ExperienceLevel_JapanRank2"
+		Prerequisite="JapanFortressShipExperienceLevel_1"
+		RequiredExperience="9000"
+		ExperienceAward="6000">
+		<Target>JapanFortressDummy</Target>
+		<Target>JapanFortressShip</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="JapanFortressShipExperienceLevel_3"
+		inheritFrom="ExperienceLevel_JapanRank3"
+		Prerequisite="JapanFortressShipExperienceLevel_2"
+		RequiredExperience="18000"
+		ExperienceAward="9000">
+		<Target>JapanFortressDummy</Target>
+		<Target>JapanFortressShip</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="JapanFortressShipLevel_4"
+		inheritFrom="ExperienceLevel_JapanRank4"
+		Prerequisite="JapanFortressShipExperienceLevel_3"
+		RequiredExperience="27000"
+		ExperienceAward="12000">
+		<Target>JapanFortressDummy</Target>
+		<Target>JapanFortressShip</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

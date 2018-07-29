@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="ALL_FutureTank_ArmSecondaryWeaponMS">
+		<Subsound>ALL_FutureTank_ArmSecondaryWeapon_Player</Subsound> 
+		<Subsound>ALL_FutureTank_ArmSecondaryWeapon_Others</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_BarrelSpinMS">
+		<Subsound>ALL_FutureTank_BarrelSpinShort</Subsound> 
+		<Subsound>ALL_FutureTank_BarrelSpinLong</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_DieExplosionMS">
+		<Subsound>RA3VehicleExplosionLarge</Subsound> 
+		<Subsound>ALL_FutureTank_DieExplosionDebris_Delayed</Subsound> 
+		<Subsound>ALL_FutureTank_DieScream</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_VoiceActivatePrimaryMS" >
+		<Subsound>ALL_FutureTank_VoiceActivatePrimary</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_VoiceActivateSecondaryMS" >
+		<Subsound>ALL_FutureTank_VoiceActivateSecondary</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_VoiceSelectBattleMS" >
+		<Subsound>ALL_FutureTank_VoiceSelectBattle</Subsound>
+		<Subsound>ALL_WarBot_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_VoiceSelectMS" >
+		<Subsound>ALL_FutureTank_VoiceSelect</Subsound>
+		<Subsound>ALL_WarBot_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_VoiceSelectUnderFireMS" >
+		<Subsound>ALL_FutureTank_VoiceSelectUnderFire</Subsound>
+		<Subsound>ALL_WarBot_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_FutureTank_Weapon1FireMS">
+		<Subsound>ALL_FutureTank_Weapon1Fire2</Subsound> 
+		<Subsound>ALL_FutureTank_Weapon1Fire</Subsound> 
+	</Multisound>
+</AssetDeclaration>

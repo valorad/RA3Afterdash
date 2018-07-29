@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="AlliedGunshipAircraftExperienceLevel_1"
+		inheritFrom="ExperienceLevel_AlliedRank1"
+		RequiredExperience="1"
+		ExperienceAward="3000">
+	  <Target>AlliedGunshipAircraft</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedGunshipAircraftExperienceLevel_2"
+		inheritFrom="ExperienceLevel_AlliedRank2"
+		Prerequisite="AlliedGunshipAircraftExperienceLevel_1"
+		RequiredExperience="9000"
+		ExperienceAward="6000">
+	  <Target>AlliedGunshipAircraft</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedGunshipAircraftExperienceLevel_3"
+		inheritFrom="ExperienceLevel_AlliedRank3"
+		Prerequisite="AlliedGunshipAircraftExperienceLevel_2"
+		RequiredExperience="18000"
+		ExperienceAward="9000">
+	  <Target>AlliedGunshipAircraft</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedGunshipAircraftExperienceLevel_4"
+		inheritFrom="ExperienceLevel_AlliedRank4"
+		Prerequisite="AlliedGunshipAircraftExperienceLevel_3"
+		RequiredExperience="27000"
+		ExperienceAward="12000">
+	  <Target>AlliedGunshipAircraft</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

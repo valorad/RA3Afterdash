@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UpgradeTemplate id="Leech_FutureTank_Upgrade" Type="OBJECT" />
+	<UpgradeTemplate id="Leech_GigaFortress_Upgrade" Type="OBJECT" />
+	<UpgradeTemplate id="Leech_Pacifier_Upgrade" Type="OBJECT" />
+	<UpgradeTemplate id="Leech_Reaper_Upgrade" Type="OBJECT" />
+</AssetDeclaration>

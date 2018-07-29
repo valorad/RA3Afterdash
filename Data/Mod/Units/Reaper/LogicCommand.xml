@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<LogicCommand
+		Type="UNIT_BUILD"
+		id="Command_ConstructSovietHeavyWalkerVehicle">
+		<Object>SovietHeavyWalkerVehicle</Object>
+	</LogicCommand>
+	
+    <LogicCommand
+        Type="SPECIAL_POWER"
+        id="Command_ActivateLeapDeploySpecialPower">
+        <SpecialPower>SpecialPower_TriggerLeapDeploy</SpecialPower>
+        <AISpecialPowerInfo 
+            Heuristic="AOE_ATTACK"
+            Manager="MICRO_MANAGER"
+            NeverUseWhileRetreating="true"
+            NeverUseWhilePullingBack="true">
+            <SpecialPowerWeapon
+                Weapon="SovietHeavyWalkerVehicleLeapWeapon"
+                AoeAttackPowerLocationPreference="PREFER_CENTER_OF_ENEMIES"/>
+        </AISpecialPowerInfo>
+    </LogicCommand>
+</AssetDeclaration>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UnitAbilityButtonTemplate
+		id="MouseButtonGrinderNitrousBoostPower"
+		LogicCommand="Command_ActivateGrinderNitrousBoostSpecialPower">
+		<Data>
+			<SpecialPower
+				StateData="ButtonStateAbilityGrinderNitrousBoost"/>
+		</Data>
+	</UnitAbilityButtonTemplate>
+</AssetDeclaration>

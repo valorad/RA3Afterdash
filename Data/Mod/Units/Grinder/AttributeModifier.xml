@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<AttributeModifier
+		id="AttributeModifier_SovietGrinderTriggerNitrousBoost"
+		Category="NONE"
+		Duration="5s"
+		ModelConditionsSet="USER_6">
+		<Modifier Type="SPEED" Value="200%"/>
+	</AttributeModifier>
+	
+	<AttributeModifier
+		id="AttributeModifier_SovietGrinderCollide"
+		Duration="0.25s"
+		ObjectStatusToSet="UNPACKING IMMOBILE" />
+	
+	<AttributeModifier
+		id="AttributeModifier_SovietGrinderWeapon"
+		Duration="0.25s"
+		ObjectStatusToSet="IMMOBILE" />
+</AssetDeclaration>

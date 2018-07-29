@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xai="uri:ea.com:eala:asset:instance" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<Includes>
+		<Include type="instance" source="DATA:SageXml/BaseObjects/BaseCollapsingObject.xml" />
+		<Include type="instance" source="DATA:SageXml/BaseObjects/BaseProjectile.xml"/>
+		<Include type="instance" source="DATA:SageXml/BaseObjects/BaseVehicle.xml" />
+	</Includes>
+	
+	<GameObject
+		id="AlliedFutureTank"
+		inheritFrom="BaseVehicle"
+		SelectPortrait="Portrait_AlliedFutureTank"
+		ButtonImage="Button_AlliedFutureTank"
+		Side="Allies"
+		SubGroupPriority="413" 
+		EditorSorting="UNIT"
+		HealthBoxHeightOffset="30"
+		BuildTime="30"
+		JustBuiltTime="2.5s"
+		CommandSet="AlliedFutureTankCommandSet"
+		KindOf="SELECTABLE CAN_ATTACK CAN_CAST_REFLECTIONS SCORE VEHICLE CAN_BE_FAVORITE_UNIT T3_UNIT"
+		WeaponCategory="CANNON"
+		VoicePriority="188"
+		EditorName="AlliedFutureTank"
+		Description="Desc:AlliedFutureTank"
+		TypeDescription="Type:AlliedFutureTank"
+		UnitIntro="Allied_FutureTank_UnitIntro">
+		<DisplayName
+			xai:joinAction="Replace" xmlns:xai="uri:ea.com:eala:asset:instance">Name:AlliedFutureTank</DisplayName>
+		<GameDependency>
+			<NeededUpgrade>Upgrade_AlliedTech3</NeededUpgrade>
+			<RequiredObject>AlliedTechStructure</RequiredObject>
+		</GameDependency>		
+		<ObjectResourceInfo>
+			<BuildCost Account="0" Amount="3000"/>
+		</ObjectResourceInfo>				
+		<ArmorSet
+			Armor="AlliedFutureTankArmor"
+			DamageFX="VehicleDamageFX" />
+		<LocomotorSet
+			Locomotor="AlliedFutureTankLocomotor"
+			Condition="NORMAL"
+			Speed="45.0" />
+		<SkirmishAIInformation
+			UnitBuilderStandardCombatUnit="true" />
+		<Draws>
+			<TruckDraw
+				id="ModuleTag_Draw"
+				OkToChangeModelColor="true"
+				LeftFrontTireBone="Bone_Tracks_Front_Left"
+				RightFrontTireBone="Bone_Tracks_Front_Right"
+				LeftRearTireBone="Bone_Tracks_Rear_Right"
+				RightRearTireBone="Bone_Tracks_Rear_Left"
+				
+				TireRotationMultiplier="0.0"		
+				InitialRecoilSpeed="0.5"
+				MaxRecoilDistance="5"
+				RecoilDamping="2.0"
+				RecoilSettleSpeed="3.0"
+				
+				ExtraPublicBone="Bone_Tread_Front_Left Bone_Tread_Front_Right Bone_Tread_Rear_Left Bone_Tread_Rear_Right FXTracksL FXTracksR Bone_Turret Bone_Turret_Pitch FX_Laser FXBone_Muzzle BONE_GUN_MUZZLE FX_Weapon_01 FX_Weapon_02 FX_Laser01 FX_Laser02"
+				TrackMarks="EXTnkTrack"
+				TrackMarksLeftBone="FX_Track02"
+				TrackMarksRightBone="FX_Track01">
+				<TreadTerrainParticles>DefaultTankTerrainParticleMapping</TreadTerrainParticles>
+
+				<TreadScrollingMap
+					LeftTrack="Bone_Tread_Front_Left"
+					RightTrack="Bone_Tread_Front_Right"
+					SpeedMultiplier="-0.06"
+					TreadDriveSpeedFraction="10%"/>
+				<TreadScrollingMap
+					LeftTrack="Bone_Tread_Rear_Left"
+					RightTrack="Bone_Tread_Rear_Right"
+					SpeedMultiplier="-0.06"
+					TreadDriveSpeedFraction="10%"/>
+														
+				<ModelConditionState
+					ParseCondStateType="PARSE_DEFAULT"
+					RetainSubObjects="true">
+					<Model
+						Name="AUFutureTank_SKN" />					
+					<WeaponFireFXBone
+						WeaponSlotID="1"
+						WeaponSlotType="PRIMARY_WEAPON"
+						BoneName="FX_Laser" />
+					<WeaponRecoilBone
+						WeaponSlotID="1"
+						WeaponSlotType="PRIMARY_WEAPON"
+						BoneName="FX_Laser" />
+					<WeaponLaunchBone
+						WeaponSlotID="1"
+						WeaponSlotType="PRIMARY_WEAPON"
+						BoneName="FX_Laser" />
+					<Turret
+						TurretNameKey="B_Turret"
+						TurretPitch="Bone_turret_pitch"
+						TurretID="1" />
+				</ModelConditionState>
+
+        <!-- Damage States -->
+        <ModelConditionState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="DAMAGED">
+          <Model
+              Name="AUFutureTank_SKN" />
+          <ParticleSysBone
+              BoneName="B_Fender01"
+              FXParticleSystemTemplate="AlliedVehicleDamageSmoke"
+              FollowBone="true"/>
+        </ModelConditionState>
+
+				<ModelConditionState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="REALLYDAMAGED">
+					<Model
+						Name="AUFutureTank_SKN" />
+				<Texture
+						Original="AUFutureTank"
+						New="AUFutureTank_D" /> 	
+					<ParticleSysBone
+						BoneName="B_Fender01"
+						FXParticleSystemTemplate="AlliedVehicleDamageFire"
+						FollowBone="true"/>
+					<ParticleSysBone
+						BoneName="B_Fender01"
+						FXParticleSystemTemplate="AlliedVehicleDamageFireLight"
+						FollowBone="true"/>
+					<ParticleSysBone
+						BoneName="B_Fender01"
+						FXParticleSystemTemplate="AlliedVehicleDamageSmoke"
+						FollowBone="true"/>
+				</ModelConditionState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_DEFAULT"
+					Flags="RESTART_ANIM_WHEN_COMPLETE"
+					AllowRepeatInRandomPick="true"
+					StateName="STATE_Bored">
+					<Animation
+						AnimationName="AUFutureTank_BIDA"
+						AnimationMode="ONCE"
+						AnimationPriority="100" 
+						AnimationBlendTime="15" />
+
+					<Script>
+						Prev = CurDrawablePrevAnimationState()
+						if Prev == "STATE_SelectedPose" or Prev == "TRANS_boredToAttention" or Prev == "STATE_Attack" then
+							CurDrawableSetTransitionAnimState("TRANS_attentionToBored")
+						elseif Prev == "STATE_LaserPack" then
+							CurDrawableSetTransitionAnimState("TRANS_LaserWeaponToBored")
+							CurDrawablePlaySound("ALL_FutureTank_ArmPrimaryWeapon")
+						end
+					</Script>
+				</AnimationState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="JUST_BUILT">
+					<Animation
+						AnimationName="AUFutureTank_XMOVA"
+						AnimationMode="LOOP" />
+				</AnimationState>
+				
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="MOVING PREATTACK_A"
+					StateName="STATE_Attack">
+					<Animation
+						AnimationName="AUFutureTank_ATKG"
+						AnimationMode="LOOP" />
+				</AnimationState>
+				
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="MOVING RELOADING_A"
+					StateName="STATE_Attack">
+					<Animation
+						AnimationName="AUFutureTank_ATKE"
+						AnimationMode="LOOP" />
+					<Animation
+						AnimationName="AUFutureTank_ATKF"
+						AnimationMode="LOOP" />
+				</AnimationState>
+				
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="MOVING"
+					Flags="RANDOMSTART"
+					StateName="STATE_SelectedPose">
+					<Animation
+						AnimationName="AUFutureTank_MOVA"
+						AnimationMode="LOOP" />
+				</AnimationState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="SPECIAL_WEAPON_ONE UNPACKING"
+					Flags="START_FRAME_LAST"
+					StateName="STATE_LaserUnpack">
+					<Animation
+						AnimationName="AUFutureTank_ATKD"
+						AnimationMode="MANUAL" />
+					<Script>
+						CurDrawableSetTransitionAnimState("TRANS_boredToLaserWeapon")
+					</Script>
+				</AnimationState>
+				
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="SPECIAL_WEAPON_ONE PACKING"
+					Flags="START_FRAME_FIRST"
+					StateName="STATE_LaserPack">
+					<Animation
+						AnimationName="AUFutureTank_ATKD"
+						AnimationMode="MANUAL" />
+				</AnimationState>
+				
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="PREATTACK_A"
+					StateName="STATE_Attack">
+					<Animation
+						AnimationName="AUFutureTank_ATKG"
+						AnimationMode="LOOP" />
+				</AnimationState>
+				
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="RELOADING_A"
+					StateName="STATE_Attack">
+					<Animation
+						AnimationName="AUFutureTank_ATKE"
+						AnimationMode="LOOP" />
+					<Animation
+						AnimationName="AUFutureTank_ATKF"
+						AnimationMode="LOOP" />
+				</AnimationState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_NORMAL"
+					ConditionsYes="SELECTED"
+					Flags="RESTART_ANIM_WHEN_COMPLETE"
+					StateName="STATE_SelectedPose">
+					<Animation
+						AnimationName="AUFutureTank_AIDA"
+						AnimationMode="ONCE"
+						AnimationPriority="100"
+						AnimationBlendTime="15"
+						AnimationMustCompleteBlend="true" />
+					<Script>
+						Prev = CurDrawablePrevAnimationState()
+						if Prev == "STATE_Bored" then
+							CurDrawableSetTransitionAnimState("TRANS_boredToAttention")
+						end
+						if Prev == "STATE_LaserPack" then
+							CurDrawablePlaySound("ALL_FutureTank_ArmPrimaryWeapon")
+						end
+					</Script>
+				</AnimationState>
+
+				
+				
+				<!-- transitions. -->
+				<AnimationState
+					ParseCondStateType="PARSE_TRANSITION"
+					StateName="TRANS_boredToLaserWeapon">
+					<Animation
+						AnimationName="AUFutureTank_BATB"
+						AnimationMode="ONCE" />
+				</AnimationState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_TRANSITION"
+					StateName="TRANS_LaserWeaponToBored"
+					Flags="START_FRAME_LAST">
+					<Animation
+						AnimationName="AUFutureTank_BATB"
+						AnimationMode="ONCE_BACKWARDS" />
+				</AnimationState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_TRANSITION"
+					StateName="TRANS_boredToAttention">
+					<Animation
+						AnimationName="AUFutureTank_BATA"
+						AnimationMode="ONCE" />
+				</AnimationState>
+
+				<AnimationState
+					ParseCondStateType="PARSE_TRANSITION"
+					StateName="TRANS_attentionToBored">
+					<Animation
+						AnimationName="AUFutureTank_ABTA"
+						AnimationMode="ONCE" />
+				</AnimationState>
+
+			</TruckDraw>
+
+			
+			
+			
+    <ScriptedModelDraw
+		id="ModuleTag_FireingDrawL"
+		AttachToBoneInAnotherModule="FX_Laser01">
+        <ModelConditionState
+          ParseCondStateType="PARSE_DEFAULT" />
+		
+        <ModelConditionState
+          ParseCondStateType="PARSE_NORMAL"
+          ConditionsYes="PREATTACK_A">
+          <Model
+            Name="EXFutureTankCharge" />
+        </ModelConditionState>
+		
+        <ModelConditionState
+          ParseCondStateType="PARSE_NORMAL"
+          ConditionsYes="RELOADING_A">
+          <Model
+            Name="EXFutureTankCharge" />
+        </ModelConditionState>
+		
+        <AnimationState
+          ParseCondStateType="PARSE_DEFAULT" />
+		
+        <AnimationState
+			ParseCondStateType="PARSE_NORMAL"
+			ConditionsYes="PREATTACK_A">
+			<Animation
+				AnimationName="EXFutureTankCharge"
+				AnimationMode="ONCE"
+				AnimationBlendTime="0"
+				AnimationAbsoluteTime="2.4s" />
+				<Script>
+					CurDrawablePlaySound("ALL_FutureTank_PreFireChargeUp")
+				</Script>
+        </AnimationState>
+		
+        <AnimationState
+          ParseCondStateType="PARSE_NORMAL"
+          ConditionsYes="RELOADING_A"
+          Flags="START_FRAME_LAST">
+          <Animation
+            AnimationName="EXFutureTankCharge"
+            AnimationMode="ONCE_BACKWARDS"
+            AnimationBlendTime="0"
+            AnimationAbsoluteTime="0.5s"/>
+        </AnimationState>
+    </ScriptedModelDraw>
+	  
+	  
+	 
+	<ScriptedModelDraw
+		id="ModuleTag_FireingDrawR"
+		AttachToBoneInAnotherModule="FX_Laser02">
+        <ModelConditionState
+          ParseCondStateType="PARSE_DEFAULT" />
+		
+        <ModelConditionState
+          ParseCondStateType="PARSE_NORMAL"
+          ConditionsYes="PREATTACK_A">
+          <Model
+            Name="EXFutureTankCharge" />
+        </ModelConditionState>
+		
+        <ModelConditionState
+          ParseCondStateType="PARSE_NORMAL"
+          ConditionsYes="RELOADING_A">
+          <Model
+            Name="EXFutureTankCharge" />
+        </ModelConditionState>
+		
+        <AnimationState
+          ParseCondStateType="PARSE_DEFAULT" />
+		
+        <AnimationState
+			ParseCondStateType="PARSE_NORMAL"
+			ConditionsYes="PREATTACK_A">
+			<Animation
+				AnimationName="EXFutureTankCharge"
+				AnimationMode="ONCE"
+				AnimationBlendTime="0"
+				AnimationAbsoluteTime="2.4s" />
+				<Script>
+					CurDrawablePlaySound("ALL_FutureTank_PreFireChargeUp")
+				</Script>
+        </AnimationState>
+		
+        <AnimationState
+          ParseCondStateType="PARSE_NORMAL"
+          ConditionsYes="RELOADING_A"
+          Flags="START_FRAME_LAST">
+          <Animation
+            AnimationName="EXFutureTankCharge"
+            AnimationMode="ONCE_BACKWARDS"
+            AnimationBlendTime="0"
+            AnimationAbsoluteTime="0.5s"/>
+        </AnimationState>
+    </ScriptedModelDraw>
+
+      
+
+			<!-- include Headlight draw module. -->
+			<xi:include
+				href="DATA:SageXml/Includes/HeadlightDraw2.xml"
+				xpointer="xmlns(n=uri:ea.com:eala:asset) xpointer(/n:HeadlightDraw2/child::*)" />
+			
+			<LaserDraw
+				id="ModuleTag_LaserDraw1"
+				Texture1_UTile="1"
+				Texture1_VTile="1"
+				Texture1_UScrollRate="0"
+				Texture1_VScrollRate="0"
+				Texture1_NumFrames="1"
+				Texture1_FrameRate="30"
+				Texture2_UTile="1"
+				Texture2_VTile=".8"
+				Texture2_UScrollRate="0"
+				Texture2_VScrollRate="1"
+				Texture2_NumFrames="1"
+				Texture2_FrameRate="30"
+				LaserWidth="20"
+				LaserStateID="101">
+				<FXShader
+					ShaderName="Laser.fx"
+					TechniqueIndex="0">
+					<Constants>
+						<Texture
+							Name="Texture1">
+							<Value>FXAlliedFutureLaser</Value>
+						</Texture>
+						<Texture
+							Name="Texture2">
+							<Value>FXAlienLaser</Value>
+						</Texture>
+						<Float Name="ColorEmissive">
+							<Value>4.500000</Value>
+							<Value>4.500000</Value>
+							<Value>4.500000</Value>
+						</Float>
+					</Constants>
+				</FXShader>
+        <ObjectStatusValidation
+					ForbiddenStatus="WEAPON_UPGRADED_02" />
+			</LaserDraw>
+
+			<LaserDraw
+				id="ModuleTag_LaserDraw2"
+				Texture1_UTile="1"
+				Texture1_VTile="1"
+				Texture1_UScrollRate="0"
+				Texture1_VScrollRate="0"
+				Texture1_NumFrames="1"
+				Texture1_FrameRate="30"
+				Texture2_UTile="1"
+				Texture2_VTile="1"
+				Texture2_UScrollRate="0"
+				Texture2_VScrollRate="1"
+				Texture2_NumFrames="1"
+				Texture2_FrameRate="30"
+				LaserWidth="20"
+				LaserStateID="102">
+				<FXShader
+					ShaderName="Laser.fx"
+					TechniqueIndex="0">
+					<Constants>
+						<Texture
+							Name="Texture1">
+							<Value>FXAlliedFutureLaser</Value>
+						</Texture>
+						<Texture
+							Name="Texture2">
+							<Value>FXAlienLaser</Value>
+						</Texture>
+						<Float Name="ColorEmissive">
+              <Value>4.500000</Value>
+              <Value>4.500000</Value>
+              <Value>4.500000</Value>
+						</Float>
+					</Constants>
+				</FXShader>
+        <ObjectStatusValidation
+					ForbiddenStatus="WEAPON_UPGRADED_02" />
+      </LaserDraw>
+      <LaserDraw
+				id="ModuleTag_LaserDraw1Vet"
+				Texture1_UTile="1"
+				Texture1_VTile="1"
+				Texture1_UScrollRate="0"
+				Texture1_VScrollRate="0"
+				Texture1_NumFrames="1"
+				Texture1_FrameRate="30"
+				Texture2_UTile="1"
+				Texture2_VTile=".8"
+				Texture2_UScrollRate="0"
+				Texture2_VScrollRate="1"
+				Texture2_NumFrames="1"
+				Texture2_FrameRate="30"
+				LaserWidth="20"
+				LaserStateID="103">
+        <FXShader
+					ShaderName="Laser.fx"
+					TechniqueIndex="0">
+          <Constants>
+            <Texture
+							Name="Texture1">
+              <Value>FXAlliedFutureLaser</Value>
+            </Texture>
+            <Texture
+							Name="Texture2">
+              <Value>FXAlienLaserHeroic</Value>
+            </Texture>
+            <Float Name="ColorEmissive">
+              <Value>9.000000</Value>
+              <Value>1.500000</Value>
+              <Value>1.500000</Value>
+            </Float>
+          </Constants>
+        </FXShader>
+        <ObjectStatusValidation
+					RequiredStatus="WEAPON_UPGRADED_02" />
+      </LaserDraw>
+
+      <LaserDraw
+				id="ModuleTag_LaserDraw2Vet"
+				Texture1_UTile="1"
+				Texture1_VTile="1"
+				Texture1_UScrollRate="0"
+				Texture1_VScrollRate="0"
+				Texture1_NumFrames="1"
+				Texture1_FrameRate="30"
+				Texture2_UTile="1"
+				Texture2_VTile="1"
+				Texture2_UScrollRate="0"
+				Texture2_VScrollRate="1"
+				Texture2_NumFrames="1"
+				Texture2_FrameRate="30"
+				LaserWidth="20"
+				LaserStateID="104">
+        <FXShader
+					ShaderName="Laser.fx"
+					TechniqueIndex="0">
+          <Constants>
+            <Texture
+							Name="Texture1">
+              <Value>FXAlliedFutureLaser</Value>
+            </Texture>
+            <Texture
+							Name="Texture2">
+              <Value>FXAlienLaserHeroic</Value>
+            </Texture>
+            <Float Name="ColorEmissive">
+              <Value>9.000000</Value>
+              <Value>1.500000</Value>
+              <Value>1.500000</Value>
+            </Float>
+          </Constants>
+        </FXShader>
+        <ObjectStatusValidation
+					RequiredStatus="WEAPON_UPGRADED_02" />
+			</LaserDraw>
+		</Draws>
+		<Behaviors>
+			<WeaponSetUpdate
+				id="ModuleTag_WeaponSetUpdate">
+				<WeaponSlotTurret
+					ID="1">
+					<Weapon
+						Ordering="PRIMARY_WEAPON"
+						Template="AlliedFutureTankNeutronScrambler"
+						ForbiddenObjectStatus="SPECIALABILITY_ACTIVE WEAPON_UPGRADED_02"/>
+					<Weapon
+						Ordering="PRIMARY_WEAPON"
+						Template="AlliedFutureTankNeutronScrambler_Veteran"
+						ForbiddenObjectStatus="SPECIALABILITY_ACTIVE"
+						ObjectStatus="WEAPON_UPGRADED_02"/>
+					<TurretSettings
+						TurretTurnRate="170"
+						MinimumPitch="-30d"
+						AllowsPitch="true"
+						TurretPitchRate="180"
+						InvalidIdleScanObjectStatus="SPECIALABILITY_ACTIVE"
+						MinIdleScanTime="5.0s"
+						MaxIdleScanTime="10.0s"
+						MinIdleScanAngle="25.0"
+						MaxIdleScanAngle="25.0"
+						ComeToHaltJiggle="3d">
+						<TurretAITargetChooserData
+							IdleScanDelay="0.0s"
+							CanAcquireDynamicIfAssignedOutOfRange="true" />
+					</TurretSettings>
+				</WeaponSlotTurret>
+			</WeaponSetUpdate>
+      <StatusBitsUpgrade
+				id="ModuleTag_VeterancyUpgrade"
+				StatusToSet="WEAPON_UPGRADED_02">
+        <TriggeredBy>Upgrade_Veterancy_HEROIC</TriggeredBy>
+      </StatusBitsUpgrade>
+			<CreateObjectDie
+				id="ModuleTag_CreateObjectDie"
+				CreationList="AUFutureTank_Die_OCL">
+				<DieMuxData
+					DeathTypes="ALL" />
+			</CreateObjectDie>
+			<DestroyDie
+				id="ModuleTag_Die">
+				<DieMuxData
+					DeathTypes="ALL" />
+			</DestroyDie>
+			<FXListBehavior
+				id="ModuleTag_FXList">
+				<DieMuxData
+					DeathTypes="ALL" />
+				<Event
+					Index="onDeath"
+					FX="FX_ALL_FutureTankDie" />
+			</FXListBehavior>
+
+			<Physics
+				id="ModuleTag_Physics" />
+
+			<AutoHealBehavior
+				id="Upgrade_PassiveHeal"
+				InitiallyActive="true"
+				HealOnlyIfNotInCombat="false"
+				HealOnlyIfNotUnderAttack="false"
+				StartHealingDelay="1s"
+				HealingAmount="2"
+				HealingDelay="0.5s">
+			</AutoHealBehavior>		
+
+			<SpecialPower
+				id="ModuleTag_ToggleFutureTankWeapon"
+				SpecialPowerTemplate="SpecialPower_AlliedFutureTankLaserWeapon"
+				UpdateModuleStartsAttack="true" />
+			
+			<WeaponFireSpecialAbilityUpdate
+				id="ModuleTag_AlliedFutureTankFireLaserUpdate"
+				SpecialPowerTemplate="SpecialPower_AlliedFutureTankLaserWeapon"
+				SpecialWeapon="AlliedFutureTankLaserWeapon"
+				UnpackTime="1.0s"
+				PackTime="1.0s"
+				BusyForDuration="1.0s"
+				StartAbilityRange="250.0"
+				WhichSpecialWeapon="1"
+				UnpackSound="ALL_FutureTank_ArmSecondaryWeaponMS"
+				TriggerSound="ALL_FutureTank_DeathRayWeaponFire"
+				Options="FAIL_WITH_INVALID_APPROACH MUST_FINISH_ABILITY" />
+				
+			<SweepingLaserState
+				id="ModuleTag_SweepingLaserState1"
+				Radius="40"
+				LaserId="101" 
+				OriginBoneName="FX_WEAPON_01"
+				SweepFXList=""
+				VeteranSweepFXList=""
+				SweepWeapon="AlliedFutureTankLaserSweepWeapon">
+				<LaserStartParticleSystem>AlliedFutureStartGlow</LaserStartParticleSystem>
+				<LaserEndParticleSystem>AlliedFutureGlow</LaserEndParticleSystem>
+				<ObjectStatusValidation
+					ForbiddenStatus="WEAPON_UPGRADED_02" />
+			</SweepingLaserState>
+			
+			<SweepingLaserState
+				id="ModuleTag_SweepingLaserState2"
+				Radius="40"
+				LaserId="102" 
+				OriginBoneName="FX_WEAPON_02"
+				SweepFXList=""
+				VeteranSweepFXList=""
+				SweepWeapon="AlliedFutureTankLaserSweepWeapon">
+				<LaserStartParticleSystem>AlliedFutureStartGlow</LaserStartParticleSystem>
+				<LaserEndParticleSystem>AlliedFutureGlow</LaserEndParticleSystem>
+				<ObjectStatusValidation
+					ForbiddenStatus="WEAPON_UPGRADED_02" />
+			</SweepingLaserState>
+
+			<SweepingLaserState
+				id="ModuleTag_SweepingLaserState3"
+				Radius="40"
+				LaserId="103" 
+				OriginBoneName="FX_WEAPON_01"
+				SweepFXList=""
+				VeteranSweepFXList=""
+				SweepWeapon="AlliedFutureTankLaserSweepWeapon">
+				<LaserStartParticleSystem>AlliedFutureStartGlowVet</LaserStartParticleSystem>
+				<LaserEndParticleSystem>AlliedFutureGlowVet</LaserEndParticleSystem>
+				<ObjectStatusValidation
+					RequiredStatus="WEAPON_UPGRADED_02" />
+			</SweepingLaserState>
+			
+			<SweepingLaserState
+				id="ModuleTag_SweepingLaserState4"
+				Radius="40"
+				LaserId="104" 
+				OriginBoneName="FX_WEAPON_02"
+				SweepFXList=""
+				VeteranSweepFXList=""
+				SweepWeapon="AlliedFutureTankLaserSweepWeapon">
+				<LaserStartParticleSystem>AlliedFutureStartGlowVet</LaserStartParticleSystem>
+				<LaserEndParticleSystem>AlliedFutureGlowVet</LaserEndParticleSystem>
+				<ObjectStatusValidation
+					RequiredStatus="WEAPON_UPGRADED_02" />
+			</SweepingLaserState>
+		</Behaviors>
+		<AI>
+			<AIUpdate
+				id="ModuleTag_AI"
+				AutoAcquireEnemiesWhenIdle="YES"
+				StateMachine="UnitAIStateMachine">
+				<UnitAITargetChooserData
+					CanPickDynamicTargets="false" />
+			</AIUpdate>
+		</AI>
+		<Body>
+			<ActiveBody
+				id="ModuleTag_Body"
+				MaxHealth="3000" />
+		</Body>		
+		<ClientBehaviors>
+			<ModelConditionAudioLoopClientBehavior id="ModuleTag_ShrunkenVoice">
+				<ModelConditionSound Sound="ALL_FutureTank_VoiceShrunken" RequiredFlags="SHRINK_EFFECT" />
+			</ModelConditionAudioLoopClientBehavior>
+			<ModelConditionSoundSelectorClientBehavior id="ModuleTag_VoiceAttackBeam">
+				<Override RequiredFlags="WEAPONSTATE_ONE">
+					<AudioArrayVoice>
+						<AudioEntry Sound="ALL_FutureTank_VoiceAttackBeam" AudioType="voiceAttack" />
+					</AudioArrayVoice>
+				</Override>
+			</ModelConditionSoundSelectorClientBehavior>
+			<ModelConditionAudioLoopClientBehavior id="ModuleTag_TorsoRotateWhileArmingSecondary">
+				<ModelConditionSound Sound="ALL_FutureTank_TorsoRotate" RequiredFlags="TURRET_ROTATE" ExcludedFlags="DYING FROZEN" />
+			</ModelConditionAudioLoopClientBehavior>			
+		</ClientBehaviors>
+		<AudioArrayVoice>
+			<AudioEntry Sound="ALL_FutureTank_VoiceAttack" AudioType="voiceAttack" />
+			<AudioEntry Sound="ALL_FutureTank_VoiceCreate" AudioType="voiceCreated" />
+			<AudioEntry Sound="ALL_FutureTank_VoiceMove" AudioType="voiceMove" />
+			<AudioEntry Sound="ALL_FutureTank_VoiceMoveAttack" AudioType="voiceAttackAfterMoving" />
+			<AudioEntry Sound="ALL_FutureTank_VoiceSelectMS" AudioType="voiceSelect" />
+			<AudioEntry Sound="ALL_FutureTank_VoiceSelectBattleMS" AudioType="voiceSelectBattle" />
+			<AudioEntry Sound="ALL_FutureTank_VoiceSelectUnderFireMS" AudioType="voiceSelectUnderFire" />
+			<NamedEntry Sound="ALL_FutureTank_VoiceAttackBeam" Name="voiceAttackRiotBeam" />
+		</AudioArrayVoice>
+		<AudioArraySound>
+			<AudioEntry
+				Sound="ALL_FutureTank_MoveStart"
+				AudioType="soundMoveStart" />
+			<AudioEntry
+				Sound="ALL_FutureTank_IdleLoop"
+				AudioType="soundAmbient" />
+			<AudioEntry
+				Sound="ALL_FutureTank_MoveLoop"
+				AudioType="soundMoveLoop" />
+		</AudioArraySound>
+		<Geometry>
+			<Shape
+				Type="BOX"
+				MajorRadius="17.0"
+				MinorRadius="25.0"
+				Height="40.0"
+				ContactPointGeneration="VEHICLE"/>
+		</Geometry>		
+		<VisionInfo
+			VisionRange="275"
+			ShroudClearingRange="500" />
+		<CrusherInfo 
+			CrushableLevel="31" 
+			CrusherLevel="20"/>
+	</GameObject>
+	
+	<GameObject
+		id="AlliedFutureTank_Collapse"
+		inheritFrom="BaseCollapsingObject" 
+		EditorName="AlliedFutureTank_Collapse">
+		<Draws>
+			<DynamicsDraw 
+			id="ModuleTag_Draw" 
+			Collision="NONINTERCOLLIDING"
+			FlingPerturbation="15"
+			Explodiness="4" >
+				<ModelConditionState
+					ParseCondStateType="PARSE_DEFAULT">
+					<Model
+						Name="AUFutureTank_COL" />
+				<Texture
+						Original="AUFutureTank"
+						New="AUFutureTank_D" /> 				
+
+
+				<xi:include
+					href="DATA:SageXml/Includes/VehicleCollapseParticles/AlliedVehicleCollapseParticles.xml"
+					xpointer="xmlns(n=uri:ea.com:eala:asset) xpointer(/n:AlliedVehicleCollapseParticles/child::*)" />
+					
+        
+				</ModelConditionState>
+
+				<BoneVolumes>
+
+<BoneVolume BoneName="Bone_D_01" Mass="9315" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="6.406" HalfSizeY="6.743" HalfSizeZ="10.783" >
+		<Translation x="-8.586" y="-0.03" z="28.758" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_02" Mass="3504" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="10.973" HalfSizeY="4.284" HalfSizeZ="3.728" >
+		<Translation x="-3.519" y="22.403" z="27.122" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_03" Mass="189" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="1.396" HalfSizeY="3.412" HalfSizeZ="1.989" >
+		<Translation x="-7.87" y="12.231" z="29.402" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_04" Mass="1597" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="5.552" HalfSizeY="3.316" HalfSizeZ="4.339" >
+		<Translation x="3.306" y="14.642" z="10.505" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_05" Mass="285" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="2.633" HalfSizeY="2.842" HalfSizeZ="1.909" >
+		<Translation x="-8.197" y="13.553" z="33.836" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_06" Mass="2170" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="4.74" HalfSizeY="4.328" HalfSizeZ="5.289" >
+		<Translation x="2.929" y="-0.03" z="35.988" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_07" Mass="603" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="2.633" HalfSizeY="3.576" HalfSizeZ="3.205" >
+		<Translation x="-8.197" y="-12.056" z="31.174" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_08" Mass="13256" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="10.017" HalfSizeY="11.534" HalfSizeZ="5.737" >
+		<Translation x="-0.362" y="-1.019" z="8.45" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+<BoneVolume BoneName="Bone_D_09" Mass="3504" Spinniness="3.0" ContactTag="VEHICLE" >
+	<Box  HalfSizeX="10.973" HalfSizeY="4.284" HalfSizeZ="3.728" >
+		<Translation x="-3.519" y="-21.986" z="27.105" />
+		<Rotation x="0.0" y="0.0" z="0.0" w="1.0" />
+	</Box>
+</BoneVolume>
+
+
+
+			</BoneVolumes>
+			<Lifetime
+				Delay="5s"
+				FadeTime="4s" />
+		</DynamicsDraw>
+	</Draws>
+	
+	<Behaviors>
+		<LifetimeUpdate
+			id="ModuleTag_LifeTime"
+			MinLifetime="4s"
+			MaxLifetime="5s" />	
+		<SlowDeath
+			id="ModuleTag_Death"
+			SinkDelay="1s"
+			SinkRate="1.5"
+			DestructionDelay="8s">
+			<DieMuxData
+				DeathTypes="ALL" />
+		</SlowDeath>
+	</Behaviors>
+</GameObject>
+
+	<GameObject
+		id="AlliedFutureTankNeutronScramblerNode"
+		Side="Allies"
+		EditorSorting="SYSTEM"
+		TransportSlotCount="0"
+		IsTrainable="false"
+		KindOf="UNATTACKABLE NOT_AUTOACQUIRABLE NO_COLLIDE SIMPLE_OBJECT_PROP SKIRMISH_AI_ATTEMPT_TO_DODGE PASS_EXPERIENCE_TO_PRODUCER"
+		EditorName="AlliedFutureTankNeutronScramblerNode">
+		<DisplayName>AlliedFutureTankNeutronScramblerNode</DisplayName>
+		<ArmorSet
+			Armor="NoArmor" />
+    <SkirmishAIInformation
+      DodgeSafetyDistance="220.0">
+      <DodgeWithUnits Rule="ALL"
+        StatusBitFlagsExclude="AIRBORNE_TARGET">
+      </DodgeWithUnits>
+    </SkirmishAIInformation>
+		<Draws>
+			<ScriptedModelDraw
+				id="ModuleTag_Draw"
+				NoRotate="true">
+				<ModelConditionState
+					ParseCondStateType="PARSE_DEFAULT">
+					<Model Name="" />
+          <ParticleSysBone
+              BoneName="NONE"
+              FXParticleSystemTemplate="AlliedFutureTankHit_XP"
+              FollowBone="true"/>
+          <ParticleSysBone
+              BoneName="NONE"
+              FXParticleSystemTemplate="AlliedFutureTankHit_Light"
+              FollowBone="true"/>
+				</ModelConditionState>
+			</ScriptedModelDraw>
+		</Draws>
+		<Behaviors>
+			<DestroyDie
+				id="ModuleTag_Die">
+				<DieMuxData
+					DeathTypes="ALL" />
+			</DestroyDie>
+			
+			<LifetimeUpdate
+				id="ModuleTag_LifetimeUpdate"
+				MinLifetime="1.5s"
+				MaxLifetime="1.5s" />
+				
+			<FireWeaponUpdate
+				id="ModuleTag_FireOneShotWeaponUpdate">
+				<FireWeaponNugget
+					WeaponName="AlliedFutureTankNeutronWeapon_OneShotWeapon"
+					FireDelay="0.0s"
+					OneShot="true">
+				</FireWeaponNugget>
+			</FireWeaponUpdate>
+			
+			<FireWeaponUpdate
+				id="ModuleTag_FireIncrementalWeaponUpdate"
+				FireInterval="0.25s">
+				<FireWeaponNugget
+					WeaponName="AlliedFutureTankNeutronWeapon_IncrementalWeapon"
+					FireDelay="0.0s">
+				</FireWeaponNugget>
+			</FireWeaponUpdate>
+		</Behaviors>
+		<Body>
+			<ActiveBody
+				id="ModuleTag_Body"
+				MaxHealth="100.0" />
+		</Body>
+		<Geometry
+			IsSmall="true">
+			<Shape
+				Type="SPHERE"
+				MajorRadius="1.0">
+			</Shape>
+		</Geometry>
+		<AudioArraySound>
+			<AudioEntry Sound="ALL_FutureTank_Weapon_NeutronScramblerImpactSmall" AudioType="soundAmbient"/>
+		</AudioArraySound>
+		<ShadowInfo
+			Type="NONE" />
+		<CrusherInfo
+			id="id_CrusherInfo"
+			CrushableLevel="0" />
+	</GameObject>
+
+	<GameObject
+		id="AlliedFutureTankNeutronScramblerNode_Vet"
+		inheritFrom="AlliedFutureTankNeutronScramblerNode">
+		<Draws>
+			<ScriptedModelDraw
+				id="ModuleTag_Draw"
+				NoRotate="true"
+				xai:joinAction="Replace">
+				<ModelConditionState
+					ParseCondStateType="PARSE_DEFAULT">
+					<Model Name="" />
+					<ParticleSysBone
+              BoneName="NONE"
+              FXParticleSystemTemplate="AlliedFutureTankHit_XPVet"
+              FollowBone="true"/>
+					<ParticleSysBone
+              BoneName="NONE"
+              FXParticleSystemTemplate="AlliedFutureTankHit_LightVet"
+              FollowBone="true"/>
+				</ModelConditionState>
+			</ScriptedModelDraw>
+		</Draws>
+	</GameObject>
+	
+	<GameObject
+		id="AlliedFutureTankNeutronWeaponProjectile"
+		inheritFrom="BaseProjectile"
+		KindOf="-NO_COLLIDE"
+		Side="Allies"
+		EditorName="AlliedFutureTankNeutronWeaponProjectile">
+		<Draws>
+			<ScriptedModelDraw
+				id="ModuleTag_ScriptedModelDraw">
+        <ModelConditionState
+					ParseCondStateType="PARSE_DEFAULT">
+          <Model
+						Name="FXFutureProjectile02" />
+          <ParticleSysBone
+              BoneName="NONE"
+              FXParticleSystemTemplate="AlliedFutureTankProjLight"
+              FollowBone="true"/>
+        </ModelConditionState>
+			</ScriptedModelDraw>
+		</Draws>
+		<Behaviors>
+			<FXListBehavior
+				id="ModuleTag_FXLists">
+				<DieMuxData
+					DeathTypes="ALL" />
+				<Event
+					Index="onDeath"
+					FX="FX_Allied_FutureTank_Hit" />
+			</FXListBehavior>
+
+			<BezierProjectile
+				id="ModuleTag_BezierProjectileBehavior"
+				Flags="ORIENT_TO_FLIGHT_PATH DETONATE_CALLS_KILL"
+				FirstHeightMin="5"
+				FirstHeightMax="5"
+				SecondHeightMin="0"
+				SecondHeightMax="0"
+				FirstPercentIndent="33"
+				SecondPercentIndent="66"
+				CurveFlattenMinDist="300"
+				FlightPathAdjustDistPerSecond="20"
+				GroundHitFX="FX_Allied_FutureTank_Hit"
+        Acceleration="5" />
+
+		</Behaviors>
+		<Geometry
+			IsSmall="true">
+			<Shape
+				Type="SPHERE"
+				MajorRadius="0.8"></Shape>
+		</Geometry>
+	</GameObject>
+
+	<!-- VETERAN -->
+	<GameObject
+		id="AlliedFutureTankNeutronWeaponProjectile_Vet"
+		inheritFrom="AlliedFutureTankNeutronWeaponProjectile"
+		EditorName="AlliedFutureTankNeutronWeaponProjectile_Vet">
+		<Draws>
+			<ScriptedModelDraw
+				id="ModuleTag_ScriptedModelDraw"
+				xai:joinAction="Replace">
+        <ModelConditionState
+					ParseCondStateType="PARSE_DEFAULT">
+          <Model
+						Name="FXFutureProjectile02_Vet" />
+        </ModelConditionState>
+      </ScriptedModelDraw>
+    </Draws>
+    <Behaviors>
+      <FXListBehavior
+				id="ModuleTag_FXList">
+        <DieMuxData
+					DeathTypes="ALL" />
+        <Event
+					Index="onDeath"
+          xai:joinAction="Replace"
+					FX="FX_Allied_FutureTank_HitVet" />
+			</FXListBehavior>
+			<BezierProjectile
+				id="ModuleTag_BezierProjectileBehavior"
+        xai:joinAction="Replace"
+				Flags="ORIENT_TO_FLIGHT_PATH DETONATE_CALLS_KILL"
+				FirstHeightMin="5"
+				FirstHeightMax="5"
+				SecondHeightMin="0"
+				SecondHeightMax="0"
+				FirstPercentIndent="33"
+				SecondPercentIndent="66"
+				CurveFlattenMinDist="300"
+				FlightPathAdjustDistPerSecond="20"
+				GroundHitFX="FX_Allied_FutureTank_HitVet"
+        Acceleration="5" />
+		</Behaviors>
+	</GameObject>
+</AssetDeclaration>

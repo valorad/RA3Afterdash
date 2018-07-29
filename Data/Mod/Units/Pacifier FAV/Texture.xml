@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="AUArtilleryVehicle" File="ART:Units/Pacifier FAV/AUArtilleryVehicle.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AUArtilleryVehicle_D" File="ART:Units/Pacifier FAV/AUArtilleryVehicle_D.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AUArtilleryVehicle_NRM" File="ART:Units/Pacifier FAV/AUArtilleryVehicle_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AUArtilleryVehicle_SPM" File="ART:Units/Pacifier FAV/AUArtilleryVehicle_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXAlienPortal" File="ART:Units/Pacifier FAV/FXAlienPortal.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="FXPacifier_Reticule" File="ART:Units/Pacifier FAV/FXPacifier_Reticule.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

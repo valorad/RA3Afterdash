@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<UpgradeTemplate id="Upgrade_ABD_CryoLegionnaire" Type="OBJECT" />
+	<UpgradeTemplate id="Upgrade_ABD_Desolator" Type="OBJECT" />
+	<UpgradeTemplate id="Upgrade_ABD_ArcherMaiden" Type="OBJECT" />	
+</AssetDeclaration>

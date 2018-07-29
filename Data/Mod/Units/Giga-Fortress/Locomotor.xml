@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<LocomotorTemplate
+		id="JapanFortressShipWaterLocomotor"
+		Surfaces="DEEP_WATER"
+		TurnTimeSeconds="3.0s"
+		TurnTimeDamagedSeconds="4.0s"
+		MaxSpeedDamaged="75%"
+		AccelerationSeconds="0.5s"
+		BrakingSeconds="0.5s"
+		SlowTurnRadius="0.0"
+		FastTurnRadius="40.0"
+		MinTurnSpeed="0%"
+		PreferredHeight="0.1"
+		BehaviorZ="SURFACE_RELATIVE_HEIGHT"
+		Appearance="SHIP"
+		ActiveModelConditions="OVER_WATER"
+		ActiveObjectStatus="WATER_LOCOMOTOR_ACTIVE OVER_WATER"
+		ClampOrientationToPathTangent="true"
+		ReorientIfTurnTooSharp="true"
+		TurnThresholdHS="90d"
+		PitchStiffness="0.2"
+		RollStiffness="0.01"
+		PitchDamping="0.2"
+		RollDamping="0.05"
+
+		TakeOffAndLandingSpeed="3.5"
+		TakeOffAndLandingSlowDownDelta="0.0"
+		EasingTakeOffAndLanding="true"
+		EasingPercentage="30%"
+			
+		ElevatorCorrectionDegree="0.02"
+		ElevatorCorrectionRate="0.04"
+		AeleronCorrectionDegree="0.05"
+		AeleronCorrectionRate="0.03"
+	/>
+
+	<LocomotorTemplate
+		id="JapanFortressShipAirborneLocomotor"
+		Surfaces="AIR"
+		TurnTimeSeconds="8.0s"
+		TurnTimeDamagedSeconds="10.0s"
+		FastTurnRadius="30.0"
+		SlowTurnRadius="0.0"
+		AccelerationSeconds="1.5s"
+		Lift="10%"
+		LiftDamaged="10%"
+		BrakingSeconds="1.5s"
+		MinTurnSpeed="0%"
+		PreferredHeight="130"
+		PreferredHeightDamping="2.0"
+		AllowMotiveForceWhileAirborne="true"
+		BehaviorZ="SURFACE_RELATIVE_HEIGHT"
+		Appearance="HOVER"
+		
+		PitchByZVelCoef="1.0"
+		PitchStiffness="1.0"
+		RollStiffness="0.1"
+		PitchDamping="0.9"
+		RollDamping="0.5"
+		Apply2DFrictionWhenAirborne="true"
+		AirborneTargetingHeight="2"
+		LocomotorWorksWhenDead="true"
+
+		TakeOffAndLandingSpeed="5.0"
+		TakeOffAndLandingSlowDownDelta="25.0"
+		TakeOffAndLandingSlowDownTime="3.0s"
+
+		EasingTakeOffAndLanding="true"
+		EasingPercentage="50%"
+
+		RudderCorrectionDegree="0.169"
+		RudderCorrectionRate="0.027"
+		ElevatorCorrectionDegree="0.103"
+		ElevatorCorrectionRate="0.016"
+	/>
+</AssetDeclaration>

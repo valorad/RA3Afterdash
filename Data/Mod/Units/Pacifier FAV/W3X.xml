@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_ATKA.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_ATRA.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_BIDA.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_DPLY.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_DPLY_COL.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_DPLY_COL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_DPLY_COL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_MOVA.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_MOVB.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKL.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.FX_JETGLOW01.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.FX_JETGLOW02.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.FX_JETGLOW03.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.FX_JETGLOW04.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.NEWSKIN.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.OBBOX01.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_SKN.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_TRNL.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/AUARTILLERYVEHICLE_TRNR.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/EXALLIEDSHELL.PLANE01.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/EXALLIEDSHELL_CTR.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/EXALLIEDSHELL_HRC.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/EXALLIEDSHELL_VET.PLANE01.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/EXALLIEDSHELL_VET_CTR.w3x" />
+		<Include type="all" source="ART:Units/Pacifier FAV/EXALLIEDSHELL_VET_HRC.w3x" />
+	</Includes>
+</AssetDeclaration>

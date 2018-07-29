@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="AlliedFutureTankExperienceLevel_1"
+		inheritFrom="ExperienceLevel_AlliedRank1"
+		RequiredExperience="1"
+		ExperienceAward="2500">
+		<Target>AlliedFutureTank</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedFutureTankExperienceLevel_2"
+		inheritFrom="ExperienceLevel_AlliedRank2"
+		Prerequisite="AlliedFutureTankExperienceLevel_1"
+		RequiredExperience="7500"
+		ExperienceAward="5000">
+		<Target>AlliedFutureTank</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedFutureTankExperienceLevel_3"
+		inheritFrom="ExperienceLevel_AlliedRank3"
+		Prerequisite="AlliedFutureTankExperienceLevel_2"
+		RequiredExperience="15000"
+		ExperienceAward="7500">
+		<Target>AlliedFutureTank</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedFutureTankExperienceLevel_4"
+		inheritFrom="ExperienceLevel_AlliedRank4"
+		Prerequisite="AlliedFutureTankExperienceLevel_3"
+		RequiredExperience="22500"
+		ExperienceAward="10000">
+		<Target>AlliedFutureTank</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

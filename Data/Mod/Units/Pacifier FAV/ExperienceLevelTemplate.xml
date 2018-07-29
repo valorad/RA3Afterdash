@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="AlliedArtilleryVehicleExperienceLevel_1"
+		inheritFrom="ExperienceLevel_AlliedRank1"
+		RequiredExperience="1"
+		ExperienceAward="2000">
+		<Target>AlliedArtilleryVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedArtilleryVehicleExperienceLevel_2"
+		inheritFrom="ExperienceLevel_AlliedRank2"
+		Prerequisite="AlliedArtilleryVehicleExperienceLevel_1"
+		RequiredExperience="6000"
+		ExperienceAward="4000">
+		<Target>AlliedArtilleryVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedArtilleryVehicleExperienceLevel_3"
+		inheritFrom="ExperienceLevel_AlliedRank3"
+		Prerequisite="AlliedArtilleryVehicleExperienceLevel_2"
+		RequiredExperience="12000"
+		ExperienceAward="6000">
+		<Target>AlliedArtilleryVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="AlliedArtilleryVehicleExperienceLevel_4"
+		inheritFrom="ExperienceLevel_AlliedRank4"
+		Prerequisite="AlliedArtilleryVehicleExperienceLevel_3"
+		RequiredExperience="18000"
+		ExperienceAward="8000">
+		<Target>AlliedArtilleryVehicle</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>

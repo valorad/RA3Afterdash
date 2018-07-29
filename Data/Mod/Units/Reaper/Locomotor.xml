@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<LocomotorTemplate
+		id="SovietHeavyWalkerLocomotor"
+		Surfaces="GROUND"
+		TurnTimeSeconds="1.0s"
+		TurnTimeDamagedSeconds="1.5s"
+		MaxSpeedDamaged="75%"
+		AccelerationSeconds="0.01s"
+		BrakingSeconds="0.01s"
+		SlowTurnRadius="0.0"
+		FastTurnRadius="20.0"
+		TurnThresholdHS="90d"
+		UseTerrainSmoothing="true"
+		MinTurnSpeed="0%"
+		TurnPivotOffset="0.0"
+		BehaviorZ="NO_MOTIVE_FORCE"
+		Appearance="FOUR_WHEELS"
+		AccelPitchLimit="0d"
+		BounceKick="0d"
+		PitchStiffness="0.5"
+		RollStiffness="0.5"
+		PitchDamping="0.5"
+		RollDamping="0.75"
+		ForwardAccelerationPitchFactor="0.0"
+		LateralAccelerationRollFactor="0.0"
+		CanReverseMove="true"
+		AirborneTargetingHeight="30"
+		ClampOrientationToPathTangent="true"
+		ReorientIfTurnTooSharp="true" />
+</AssetDeclaration>

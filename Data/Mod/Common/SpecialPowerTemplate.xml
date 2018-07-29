@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<SpecialPowerTemplate
+		id="SpecialPowerChrono_Base"
+		TargetType="LOCATION" 		
+		Flags="IS_PLAYER_POWER WATER_OK NEEDS_OBJECT_FILTER NOT_IN_NANOSWARM">
+		<ObjectFilter
+				Rule="ANY"
+				Include="INFANTRY VEHICLE TIME_BOMB"				
+				StatusBitFlagsExclude="AIRBORNE_TARGET NOT_IN_WORLD">
+			<IncludeThing>AlliedTimeBombLvl1</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl2</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl3</IncludeThing>
+		</ObjectFilter>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPowerChronoSwapSelect"
+		TargetType="OBJECT"
+		ReloadTime="120s"
+		EvaEventToPlayWhenSelectingTarget="SelectUnit"
+		EvaEventToPlayOnInitiateOwner="SelectUnit"
+		inheritFrom="SpecialPowerChrono_Base"
+		RequiredPlayerTech="PlayerTech_Allied_ChronoSwap"
+		DisallowedTargetModelStates="DEPLOYED"
+		Flags="+NO_FORBIDDEN_MODEL_STATES">
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ALLIES"
+			Include="INFANTRY VEHICLE TIME_BOMB"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET NOT_IN_WORLD">
+			<IncludeThing>AlliedTimeBombLvl1</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl2</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl3</IncludeThing>
+		</ObjectFilter>
+		<GameDependency
+			id="Allied_ChronoSwapSelect_GameDependency">
+			<RequiredObject>AlliedConstructionYard</RequiredObject>
+		</GameDependency>		
+	</SpecialPowerTemplate>
+
+	<SpecialPowerTemplate
+		id="SpecialPowerChronoSwapTeleport"
+		ReloadTime="120s"
+		TargetType="OBJECT"
+		EvaEventToPlayWhenSelectingTarget="SelectUnit"
+		inheritFrom="SpecialPowerChrono_Base"
+		RequiredPlayerTech="PlayerTech_Allied_ChronoSwap"
+		DisallowedTargetModelStates="DEPLOYED"
+		Flags="+NO_FORBIDDEN_MODEL_STATES">
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ALLIES"
+			Include="INFANTRY VEHICLE TIME_BOMB"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET NOT_IN_WORLD">
+			<IncludeThing>AlliedTimeBombLvl1</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl2</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl3</IncludeThing>
+		</ObjectFilter>
+		<GameDependency
+			id="Allied_ChronoSwapTeleport_GameDependency">
+			<RequiredObject>AlliedConstructionYard</RequiredObject>
+		</GameDependency>
+	</SpecialPowerTemplate>
+
+	<SpecialPowerTemplate
+		id="SpecialPowerChronosphereObjectSelect"
+		TargetType="LOCATION"
+		ReloadTime="180s"
+		RadiusCursorRadius="100"
+		TimerImage="Button_PlayerPower_Chronosphere"
+		DisplayName="NAME:SuperweaponTimerChronosphere"
+		InitiateAtLocationSound="ALL_Chronosphere_Select"
+		EvaEventToPlayWhenSelectingTarget="SelectSpecialPowerTarget"
+		EvaEventToPlayOnInitiateEnemy="WarnChronosphereActivated"
+		Flags="HAS_PUBLIC_TIMER IS_PLAYER_POWER WATER_OK IGNORE_MAP_EXTENTS">
+		<ObjectFilter
+				Rule="ANY"
+				Include="INFANTRY VEHICLE TIME_BOMB"
+				Exclude="AIRCRAFT"
+				StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET NOT_IN_WORLD">
+			<IncludeThing>AlliedTimeBombLvl1</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl2</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl3</IncludeThing>
+		</ObjectFilter>
+		<!-- EvaEventToPlayOnInitiateOwner="SelectDestination" -->
+	</SpecialPowerTemplate>
+
+	<SpecialPowerTemplate
+		id="SpecialPowerChronosphereObjectSpawn"
+		ReloadTime="180s"
+		TargetType="LOCATION"
+		InitiateAtLocationSound="ALL_Chronosphere_Die"
+		RadiusCursorRadius="100"
+		Flags="IS_PLAYER_POWER WATER_OK">
+		<ObjectFilter
+			Rule="ANY"
+			Include="INFANTRY VEHICLE TIME_BOMB"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="AIRBORNE_TARGET">
+			<IncludeThing>AlliedTimeBombLvl1</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl2</IncludeThing>
+			<IncludeThing>AlliedTimeBombLvl3</IncludeThing>
+		</ObjectFilter>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_Bribe"
+		ReloadTime="10s"
+		Money="-1000"
+		TargetType="NONE"
+		InitiateSound="ALL_Spy_Bribe"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="VoiceBribe"
+		Flags="NEEDS_OBJECT_FILTER" 
+		WaypointModeTerminal="false">
+		
+		<!-- Heroic units are excluded from bribes by setting the NO_BRIBE flag on them when they turn heroic -->
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ENEMIES NEUTRAL"
+			Include="INFANTRY AIRCRAFT VEHICLE SHIP"
+			Exclude="EGG MCV STRUCTURE HARVESTER"
+			StatusBitFlagsExclude="AIRBORNE_TARGET SUBMERGED NO_BRIBE">
+			
+			<ExcludeThing>AlliedCommandoTech1</ExcludeThing>
+			<ExcludeThing>AlliedInfiltrationInfantry</ExcludeThing>
+            <ExcludeThing>AlliedScoutInfantry</ExcludeThing>
+            <ExcludeThing>AlliedAntiNavalScout</ExcludeThing>
+			
+			<ExcludeThing>SovietCommandoTech1</ExcludeThing>
+            <ExcludeThing>SovietSurveyor</ExcludeThing>	         		
+            <ExcludeThing>SovietScoutInfantry</ExcludeThing>	
+            <ExcludeThing>SovietScoutVehicle</ExcludeThing>   
+
+			<ExcludeThing>JapanCommandoTech1</ExcludeThing>
+			<ExcludeThing>JapanInfiltrationInfantry</ExcludeThing>
+			<ExcludeThing>JapanScoutInfantry</ExcludeThing>
+			
+			<ExcludeThing>JapanMechaKing</ExcludeThing>
+			<ExcludeThing>JapanEmperorMecha</ExcludeThing>
+			<ExcludeThing>SovietLargeScoutInfantry</ExcludeThing>
+		</ObjectFilter>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_JapanLightTransportVehicleDisguise"
+		TargetType="OBJECT"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="VoiceDisguise"
+		Flags="NEEDS_OBJECT_FILTER DO_NOT_REACQUIRE_TARGET CAN_NOT_BE_SCRAMBLED"		
+		WaypointModeTerminal="false" >
+		<ObjectFilter
+			Rule="ANY"
+			Include="VEHICLE">
+			<ExcludeThing>JapanMechaKing</ExcludeThing>
+		</ObjectFilter>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_PilotSnipe"
+		ReloadTime="60s"
+		TargetType="OBJECT"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="VoiceInitiatePilotSnipe"
+		Flags="NEEDS_OBJECT_FILTER CANNOT_LEAVE_ENCLOSURE"	
+		WaypointModeTerminal="false" >
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ENEMIES" 
+			Include="VEHICLE"
+			Exclude="AIRCRAFT SUBMARINE EGG"
+			StatusBitFlagsExclude="TRANSFORMATION_TOGGLE_STATE">
+			<ExcludeThing>SovietMortarcycle</ExcludeThing>
+			<ExcludeThing>JapanFortressShip</ExcludeThing>
+		</ObjectFilter>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_TriggerLeap"
+		ReloadTime="10s"
+		TargetType="LOCATION"
+		Flags="PATHABLE_ONLY NOT_CLIFF_CELL NO_FORBIDDEN_OBJECTS FOGGED_SHROUDED_CELLS_OK CANNOT_LEAVE_ENCLOSURE CAN_NOT_BE_SCRAMBLED"
+		ForbiddenObjectRange="15"
+		WaypointModeTerminal="false"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="voiceLeap">
+		<ForbiddenObjectFilter
+			Rule="ANY"
+			Include="STRUCTURE CRUSHABLE_OBSTACLE AIRCRAFT"
+			Exclude="BRIDGE_ENDCAP BRIDGE_SEGMENT">
+			<ExcludeThing>NanoSwarmHiveEffect</ExcludeThing>
+		</ForbiddenObjectFilter>
+	</SpecialPowerTemplate>
+
+	<SpecialPowerTemplate
+		id="SpecialPower_TriggerJump"
+		ReloadTime="20s"
+		TargetType="LOCATION"
+		Flags="PATHABLE_ONLY NOT_CLIFF_CELL NO_FORBIDDEN_OBJECTS WATER_OK FOGGED_SHROUDED_CELLS_OK CANNOT_LEAVE_ENCLOSURE CAN_NOT_BE_SCRAMBLED"
+		ForbiddenObjectRange="15"
+		WaypointModeTerminal="false"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="voiceJump">
+		<ForbiddenObjectFilter
+			Rule="ANY"
+			Include="STRUCTURE CRUSHABLE_OBSTACLE AIRCRAFT" />
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_ShrinkRay"
+		ReloadTime="10s"
+		TargetType="OBJECT"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="VoiceShrinkRay"
+		Flags="NEEDS_OBJECT_FILTER CANNOT_LEAVE_ENCLOSURE"
+		WaypointModeTerminal="false" >
+		<!-- must have same object filter as AlliedSupportAircraftShrinkRay -->
+		<ObjectFilter
+			Rule="ANY"
+			Include="VEHICLE HUGE_VEHICLE TIME_BOMB"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET NOT_IN_WORLD UNDER_IRON_CURTAIN"/>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_JapanScoutInfantryAttachWeapon"
+		ReloadTime="0s"
+		TargetType="OBJECT"
+		NameOfVoiceNameToUseAsInitiateIntendToDoVoice="VoiceAttach"
+		DisallowedTargetObjectStatus="VEHICLE_ATTACHED"
+		WaypointModeTerminal="false" >
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ENEMIES NEUTRAL"
+			Include="VEHICLE HUGE_VEHICLE"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="AIRBORNE_TARGET OVER_WATER WATER_LOCOMOTOR_ACTIVE"/>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_IrradiateTarget"
+		TargetType="OBJECT"
+		ReloadTime="150s"
+		Flags="NEEDS_OBJECT_FILTER IS_PLAYER_POWER"
+		RequiredPlayerTech="PlayerTech_Soviet_IrradiateTarget"
+		WaypointModeTerminal="false" >
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ALLIES"
+			Include="VEHICLE HUGE_VEHICLE SHIP"
+			Exclude="AIRCRAFT"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET IN_NANOHIVE NOT_IN_WORLD">
+		</ObjectFilter>
+		<GameDependency
+			id="Soviet_IrradiateTarget_GameDependency">
+			<RequiredObject>SovietConstructionYard</RequiredObject>
+		</GameDependency>
+	</SpecialPowerTemplate>
+	
+	<SpecialPowerTemplate
+		id="SpecialPower_PointDefenseDrones"
+		TargetType="LOCATION"
+		ReloadTime="120s"
+		Flags="IS_PLAYER_POWER WATER_OK NEEDS_OBJECT_FILTER NOT_IN_NANOSWARM"
+		RadiusCursorRadius="100"
+		EvaEventToPlayWhenSelectingTarget="SelectSpecialPowerTarget"
+		RequiredPlayerTech="PlayerTech_Japan_PointDefenseDrones">
+		<!-- this objfilter must be the same as the one in the PlayerPowerPointDefenseDronesWeapon Weapon -->
+		<ObjectFilter
+			Rule="ANY"
+			Relationship="ALLIES"
+			Include="VEHICLE HUGE_VEHICLE SHIP"
+			Exclude="INFANTRY AIRCRAFT SUBMARINE"
+			StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET IN_NANOHIVE NOT_IN_WORLD POINT_DEFENSE_DRONE_ATTACHED">
+			<ExcludeThing>JapanPointDefenseDrone</ExcludeThing>
+		</ObjectFilter>
+		<GameDependency
+			id="Japan_PointDefenseDrones_GameDependency">
+			<RequiredObject>JapanConstructionYard</RequiredObject>
+		</GameDependency>
+	</SpecialPowerTemplate>
+</AssetDeclaration>

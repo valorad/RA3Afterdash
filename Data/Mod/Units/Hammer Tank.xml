@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="Hammer Tank/GameObject.xml" />
+		<Include type="all" source="Hammer Tank/UpgradeTemplate.xml" />
+		<Include type="all" source="Hammer Tank/W3X.xml" />
+	</Includes>
+</AssetDeclaration>

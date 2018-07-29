@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityToggleSovietMortarcycleMolotov">
+		<State
+			Image="SUA_Conscript_Molotov"
+			Title="NAME:ToggleSovietMortarCycleMolotov"
+			Description="DESC:ToggleSovietMortarCycleMolotov" />
+	</ButtonSingleStateData>
+	
+	<ButtonSingleStateData
+		id="ButtonStateAbilityToggleSovietMortarcycleMortar">
+		<State
+			Image="SUA_Mortarcycle_Mortar"
+			Title="NAME:ToggleSovietMortarCycleMortar"
+			Description="DESC:ToggleSovietMortarCycleMortar" />
+	</ButtonSingleStateData>	
+</AssetDeclaration>

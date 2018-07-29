@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="SOV_ProtoSickle_MoveLandMS">
+		<Subsound>SOV_ProtoSickle_MoveLand1</Subsound> 
+		<Subsound>SOV_ProtoSickle_MoveLand2</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_ProtoSickle_MoveLeapMS">
+		<Subsound>SOV_ProtoSickle_MoveLeap1</Subsound> 
+		<Subsound>SOV_ProtoSickle_MoveLeap2</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_Reaper_VoiceSelectBattleMS" >
+		<Subsound>SOV_Reaper_VoiceSelectBattle</Subsound>
+		<Subsound>SOV_ProtoSickle_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_Reaper_VoiceSelectMS" >
+		<Subsound>SOV_Reaper_VoiceSelect</Subsound>
+		<Subsound>SOV_ProtoSickle_Select</Subsound>
+	</Multisound>
+	
+	<Multisound id="SOV_Reaper_VoiceSelectUnderFireMS" >
+		<Subsound>SOV_Reaper_VoiceSelectUnderFire</Subsound>
+		<Subsound>SOV_ProtoSickle_Select</Subsound>
+	</Multisound>
+</AssetDeclaration>

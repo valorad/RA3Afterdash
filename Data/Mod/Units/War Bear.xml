@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="all" source="War Bear/GameObject.xml" />
+		<Include type="all" source="War Bear/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

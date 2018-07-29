@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="instance" source="DATA:SageXml/Sounds/BaseSoundEffect.xml" />
+	</Includes>
+	
+	<AudioEvent
+		id="Amb_FlyingFortress_Hovering"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="80"
+		VolumeShift="-2"
+		MinRange="400"
+		MaxRange="1000"
+		Limit="3"
+		Control="LOOP"
+		Priority="LOWEST"
+		Type="WORLD SHROUDED EVERYONE"
+		SubmixSlider="AMBIENT">
+		<PitchShift Low="-5" High="5" />
+		<Sound>JUPearl_ambiLoopa</Sound>
+		<Sound>JUPearl_ambiLoopb</Sound>
+		<Sound>JUPearl_ambiLoopc</Sound>
+		<Sound>JUPearl_ambiLoopd</Sound>
+	</AudioEvent>
+
+	<AudioEvent
+		id="Amb_FlyingFortress_Floating"
+		inheritFrom="AudioEvent:BaseSoundEffect"
+		Volume="80"
+		VolumeShift="-2"
+		MinRange="400"
+		MaxRange="1000"
+		Limit="3"
+		Control="LOOP"
+		Priority="LOWEST"
+		Type="WORLD SHROUDED EVERYONE"
+		SubmixSlider="AMBIENT">
+		<PitchShift Low="-5" High="5" />
+		<Sound>JUPearl_ambiLoopWatera</Sound>
+		<Sound>JUPearl_ambiLoopWaterb</Sound>
+		<Sound>JUPearl_ambiLoopWaterc</Sound>
+		<Sound>JUPearl_ambiLoopWaterd</Sound>
+	</AudioEvent>
+</AssetDeclaration>

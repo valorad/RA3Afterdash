@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ObjectCreationList
+		id="OCL_ChronoRiftBeaconLvl1">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			Disposition="ON_GROUND_ALIGNED USE_WATER_SURFACE">
+			<CreateObject>ChronoRiftBeaconLvl1</CreateObject>
+		</CreateObject>
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			Disposition="ON_GROUND_ALIGNED USE_WATER_SURFACE"
+			MinLifetime="1s"
+			MaxLifetime="1s">
+			<CreateObject>SovietGenericAirStrikeBeacon</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_ChronoRiftBeaconLvl2">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			Disposition="ON_GROUND_ALIGNED USE_WATER_SURFACE">
+			<CreateObject>ChronoRiftBeaconLvl2</CreateObject>
+		</CreateObject>
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			Disposition="ON_GROUND_ALIGNED USE_WATER_SURFACE"
+			MinLifetime="1s"
+			MaxLifetime="1s">
+			<CreateObject>SovietGenericAirStrikeBeacon</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_ChronoRiftBeaconLvl3">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			Disposition="ON_GROUND_ALIGNED USE_WATER_SURFACE">
+			<CreateObject>ChronoRiftBeaconLvl3</CreateObject>
+		</CreateObject>
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS CREATE_AT_TARGET"
+			Disposition="ON_GROUND_ALIGNED USE_WATER_SURFACE"
+			MinLifetime="1s"
+			MaxLifetime="1s">
+			<CreateObject>SovietGenericAirStrikeBeacon</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_ChronoRiftEffectLvl1">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING ON_GROUND_ALIGNED USE_WATER_SURFACE">
+			<CreateObject>ChronoRiftEffectLvl1</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_ChronoRiftEffectLvl2">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING ON_GROUND_ALIGNED USE_WATER_SURFACE">
+			<CreateObject>ChronoRiftEffectLvl2</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+	
+	<ObjectCreationList
+		id="OCL_ChronoRiftEffectLvl3">
+		<CreateObject
+			Options="IGNORE_ALL_OBJECTS"
+			Disposition="LIKE_EXISTING ON_GROUND_ALIGNED USE_WATER_SURFACE">
+			<CreateObject>ChronoRiftEffectLvl3</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+</AssetDeclaration>

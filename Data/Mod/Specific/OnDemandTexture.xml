@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<OnDemandTexture id="Mod_Logo" File="ART:Specific/Mod_Logo.dds" OutputFormat="DXT1" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+	<OnDemandTexture id="Mod_Text" File="ART:Specific/Mod_Text.dds" OutputFormat="A8R8G8B8" GenerateMipMaps="false" AllowAutomaticResize="false"/>
+</AssetDeclaration>

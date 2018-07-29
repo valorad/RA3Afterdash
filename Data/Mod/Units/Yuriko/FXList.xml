@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<FXList id="FX_JapanCommandoSecondaryFire">
+		<NuggetList>
+			<Sound Value="JAP_Yuriko_PsychokineticBurstMS" />
+			<ParticleSystem Particle="YurikoPsyonicBlastAdditive" />
+			<ParticleSystem Particle="YurikoPsyonicBlastDistortion" />
+			<ParticleSystem Particle="YurikoPsyonicBlastFlash" />
+			<ParticleSystem Particle="YurikoPsyonicBlastLight" />
+			<!--
+			<ParticleSystem Particle="JapSchoolgirl_BlastRays">
+				<Offset x="0" y="0" z="35.0" />
+			</ParticleSystem>
+			-->
+		</NuggetList>
+	</FXList>
+	
+  <FXList id="FX_JapanPsyonicMind">
+    <NuggetList>
+      <ParticleSystem
+				Particle="YurikoAttackFlashes">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="YurikoAttackSmoke">
+      </ParticleSystem>	  
+	  <ParticleSystem
+				Particle="YurikoAttackSparks">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="YurikoAttackLight">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanPsyonic_End">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackDistortion">
+      </ParticleSystem>
+      
+      <Sound Value="JAP_YurikoOmega_PsyonicEndExplodeMS" />
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanPsyonicMind_Vet">
+    <NuggetList>
+      <ParticleSystem
+				Particle="YurikoAttackFlashes">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="YurikoAttackSmoke">
+      </ParticleSystem>	  
+	  <ParticleSystem
+				Particle="YurikoAttackSparks">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="YurikoAttackLight">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanPsyonic_End_Vet">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackDistortion">
+      </ParticleSystem>
+      
+      <Sound Value="JAP_YurikoOmega_PsyonicEndExplodeMS" />
+    </NuggetList>
+  </FXList>
+
+  <FXList id="FX_JapanPsyonicMindInfantry">
+    <NuggetList>
+      <ParticleSystem
+				Particle="YurikoAttackFlashes">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="YurikoAttackSmoke">
+      </ParticleSystem>	  
+	  <ParticleSystem
+				Particle="YurikoAttackSparks">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackInfantryBlood">
+      </ParticleSystem>	  
+      <ParticleSystem
+				Particle="YurikoAttackLight">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanPsyonic_End">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackDistortion">
+      </ParticleSystem>
+      
+      <Sound Value="JAP_YurikoOmega_PsyonicEndExplodeMS" />
+    </NuggetList>
+  </FXList>
+  
+  <FXList id="FX_JapanPsyonicMindInfantry_Vet">
+    <NuggetList>
+      <ParticleSystem
+				Particle="YurikoAttackFlashes">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="YurikoAttackSmoke">
+      </ParticleSystem>	  
+	  <ParticleSystem
+				Particle="YurikoAttackSparks">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackInfantryBlood">
+      </ParticleSystem>	  
+      <ParticleSystem
+				Particle="YurikoAttackLight">
+      </ParticleSystem>
+      <ParticleSystem
+				Particle="JapanPsyonic_End_Vet">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackDistortion">
+      </ParticleSystem>
+      
+      <Sound Value="JAP_YurikoOmega_PsyonicEndExplodeMS" />
+    </NuggetList>
+  </FXList>  
+  
+  <FXList id="FX_JapanInfantryPsyonicDeath">
+    <NuggetList>
+ 	  <ParticleSystem
+				Particle="YurikoAttackInfantryDeath">
+      </ParticleSystem>
+	  <ParticleSystem
+				Particle="YurikoAttackInfantryMist">
+      </ParticleSystem>
+      <Sound Value="JAP_YurikoOmega_PsyonicInfantryBurst" />	  
+    </NuggetList>
+  </FXList>  
+  
+  <FXList id="FX_JapanInfantryPsyonicBlastDeath">
+    <NuggetList>
+      <ParticleSystem
+		Particle="YurikoPsyonicBlastInfantryBlood"
+        OrientToObject = "true"
+        Ricochet="true">
+      </ParticleSystem>
+      <ParticleSystem
+		Particle="YurikoPsyonicBlastInfantryMist"
+        OrientToObject = "true"
+        Ricochet="true">
+      </ParticleSystem>
+      <Sound Value="JAP_YurikoOmega_PsyonicInfantryBurst" />	  
+    </NuggetList>
+  </FXList>  
+</AssetDeclaration>

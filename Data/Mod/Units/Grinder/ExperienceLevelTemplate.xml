@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<Includes>
+		<Include type="instance" source="DATA:Base/BaseExperienceLevelTemplate.xml" />
+	</Includes>
+	
+	<ExperienceLevelTemplate
+		id="SovietGrinderVehicleExperienceLevel_1"
+		inheritFrom="ExperienceLevel_SovietRank1"
+		RequiredExperience="1"
+		ExperienceAward="1600">
+		<Target>SovietGrinderVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietGrinderVehicleExperienceLevel_2"
+		inheritFrom="ExperienceLevel_SovietRank2"
+		Prerequisite="SovietGrinderVehicleExperienceLevel_1"
+		RequiredExperience="4800"
+		ExperienceAward="3200">
+		<Target>SovietGrinderVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietGrinderVehicleExperienceLevel_3"
+		inheritFrom="ExperienceLevel_SovietRank3"
+		Prerequisite="SovietGrinderVehicleExperienceLevel_2"
+		RequiredExperience="9600"
+		ExperienceAward="4800">
+		<Target>SovietGrinderVehicle</Target>
+	</ExperienceLevelTemplate>
+	
+	<ExperienceLevelTemplate
+		id="SovietGrinderExperienceLevel_4"
+		inheritFrom="ExperienceLevel_SovietRank4"
+		Prerequisite="SovietGrinderVehicleExperienceLevel_3"
+		RequiredExperience="14400"
+		ExperienceAward="6400">
+		<Target>SovietGrinderVehicle</Target>
+	</ExperienceLevelTemplate>
+</AssetDeclaration>
