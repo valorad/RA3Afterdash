@@ -216,9 +216,15 @@ pip-log.txt
 .mr.developer.cfg
 
 # repo specific
+/.vscode/**
+/Art/**
+/Assets/**
+/Audio/**
+/Data/AdditionalMaps/**
+/Data/AptUI/**
+/Misc/Data/**
+/Misc/Shaders/**
 
-/Data/AdditionalMaps/*
-/Data/AptUI/*
 *.babproj
 
 !.gitkeep
