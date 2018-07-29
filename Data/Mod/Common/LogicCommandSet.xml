@@ -19,6 +19,7 @@
 		<Cmd>Command_ConstructAlliedInfiltrationInfantry</Cmd>
 		<Cmd>Command_ConstructAlliedLegionnaireInfantry</Cmd>
 		<Cmd>Command_ConstructAlliedCommandoTech1</Cmd>
+		<!-- <Cmd>Command_ConstructVAPrydwen</Cmd> -->
 	</LogicCommandSet>	
 	
 	<LogicCommandSet

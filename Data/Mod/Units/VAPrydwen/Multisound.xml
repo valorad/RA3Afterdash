@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Multisound id="ALL_CryoLegionnaire_Footstep_Ice_OverWaterMS">
+		<Subsound>ALL_CryoLegionnaire_Footstep_Ice_OverWater</Subsound> 
+		<Subsound>ALL_CryoLegionnaire_FootstepWaterSplash</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_CryoLegionaire_Land_FootstepIceMS">
+		<Subsound>ALL_CryoLegionaire_WaterExplosion</Subsound> 
+		<Subsound>ALL_CryoLegionaire_Land_Footstep1</Subsound> 
+		<Subsound>ALL_CryoLegionaire_Land_Footstep2</Subsound> 
+		<Subsound>ALL_CryoLegionnaire_Footstep_Ice_OverWater</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_CryoLegionaire_Land_FootstepMS">
+		<Subsound>ALL_CryoLegionaire_Land_Footstep1</Subsound> 
+		<Subsound>ALL_CryoLegionaire_Land_Footstep2</Subsound> 
+	</Multisound>
+	
+	<Multisound id="ALL_CryoLegionnaire_VoiceSelectBattleMS" >
+		<Subsound>ALL_CryoLegionnaire_VoiceSelectBattle</Subsound>
+		<Subsound>ALL_CryoLegionaire_Select1</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_CryoLegionnaire_VoiceSelectMS" >
+		<Subsound>ALL_CryoLegionnaire_VoiceSelect</Subsound>
+		<Subsound>ALL_CryoLegionaire_Select1</Subsound>
+	</Multisound>
+	
+	<Multisound id="ALL_CryoLegionnaire_VoiceSelectUnderFireMS" >
+		<Subsound>ALL_CryoLegionnaire_VoiceSelectUnderFire</Subsound>
+		<Subsound>ALL_CryoLegionaire_Select1</Subsound>
+	</Multisound>
+</AssetDeclaration>

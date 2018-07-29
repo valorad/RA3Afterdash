@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WeaponTemplate
+		id="AlliedLegionnaireInfantryFreezeSpray"
+		AttackRange="200.0"
+		MinTargetPitch="-15d"
+		MaxTargetPitch="15d"
+		WeaponSpeed="750"
+		FiringLoopSound="ALL_CryoLegionaire_FreezeWeaponLoop"
+		FiringLoopSoundContinuesDuringReload="true"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT NOT_ATTRACTED_BY_MAGNETS"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER"
+		AcceptableAimDelta="1d"
+		DamageDealtAtSelfPosition="true"
+		CanFireWhileMoving="false"
+		IgnoresContactPoints="true">
+		<PreAttackDelay
+			MinSeconds="0.01s"
+			MaxSeconds="0.01s" />
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<AttributeModifierNugget
+				AttributeModifierName="AttributeModifier_CryoSpray"
+				DamageArc="60d"
+				Radius="225">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING">
+				</SpecialObjectFilter>
+			</AttributeModifierNugget>
+			
+			<SecondaryDamageNugget
+				id="FreezeNormal"
+				Amount="20"
+				Radius="225"
+				DamageTaperOff="5">
+				<SpecialObjectFilter
+					Rule="ALL"
+					StatusBitFlags="HAS_SECONDARY_DAMAGE"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING">
+				</SpecialObjectFilter>
+				<ForbiddenUpgrade>Upgrade_AlliedHighTechnology</ForbiddenUpgrade>
+			</SecondaryDamageNugget>
+			
+			<SecondaryDamageNugget
+				id="FreezeUpgraded"
+				Amount="25"
+				Radius="225"
+				DamageTaperOff="5">
+				<SpecialObjectFilter
+					Rule="ALL"
+					StatusBitFlags="HAS_SECONDARY_DAMAGE"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING">
+				</SpecialObjectFilter>
+				<RequiredUpgrade>Upgrade_AlliedHighTechnology</RequiredUpgrade>
+			</SecondaryDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+  
+	<WeaponTemplate
+		id="AlliedLegionnaireGarrisonWeapon"
+		AttackRange="225.0"
+		FiringLoopSound="ALL_CryoLegionnaire_FreezeWeapon_GarrisonLoop"
+		FiringLoopSoundContinuesDuringReload="false"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		CanFireWhileMoving="true"
+		AcceptableAimDelta="20d"
+		RequiredAntiMask="ANTI_STRUCTURE ANTI_GROUND ANTI_WATER">
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>
+			<ActivateLaserNugget
+				Lifetime="1.0s"
+				LaserId="101">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING"/>
+			</ActivateLaserNugget>
+			
+			<SecondaryDamageNugget
+				id="FreezeNormal"
+				Amount="75">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING">
+				</SpecialObjectFilter>
+				<ForbiddenUpgrade>Upgrade_AlliedHighTechnology</ForbiddenUpgrade>
+			</SecondaryDamageNugget>
+
+			<SecondaryDamageNugget
+				id="FreezeUpgraded"
+				Amount="100">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING"/>
+				<RequiredUpgrade>Upgrade_AlliedHighTechnology</RequiredUpgrade>
+			</SecondaryDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="AlliedLegionnaireLeapWeapon"
+		IdleAfterFiringDelaySeconds="0s"
+		AttackRange="300.0"
+		MinimumAttackRange="20"
+		WeaponSpeed="300"
+		ProjectileSelf="true"
+		AutoReloadsClip="AUTO"
+		PreAttackType="PER_SHOT"
+		FireFX="FX_Allied_LegionnaireLeapFire"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		HitPercentage="0%">
+		
+		<FiringDuration
+			MinSeconds="0.1s"
+			MaxSeconds="0.1s" />
+		<Nuggets>
+			<ProjectileNugget
+				WarheadTemplate="DummyWeaponWarhead" />
+			<InformTargetNugget />
+		</Nuggets>
+	</WeaponTemplate>
+
+	<WeaponTemplate
+		id="AlliedLegionnaireInfantryLandWeapon"
+		FireFX="FX_Allied_LegionnaireLeapLand"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		RadiusDamageAffects="ENEMIES NEUTRALS">
+		<Nuggets>
+			<DamageNugget
+				id="DefaultDamageNugget"
+				Damage="20.0"
+				Radius="50.0"
+				DamageType="MELEE"
+				DeathType="CRUSHED">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Relationship="ENEMIES NEUTRAL"
+					StatusBitFlagsExclude="NO_COLLISIONS">
+				</SpecialObjectFilter>
+			</DamageNugget>
+			
+			<MetaImpactNugget
+				ShockWaveAmount="50"
+				ShockWaveRadius="50.0"
+				ForbiddenTargetModelCondition="STUNNED STUNNED_STANDING_UP STUNNED_FLAILING">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Relationship="ENEMIES"
+					Include="INFANTRY"
+					StatusBitFlagsExclude="NO_COLLISIONS">
+				</SpecialObjectFilter>
+			</MetaImpactNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="CryoLegionnaireDeathWeapon"
+		FireFX="FX_Allied_LegionnaireDeath"
+		Flags="NOT_ATTRACTED_BY_MAGNETS"
+		RadiusDamageAffects="ALLIES ENEMIES NEUTRALS">
+		<Nuggets>
+			<SecondaryDamageNugget
+				Amount="500"
+				Radius="20">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED AIRBORNE_TARGET PARACHUTING">
+				</SpecialObjectFilter>
+			</SecondaryDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	
+	
+	<!-- Multigunner IFV -->
+	<WeaponTemplate
+		id="AAAVT1_CryoLegionnaire"
+		AttackRange="250.0"
+		FiringLoopSound="ALL_CryoLegionnaire_FreezeWeapon_GarrisonLoop"
+		FiringLoopSoundContinuesDuringReload="false"
+		Flags="ATTACK_NEEDS_LINE_OF_SIGHT"
+		CanFireWhileMoving="true"
+		AcceptableAimDelta="20d"
+		ReAcquireDetailType="PER_CLIP"
+		RequiredAntiMask="ANTI_GROUND ANTI_STRUCTURE ANTI_WATER">
+		<FiringDuration
+			MinSeconds="1.0s"
+			MaxSeconds="1.0s" />
+		<Nuggets>
+			<ActivateLaserNugget
+				Lifetime="1.0s"
+				LaserId="0">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED" />
+			</ActivateLaserNugget>
+			
+			<SecondaryDamageNugget
+				Amount="75">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED" />
+				<ForbiddenUpgrade>Upgrade_AlliedHighTechnology</ForbiddenUpgrade>
+			</SecondaryDamageNugget>
+
+			<SecondaryDamageNugget
+				Amount="100">
+				<SpecialObjectFilter
+					Rule="ALL"
+					Exclude="BRIDGE_GATEHOUSE"
+					StatusBitFlagsExclude="SUBMERGED" />
+				<RequiredUpgrade>Upgrade_AlliedHighTechnology</RequiredUpgrade>
+			</SecondaryDamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<WeaponTemplate
+		id="AAAVT1_CryoLegionnaire_Air"
+		inheritFrom="AAAVT1_CryoLegionnaire"
+		RequiredAntiMask="ANTI_AIRBORNE_VEHICLE ANTI_AIRBORNE_INFANTRY">
+		<Nuggets>
+			<DamageNugget
+				Damage="999999"
+				Radius="0"
+				DamageType="EXPLOSIVE"
+				DeathType="EXPLODED">
+				<SpecialObjectFilter
+					Rule="ANY"
+					Include="INFANTRY VEHICLE AIRCRAFT"
+					StatusBitFlags="UNDER_FROZEN"
+					StatusBitFlagsExclude="SUBMERGED" />
+			</DamageNugget>
+		</Nuggets>
+	</WeaponTemplate>
+	
+	<!-- Multigunner Turret -->
+	<WeaponTemplate
+		id="ABD_CryoLegionnaire"
+		inheritFrom="AAAVT1_CryoLegionnaire" />
+		
+	<WeaponTemplate
+		id="ABD_CryoLegionnaire_Air"
+		inheritFrom="AAAVT1_CryoLegionnaire_Air" />
+</AssetDeclaration>

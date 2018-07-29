@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+  <FXList id="FX_Allied_LegionnaireSprayFire">
+    <NuggetList>
+      <ParticleSystem	Particle="AlliedLegion_Frost_Decal"
+		OrientToObject="true" />
+	  <ParticleSystem	Particle="AlliedLegion_Frost_Decal2"
+		OrientToObject="true" />
+	  <ParticleSystem	Particle="AlliedLegion_Frost_Glow"
+		OrientToObject="true" />
+	  <ParticleSystem
+		Particle="AlliedLegion_Frost_Myst"
+		OrientToObject="true" />
+	  <ParticleSystem	Particle="AlliedLegion_Frost_Snow"
+		OrientToObject="true" />
+    </NuggetList>
+  </FXList> 
+
+  <FXList id="FX_AlliedCryoSpill">
+    <NuggetList>
+      <ParticleSystem	Particle="AlliedCryoSatelliteBeamGlowLvl2" />
+      <ParticleSystem	Particle="AlliedCryoSatelliteBeamDecalLvl2" />
+	  <ParticleSystem	Particle="AlliedCryoSpillMist" />
+	  <Sound Value="ALL_Cryoshot_CastMS" />
+    </NuggetList>
+  </FXList>  
+
+  <FXList id="FX_Allied_LegionnaireLeapFire">
+    <NuggetList>
+      <ParticleSystem	Particle="AlliedLegionnaireLeapSparkles"/>
+	  <ParticleSystem	Particle="AlliedLegionnaireLeapGlow"/>
+	  <ParticleSystem	Particle="AlliedLegionnaireLeapDust"/>
+	  <ParticleSystem	Particle="AlliedLegionnaireLeapLight"/>
+    </NuggetList>
+  </FXList>  
+  
+	<FXList id="FX_Allied_LegionnaireLeapLand">
+		<NuggetList>
+			<ParticleSystem	
+				Particle="AlliedLegionnaireLeapHitDust"
+				OnlyIfOnLand ="true"/>
+			<ParticleSystem	
+				Particle="AlliedLegionnaireLeapHitDebris"
+				OnlyIfOnLand ="true"/>
+			<ParticleSystem	
+				Particle="AlliedLegionnaireLeapHitSplash"
+				OnlyIfOnWater ="true"/>
+			<ParticleSystem	
+				Particle="AlliedLegionnaireLeapHitWake"
+				OnlyIfOnWater ="true"/>					
+			<Sound Value="ALL_CryoLegionaire_Land" />
+		</NuggetList>
+	</FXList>  
+  
+  <FXList id="FX_Allied_LegionnaireDeath">
+    <NuggetList>
+      <Sound Value="ALL_CryoLegionaire_Die_FreezeEffect" />
+      <ParticleSystem	Particle="AlliedLegionaireDeathDecal"/>
+	  <ParticleSystem	Particle="AlliedLegionaireDeathGlow"/>
+	  <ParticleSystem	Particle="AlliedLegionaireDeathMist"/>
+	  <ParticleSystem	Particle="AlliedLegionaireDeathLight"/>
+    </NuggetList>
+  </FXList>
+</AssetDeclaration>

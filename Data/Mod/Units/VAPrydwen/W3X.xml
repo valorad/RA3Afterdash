@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_ABTA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_AIDA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_AIFA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_AIFB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_AIFC.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_ATKB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_BATA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_BIDA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_BIFA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_BIFB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_BIFC.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_CDTA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_CDTB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_CWRA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_DTBA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_DTBB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_FLYA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_GTPA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_LNDA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_MCNA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_MCNB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_MCNC.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_MCND.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_RUNA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_SKL.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_SKN.AULEGIONNAIREINFANTRY.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_SKN.FX_JET1.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_SKN.FX_JET2.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_SKN.OBBOX.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_SKN.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_WDIEA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_XJMPA.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_XJMPB.w3x" />
+		<Include type="all" source="ART:Units/Cryo Legionnaire/AULEGIONNAIREINFANTRY_XJMPC.w3x" />
+	</Includes>
+</AssetDeclaration>

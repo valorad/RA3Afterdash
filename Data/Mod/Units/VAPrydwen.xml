@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Includes>
+		<Include type="all" source="VAPrydwen/AudioEvent.xml" />
+		<Include type="all" source="VAPrydwen/AudioFile.xml" />
+		<Include type="all" source="VAPrydwen/Multisound.xml" />
+		<Include type="all" source="VAPrydwen/Video.xml" />
+		<Include type="all" source="VAPrydwen/VideoEventList.xml" />
+		
+		<Include type="all" source="VAPrydwen/Armor.xml" />
+		<Include type="all" source="VAPrydwen/AttributeModifier.xml" />
+		<Include type="all" source="VAPrydwen/ButtonSingleStateData.xml" />
+		<Include type="all" source="VAPrydwen/ExperienceLevelTemplate.xml" />
+		<Include type="all" source="VAPrydwen/FXList.xml" />
+		<Include type="all" source="VAPrydwen/FXParticleSystemTemplate.xml" />
+		<Include type="all" source="VAPrydwen/GameObject.xml" />
+		<Include type="all" source="VAPrydwen/LogicCommand.xml" />
+		<Include type="all" source="VAPrydwen/LogicCommandSet.xml" />
+		<Include type="all" source="VAPrydwen/ObjectCreationList.xml" />
+		<Include type="all" source="VAPrydwen/PackedTextureImage.xml" />
+		<Include type="all" source="VAPrydwen/SpecialPowerTemplate.xml" />
+		<Include type="all" source="VAPrydwen/Texture.xml" />
+		<Include type="all" source="VAPrydwen/UnitAbilityButtonTemplate.xml" />
+		<Include type="all" source="VAPrydwen/UnitIntro.xml" />
+		<Include type="all" source="VAPrydwen/UnitTypeIcon.xml" />
+		<Include type="all" source="VAPrydwen/W3X.xml" />
+		<Include type="all" source="VAPrydwen/WeaponTemplate.xml" />
+	</Includes>
+</AssetDeclaration>

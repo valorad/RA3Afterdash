@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ButtonSingleStateData
+		id="ButtonStateAbilityCryoLeap">
+		<State
+			Image="AUA_CryoTrooper_BoostKick"
+			Title="NAME:CryoLeapSpecialPower"
+			Description="DESC:CryoLeapSpecialPower" />
+	</ButtonSingleStateData>
+</AssetDeclaration>

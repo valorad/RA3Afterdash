@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Texture id="AULegionnaireInfantry" File="ART:Units/Cryo Legionnaire/AULegionnaireInfantry.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AULegionnaireInfantry_NRM" File="ART:Units/Cryo Legionnaire/AULegionnaireInfantry_NRM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+	<Texture id="AULegionnaireInfantry_SPM" File="ART:Units/Cryo Legionnaire/AULegionnaireInfantry_SPM.dds" GenerateMipMaps="false" AllowAutomaticResize="false" />
+</AssetDeclaration>

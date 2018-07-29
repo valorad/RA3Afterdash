@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetDeclaration xmlns="uri:ea.com:eala:asset">
+	<ObjectCreationList
+		id="OCL_CryoSpill">
+		<CreateObject
+			Disposition="ON_GROUND_ALIGNED"
+			Options="IGNORE_ALL_OBJECTS">
+			<CreateObject>AlliedCryoSpill</CreateObject>
+		</CreateObject>
+	</ObjectCreationList>
+</AssetDeclaration>

@@ -583,3 +583,17 @@
 	Version:Format2
 		"Red Alert 3: Upheaval 1.16"
 	End
+
+
+// Afterdash
+	Name:vaPrydwen
+	"Prydwen"
+	END
+
+	Desc:vaPrydwen
+	"Prydwen is a veteran cryo Legionnaire"
+	END
+
+	Type:vaPrydwen
+	"Hero, Omni destroyer"
+	END
